@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/ElectricitySimulation.unity
+- path: Assets/Scenes/Machinery.unity
   isLoaded: 1
   isActive: 1

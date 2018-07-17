@@ -39,7 +39,6 @@ public class Wood : Substance {
 
     private void OnTriggerStay(Collider other)
     {
-        //Debug.Log(other.gameObject.GetComponent<Substance>().CurrentState);
         if (other.gameObject.GetComponent<Substance>().CurrentState == SubstanceState.burning && currentState == SubstanceState.intact)
         {
             currentState = SubstanceState.burnDelay;

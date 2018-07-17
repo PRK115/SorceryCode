@@ -29,7 +29,7 @@ public class EnergyOrb : Substance {
     protected override void electrifiedBehaviour()
     {
         if (timeLeft > 0.03 && timeLeft < 0.05)
-            elementalCollider.center = new Vector3(elementalCollider.center.x, elementalCollider.center.y, elementalCollider.center.z - 10);
+            elementalCollider.center = new Vector3(elementalCollider.center.x, elementalCollider.center.y, -10);
     }
 
     new void Update () {
