@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wood : Substance {
+public class Flammable : Substance {
     public float burnDelay;
     float timeTillIgnition;
     public float burningDuration;
@@ -39,11 +39,12 @@ public class Wood : Substance {
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.GetComponent<Substance>().CurrentState == SubstanceState.burning && currentState == SubstanceState.intact)
-        {
-            currentState = SubstanceState.burnDelay;
-            fire.SetActive(true);
-        }
+        if(other.gameObject.GetComponent<Substance>() != null)
+            if (other.gameObject.GetComponent<Substance>().CurrentState == SubstanceState.burning && currentState == SubstanceState.intact)
+            {
+                currentState = SubstanceState.burnDelay;
+                fire.SetActive(true);
+            }
     }
 
     new private void Update()

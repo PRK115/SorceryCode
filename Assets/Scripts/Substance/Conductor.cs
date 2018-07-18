@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Metal : Substance
+public class Conductor : Substance
 {
 
     public float electricityDuration;
@@ -32,31 +32,34 @@ public class Metal : Substance
             Electrify(0);
     }
 
-    private void OnTriggerStay(Collider other)
+    protected void OnTriggerStay(Collider other)
     {
         switch (currentState)
         {
             case SubstanceState.intact:
                 break;
+
             case SubstanceState.electrified:
-                if (other.gameObject.tag == "Conductor")
-                {
-                    if (!supplied)
-                        other.gameObject.GetComponent<Metal>().Disconnect(distanceFromSupply);
-                    else if (other.gameObject.GetComponent<Metal>().distanceFromSupply == 0 || other.gameObject.GetComponent<Metal>().distanceFromSupply > distanceFromSupply)
-                        other.gameObject.GetComponent<Metal>().Electrify(distanceFromSupply);
-                }
+                if(other.gameObject.GetComponent<Substance>() != null)
+                    if (other.gameObject.GetComponent<Conductor>() != null)
+                    {
+                        if (!supplied)
+                            other.gameObject.GetComponent<Conductor>().Disconnect(distanceFromSupply);
+                        else if (other.gameObject.GetComponent<Conductor>().distanceFromSupply == 0 || other.gameObject.GetComponent<Conductor>().distanceFromSupply > distanceFromSupply)
+                            other.gameObject.GetComponent<Conductor>().Electrify(distanceFromSupply);
+                    }
                 break;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Exit");
         if (other.gameObject.tag == "PowerSupply")
-        {
             supplied = false;
-        }
+
+        else if (other.gameObject.GetComponent<Conductor>() != null && other.gameObject.GetComponent<Conductor>().distanceFromSupply < distanceFromSupply)
+            supplied = false;
+            
     }
 
     public void Electrify(int previousDistanceFromSupply)

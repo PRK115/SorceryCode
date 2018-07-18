@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Flesh : Substance {
+public class Flesh : Conductor {
 
     public GameObject fire;
-    public GameObject spark;
 
     public float deathTime;
     float timeTillDeath;
@@ -37,18 +36,25 @@ public class Flesh : Substance {
         if (timeTillDeath < 0)
             Destroy(gameObject);
         else
+        {
             timeTillDeath -= Time.deltaTime;
+            if (timeTillDeath > 0.03 && timeTillDeath < 0.05)
+                GetComponent<BoxCollider>().transform.Translate(new Vector3(0, 0, -10));
+        }
     }
 
-    private void OnTriggerStay(Collider other)
+    private new void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.GetComponent<Substance>().CurrentState == SubstanceState.burning)
-        {
-            currentState = SubstanceState.burning;
-        }
-        if (other.gameObject.GetComponent<Substance>().CurrentState == SubstanceState.electrified)
-        {
-            currentState = SubstanceState.electrified;
-        }
+        base.OnTriggerStay(other);
+        if(other.gameObject.GetComponent<Substance>() != null)
+            if (other.gameObject.GetComponent<Substance>().CurrentState == SubstanceState.burning)
+            {
+                currentState = SubstanceState.burning;
+            }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.gameObject.name);
     }
 }
