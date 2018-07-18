@@ -283,7 +283,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Brain.cs" />
+    <Compile Include="Assets\Scripts\Machinery\Input.cs" />
     <Compile Include="Assets\Scripts\Machinery\Output.cs" />
+    <Compile Include="Assets\Scripts\Machinery\Switch.cs" />
+    <Compile Include="Assets\Scripts\Machinery\TwoPhaseMachine.cs" />
+    <Compile Include="Assets\Scripts\Machinery\TwoPhaseRotation.cs" />
+    <Compile Include="Assets\Scripts\Machinery\TwoPhaseTransition.cs" />
     <Compile Include="Assets\Scripts\Substance\EnergyOrb.cs" />
     <Compile Include="Assets\Scripts\Substance\Flesh.cs" />
     <Compile Include="Assets\Scripts\Substance\Metal.cs" />
