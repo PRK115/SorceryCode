@@ -7,7 +7,10 @@ public abstract class TwoPhaseMachine : Output {
     protected enum Phase { original, changing, second, returning }
     protected Phase currentPhase;
 
-    protected void Update()
+    public float phaseChangeTime;
+    public float returnTime;
+
+    protected void FixedUpdate()
     {
         switch (currentPhase)
         {
@@ -28,10 +31,6 @@ public abstract class TwoPhaseMachine : Output {
         }
     }
 
-    public float phaseChangeTime;
-    public float returnTime;
-
     protected abstract void PhaseChange();
     protected abstract void Return();
-
 }

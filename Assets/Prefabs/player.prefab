@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 33446666009606870}
   - component: {fileID: 23720338795913236}
   - component: {fileID: 114413294078987054}
+  - component: {fileID: 114957211925591270}
   m_Layer: 9
   m_Name: player
   m_TagString: Untagged
@@ -72,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1849303232956244}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.37, y: 2.91, z: 0}
+  m_LocalPosition: {x: 0.37, y: 1.88, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 4237060855046228}
@@ -185,9 +186,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c52e648b5bf1aeb4888e1eb2b3722854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fire: {fileID: 1188897389613886}
+  electricityDuration: 0
   spark: {fileID: 1239917355907540}
+  fire: {fileID: 1188897389613886}
   deathTime: 1
+--- !u!114 &114957211925591270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1849303232956244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d17aafa497d4be946903664dcefdb00c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manueverType: {fileID: 0}
 --- !u!198 &198392866576650394
 ParticleSystem:
   m_ObjectHideFlags: 1

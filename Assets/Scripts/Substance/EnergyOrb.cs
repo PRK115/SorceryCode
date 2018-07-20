@@ -32,11 +32,11 @@ public class EnergyOrb : Substance {
             elementalCollider.center = new Vector3(elementalCollider.center.x, elementalCollider.center.y, -10);
     }
 
-    new void Update () {
+    new void FixedUpdate () {
         if (timeLeft < 0)
             currentState = SubstanceState.intact;
         else
             timeLeft -= Time.deltaTime;
-        base.Update();
+        base.FixedUpdate();
 	}
 }

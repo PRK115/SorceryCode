@@ -47,9 +47,9 @@ public class Flammable : Substance {
             }
     }
 
-    new private void Update()
+    new private void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
         Debug.Log("wood " + currentState);
         Debug.Log(burningTimeLeft);
     }

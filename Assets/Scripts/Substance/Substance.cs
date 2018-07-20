@@ -9,7 +9,7 @@ public class Substance : MonoBehaviour {
 
     //protected ArrayList powerSupplies = new ArrayList();
 
-    protected void Update()
+    protected void FixedUpdate()
     {
         substanceStateBehaviour(currentState);
     }

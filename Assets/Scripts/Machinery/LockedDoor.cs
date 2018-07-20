@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class LockedDoor : Output {
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(other.gameObject.name);
-        if(other.gameObject.name == "player" && activated)
+        Debug.Log(collision.gameObject.name);
+        if(collision.gameObject.name == "player" && activated)
         {
             Destroy(gameObject);
         }

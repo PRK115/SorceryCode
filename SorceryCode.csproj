@@ -282,17 +282,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Brain.cs" />
+    <Compile Include="Assets\Scripts\Life\Control.cs" />
+    <Compile Include="Assets\Scripts\Life\Manuever.cs" />
+    <Compile Include="Assets\Scripts\Life\PlayerCtrl.cs" />
+    <Compile Include="Assets\Scripts\Life\WalkAndJump.cs" />
     <Compile Include="Assets\Scripts\Machinery\Key.cs" />
     <Compile Include="Assets\Scripts\Machinery\LockedDoor.cs" />
     <Compile Include="Assets\Scripts\Machinery\Output.cs" />
     <Compile Include="Assets\Scripts\Machinery\Switch.cs" />
     <Compile Include="Assets\Scripts\Machinery\TwoPhaseMachine.cs" />
+    <Compile Include="Assets\Scripts\Machinery\TwoPhaseRotation.cs" />
     <Compile Include="Assets\Scripts\Machinery\TwoPhaseTransition.cs" />
     <Compile Include="Assets\Scripts\Substance\Conductor.cs" />
     <Compile Include="Assets\Scripts\Substance\EnergyOrb.cs" />
     <Compile Include="Assets\Scripts\Substance\Flammable.cs" />
-    <Compile Include="Assets\Scripts\Substance\Flesh.cs" />
+    <Compile Include="Assets\Scripts\Substance\Organism.cs" />
     <Compile Include="Assets\Scripts\Substance\Substance.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

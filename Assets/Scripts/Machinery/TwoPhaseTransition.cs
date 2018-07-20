@@ -30,7 +30,10 @@ public class TwoPhaseTransition : TwoPhaseMachine
     {
         currentTransition = transform.position - originalPosition;
         if (Vector3.Dot(currentTransition, transition) <= 0)
+        {
+            transform.position = originalPosition;
             currentPhase = Phase.original;
+        }
 
         else
             transform.Translate(-transition * Time.deltaTime / returnTime);
