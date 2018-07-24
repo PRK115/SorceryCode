@@ -6,14 +6,12 @@ public class EnergyOrb : Substance {
 
     public float duration;
     float timeLeft;
-    BoxCollider elementalCollider;
 
     public SubstanceState type;
     private void Start()
     {
         timeLeft = duration;
         currentState = type;
-        elementalCollider = GetComponent<BoxCollider>();
     }
 
     protected override void intactBehaviour()
@@ -28,8 +26,7 @@ public class EnergyOrb : Substance {
 
     protected override void electrifiedBehaviour()
     {
-        if (timeLeft > 0.03 && timeLeft < 0.05)
-            elementalCollider.center = new Vector3(elementalCollider.center.x, elementalCollider.center.y, -10);
+        
     }
 
     new void FixedUpdate () {
@@ -39,4 +36,10 @@ public class EnergyOrb : Substance {
             timeLeft -= Time.deltaTime;
         base.FixedUpdate();
 	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<Conductor>() != null)
+            other.gameObject.GetComponent<Conductor>().Electrify(gameObject, 0);
+    }
 }

@@ -490,7 +490,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4089280666354538, guid: 8148e62d8daba4947972186c2d2402f7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.43
+      value: 3.9
       objectReference: {fileID: 0}
     - target: {fileID: 4089280666354538, guid: 8148e62d8daba4947972186c2d2402f7, type: 2}
       propertyPath: m_LocalPosition.y
@@ -524,7 +524,17 @@ Prefab:
       propertyPath: m_Name
       value: lightningBall (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 0}
+      propertyPath: duration
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114105032218112618, guid: 8148e62d8daba4947972186c2d2402f7,
+        type: 2}
+      propertyPath: duration
+      value: 1.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 8148e62d8daba4947972186c2d2402f7, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1128910103
