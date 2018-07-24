@@ -70,9 +70,13 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4089280666354538}
+  - component: {fileID: 65172123424689160}
+  - component: {fileID: 114331177746234110}
+  - component: {fileID: 65527017819965050}
+  - component: {fileID: 114105032218112618}
   m_Layer: 0
   m_Name: lightningBall
-  m_TagString: Untagged
+  m_TagString: PowerSupply
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +122,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1457927989000272}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.48, y: 1.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4122203676965014}
@@ -194,6 +198,56 @@ Transform:
   m_Father: {fileID: 4122203676965014}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65172123424689160
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1457927989000272}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65527017819965050
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1457927989000272}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114105032218112618
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1457927989000272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d23d154d3dbf34d9a802c19ecf4ebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1000
+  type: 3
+--- !u!114 &114331177746234110
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1457927989000272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d23d154d3dbf34d9a802c19ecf4ebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 60
+  type: 3
 --- !u!198 &198121626469092606
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -901,7 +955,7 @@ ParticleSystem:
         serializedVersion: 2
         minMaxState: 0
         scalar: 30
-        minScalar: 0
+        minScalar: 30
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -946,7 +1000,7 @@ ParticleSystem:
         serializedVersion: 2
         minMaxState: 0
         scalar: 30
-        minScalar: 0
+        minScalar: 30
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -991,7 +1045,7 @@ ParticleSystem:
         serializedVersion: 2
         minMaxState: 0
         scalar: 30
-        minScalar: 0
+        minScalar: 30
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -1036,7 +1090,7 @@ ParticleSystem:
         serializedVersion: 2
         minMaxState: 0
         scalar: 30
-        minScalar: 0
+        minScalar: 30
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -1081,7 +1135,7 @@ ParticleSystem:
         serializedVersion: 2
         minMaxState: 0
         scalar: 30
-        minScalar: 0
+        minScalar: 30
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -3790,7 +3844,7 @@ ParticleSystem:
   lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -3840,7 +3894,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 49387298
+  randomSeed: 1937548818
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4487,7 +4541,7 @@ ParticleSystem:
         serializedVersion: 2
         minMaxState: 0
         scalar: 30
-        minScalar: 0
+        minScalar: 30
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -4532,7 +4586,7 @@ ParticleSystem:
         serializedVersion: 2
         minMaxState: 0
         scalar: 30
-        minScalar: 0
+        minScalar: 30
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -4577,7 +4631,7 @@ ParticleSystem:
         serializedVersion: 2
         minMaxState: 0
         scalar: 30
-        minScalar: 0
+        minScalar: 30
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -4622,7 +4676,7 @@ ParticleSystem:
         serializedVersion: 2
         minMaxState: 0
         scalar: 30
-        minScalar: 0
+        minScalar: 30
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -4667,7 +4721,7 @@ ParticleSystem:
         serializedVersion: 2
         minMaxState: 0
         scalar: 30
-        minScalar: 0
+        minScalar: 30
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -10782,7 +10836,7 @@ ParticleSystem:
   lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0

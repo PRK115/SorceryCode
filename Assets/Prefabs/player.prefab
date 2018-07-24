@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 23720338795913236}
   - component: {fileID: 114413294078987054}
   - component: {fileID: 114957211925591270}
+  - component: {fileID: 114981008827435346}
   m_Layer: 9
   m_Name: player
   m_TagString: Untagged
@@ -73,7 +74,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1849303232956244}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.37, y: 1.88, z: 0}
+  m_LocalPosition: {x: -3.95, y: 3.46, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 4237060855046228}
@@ -121,7 +122,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100002, guid: 3e9045e52f7262a4688392c19260d64c, type: 3}
+  - {fileID: 2100000, guid: f26ac8f6b308e6344ba50c8893265988, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -147,7 +148,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1849303232956244}
-  m_Mesh: {fileID: 4300000, guid: 3e9045e52f7262a4688392c19260d64c, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 994ee90731195c44297a0778a1775f51, type: 3}
 --- !u!54 &54338269144429048
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -169,11 +170,11 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1849303232956244}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2f27a1a3a69655e4c8b7b2c0c1bda343, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2, y: 2.5, z: 1}
+  m_Size: {x: 1.2, y: 2.5, z: 0.75}
   m_Center: {x: 0, y: -0.3, z: 0}
 --- !u!114 &114413294078987054
 MonoBehaviour:
@@ -201,7 +202,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d17aafa497d4be946903664dcefdb00c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manueverType: {fileID: 0}
+--- !u!114 &114981008827435346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1849303232956244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceaac989934b8664fbde7b58b588a38d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 4
+  verticalJumpImpulse: 5.2
+  horizontalJumpImpulse: 2
 --- !u!198 &198392866576650394
 ParticleSystem:
   m_ObjectHideFlags: 1
