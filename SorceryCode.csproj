@@ -293,6 +293,7 @@
     <Compile Include="Assets\Scripts\Machinery\TwoPhaseMachine.cs" />
     <Compile Include="Assets\Scripts\Machinery\TwoPhaseRotation.cs" />
     <Compile Include="Assets\Scripts\Machinery\TwoPhaseTransition.cs" />
+    <Compile Include="Assets\Scripts\MapGenerator.cs" />
     <Compile Include="Assets\Scripts\Substance\Conductor.cs" />
     <Compile Include="Assets\Scripts\Substance\EnergyOrb.cs" />
     <Compile Include="Assets\Scripts\Substance\Flammable.cs" />

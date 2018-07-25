@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/ElectricitySimulation.unity
+- path: Assets/Scenes/MapMaker.unity
   isLoaded: 1
   isActive: 1

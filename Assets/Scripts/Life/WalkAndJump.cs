@@ -14,7 +14,6 @@ public class WalkAndJump : ManueverType {
 
     public override void Manuever(Control.Direction direction)
     {
-        Debug.Log(direction +" " + inAirHorizontal);
         if (onGround)
         {
             switch (direction)
