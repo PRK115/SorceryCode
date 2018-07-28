@@ -13,7 +13,7 @@ public class Key : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.name == "player")
+        if(other.gameObject.tag == "Player")
         {
             lockedDoor.Activate();
             Destroy(gameObject);

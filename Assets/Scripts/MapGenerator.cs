@@ -5,24 +5,38 @@ using UnityEngine;
 public class MapGenerator : MonoBehaviour {
 
     public Texture2D map;
+
+    public GameObject player;
     public GameObject stoneBlock;
     public GameObject metalBlock;
     public GameObject goal;
-    public GameObject player;
 
-    private void Awake()
+    public GameObject button;
+    public GameObject key;
+
+    //GameObject player = MapComponentData.instance.player;
+    //GameObject stoneBlock = MapComponentData.instance.stoneBlock;
+    //GameObject metalBlock = MapComponentData.instance.metalBlock;
+    //GameObject goal = MapComponentData.instance.goal;
+
+    //GameObject button = MapComponentData.instance.goal;
+    //GameObject key = MapComponentData.instance.key;
+
+    private void Start()
     {
         int mapWidth = map.width;
         int mapHeight = map.height;
 
-        for(int x = 0; x < mapWidth; x++)
+        if(transform.childCount == 0)
         {
-            for(int y = 0; y < mapHeight; y++)
+            for (int x = 0; x < mapWidth; x++)
             {
-                Color pixelColor = map.GetPixel(x, y);
-                Debug.Log(x + "," + y + "  " + pixelColor);
-                if(ObjectOfColor(pixelColor) != null)
-                    Instantiate(ObjectOfColor(pixelColor), new Vector3(x-mapWidth/2, y-mapHeight/2, 0), gameObject.transform.rotation, gameObject.transform);
+                for (int y = 0; y < mapHeight; y++)
+                {
+                    Color pixelColor = map.GetPixel(x, y);
+                    if (ObjectOfColor(pixelColor) != null)
+                        Instantiate(ObjectOfColor(pixelColor), new Vector3(x - mapWidth / 2, y - mapHeight / 2, 0), gameObject.transform.rotation, gameObject.transform);
+                }
             }
         }
     }
@@ -40,15 +54,19 @@ public class MapGenerator : MonoBehaviour {
             return false;
     }
 
-    GameObject ObjectOfColor(Color a)
+    GameObject ObjectOfColor(Color pixelColor)
     {
-        if (ColorCloseEnough(a, Color.black))
+        if (ColorCloseEnough(pixelColor, Color.black))
             return stoneBlock;
-        if (ColorCloseEnough(a, Color.gray))
+        if (ColorCloseEnough(pixelColor, Color.gray))
             return metalBlock;
-        if (ColorCloseEnough(a, Color.green))
+        if (ColorCloseEnough(pixelColor, Color.yellow))
+            return key;
+        if (ColorCloseEnough(pixelColor, Color.blue))
+            return button;
+        if (ColorCloseEnough(pixelColor, Color.green))
             return goal;
-        if (ColorCloseEnough(a, Color.red))
+        if (ColorCloseEnough(pixelColor, Color.red))
             return player;
         else
             return null;

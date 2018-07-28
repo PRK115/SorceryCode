@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Organism : Conductor {
 
-    Control control;
+    Brain brain;
     ManueverType manueverType;
 
     public GameObject fire;
@@ -14,14 +14,14 @@ public class Organism : Conductor {
 
     private void Start()
     {
-        control = GetComponent<Control>();
+        brain = GetComponent<Brain>();
         manueverType = GetComponent<ManueverType>();
         timeTillDeath = deathTime;
     }
 
     protected override void intactBehaviour()
     {
-        manueverType.Manuever(control.Command);
+        manueverType.Manuever(brain.Command);
     }
 
     protected override void burningBehaviour()
@@ -38,13 +38,12 @@ public class Organism : Conductor {
 
     void CountDown()
     {
+        brain.Death();
         if (timeTillDeath < 0)
             Destroy(gameObject);
         else
         {
             timeTillDeath -= Time.deltaTime;
-            if (timeTillDeath > 0.03 && timeTillDeath < 0.05)
-                GetComponent<BoxCollider>().transform.Translate(new Vector3(0, 0, -10));
         }
     }
 

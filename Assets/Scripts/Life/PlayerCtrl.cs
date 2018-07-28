@@ -2,16 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCtrl : Control {
+public class PlayerCtrl : Brain {
+
+    GameStateManager manager;
+
+    private void Start()
+    {
+        if(GameObject.Find("StageCanvas") != null)
+        manager = GameObject.Find("StageCanvas").GetComponent<GameStateManager>();
+    }
 
     private void Update()
     {
+        if (alive)
+        {
+            InterpretKey();
+        }
+        else if(manager != null)
+            manager.Funeral();
+    }
 
+    void InterpretKey()
+    {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
 
         if (horizontalInput != 0)
         {
-            if (Input.GetKeyDown("space"))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (horizontalInput < 0)
                     command = Direction.leftUp;
@@ -28,7 +45,6 @@ public class PlayerCtrl : Control {
 
         else if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("jump");
             command = Direction.up;
         }
 

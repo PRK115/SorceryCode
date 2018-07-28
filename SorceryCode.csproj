@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.3.0f3</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -282,7 +284,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Life\Control.cs" />
+    <Compile Include="Assets\Scripts\GameStateManager.cs" />
+    <Compile Include="Assets\Scripts\Goal.cs" />
+    <Compile Include="Assets\Scripts\Life\Brain.cs" />
     <Compile Include="Assets\Scripts\Life\Manuever.cs" />
     <Compile Include="Assets\Scripts\Life\PlayerCtrl.cs" />
     <Compile Include="Assets\Scripts\Life\WalkAndJump.cs" />
@@ -293,11 +297,13 @@
     <Compile Include="Assets\Scripts\Machinery\TwoPhaseMachine.cs" />
     <Compile Include="Assets\Scripts\Machinery\TwoPhaseRotation.cs" />
     <Compile Include="Assets\Scripts\Machinery\TwoPhaseTransition.cs" />
+    <Compile Include="Assets\Scripts\MapComponentData.cs" />
     <Compile Include="Assets\Scripts\MapGenerator.cs" />
+    <Compile Include="Assets\Scripts\SceneChange.cs" />
     <Compile Include="Assets\Scripts\Substance\Conductor.cs" />
-    <Compile Include="Assets\Scripts\Substance\EnergyOrb.cs" />
     <Compile Include="Assets\Scripts\Substance\Flammable.cs" />
     <Compile Include="Assets\Scripts\Substance\Organism.cs" />
+    <Compile Include="Assets\Scripts\Substance\PureEnergy.cs" />
     <Compile Include="Assets\Scripts\Substance\Substance.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

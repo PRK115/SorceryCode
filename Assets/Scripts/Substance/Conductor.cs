@@ -60,7 +60,6 @@ public class Conductor : Substance
     {
         if (other.gameObject == powerSource)
         {
-            supplied = false;
             powerSource = null;
         }
 
