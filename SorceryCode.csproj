@@ -235,68 +235,26 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>Library\UnityAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.Timeline">
       <HintPath>Library\UnityAssemblies\UnityEngine.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Timeline">
-      <HintPath>Library\UnityAssemblies\UnityEditor.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.TreeEditor">
-      <HintPath>Library\UnityAssemblies\UnityEditor.TreeEditor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEditor.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.GoogleAudioSpatializer">
-      <HintPath>Library\UnityAssemblies\UnityEditor.GoogleAudioSpatializer.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.GoogleAudioSpatializer">
       <HintPath>Library\UnityAssemblies\UnityEngine.GoogleAudioSpatializer.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.HoloLens">
-      <HintPath>Library\UnityAssemblies\UnityEditor.HoloLens.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.SpatialTracking">
-      <HintPath>Library\UnityAssemblies\UnityEditor.SpatialTracking.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>Library\UnityAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.VR">
-      <HintPath>Library\UnityAssemblies\UnityEditor.VR.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Graphs">
-      <HintPath>Library\UnityAssemblies\UnityEditor.Graphs.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
-      <HintPath>Library\UnityAssemblies\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Advertisements">
-      <HintPath>Library\UnityAssemblies\UnityEditor.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.Analytics">
-      <HintPath>Library\UnityAssemblies\UnityEditor.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Purchasing">
-      <HintPath>Library\UnityAssemblies\UnityEditor.Purchasing.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>Library\UnityAssemblies\UnityEngine.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
-      <HintPath>Library\UnityAssemblies\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>Library\UnityAssemblies\mscorlib.dll</HintPath>
@@ -325,53 +283,41 @@
     <Reference Include="Boo.Lang">
       <HintPath>Library\UnityAssemblies\Boo.Lang.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.StandardEvents">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.PackageManagerUI.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\FastAction.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\MaterialReferenceManager.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\PackageResourceImporterWindow.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TextContainer.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TextMeshPro.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TextMeshProUGUI.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_Asset.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_ColorGradient.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_Compatibility.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_CoroutineTween.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_DefaultControls.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_Dropdown.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_FontAsset.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_InputField.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_InputValidator.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_LineInfo.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_ListPool.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_MaterialManager.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_MeshInfo.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_ObjectPool.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_ScrollbarEventHandler.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_SelectionCaret.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_Settings.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_Sprite.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_SpriteAnimator.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_SpriteAsset.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_SpriteAssetImportFormats.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_Style.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_StyleSheet.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_SubMesh.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_SubMeshUI.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_Text.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_TextElement.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_TextInfo.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_TextUtilities.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_UpdateManager.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_UpdateRegistery.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_XmlTagStack.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMPro_EventManager.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMPro_ExtensionMethods.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMPro_FontUtilities.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMPro_MeshUtilities.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMPro_Private.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMPro_ShaderUtilities.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMPro_UGUI_Private.cs" />
+    <Compile Include="Assets\Scripts\GameStateManager.cs" />
+    <Compile Include="Assets\Scripts\Goal.cs" />
+    <Compile Include="Assets\Scripts\Life\Brain.cs" />
+    <Compile Include="Assets\Scripts\Life\Manuever.cs" />
+    <Compile Include="Assets\Scripts\Life\PlayerCtrl.cs" />
+    <Compile Include="Assets\Scripts\Life\WalkAndJump.cs" />
+    <Compile Include="Assets\Scripts\Machinery\Key.cs" />
+    <Compile Include="Assets\Scripts\Machinery\LockedDoor.cs" />
+    <Compile Include="Assets\Scripts\Machinery\Output.cs" />
+    <Compile Include="Assets\Scripts\Machinery\Switch.cs" />
+    <Compile Include="Assets\Scripts\Machinery\TwoPhaseMachine.cs" />
+    <Compile Include="Assets\Scripts\Machinery\TwoPhaseRotation.cs" />
+    <Compile Include="Assets\Scripts\Machinery\TwoPhaseTransition.cs" />
+    <Compile Include="Assets\Scripts\MapComponentData.cs" />
+    <Compile Include="Assets\Scripts\MapGenerator.cs" />
+    <Compile Include="Assets\Scripts\SceneChange.cs" />
+    <Compile Include="Assets\Scripts\Substance\Conductor.cs" />
+    <Compile Include="Assets\Scripts\Substance\Flammable.cs" />
+    <Compile Include="Assets\Scripts\Substance\Organism.cs" />
+    <Compile Include="Assets\Scripts\Substance\PureEnergy.cs" />
+    <Compile Include="Assets\Scripts\Substance\Substance.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
