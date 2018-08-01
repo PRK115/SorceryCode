@@ -8,7 +8,7 @@ public class GameStateManager : MonoBehaviour {
     public GameObject inStagePausePanel;
     public GameObject inStageFuneralPanel;
     public GameObject grimoire;
-    GameObject clearPanel;
+    public GameObject clearPanel;
 
     private void Start()
     {
@@ -19,8 +19,7 @@ public class GameStateManager : MonoBehaviour {
         inStagePausePanel.SetActive(false);
         inStageFuneralPanel.SetActive(false);
         grimoire.SetActive(false);
-        clearPanel = GameObject.Find("ClearPanel");
-        clearPanel.SetActive(false);
+            clearPanel.SetActive(false);
     }
 
     //일시 정지 메뉴

@@ -303,10 +303,10 @@
     <Compile Include="Assets\Scripts\Life\Manuever.cs" />
     <Compile Include="Assets\Scripts\Life\PlayerCtrl.cs" />
     <Compile Include="Assets\Scripts\Life\WalkAndJump.cs" />
+    <Compile Include="Assets\Scripts\Machinery\Button.cs" />
     <Compile Include="Assets\Scripts\Machinery\Key.cs" />
     <Compile Include="Assets\Scripts\Machinery\LockedDoor.cs" />
     <Compile Include="Assets\Scripts\Machinery\Output.cs" />
-    <Compile Include="Assets\Scripts\Machinery\Switch.cs" />
     <Compile Include="Assets\Scripts\Machinery\TwoPhaseMachine.cs" />
     <Compile Include="Assets\Scripts\Machinery\TwoPhaseRotation.cs" />
     <Compile Include="Assets\Scripts\Machinery\TwoPhaseTransition.cs" />

@@ -14,6 +14,8 @@ public class MapGenerator : MonoBehaviour {
     public GameObject button;
     public GameObject key;
 
+    GameObject stageCamera;
+
     //GameObject player = MapComponentData.instance.player;
     //GameObject stoneBlock = MapComponentData.instance.stoneBlock;
     //GameObject metalBlock = MapComponentData.instance.metalBlock;
@@ -24,10 +26,12 @@ public class MapGenerator : MonoBehaviour {
 
     private void Start()
     {
+        stageCamera = GameObject.Find("Main Camera");
         int mapWidth = map.width;
         int mapHeight = map.height;
+        stageCamera.GetComponent<Camera>().orthographicSize = map.height / 2;
 
-        if(transform.childCount == 0)
+        if (transform.childCount == 0)
         {
             for (int x = 0; x < mapWidth; x++)
             {
