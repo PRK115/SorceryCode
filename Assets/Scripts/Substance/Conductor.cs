@@ -9,7 +9,7 @@ public class Conductor : Substance
     float electricityTimeLeft = 0;
 
     int distanceFromSupply = 0;
-    GameObject powerSource;
+    GameObject predecessor;
     bool supplied = false;
 
     public GameObject spark;
@@ -28,7 +28,7 @@ public class Conductor : Substance
         {
             if(!supplied)
                 electricityTimeLeft -= Time.deltaTime;
-            if (powerSource == null)
+            if (predecessor == null)
                 supplied = false;
         }
     }
@@ -49,8 +49,8 @@ public class Conductor : Substance
                     if (!supplied)
                         other.gameObject.GetComponent<Conductor>().Disconnect(distanceFromSupply);
 
-                    else if (other.gameObject.GetComponent<Conductor>().distanceFromSupply == 0 || other.gameObject.GetComponent<Conductor>().distanceFromSupply > distanceFromSupply)
-                        other.gameObject.GetComponent<Conductor>().Electrify(powerSource, distanceFromSupply);
+                    else if (other.gameObject.GetComponent<Conductor>().distanceFromSupply == 0 || other.gameObject.GetComponent<Conductor>().distanceFromSupply > distanceFromSupply + 1)
+                        other.gameObject.GetComponent<Conductor>().Electrify(gameObject, distanceFromSupply);
                 }
                 break;
         }
@@ -58,9 +58,9 @@ public class Conductor : Substance
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == powerSource)
+        if (other.gameObject == predecessor)
         {
-            powerSource = null;
+            predecessor = null;
         }
 
         else if (other.gameObject.GetComponent<Conductor>() != null && other.gameObject.GetComponent<Conductor>().distanceFromSupply < distanceFromSupply)
@@ -68,9 +68,9 @@ public class Conductor : Substance
             
     }
 
-    public void Electrify(GameObject powerSource, int previousDistanceFromSupply)
+    public void Electrify(GameObject predecessor, int previousDistanceFromSupply)
     {
-        this.powerSource = powerSource;
+        this.predecessor = predecessor;
         supplied = true;
         electricityTimeLeft = electricityDuration;
         currentState = SubstanceState.electrified;
