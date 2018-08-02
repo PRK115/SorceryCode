@@ -13,12 +13,41 @@ public class Interpreter : MonoBehaviour
 
     public abstract class Stmt
     {
-        public abstract IEnumerator Eval();
+        public delegate void Continuation(StmtResult result);
+
+        public abstract IEnumerator Eval(Continuation cont);
+    }
+
+    public enum StmtResult
+    {
+        None, Break
     }
 
     public class LangException : Exception
     {
         public LangException(string message) : base(message) { }
+    }
+
+    public class LangCoroutine
+    {
+        public Coroutine Coroutine { get; private set; }
+        public object Result;
+        private IEnumerator target;
+
+        public LangCoroutine(MonoBehaviour owner, IEnumerator target)
+        {
+            this.target = target;
+            this.Coroutine = owner.StartCoroutine(Run());
+        }
+
+        private IEnumerator Run()
+        {
+            while (target.MoveNext())
+            {
+                Result = target.Current;
+                yield return Result;
+            }
+        }
     }
 
     public class Object : Expr
@@ -40,7 +69,7 @@ public class Interpreter : MonoBehaviour
     {
         public Expr Expr;
 
-        public override IEnumerator Eval()
+        public override IEnumerator Eval(Continuation cont)
         {
             Expr.Eval();
             yield return new WaitForSeconds(Inst.Delay);
@@ -51,11 +80,11 @@ public class Interpreter : MonoBehaviour
     {
         public List<Stmt> Statements;
 
-        public override IEnumerator Eval()
+        public override IEnumerator Eval(Continuation cont)
         {
             foreach (Stmt stmt in Statements)
             {
-                yield return Inst.StartCoroutine(stmt.Eval());
+                yield return Inst.StartCoroutine(stmt.Eval(cont));
             }
         }
     }
@@ -66,7 +95,7 @@ public class Interpreter : MonoBehaviour
         public Stmt Then;
         public Stmt Else;
 
-        public override IEnumerator Eval()
+        public override IEnumerator Eval(Continuation cont)
         {
             object condResult = Cond.Eval();
             if (condResult is bool)
@@ -74,11 +103,11 @@ public class Interpreter : MonoBehaviour
                 bool condValue = (bool) condResult;
                 if (condValue)
                 {
-                    yield return Inst.StartCoroutine(Then.Eval());
+                    yield return Inst.StartCoroutine(Then.Eval(cont));
                 }
                 else if (Else != null)
                 {
-                    yield return Inst.StartCoroutine(Else.Eval());
+                    yield return Inst.StartCoroutine(Else.Eval(cont));
                 }
             }
             else
@@ -92,12 +121,26 @@ public class Interpreter : MonoBehaviour
     {
         public Stmt Body;
 
-        public override IEnumerator Eval()
+        public override IEnumerator Eval(Continuation cont)
         {
             while (true)
             {
-                yield return Inst.StartCoroutine(Body.Eval());
+                StmtResult result = StmtResult.None;
+                yield return Body.Eval(newResult => result = newResult);
+                if (result == StmtResult.Break)
+                {
+                    break;
+                }
             }
+        }
+    }
+
+    public class Break : Stmt
+    {
+        public override IEnumerator Eval(Continuation cont)
+        {
+            cont(StmtResult.Break);
+            yield return StmtResult.Break;
         }
     }
 
@@ -106,9 +149,9 @@ public class Interpreter : MonoBehaviour
     {
         public Stmt Body;
 
-        public override IEnumerator Eval()
+        public override IEnumerator Eval(Continuation cont)
         {
-            yield return Inst.StartCoroutine(Body.Eval());
+            yield return Inst.StartCoroutine(Body.Eval(cont));
         }
     }
 
@@ -118,10 +161,10 @@ public class Interpreter : MonoBehaviour
     {
         public Stmt Body;
 
-        public override IEnumerator Eval()
+        public override IEnumerator Eval(Continuation cont)
         {
             // TODO
-            yield return Inst.StartCoroutine(Body.Eval());
+            yield return Inst.StartCoroutine(Body.Eval(cont));
         }
     }
 
@@ -131,7 +174,7 @@ public class Interpreter : MonoBehaviour
 
     public void Execute(Block program)
     {
-        Inst.StartCoroutine(program.Eval());
+        Inst.StartCoroutine(program.Eval(_ => { }));
     }
 
     void Awake()
@@ -187,7 +230,8 @@ public class Interpreter : MonoBehaviour
                                         Argument = new Object() { Obj = 2 },
                                         Fun = Test2
                                     }
-                                }
+                                },
+                                new Break()
                             }
                         },
                         Else = new Expression()
