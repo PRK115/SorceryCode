@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TwoPhaseTransition : TwoPhaseMachine
+public class TwoPhaseTransition : MonoBehaviour, IToggleable
 {
+    public TwoPhaseMachine machine;
 
     Vector3 originalPosition;
 
@@ -15,27 +16,31 @@ public class TwoPhaseTransition : TwoPhaseMachine
         originalPosition = transform.position;
     }
 
+    public void Toggle(bool on)
+    {
+        machine.Activate(on);
+    }
 
-    protected override void PhaseChange()
+    public void PhaseChange()
     {
         currentTransition = transform.position - originalPosition;
         if (currentTransition.magnitude >= transition.magnitude)
-            currentPhase = Phase.second;
+            machine.currentPhase = TwoPhaseMachine.Phase.Second;
 
         else
-            transform.Translate(transition * Time.deltaTime / phaseChangeTime);
+            transform.Translate(transition * Time.deltaTime / machine.phaseChangeTime);
     }
 
-    protected override void Return()
+    public void Return()
     {
         currentTransition = transform.position - originalPosition;
         if (Vector3.Dot(currentTransition, transition) <= 0)
         {
             transform.position = originalPosition;
-            currentPhase = Phase.original;
+            machine.currentPhase = TwoPhaseMachine.Phase.Original;
         }
 
         else
-            transform.Translate(-transition * Time.deltaTime / returnTime);
+            transform.Translate(-transition * Time.deltaTime / machine.returnTime);
     }
 }

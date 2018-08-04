@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Key : MonoBehaviour {
 
-    Output lockedDoor;
+    IToggleable lockedDoor;
 
-    private void Start()
+    private void Awake()
     {
-        lockedDoor = GetComponentInParent<Output>();
+        lockedDoor = GetComponentInParent<IToggleable>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
         {
-            lockedDoor.Activate();
+            lockedDoor.Toggle(true);
             Destroy(gameObject);
         }
     }

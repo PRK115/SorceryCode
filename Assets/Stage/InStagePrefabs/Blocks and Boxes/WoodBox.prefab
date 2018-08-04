@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 198650486588759256}
   - component: {fileID: 199673496914073428}
   m_Layer: 0
-  m_Name: fireOnBlock
+  m_Name: fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,6 +57,8 @@ GameObject:
   - component: {fileID: 114170198021480306}
   - component: {fileID: 54603023793516402}
   - component: {fileID: 65148622726328712}
+  - component: {fileID: 114537458676603258}
+  - component: {fileID: 114711685296160464}
   m_Layer: 0
   m_Name: WoodBox
   m_TagString: Block
@@ -259,9 +261,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b532930bf7c95464f9b4ffa321b39f51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
   burnDelay: 0.6
   burningDuration: 2
-  fire: {fileID: 1466197232851286}
+--- !u!114 &114537458676603258
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1549163940768664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927dd6ac6f44c8d4da744262e751162d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityType: 8
+  IsMovable: 1
+  IsButtonPushable: 1
+--- !u!114 &114711685296160464
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1549163940768664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b532930bf7c95464f9b4ffa321b39f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  burnDelay: 0.2
+  burningDuration: 1
 --- !u!198 &198037049063964448
 ParticleSystem:
   m_ObjectHideFlags: 1

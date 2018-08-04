@@ -1,36 +1,51 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class TwoPhaseMachine : Output {
+[System.Serializable]
+public class TwoPhaseMachine {
 
-    protected enum Phase { original, changing, second, returning }
-    protected Phase currentPhase;
+    public enum Phase { Original, Changing, Second, Returning }
+    public Phase currentPhase;
 
     public float phaseChangeTime;
     public float returnTime;
 
-    protected void FixedUpdate()
+    public bool activated = false;
+
+    private Action PhaseChange;
+    private Action Return;
+
+    public void SetCallbacks(Action PhaseChange, Action Return)
+    {
+        this.PhaseChange = PhaseChange;
+        this.Return = Return;
+    }
+
+    public void Activate(bool activated)
+    {
+        this.activated = activated;
+    }
+
+    public void Update()
     {
         switch (currentPhase)
         {
-            case Phase.original:
+            case Phase.Original:
                 if (activated)
-                    currentPhase = Phase.changing;
+                    currentPhase = Phase.Changing;
                 break;
-            case Phase.changing:
+            case Phase.Changing:
                 PhaseChange();
                 break;
-            case Phase.second:
+            case Phase.Second:
                 if (!activated)
-                    currentPhase = Phase.returning;
+                    currentPhase = Phase.Returning;
                 break;
-            case Phase.returning:
+            case Phase.Returning:
                 Return();
                 break;
         }
     }
-
-    protected abstract void PhaseChange();
-    protected abstract void Return();
 }

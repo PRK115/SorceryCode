@@ -2,24 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCtrl : Brain {
+public class PlayerCtrl : MonoBehaviour {
 
-    GameStateManager manager;
+    private WalkAndJump walkAndJump;
+    private GameStateManager manager;
 
-    private void Start()
+    private bool alive = false;
+
+    private void Awake()
     {
-        if(GameObject.Find("StageCanvas") != null)
-        manager = GameObject.Find("StageCanvas").GetComponent<GameStateManager>();
+        walkAndJump = GetComponent<WalkAndJump>();
+        manager = FindObjectOfType<GameStateManager>();
     }
 
     private void Update()
     {
+        InterpretKey();
         if (alive)
         {
-            InterpretKey();
+            if (manager != null)
+                manager.Funeral();
         }
-        else if(manager != null)
-            manager.Funeral();
     }
 
     void InterpretKey()
@@ -31,24 +34,23 @@ public class PlayerCtrl : Brain {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (horizontalInput < 0)
-                    command = Direction.leftUp;
+                    walkAndJump.Manuever(Direction.LeftUp);
                 else
-                    command = Direction.rightUp;
+                    walkAndJump.Manuever(Direction.RightUp);
             }
             else if (horizontalInput < 0)
             {
-                command = Direction.left;
+                walkAndJump.Manuever(Direction.Left);
             }
             else
-                command = Direction.right;
+            {
+                walkAndJump.Manuever(Direction.Right);
+            }
         }
 
         else if (Input.GetKeyDown(KeyCode.Space))
         {
-            command = Direction.up;
+            walkAndJump.Manuever(Direction.Up);
         }
-
-        else
-            command = Direction.none;
     }
 }

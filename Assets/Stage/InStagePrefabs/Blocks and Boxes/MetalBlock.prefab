@@ -42,6 +42,8 @@ GameObject:
   - component: {fileID: 114982887028947550}
   - component: {fileID: 65281304390222984}
   - component: {fileID: 54512516435008898}
+  - component: {fileID: 114965526905209616}
+  - component: {fileID: 114382813402609288}
   m_Layer: 0
   m_Name: MetalBlock
   m_TagString: Block
@@ -157,6 +159,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114382813402609288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1961037955922088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f650f07419cc04e8a3d209c4066daa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  electricityDuration: 0.2
+--- !u!114 &114965526905209616
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1961037955922088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927dd6ac6f44c8d4da744262e751162d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityType: 1
+  IsMovable: 0
+  IsButtonPushable: 0
 --- !u!114 &114982887028947550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -168,8 +197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8f650f07419cc04e8a3d209c4066daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
   electricityDuration: 0.2
-  spark: {fileID: 1120309061083800}
 --- !u!198 &198369084682247770
 ParticleSystem:
   m_ObjectHideFlags: 1

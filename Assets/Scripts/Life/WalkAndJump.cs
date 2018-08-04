@@ -3,36 +3,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WalkAndJump : ManueverType {
+public class WalkAndJump : MonoBehaviour {
 
     public float walkSpeed;
     public float verticalJumpImpulse;
     public float horizontalJumpImpulse;
     bool onGround = false;
     bool inAirHorizontal = false;
-    public override void Manuever(Brain.Direction direction)
+
+    private Rigidbody rb;
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    public void Manuever(Direction direction)
     {
         if (onGround)
         {
             switch (direction)
             {
-                case Brain.Direction.left:
+                case Direction.Left:
                     transform.LookAt(transform.position + Vector3.left);
                     transform.Translate(Vector3.forward * walkSpeed * Time.deltaTime);
                     break;
-                case Brain.Direction.right:
+                case Direction.Right:
                     transform.LookAt(transform.position + Vector3.right);
                     transform.Translate(Vector3.forward * walkSpeed * Time.deltaTime);
                     break;
-                case Brain.Direction.up:
-                    GetComponent<Rigidbody>().AddForce(new Vector3(0, verticalJumpImpulse, 0), ForceMode.Impulse);
+                case Direction.Up:
+                    rb.AddForce(new Vector3(0, verticalJumpImpulse, 0), ForceMode.Impulse);
                     break;
-                case Brain.Direction.leftUp:
-                    GetComponent<Rigidbody>().AddForce(new Vector3(0, verticalJumpImpulse, 0), ForceMode.Impulse);
+                case Direction.LeftUp:
+                    rb.AddForce(new Vector3(0, verticalJumpImpulse, 0), ForceMode.Impulse);
                     inAirHorizontal = true;
                     break;
-                case Brain.Direction.rightUp:
-                    GetComponent<Rigidbody>().AddForce(new Vector3(0, verticalJumpImpulse, 0), ForceMode.Impulse);
+                case Direction.RightUp:
+                    rb.AddForce(new Vector3(0, verticalJumpImpulse, 0), ForceMode.Impulse);
                     inAirHorizontal = true;
                     break;
             }
@@ -50,7 +57,7 @@ public class WalkAndJump : ManueverType {
         }
         if (collision.contacts[0].normal == Vector3.up)
         {
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            rb.velocity = Vector3.zero;
             inAirHorizontal = false;
         }
     }

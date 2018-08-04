@@ -2,7 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LockedDoor : Output {
+public class LockedDoor : MonoBehaviour, IToggleable
+{
+    public bool activated;
+
+    public void Toggle(bool on)
+    {
+        activated = on;
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

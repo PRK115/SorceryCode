@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Button : MonoBehaviour {
 
-    Output[] outputs;
+    IToggleable[] outputs;
 
     private void Start()
     {
-        outputs = GetComponentsInChildren<Output>();
+        outputs = GetComponentsInChildren<IToggleable>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         for(int i = 0; i < outputs.GetLength(0); i++)
         {
-            outputs[i].Activate();
+            outputs[i].Toggle(true);
         }
     }
 
@@ -23,7 +23,7 @@ public class Button : MonoBehaviour {
     {
         for (int i = 0; i < outputs.GetLength(0); i++)
         {
-            outputs[i].Deactivate();
+            outputs[i].Toggle(false);
         }
     }
 }

@@ -37,6 +37,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4001445957713306}
+  - component: {fileID: 114665328827655412}
   - component: {fileID: 114038981514631884}
   m_Layer: 0
   m_Name: SlidingDoor
@@ -137,6 +138,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891dc30305d3a9a47b823f5233e49462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phaseChangeTime: 1
-  returnTime: 1
+  machine:
+    currentPhase: 0
+    phaseChangeTime: 0
+    returnTime: 0
+    activated: 0
   transition: {x: 0, y: 2, z: 0}
+--- !u!114 &114665328827655412
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1912722062843292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927dd6ac6f44c8d4da744262e751162d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityType: 42
+  IsMovable: 0
+  IsButtonPushable: 0

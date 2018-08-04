@@ -37,6 +37,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4001357622774008}
+  - component: {fileID: 114581824357351138}
   - component: {fileID: 114173641873949898}
   m_Layer: 0
   m_Name: RotatingDoor
@@ -137,6 +138,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ca90449012f5a440bf426e83a1f7824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phaseChangeTime: 1
-  returnTime: 1
+  machine:
+    currentPhase: 0
+    phaseChangeTime: 0
+    returnTime: 0
+    activated: 0
   angle: 90
+--- !u!114 &114581824357351138
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1768849196855400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927dd6ac6f44c8d4da744262e751162d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityType: 41
+  IsMovable: 0
+  IsButtonPushable: 0
