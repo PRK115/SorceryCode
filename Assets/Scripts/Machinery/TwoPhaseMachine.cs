@@ -11,6 +11,7 @@ public class TwoPhaseMachine {
 
     public float phaseChangeTime;
     public float returnTime;
+    public float TimeTillNextPhase { get; set; }
 
     public bool activated = false;
 

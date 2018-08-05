@@ -29,7 +29,7 @@ public class Flammable : MonoBehaviour, ISubstance {
 
     private void Awake()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
+        meshRenderer = GetComponentInChildren<MeshRenderer>();
         fire = transform.Find("fire").gameObject;
     }
 

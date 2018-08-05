@@ -30,7 +30,7 @@ public enum EntityType
 public class Entity : MonoBehaviour
 {
     public EntityType EntityType;
-    public bool IsMovable;
+    public bool isMovable;
     public bool IsButtonPushable;
     public bool BlockProjectiles;
 }

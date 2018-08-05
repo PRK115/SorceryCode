@@ -9,7 +9,6 @@ public class TwoPhaseTransition : MonoBehaviour, IToggleable
     Vector3 originalPosition;
 
     public Vector3 transition;
-    private Vector3 currentTransition;
 
     private void Awake()
     {
@@ -19,6 +18,7 @@ public class TwoPhaseTransition : MonoBehaviour, IToggleable
     void Start()
     {
         originalPosition = transform.position;
+        machine.TimeTillNextPhase = machine.phaseChangeTime;
     }
 
     private void Update()
@@ -33,24 +33,33 @@ public class TwoPhaseTransition : MonoBehaviour, IToggleable
 
     public void PhaseChange()
     {
-        currentTransition = transform.position - originalPosition;
-        if (currentTransition.magnitude >= transition.magnitude)
+        if (machine.TimeTillNextPhase <= 0)
+        {
+            machine.TimeTillNextPhase = machine.returnTime;
+            //transform.position = originalPosition;
             machine.currentPhase = TwoPhaseMachine.Phase.Second;
+        }
 
         else
-           transform.Translate(transition * Time.deltaTime / machine.phaseChangeTime);
+        {
+            transform.Translate(transition * Time.deltaTime / machine.phaseChangeTime);
+            machine.TimeTillNextPhase -= Time.deltaTime;
+        }
     }
 
     public void Return()
     {
-        currentTransition = transform.position - originalPosition;
-        if (Vector3.Dot(currentTransition, transition) <= 0)
+        if (machine.TimeTillNextPhase <= 0)
         {
+            machine.TimeTillNextPhase = machine.phaseChangeTime;
             transform.position = originalPosition;
             machine.currentPhase = TwoPhaseMachine.Phase.Original;
         }
 
         else
+        {
             transform.Translate(-transition * Time.deltaTime / machine.returnTime);
+            machine.TimeTillNextPhase -= Time.deltaTime;
+        }
     }
 }
