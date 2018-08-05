@@ -265,6 +265,7 @@ MonoBehaviour:
   EntityType: 2
   IsMovable: 0
   IsButtonPushable: 0
+  BlockProjectiles: 1
 --- !u!198 &198009998964810954
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -7,5 +7,6 @@ using UnityEngine;
 
 public class Enchantable : MonoBehaviour, Attribute
 {
+
 }
 

@@ -32,5 +32,6 @@ public class Entity : MonoBehaviour
     public EntityType EntityType;
     public bool IsMovable;
     public bool IsButtonPushable;
+    public bool BlockProjectiles;
 }
 
