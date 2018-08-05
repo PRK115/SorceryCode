@@ -16,22 +16,21 @@ public class Conductor : MonoBehaviour, ISubstance
     float electricityTimeLeft = 0;
 
     int distanceFromSupply = 0;
-    GameObject predecessor;
+    Conductor predecessor;
     bool supplied = false;
 
     private GameObject spark;
 
     private Action OnElectrify;
 
-    public void SetElectrifyCallback(Action action)
-    {
-        action = OnElectrify;
-    }
+    //public void SetElectrifyCallback(Action action)
+    //{
+    //    action = OnElectrify;
+    //}
 
     public void SetAsElectricitySource()
     {
-        state = State.Electrified;
-        distanceFromSupply = 0;
+        Electrify(this, -1);
     }
 
     void Awake()
@@ -55,7 +54,7 @@ public class Conductor : MonoBehaviour, ISubstance
                 {
                     electricityTimeLeft -= Time.deltaTime;
                 }
-                if (predecessor == null)
+                if (predecessor == null || predecessor.enabled == false)
                 {
                     supplied = false;
                 }
@@ -80,8 +79,8 @@ public class Conductor : MonoBehaviour, ISubstance
                 if (!supplied)
                     conductor.Disconnect(distanceFromSupply);
 
-                else if (conductor.distanceFromSupply == 0 || conductor.distanceFromSupply > distanceFromSupply + 1)
-                    conductor.Electrify(gameObject, distanceFromSupply);
+                else if (conductor.state == State.Intact || conductor.distanceFromSupply > distanceFromSupply + 1)
+                    conductor.Electrify(GetComponent<Conductor>(), distanceFromSupply);
             }
         }
     }
@@ -89,17 +88,17 @@ public class Conductor : MonoBehaviour, ISubstance
     private void OnTriggerExit(Collider other)
     {
         Conductor conductor = other.GetComponent<Conductor>();
-        if (other.gameObject == predecessor)
+        if (conductor == predecessor)
         {
             predecessor = null;
         }
-        else if (conductor != null && conductor.distanceFromSupply < distanceFromSupply)
-        {
-            supplied = false;
-        }
+        //else if (conductor != null && conductor.distanceFromSupply < distanceFromSupply)
+        //{
+        //    supplied = false;
+        //}
     }
 
-    public void Electrify(GameObject predecessor, int previousDistanceFromSupply)
+    public void Electrify(Conductor predecessor, int previousDistanceFromSupply)
     {
         this.predecessor = predecessor;
         supplied = true;

@@ -22,7 +22,7 @@ public class TwoPhaseMachine {
         this.PhaseChange = PhaseChange;
         this.Return = Return;
     }
-
+    
     public void Activate(bool activated)
     {
         this.activated = activated;

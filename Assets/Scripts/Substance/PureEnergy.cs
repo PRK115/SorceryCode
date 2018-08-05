@@ -23,7 +23,7 @@ public class PureEnergy : MonoBehaviour
         timeLeft = duration;
 
         Conductor conductor = substance as Conductor;
-        if (conductor)
+        if (conductor != null)
         {
             conductor.SetAsElectricitySource();
         }
@@ -33,6 +33,8 @@ public class PureEnergy : MonoBehaviour
         if (timeLeft < 0)
             Destroy(gameObject);
         else
+        {
             timeLeft -= Time.deltaTime;
+        }
 	}
 }

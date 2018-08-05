@@ -11,13 +11,14 @@ public class Flammable : MonoBehaviour, ISubstance {
 
     public State state;
 
+    public bool indestructable;
     public float burnDelay;
     float timeTillIgnition;
     public float burningDuration;
     float burningTimeLeft;
 
     private GameObject fire;
-    private MeshRenderer renderer;
+    private MeshRenderer meshRenderer;
 
     public Action OnBurn;
 
@@ -28,7 +29,7 @@ public class Flammable : MonoBehaviour, ISubstance {
 
     private void Awake()
     {
-        renderer = GetComponent<MeshRenderer>();
+        meshRenderer = GetComponent<MeshRenderer>();
         fire = transform.Find("fire").gameObject;
     }
 
@@ -36,7 +37,6 @@ public class Flammable : MonoBehaviour, ISubstance {
     {
         timeTillIgnition = burnDelay;
         burningTimeLeft = burningDuration;
-        state = State.Intact;
     }
 
     void Update()
@@ -44,22 +44,29 @@ public class Flammable : MonoBehaviour, ISubstance {
         if (state == State.BurnReady)
         {
             if (timeTillIgnition <= 0)
+            {
                 state = State.Burning;
+                fire.SetActive(true);
+            }
             else
                 timeTillIgnition -= Time.deltaTime;
         }
         else if (state == State.Burning)
         {
-            OnBurn();
+            if(OnBurn != null)
+                OnBurn();
 
-            if (burningTimeLeft <= 0)
-                gameObject.SetActive(false);
-            else
-                burningTimeLeft -= Time.deltaTime;
+            if (!indestructable)
+            {
+                if (burningTimeLeft <= 0)
+                    gameObject.SetActive(false);
+                else
+                    burningTimeLeft -= Time.deltaTime;
 
-            // TODO: 잿더미 이펙트 넣기
-            if (burningTimeLeft < 1)
-                renderer.enabled = false;
+                // TODO: 잿더미 이펙트 넣기
+                if (burningTimeLeft < 0.7)
+                    meshRenderer.enabled = false;
+            }
         }
     }
 
@@ -68,7 +75,7 @@ public class Flammable : MonoBehaviour, ISubstance {
         Flammable flammable = other.GetComponent<Flammable>();
         if (flammable != null)
         {
-            if (flammable.state == State.Burning && flammable.state == State.Intact)
+            if (flammable.state == State.Burning)
             {
                 state = State.BurnReady;
                 fire.SetActive(true);

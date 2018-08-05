@@ -51,10 +51,6 @@ public class WalkAndJump : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        for(int i = 0; i < collision.contacts.GetLength(0); i++)
-        {
-            Debug.Log(collision.contacts[i].normal);
-        }
         if (collision.contacts[0].normal == Vector3.up)
         {
             rb.velocity = Vector3.zero;

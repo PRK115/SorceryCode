@@ -396,6 +396,11 @@ Prefab:
       propertyPath: duration
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114148388758092292, guid: 8148e62d8daba4947972186c2d2402f7,
+        type: 2}
+      propertyPath: duration
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8148e62d8daba4947972186c2d2402f7, type: 2}
   m_IsPrefabAsset: 0
@@ -829,6 +834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26991ac16055e0640950e8f80f6d5587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activated: 0
 --- !u!23 &959450879
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1019,8 +1025,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891dc30305d3a9a47b823f5233e49462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phaseChangeTime: 1
-  returnTime: 7
+  machine:
+    currentPhase: 0
+    phaseChangeTime: 3
+    returnTime: 3
+    activated: 0
   transition: {x: 0, y: 10, z: 0}
 --- !u!23 &1202366957
 MeshRenderer:

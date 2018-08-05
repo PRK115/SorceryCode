@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class TwoPhaseTransition : MonoBehaviour, IToggleable
 {
-    public TwoPhaseMachine machine;
+    public TwoPhaseMachine machine = new TwoPhaseMachine();
 
     Vector3 originalPosition;
 
     public Vector3 transition;
     private Vector3 currentTransition;
 
+    private void Awake()
+    {
+        machine.SetCallbacks(PhaseChange, Return);
+    }
+
     void Start()
     {
         originalPosition = transform.position;
+    }
+
+    private void Update()
+    {
+        machine.Update();
     }
 
     public void Toggle(bool on)
@@ -28,7 +38,7 @@ public class TwoPhaseTransition : MonoBehaviour, IToggleable
             machine.currentPhase = TwoPhaseMachine.Phase.Second;
 
         else
-            transform.Translate(transition * Time.deltaTime / machine.phaseChangeTime);
+           transform.Translate(transition * Time.deltaTime / machine.phaseChangeTime);
     }
 
     public void Return()
