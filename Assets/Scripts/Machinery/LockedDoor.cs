@@ -20,4 +20,20 @@ public class LockedDoor : MonoBehaviour, IToggleable
         }
     }
 
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Debug.Log("충돌");
+        if (hit.gameObject.tag == "Player" && activated)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player" && activated)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

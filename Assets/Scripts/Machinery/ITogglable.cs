@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-interface IToggleable
+public interface IToggleable
 {
     void Toggle(bool on);
 }

@@ -7,7 +7,7 @@ public class PlayerCtrl : MonoBehaviour {
     private WalkAndJump walkAndJump;
     private GameStateManager manager;
 
-    private bool alive = false;
+    private bool alive = true;
 
     private void Awake()
     {
@@ -16,41 +16,49 @@ public class PlayerCtrl : MonoBehaviour {
     }
 
     private void Update()
-    {
-        InterpretKey();
-        if (alive)
+    { 
+        if(alive)
+        {
+            walkAndJump.Manuever(InterpretKey());
+        }
+        else
         {
             if (manager != null)
                 manager.Funeral();
         }
     }
 
-    void InterpretKey()
+    Direction InterpretKey()
     {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
 
         if (horizontalInput != 0)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space))
             {
                 if (horizontalInput < 0)
-                    walkAndJump.Manuever(Direction.LeftUp);
+                    return Direction.LeftUp;
                 else
-                    walkAndJump.Manuever(Direction.RightUp);
+                    return Direction.RightUp;
             }
             else if (horizontalInput < 0)
             {
-                walkAndJump.Manuever(Direction.Left);
+                return Direction.Left;
             }
             else
             {
-                walkAndJump.Manuever(Direction.Right);
+                return Direction.Right;
             }
         }
 
         else if (Input.GetKeyDown(KeyCode.Space))
         {
-            walkAndJump.Manuever(Direction.Up);
+            return Direction.Up;
+        }
+
+        else
+        {
+            return Direction.None;
         }
     }
 }

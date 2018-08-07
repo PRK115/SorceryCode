@@ -14,7 +14,7 @@ public class Consumable : MonoBehaviour {
     private void Awake()
     {
         consumableComponent = GetComponent<IConsumable>();
-        consumedEffect = transform.Find("Consumed").gameObject;
+        consumedEffect = transform.Find("Consumed").gameObject as GameObject;
         this.ConsumedBehaviour = consumableComponent.ConsumedBehaviour;
     }
 

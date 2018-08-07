@@ -53,15 +53,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4166209003197168}
-  - component: {fileID: 54338269144429048}
   - component: {fileID: 33446666009606870}
   - component: {fileID: 23720338795913236}
-  - component: {fileID: 136209549102722304}
   - component: {fileID: 114413294078987054}
   - component: {fileID: 114957211925591270}
   - component: {fileID: 114981008827435346}
   - component: {fileID: 114620234786695006}
   - component: {fileID: 114590748959766540}
+  - component: {fileID: 143349252982016174}
   m_Layer: 9
   m_Name: player
   m_TagString: Player
@@ -152,21 +151,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1849303232956244}
   m_Mesh: {fileID: 4300000, guid: 994ee90731195c44297a0778a1775f51, type: 3}
---- !u!54 &54338269144429048
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1849303232956244}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!114 &114413294078987054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -230,22 +214,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceaac989934b8664fbde7b58b588a38d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 4
+  walkSpeed: 8
   verticalJumpImpulse: 5.2
   horizontalJumpImpulse: 1.6
---- !u!136 &136209549102722304
-CapsuleCollider:
+--- !u!143 &143349252982016174
+CharacterController:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1849303232956244}
-  m_Material: {fileID: 13400000, guid: 2f27a1a3a69655e4c8b7b2c0c1bda343, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.6010503
-  m_Height: 2.4548962
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.3649061, z: -0.016303984}
+  serializedVersion: 2
+  m_Height: 2.4
+  m_Radius: 0.4
+  m_SlopeLimit: 45
+  m_StepOffset: 0
+  m_SkinWidth: 0.04
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: -0.4, z: 0}
 --- !u!198 &198468749858466404
 ParticleSystem:
   m_ObjectHideFlags: 1

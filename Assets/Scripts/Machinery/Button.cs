@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Button : MonoBehaviour {
 
-    IToggleable[] outputs;
+    private IToggleable[] outputs;
 
     private void Start()
     {
@@ -13,7 +13,7 @@ public class Button : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        for(int i = 0; i < outputs.GetLength(0); i++)
+        for (int i = 0; i < outputs.GetLength(0); i++)
         {
             outputs[i].Toggle(true);
         }
