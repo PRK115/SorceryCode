@@ -6,18 +6,33 @@ using UnityEngine.EventSystems;
 
 namespace CodeUI
 {
+    [RequireComponent(typeof(CanvasGroup))]
     public class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
-        public int LinePos;
-        public int LineHeight;
-        public int Indent;
-
         public Vector3 OriginalPosition;
+        public Transform OriginalParent;
         public bool IsInSlot;
+
+        public RectTransform rectTransform;
+        private CanvasGroup canvasGroup;
+
+        protected virtual void Awake()
+        {
+            rectTransform = GetComponent<RectTransform>();
+            canvasGroup = GetComponent<CanvasGroup>();
+        }
+
+        protected virtual void Start()
+        {
+
+        }
 
         public void OnBeginDrag(PointerEventData eventData)
         {
             OriginalPosition = transform.position;
+            OriginalParent = transform.parent;
+            transform.SetParent(CodeUIElement.Instance.transform);
+            canvasGroup.blocksRaycasts = false;
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -28,6 +43,8 @@ namespace CodeUI
         public void OnEndDrag(PointerEventData eventData)
         {
             transform.position = OriginalPosition;
+            transform.SetParent(OriginalParent);
+            canvasGroup.blocksRaycasts = true;
         }
     }
 }

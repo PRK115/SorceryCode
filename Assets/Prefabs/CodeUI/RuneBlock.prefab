@@ -39,7 +39,8 @@ GameObject:
   - component: {fileID: 222136279305897430}
   - component: {fileID: 114856955300668996}
   - component: {fileID: 114821132476344244}
-  - component: {fileID: 114420503360173216}
+  - component: {fileID: 225374636869507408}
+  - component: {fileID: 114333955065266074}
   m_Layer: 5
   m_Name: RuneBlock
   m_TagString: Untagged
@@ -79,8 +80,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Rune Block
---- !u!114 &114420503360173216
+  m_Text: ConjurableTestObject
+--- !u!114 &114333955065266074
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,12 +89,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1496826141501284}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aee0a6d48a630ce4b9288f59fbdf6cc7, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c27de38302fe7743aa5507ae9bb891a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LinePos: 0
-  LineHeight: 0
-  Indent: 0
+  OriginalPosition: {x: 0, y: 0, z: 0}
+  OriginalParent: {fileID: 0}
+  IsInSlot: 0
+  rectTransform: {fileID: 0}
+  Entity: {fileID: 114856011013890332, guid: 23f32b1150e01154482ec3ebc31b61da, type: 2}
 --- !u!114 &114821132476344244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -213,3 +216,14 @@ RectTransform:
   m_AnchoredPosition: {x: 94.9, y: -25}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &225374636869507408
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1496826141501284}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

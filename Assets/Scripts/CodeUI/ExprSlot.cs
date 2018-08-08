@@ -9,10 +9,9 @@ using UnityEngine.EventSystems;
 // Thanks to https://github.com/Xander93/unity3d-draganddrop for drag-and-drop sample code
 namespace CodeUI
 {
-    public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IDropHandler
+    public class ExprSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IDropHandler
     {
         public bool Filled = false;
-        public int RelLinePos;
 
         public Block OwnerBlock { get; set; }
 
@@ -29,7 +28,7 @@ namespace CodeUI
         {
             rectTransform = GetComponent<RectTransform>();
             image = GetComponent<Image>();
-            OwnerBlock = transform.parent.GetComponent<Block>();
+            OwnerBlock = GetComponentInParent<Block>();
         }
 
         public void OnPointerEnter(PointerEventData eventData)
@@ -73,9 +72,10 @@ namespace CodeUI
 
                     // Change parent of dragged block
                     draggedBlock.transform.SetParent(this.transform);
+                    draggedBlock.OriginalParent = this.transform;
 
                     // Snap dragged block to slot
-                    RectTransform blockRect = draggedBlock.GetComponent<RectTransform>();
+                    RectTransform blockRect = draggedBlock.rectTransform;
                     blockRect.anchorMin = new Vector2(0, 0);
                     blockRect.anchorMax = new Vector2(1, 1);
                     blockRect.pivot = new Vector2(0.5f, 0.5f);

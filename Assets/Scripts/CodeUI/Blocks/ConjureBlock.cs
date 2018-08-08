@@ -5,23 +5,26 @@ using UnityEngine;
 
 namespace CodeUI
 {
-    public class ConjureBlock : Block
+    public class ConjureBlock : StmtBlock
     {
         public string FunName { get; set; }
         public Func<object, object> Fun { get; set; }
 
-        private Slot argumentSlot;
+        private ExprSlot argumentSlot;
         private Conjurable conjurable;
 
-        public void Awake()
+        protected override void Awake()
         {
-            argumentSlot = GetComponentInChildren<Slot>();
+            base.Awake();
+            argumentSlot = GetComponentInChildren<ExprSlot>();
         }
 
-        public void Start()
+        protected override void Start()
         {
+            base.Start();
             argumentSlot.CheckBlockValidCallback = block =>
             {
+                if (block == this) return false;
                 if (block is EntityBlock)
                 {
                     var entityBlock = (EntityBlock) block;
