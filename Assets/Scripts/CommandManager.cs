@@ -21,7 +21,7 @@ public class CommandManager : MonoBehaviour
     public void Conjure(EntityType type)
     {
         // TODO: 인터프레터 테스트를 위해 임시로 이렇게 구현해놓았음
-        Debug.Log($"{type.GetType().Name} Conjured!");
+        Debug.Log($"{Enum.GetName(type.GetType(), type)} Conjured!");
         /*
         GameObject prefab = prefabs[type];
         Conjurable conjurable = prefab.GetComponent<Conjurable>();
