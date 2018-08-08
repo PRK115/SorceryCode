@@ -12,6 +12,7 @@ public class Organism : MonoBehaviour {
 
     private Conductor conductor;
     private Flammable flammable;
+    private bool physicallyDamaged;
 
     private void Awake()
     {
@@ -28,6 +29,7 @@ public class Organism : MonoBehaviour {
     {
         if (conductor.state == Conductor.State.Electrified || flammable.state == Flammable.State.Burning)
         {
+            alive = false;
             if (timeTillDeath < 0)
             {
                 gameObject.SetActive(false);
@@ -37,5 +39,10 @@ public class Organism : MonoBehaviour {
                 timeTillDeath -= Time.deltaTime;
             }
         }
+    }
+
+    public void PhysicalDamage()
+    {
+        physicallyDamaged = true;
     }
 }

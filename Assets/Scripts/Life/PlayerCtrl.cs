@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour {
 
+    private Organism organism;
     private WalkAndJump walkAndJump;
     private GameStateManager manager;
 
-    private bool alive = true;
+    //private bool alive = true;
 
     private void Awake()
     {
+        organism = GetComponent<Organism>();
         walkAndJump = GetComponent<WalkAndJump>();
         manager = FindObjectOfType<GameStateManager>();
     }
 
     private void Update()
-    { 
-        if(alive)
+    {
+        if (organism.alive)
         {
             walkAndJump.Manuever(InterpretKey());
         }

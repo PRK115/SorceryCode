@@ -548,10 +548,20 @@ Prefab:
       propertyPath: m_RootOrder
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: 136725132721556242, guid: 698eadc8535d5914391e107ddf1170e8,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 143349252982016174, guid: 698eadc8535d5914391e107ddf1170e8,
         type: 2}
-      propertyPath: m_SkinWidth
-      value: 0.08
+      propertyPath: m_Center.y
+      value: -0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 136725132721556242, guid: 698eadc8535d5914391e107ddf1170e8,
+        type: 2}
+      propertyPath: m_Height
+      value: 2.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 698eadc8535d5914391e107ddf1170e8, type: 2}
@@ -631,7 +641,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4903086397714472, guid: 2e6104010d3ec7b4d9349a50dc4dc2fc, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.38844165
+      value: 0.88
       objectReference: {fileID: 0}
     - target: {fileID: 4903086397714472, guid: 2e6104010d3ec7b4d9349a50dc4dc2fc, type: 2}
       propertyPath: m_LocalPosition.z
