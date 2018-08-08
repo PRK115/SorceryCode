@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 222107273338277834}
   - component: {fileID: 114785012851327442}
   - component: {fileID: 114195305053329872}
-  - component: {fileID: 114443954028486284}
+  - component: {fileID: 114132861076807404}
   m_Layer: 5
   m_Name: CommandBlock
   m_TagString: Untagged
@@ -47,6 +47,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114132861076807404
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1694176419953022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aee0a6d48a630ce4b9288f59fbdf6cc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LinePos: 0
+  LineHeight: 0
+  Indent: 0
 --- !u!114 &114195305053329872
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -88,19 +102,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114443954028486284
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1694176419953022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82051511876f4aa4bb9df40313d08cb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentToReturnTo: {fileID: 0}
-  placeHolderParent: {fileID: 0}
 --- !u!114 &114777854349238484
 MonoBehaviour:
   m_ObjectHideFlags: 1

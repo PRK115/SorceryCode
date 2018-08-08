@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 222136279305897430}
   - component: {fileID: 114856955300668996}
   - component: {fileID: 114821132476344244}
-  - component: {fileID: 114513785028415990}
+  - component: {fileID: 114420503360173216}
   m_Layer: 5
   m_Name: RuneBlock
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Rune Block
---- !u!114 &114513785028415990
+--- !u!114 &114420503360173216
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,11 +88,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1496826141501284}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82051511876f4aa4bb9df40313d08cb1, type: 3}
+  m_Script: {fileID: 11500000, guid: aee0a6d48a630ce4b9288f59fbdf6cc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentToReturnTo: {fileID: 0}
-  placeHolderParent: {fileID: 0}
+  LinePos: 0
+  LineHeight: 0
+  Indent: 0
 --- !u!114 &114821132476344244
 MonoBehaviour:
   m_ObjectHideFlags: 1
