@@ -50,6 +50,13 @@ public class Interpreter : MonoBehaviour
         }
     }
 
+    public class Entity : Expr
+    {
+        public EntityType Type;
+
+        public override object Eval() => Type;
+    }
+
     public class Object : Expr
     {
         public object Obj;
@@ -155,16 +162,15 @@ public class Interpreter : MonoBehaviour
         }
     }
 
-    // Same as "conjure"
-    // TODO
-    public class Create : Stmt
+    public class Conjure : Stmt
     {
-        public Stmt Body;
+        public Action<EntityType> Fun;
+        public EntityType Entity;
 
         public override IEnumerator Eval(Continuation cont)
         {
-            // TODO
-            yield return Inst.StartCoroutine(Body.Eval(cont));
+            Fun(Entity);
+            yield return new WaitForSeconds(Inst.Delay);
         }
     }
 

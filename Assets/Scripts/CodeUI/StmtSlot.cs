@@ -50,7 +50,6 @@ namespace CodeUI
 
         public void OnDrop(PointerEventData eventData)
         {
-            Debug.Log("OnDrop");
             Block draggedBlock = eventData.pointerDrag.GetComponent<Block>();
             if (draggedBlock != null)
             {
@@ -62,14 +61,15 @@ namespace CodeUI
                     Debug.Log(draggedBlock);
                     draggedBlock.IsInSlot = true;
 
+                    StmtBlock stmtBlock = (StmtBlock) draggedBlock;
                     if (OwnerBlock is ScopedBlock)
                     {
                         ScopedBlock Scope = (ScopedBlock) OwnerBlock;
-                        Scope.AddBlock(draggedBlock);
+                        Scope.AddBlock(stmtBlock);
                     }
                     else
                     {
-                        OwnerBlock.ParentScope.AddBlock(draggedBlock);
+                        OwnerBlock.ParentScope.AddBlock(stmtBlock);
                     }
                 }
             }

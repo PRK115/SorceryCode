@@ -96,7 +96,7 @@ MonoBehaviour:
   OriginalParent: {fileID: 0}
   IsInSlot: 0
   rectTransform: {fileID: 0}
-  Entity: {fileID: 114856011013890332, guid: 23f32b1150e01154482ec3ebc31b61da, type: 2}
+  EntityType: 64
 --- !u!114 &114821132476344244
 MonoBehaviour:
   m_ObjectHideFlags: 1

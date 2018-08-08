@@ -8,10 +8,11 @@ namespace CodeUI
     public class ConjureBlock : StmtBlock
     {
         public string FunName { get; set; }
-        public Func<object, object> Fun { get; set; }
+        public Action<EntityType> Fun { get; set; }
 
         private ExprSlot argumentSlot;
-        private Conjurable conjurable;
+
+        public EntityType EntityToConjure { get; private set; }
 
         protected override void Awake()
         {
@@ -28,7 +29,7 @@ namespace CodeUI
                 if (block is EntityBlock)
                 {
                     var entityBlock = (EntityBlock) block;
-                    if (entityBlock.Entity.GetComponent<Conjurable>() != null)
+                    if (CommandManager.Inst.IsConjurable(entityBlock.EntityType))
                     {
                         return true;
                     }
@@ -39,7 +40,7 @@ namespace CodeUI
             argumentSlot.OnBlockDropCallback = droppedBlock =>
             {
                 EntityBlock entityBlock = (EntityBlock) droppedBlock;
-                conjurable = entityBlock.GetComponent<Conjurable>();
+                EntityToConjure = entityBlock.EntityType;
             };
         }
     }

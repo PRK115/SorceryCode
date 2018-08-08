@@ -14,11 +14,25 @@ namespace CodeUI
 
         public static CodeUIElement Instance;
 
-        private List<Block> codeBlocks = new List<Block>();
+        public ScopedBlock Program;
 
         void Awake()
         {
             Instance = this;
+        }
+
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                RunProgram();
+            }
+        }
+
+        public void RunProgram()
+        {
+            var code = Compiler.Compile(Program);
+            Interpreter.Inst.Execute(code);
         }
     }
 }

@@ -7,7 +7,7 @@ namespace CodeUI
 {
     public class ScopedBlock : StmtBlock
     {
-        private List<Block> blocks = new List<Block>();
+        public List<StmtBlock> Blocks { get; private set; } = new List<StmtBlock>();
 
         public GameObject blockListRoot;
 
@@ -19,12 +19,17 @@ namespace CodeUI
 
         private void UpdateBlocks()
         {
-            blocks = GetComponentsInChildren<Block>().ToList();
-            blocks.Sort((b1, b2) =>
+            Blocks.Clear();
+            foreach (Transform child in blockListRoot.transform)
+            {
+                Blocks.Add(child.GetComponent<StmtBlock>());
+            }
+            Blocks.Sort((b1, b2) =>
                 (int)(b1.rectTransform.anchoredPosition.y - b2.rectTransform.anchoredPosition.y));
+            Debug.Log($"{Blocks.Count} blocks");
         }
 
-        public void AddBlock(Block block)
+        public void AddBlock(StmtBlock block)
         {
             block.transform.SetParent(blockListRoot.transform);
             block.OriginalParent = blockListRoot.transform;

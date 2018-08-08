@@ -6,7 +6,7 @@ namespace CodeUI
 {
     public class EntityBlock : Block
     {
-        public Entity Entity;
+        public EntityType EntityType;
     }
 }
 
