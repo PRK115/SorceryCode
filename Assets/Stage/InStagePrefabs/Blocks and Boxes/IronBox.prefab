@@ -55,8 +55,9 @@ GameObject:
   - component: {fileID: 4938608452791998}
   - component: {fileID: 65226313054044582}
   - component: {fileID: 65575487550572370}
-  - component: {fileID: 114817884028611500}
   - component: {fileID: 54519780680177918}
+  - component: {fileID: 114090738834773120}
+  - component: {fileID: 114729704828519816}
   m_Layer: 0
   m_Name: IronBox
   m_TagString: Block
@@ -186,7 +187,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114817884028611500
+--- !u!114 &114090738834773120
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271772143535170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927dd6ac6f44c8d4da744262e751162d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityType: 9
+  isMovable: 1
+  IsButtonPushable: 1
+  blockProjectiles: 0
+  occupySpace: 1
+--- !u!114 &114729704828519816
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,8 +214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8f650f07419cc04e8a3d209c4066daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
   electricityDuration: 0.2
-  spark: {fileID: 1029909513033756}
 --- !u!198 &198821112077931628
 ParticleSystem:
   m_ObjectHideFlags: 1

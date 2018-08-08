@@ -1,36 +1,66 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Conductor : Substance
+public class Conductor : MonoBehaviour, ISubstance
 {
+    public enum State
+    {
+        Intact, Electrified
+    }
+
+    public State state;
 
     public float electricityDuration;
     float electricityTimeLeft = 0;
 
     int distanceFromSupply = 0;
-    GameObject predecessor;
+    Conductor predecessor;
     bool supplied = false;
 
-    public GameObject spark;
+    private GameObject spark;
 
+    private Action OnElectrify;
 
-    protected override void electrifiedBehaviour()
+    //public void SetElectrifyCallback(Action action)
+    //{
+    //    action = OnElectrify;
+    //}
+
+    public void SetAsElectricitySource()
     {
-        if (electricityTimeLeft <= 0)
-        {
-            distanceFromSupply = 0;
-            spark.SetActive(false);
-            currentState = SubstanceState.intact;
-        }
+        Electrify(this, -1);
+    }
 
-        else
+    void Awake()
+    {
+        spark = transform.Find("spark").gameObject;
+    }
+
+    void Update()
+    {
+        if (state == State.Electrified)
         {
-            if(!supplied)
-                electricityTimeLeft -= Time.deltaTime;
-            if (predecessor == null)
-                supplied = false;
+            if (electricityTimeLeft <= 0)
+            {
+                distanceFromSupply = 0;
+                spark.SetActive(false);
+                state = State.Intact;
+            }
+            else
+            {
+                if (!supplied)
+                {
+                    electricityTimeLeft -= Time.deltaTime;
+                }
+                if (predecessor == null || predecessor.enabled == false)
+                {
+                    supplied = false;
+                }
+            }
         }
+        
     }
 
     //private void OnTriggerEnter(Collider other)
@@ -41,39 +71,39 @@ public class Conductor : Substance
 
     protected void OnTriggerStay(Collider other)
     {
-        switch (currentState)
+        if (state == State.Electrified)
         {
-            case SubstanceState.electrified:
-                if (other.gameObject.GetComponent<Conductor>() != null)
-                {
-                    if (!supplied)
-                        other.gameObject.GetComponent<Conductor>().Disconnect(distanceFromSupply);
+            Conductor conductor = other.GetComponent<Conductor>();
+            if (conductor != null)
+            {
+                if (!supplied)
+                    conductor.Disconnect(distanceFromSupply);
 
-                    else if (other.gameObject.GetComponent<Conductor>().distanceFromSupply == 0 || other.gameObject.GetComponent<Conductor>().distanceFromSupply > distanceFromSupply + 1)
-                        other.gameObject.GetComponent<Conductor>().Electrify(gameObject, distanceFromSupply);
-                }
-                break;
+                else if (conductor.state == State.Intact || conductor.distanceFromSupply > distanceFromSupply + 1)
+                    conductor.Electrify(GetComponent<Conductor>(), distanceFromSupply);
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == predecessor)
+        Conductor conductor = other.GetComponent<Conductor>();
+        if (conductor == predecessor)
         {
             predecessor = null;
         }
-
-        else if (other.gameObject.GetComponent<Conductor>() != null && other.gameObject.GetComponent<Conductor>().distanceFromSupply < distanceFromSupply)
-            supplied = false;
-            
+        //else if (conductor != null && conductor.distanceFromSupply < distanceFromSupply)
+        //{
+        //    supplied = false;
+        //}
     }
 
-    public void Electrify(GameObject predecessor, int previousDistanceFromSupply)
+    public void Electrify(Conductor predecessor, int previousDistanceFromSupply)
     {
         this.predecessor = predecessor;
         supplied = true;
         electricityTimeLeft = electricityDuration;
-        currentState = SubstanceState.electrified;
+        state = State.Electrified;
         distanceFromSupply = previousDistanceFromSupply + 1;
         spark.SetActive(true);
     }

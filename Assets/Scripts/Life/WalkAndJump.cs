@@ -3,66 +3,62 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WalkAndJump : ManueverType {
+public class WalkAndJump : MonoBehaviour {
 
     public float walkSpeed;
     public float verticalJumpImpulse;
     public float horizontalJumpImpulse;
-    bool onGround = false;
-    bool inAirHorizontal = false;
-    public override void Manuever(Brain.Direction direction)
+    //bool onGround = false;
+    //bool inAirHorizontal = false;
+
+    //private Rigidbody rb;
+    private CharacterController ctrl;
+    private Vector3 jumpDirection = Vector3.zero;
+    private float g = 9.8f;
+
+    void Awake()
     {
-        if (onGround)
+        //rb = GetComponent<Rigidbody>();
+        ctrl = GetComponent<CharacterController>();
+    }
+
+    public void Manuever(Direction direction)
+    {
+        if (ctrl.isGrounded)
         {
+            jumpDirection = Vector3.zero;
             switch (direction)
             {
-                case Brain.Direction.left:
+                case Direction.Left:
                     transform.LookAt(transform.position + Vector3.left);
-                    transform.Translate(Vector3.forward * walkSpeed * Time.deltaTime);
+                    ctrl.SimpleMove(Vector3.left * walkSpeed);
                     break;
-                case Brain.Direction.right:
+                case Direction.Right:
                     transform.LookAt(transform.position + Vector3.right);
-                    transform.Translate(Vector3.forward * walkSpeed * Time.deltaTime);
+                    ctrl.SimpleMove(Vector3.right    * walkSpeed);
                     break;
-                case Brain.Direction.up:
-                    GetComponent<Rigidbody>().AddForce(new Vector3(0, verticalJumpImpulse, 0), ForceMode.Impulse);
+                case Direction.Up:
+                    jumpDirection = new Vector3(0, verticalJumpImpulse, 0);
+                    Debug.Log("up");
+                    //rb.AddForce(new Vector3(0, verticalJumpImpulse, 0), ForceMode.Impulse);
                     break;
-                case Brain.Direction.leftUp:
-                    GetComponent<Rigidbody>().AddForce(new Vector3(0, verticalJumpImpulse, 0), ForceMode.Impulse);
-                    inAirHorizontal = true;
+                case Direction.LeftUp:
+                    jumpDirection = new Vector3(-horizontalJumpImpulse, verticalJumpImpulse, 0);
+                    //rb.AddForce(new Vector3(0, verticalJumpImpulse, 0), ForceMode.Impulse);
+                    //inAirHorizontal = true;
                     break;
-                case Brain.Direction.rightUp:
-                    GetComponent<Rigidbody>().AddForce(new Vector3(0, verticalJumpImpulse, 0), ForceMode.Impulse);
-                    inAirHorizontal = true;
+                case Direction.RightUp:
+                    jumpDirection = new Vector3(horizontalJumpImpulse, verticalJumpImpulse, 0);
+                    //rb.AddForce(new Vector3(0, verticalJumpImpulse, 0), ForceMode.Impulse);
+                    //inAirHorizontal = true;
                     break;
             }
         }
+            ctrl.Move(jumpDirection * Time.deltaTime);
+            if(!ctrl.isGrounded)
+                jumpDirection.y -= g * Time.deltaTime;
 
-        else if (inAirHorizontal)
-            transform.Translate(Vector3.forward * horizontalJumpImpulse * Time.deltaTime);
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        for(int i = 0; i < collision.contacts.GetLength(0); i++)
-        {
-            Debug.Log(collision.contacts[i].normal);
-        }
-        if (collision.contacts[0].normal == Vector3.up)
-        {
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
-            inAirHorizontal = false;
-        }
-    }
-
-    private void OnCollisionStay (Collision collision)
-    {
-        if (collision.contacts[0].normal == Vector3.up)
-            onGround = true;
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        onGround = false;
+        //else if (inAirHorizontal)
+        //    transform.Translate(Vector3.forward * horizontalJumpImpulse * Time.deltaTime);
     }
 }

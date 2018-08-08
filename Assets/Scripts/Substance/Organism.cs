@@ -2,63 +2,47 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Organism : Conductor {
-
-    Brain brain;
-    ManueverType manueverType;
-
-    public GameObject fire;
+[RequireComponent(typeof(Conductor), typeof(Flammable))]
+public class Organism : MonoBehaviour {
 
     public float deathTime;
     float timeTillDeath;
 
+    public bool alive = true;
+
+    private Conductor conductor;
+    private Flammable flammable;
+    private bool physicallyDamaged;
+
+    private void Awake()
+    {
+        conductor = GetComponent<Conductor>();
+        flammable = GetComponent<Flammable>();
+    }
+
     private void Start()
     {
-        brain = GetComponent<Brain>();
-        manueverType = GetComponent<ManueverType>();
         timeTillDeath = deathTime;
     }
 
-    protected override void intactBehaviour()
+    void Update()
     {
-        manueverType.Manuever(brain.Command);
-    }
-
-    protected override void burningBehaviour()
-    {
-        fire.SetActive(true);
-        CountDown();
-    }
-
-    protected override void electrifiedBehaviour()
-    {
-        spark.SetActive(true);
-        CountDown();
-    }
-
-    void CountDown()
-    {
-        brain.Death();
-        if (timeTillDeath < 0)
-            Destroy(gameObject);
-        else
+        if (conductor.state == Conductor.State.Electrified || flammable.state == Flammable.State.Burning)
         {
-            timeTillDeath -= Time.deltaTime;
+            alive = false;
+            if (timeTillDeath < 0)
+            {
+                gameObject.SetActive(false);
+            }
+            else
+            {
+                timeTillDeath -= Time.deltaTime;
+            }
         }
     }
 
-    private new void OnTriggerStay(Collider other)
+    public void PhysicalDamage()
     {
-        base.OnTriggerStay(other);
-        if(other.gameObject.GetComponent<Substance>() != null)
-            if (other.gameObject.GetComponent<Substance>().CurrentState == SubstanceState.burning)
-            {
-                currentState = SubstanceState.burning;
-            }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log(other.gameObject.name);
+        physicallyDamaged = true;
     }
 }

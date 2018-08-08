@@ -37,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4413307503988688}
   - component: {fileID: 65999234302187978}
+  - component: {fileID: 114367927548677054}
   - component: {fileID: 114752596104192744}
   m_Layer: 8
   m_Name: LockedDoorAndKey
@@ -114,7 +115,7 @@ Transform:
   m_GameObject: {fileID: 1265080576677376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.15956071, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 3}
   m_Children:
   - {fileID: 4084505558661704}
   - {fileID: 4315419758432062}
@@ -242,6 +243,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114367927548677054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1265080576677376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927dd6ac6f44c8d4da744262e751162d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityType: 40
+  isMovable: 0
+  IsButtonPushable: 0
+  blockProjectiles: 1
+  occupySpace: 1
 --- !u!114 &114752596104192744
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -253,6 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26991ac16055e0640950e8f80f6d5587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activated: 0
 --- !u!114 &114981512583328580
 MonoBehaviour:
   m_ObjectHideFlags: 1

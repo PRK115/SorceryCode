@@ -1,56 +1,85 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Flammable : Substance {
+public class Flammable : MonoBehaviour, ISubstance {
+    public enum State
+    {
+        Intact, BurnReady, Burning
+    }
+
+    public State state;
+
+    public bool indestructable;
     public float burnDelay;
     float timeTillIgnition;
     public float burningDuration;
     float burningTimeLeft;
 
-    public GameObject fire;
+    private GameObject fire;
+    private MeshRenderer meshRenderer;
+
+    public Action OnBurn;
+
+    public void SetBurnCallback(Action action)
+    {
+        OnBurn = action;
+    }
+
+    private void Awake()
+    {
+        meshRenderer = GetComponentInChildren<MeshRenderer>();
+        fire = transform.Find("fire").gameObject;
+    }
 
     private void Start()
     {
         timeTillIgnition = burnDelay;
         burningTimeLeft = burningDuration;
-        currentState = SubstanceState.intact;
     }
 
-    protected override void burnDelayBehaviour()
+    void Update()
     {
-        if (timeTillIgnition <= 0)
-            currentState = SubstanceState.burning;
-        else
-            timeTillIgnition -= Time.deltaTime;
-    }
-
-    override protected void burningBehaviour()
-    {
-        if (burningTimeLeft <= 0)
-            Destroy(gameObject);
-        else
+        if (state == State.BurnReady)
         {
-            burningTimeLeft -= Time.deltaTime;
+            if (timeTillIgnition <= 0)
+            {
+                state = State.Burning;
+                fire.SetActive(true);
+            }
+            else
+                timeTillIgnition -= Time.deltaTime;
         }
-        if (burningTimeLeft < 1)
-            GetComponent<MeshRenderer>().enabled = false;
+        else if (state == State.Burning)
+        {
+            if(OnBurn != null)
+                OnBurn();
+
+            if (!indestructable)
+            {
+                if (burningTimeLeft <= 0)
+                    gameObject.SetActive(false);
+                else
+                    burningTimeLeft -= Time.deltaTime;
+
+                // TODO: 잿더미 이펙트 넣기
+                if (burningTimeLeft < 0.7)
+                    meshRenderer.enabled = false;
+            }
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.GetComponent<Substance>() != null)
-            if (other.gameObject.GetComponent<Substance>().CurrentState == SubstanceState.burning && currentState == SubstanceState.intact)
+        Flammable flammable = other.GetComponent<Flammable>();
+        if (flammable != null)
+        {
+            if (flammable.state == State.Burning)
             {
-                currentState = SubstanceState.burnDelay;
+                state = State.BurnReady;
                 fire.SetActive(true);
             }
-    }
-
-    new private void FixedUpdate()
-    {
-        base.FixedUpdate();
-        Debug.Log("wood " + currentState);
-        Debug.Log(burningTimeLeft);
+        }
     }
 }
