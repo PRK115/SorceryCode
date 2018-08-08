@@ -201,7 +201,8 @@ MonoBehaviour:
   EntityType: 9
   isMovable: 1
   IsButtonPushable: 1
-  BlockProjectiles: 0
+  blockProjectiles: 0
+  occupySpace: 1
 --- !u!114 &114729704828519816
 MonoBehaviour:
   m_ObjectHideFlags: 1

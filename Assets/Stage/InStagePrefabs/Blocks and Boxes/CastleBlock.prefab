@@ -111,4 +111,5 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 1
+  occupySpace: 1

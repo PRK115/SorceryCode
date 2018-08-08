@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657695, g: 0.49641138, b: 0.5748175, a: 1}
+  m_IndirectSpecularColor: {r: 0.43632784, g: 0.47471052, b: 0.5147124, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -162,7 +162,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1968351
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -269,7 +270,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &10071977
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -376,7 +378,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &22113910
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -483,7 +486,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &25437786
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -590,7 +594,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &29256670
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -697,7 +702,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &30096730
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -804,7 +810,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &30158300
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -911,7 +918,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &31002540
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1018,7 +1026,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &37472292
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1125,7 +1134,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &39144292
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1232,7 +1242,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &41803632
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1339,7 +1350,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &43079471
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1446,7 +1458,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &51174806
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1553,7 +1566,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &51791952
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1660,7 +1674,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &53108882
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1888,7 +1903,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &53409949
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1995,7 +2011,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &56145491
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2102,7 +2119,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &59661345
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2209,7 +2227,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &60181734
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2316,7 +2335,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &61239484
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2423,7 +2443,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &62960519
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2530,7 +2551,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &63538938
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2637,7 +2659,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &65925262
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2744,7 +2767,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &67522688
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2851,7 +2875,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &68677104
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2958,7 +2983,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &70079551
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3065,7 +3091,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &72436032
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3172,7 +3199,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &73341621
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3279,7 +3307,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &83295493
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3386,7 +3415,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &85256306
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3476,7 +3506,7 @@ RectTransform:
   - {fileID: 53366761}
   - {fileID: 1969434040}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3532,7 +3562,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &91246249
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3639,7 +3670,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &98669700
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3746,7 +3778,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &100683432
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3853,7 +3886,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &100820998
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3960,7 +3994,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &101058148
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4067,7 +4102,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &105825266
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4174,7 +4210,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &107218983
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4281,7 +4318,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &110744159
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4388,7 +4426,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &117772192
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4495,7 +4534,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &120204517
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4602,7 +4642,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &122505538
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4709,7 +4750,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &125099460
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4816,7 +4858,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &125175186
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4923,7 +4966,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &134101602
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5030,7 +5074,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &136333335
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5137,7 +5182,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &136513893
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5244,7 +5290,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &137092682
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5351,7 +5398,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &139700815
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5458,7 +5506,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &140811392
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5639,7 +5688,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &144717393
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5746,7 +5796,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &144779749
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5853,7 +5904,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &147005604
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5960,7 +6012,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &154964539
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6067,7 +6120,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &158173365
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6174,7 +6228,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &158989526
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6281,7 +6336,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &159030844
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6388,7 +6444,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &161289450
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6495,7 +6552,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &165455904
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6602,7 +6660,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &167876189
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6709,7 +6768,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &171631573
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6816,7 +6876,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &177059914
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6923,7 +6984,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &179571543
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7030,7 +7092,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &181292698
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7137,7 +7200,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &182380750
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7372,7 +7436,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &186898129
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7479,7 +7544,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &195595604
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7586,7 +7652,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &196254650
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7693,7 +7760,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &205599296
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7800,7 +7868,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &206874145
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7907,7 +7976,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &217371966
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8014,7 +8084,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &220557352
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8200,7 +8271,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &232732757
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8307,7 +8379,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &239254873
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8414,7 +8487,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &246011740
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8521,7 +8595,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &246278064
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8628,7 +8703,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &246538266
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8735,7 +8811,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &248581235
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8842,7 +8919,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &249386074
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8949,7 +9027,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &249800084
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9056,7 +9135,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &249977068
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9163,7 +9243,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &251882628
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9270,7 +9351,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &252883857
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9377,7 +9459,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &256055979
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9484,7 +9567,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &257193352
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9591,7 +9675,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &258851037
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9698,7 +9783,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &260180542
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9805,7 +9891,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &266170925
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9912,7 +9999,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &267106182
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10019,7 +10107,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &273175905
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10126,7 +10215,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &279600407
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10233,7 +10323,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &279996693
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10340,7 +10431,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &282158144
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10447,7 +10539,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &287161639
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10554,7 +10647,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &287753441
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10661,7 +10755,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &289932294
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10768,7 +10863,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &293514051
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10875,7 +10971,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &294700555
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10982,7 +11079,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &297326389
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11089,7 +11187,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &297862204
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11196,7 +11295,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &299812936
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11303,7 +11403,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &305346076
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11410,7 +11511,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &305950949
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11517,7 +11619,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &306106066
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11624,7 +11727,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &306856110
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11731,7 +11835,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &310763423
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11838,7 +11943,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &316351930
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11945,7 +12051,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &317183714
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12052,7 +12159,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &317363647
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12238,7 +12346,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &327045341
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12345,7 +12454,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &335281250
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12452,7 +12562,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &335392520
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12559,7 +12670,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &335615624
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12666,7 +12778,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &337068479
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12902,7 +13015,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &338559834
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13009,7 +13123,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &352929516
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13116,7 +13231,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &355092388
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13174,6 +13290,76 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 355092385}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &356108064
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4493223586500096, guid: e4bd4660688b9884b8555ff184e8519f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493223586500096, guid: e4bd4660688b9884b8555ff184e8519f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493223586500096, guid: e4bd4660688b9884b8555ff184e8519f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493223586500096, guid: e4bd4660688b9884b8555ff184e8519f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493223586500096, guid: e4bd4660688b9884b8555ff184e8519f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493223586500096, guid: e4bd4660688b9884b8555ff184e8519f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493223586500096, guid: e4bd4660688b9884b8555ff184e8519f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493223586500096, guid: e4bd4660688b9884b8555ff184e8519f, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307547159087274, guid: e4bd4660688b9884b8555ff184e8519f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307547159087274, guid: e4bd4660688b9884b8555ff184e8519f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307547159087274, guid: e4bd4660688b9884b8555ff184e8519f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307547159087274, guid: e4bd4660688b9884b8555ff184e8519f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307547159087274, guid: e4bd4660688b9884b8555ff184e8519f, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307547159087274, guid: e4bd4660688b9884b8555ff184e8519f, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307547159087274, guid: e4bd4660688b9884b8555ff184e8519f, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e4bd4660688b9884b8555ff184e8519f, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &356159299
 GameObject:
   m_ObjectHideFlags: 0
@@ -13223,7 +13409,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &356159302
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13330,7 +13517,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &361009570
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13437,7 +13625,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &362970988
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13544,7 +13733,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &364461447
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13651,7 +13841,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &367021816
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13758,7 +13949,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &372725710
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13865,7 +14057,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &384846026
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13972,7 +14165,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &385474483
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14079,7 +14273,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &387236328
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14186,7 +14381,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &387450413
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14293,7 +14489,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &390706258
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14400,7 +14597,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &391029137
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14507,7 +14705,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &395958363
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14614,7 +14813,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &404802943
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14721,7 +14921,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &409736029
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14828,7 +15029,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &411637262
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14935,7 +15137,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &419609264
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15042,7 +15245,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &420545319
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15100,6 +15304,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 420545316}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &420613711
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4878400533603540, guid: a15362e9e70d5a644857769fb710404d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878400533603540, guid: a15362e9e70d5a644857769fb710404d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878400533603540, guid: a15362e9e70d5a644857769fb710404d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878400533603540, guid: a15362e9e70d5a644857769fb710404d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878400533603540, guid: a15362e9e70d5a644857769fb710404d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878400533603540, guid: a15362e9e70d5a644857769fb710404d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878400533603540, guid: a15362e9e70d5a644857769fb710404d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878400533603540, guid: a15362e9e70d5a644857769fb710404d, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a15362e9e70d5a644857769fb710404d, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &421632891
 GameObject:
   m_ObjectHideFlags: 0
@@ -15149,7 +15395,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &421632894
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15332,7 +15579,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &428404696
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15439,7 +15687,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &429489799
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15546,7 +15795,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &435712420
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15653,7 +15903,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &435742905
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15760,7 +16011,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &436765541
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15867,7 +16119,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &442394823
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15974,7 +16227,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &443272777
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16081,7 +16335,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &446404410
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16188,7 +16443,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &448021364
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16295,7 +16551,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &457802036
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16402,7 +16659,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &460627527
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16509,7 +16767,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &464602758
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16567,6 +16826,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 464602755}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &467496056
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &467942839
 GameObject:
   m_ObjectHideFlags: 0
@@ -16616,7 +16917,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &467942842
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16723,7 +17025,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &468426286
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16830,7 +17133,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &469594566
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16937,7 +17241,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &470614165
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17044,7 +17349,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &475047388
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17151,7 +17457,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &475640046
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17258,7 +17565,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &477450654
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17365,7 +17673,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &478373487
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17472,7 +17781,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &478701605
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17579,7 +17889,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &478957713
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17686,7 +17997,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &481197728
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17793,7 +18105,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &484112046
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17900,7 +18213,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &484579688
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18007,7 +18321,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &485555781
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18119,7 +18434,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &493345360
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18226,7 +18542,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &495029930
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18333,7 +18650,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &497234126
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18440,7 +18758,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &497675278
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18547,7 +18866,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &501348968
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18654,7 +18974,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &503256206
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18761,7 +19082,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &505711764
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18868,7 +19190,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &506678183
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18975,7 +19298,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &507305327
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19082,7 +19406,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &508987055
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19189,7 +19514,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &511867408
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19296,7 +19622,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &513625657
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19403,7 +19730,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &514318571
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19510,7 +19838,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &515664383
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19617,7 +19946,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &520545497
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19724,7 +20054,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &525367424
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19831,7 +20162,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &530430389
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19938,7 +20270,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &531113500
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20045,7 +20378,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &531835860
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20152,7 +20486,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &535342243
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20259,7 +20594,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &536663403
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20366,7 +20702,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &538141648
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20473,7 +20810,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &540880385
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20580,7 +20918,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &547228194
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20687,7 +21026,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &552680677
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20794,7 +21134,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &557739863
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20901,7 +21242,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &566691189
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21008,7 +21350,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &570498999
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21325,7 +21668,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &577845982
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21432,7 +21776,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &578652455
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21539,7 +21884,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &582664994
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21646,7 +21992,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &583376652
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21753,7 +22100,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &593224373
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21860,7 +22208,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &598183646
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21967,7 +22316,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &599437947
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22153,7 +22503,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &602274496
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22260,7 +22611,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &602536728
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22367,7 +22719,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &602541023
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22474,7 +22827,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &608232510
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22581,7 +22935,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &610857580
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22688,7 +23043,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &612928522
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22795,7 +23151,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &613588743
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22902,7 +23259,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &613877470
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23009,7 +23367,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &615702539
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23116,7 +23475,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &617593260
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23223,7 +23583,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &622033519
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23330,7 +23691,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &623348132
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23437,7 +23799,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &624764490
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23544,7 +23907,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &625636314
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23651,7 +24015,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &625851874
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23758,7 +24123,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &627403430
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23865,7 +24231,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &629213907
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23972,7 +24339,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &632169163
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24079,7 +24447,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &633361932
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24186,7 +24555,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &633703423
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24293,7 +24663,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &634515385
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24400,7 +24771,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &634858922
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24507,7 +24879,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &636082658
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24602,7 +24975,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4021088084961932, guid: e60aeb9e4b3fd414886edf20daeb5ebd, type: 2}
       propertyPath: m_RootOrder
-      value: 740
+      value: 739
       objectReference: {fileID: 0}
     - target: {fileID: 4021088084961932, guid: e60aeb9e4b3fd414886edf20daeb5ebd, type: 2}
       propertyPath: m_LocalScale.x
@@ -24724,7 +25097,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &637354008
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24831,7 +25205,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &637411640
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24938,7 +25313,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &639590708
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25045,7 +25421,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &640297572
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25152,7 +25529,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &642288292
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25259,7 +25637,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &648774828
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25366,7 +25745,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &651705372
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25473,7 +25853,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &653580443
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25580,7 +25961,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &656426000
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25687,7 +26069,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &659493521
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25794,7 +26177,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &664071567
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25901,7 +26285,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &666597540
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26008,7 +26393,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &668491365
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26115,7 +26501,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &669327679
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26222,7 +26609,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &670027186
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26329,7 +26717,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &673199985
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26436,7 +26825,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &676449050
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26543,7 +26933,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &681777690
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26650,7 +27041,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &685266320
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26757,7 +27149,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &690362581
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26864,7 +27257,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &691778199
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26971,7 +27365,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &695522569
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27078,7 +27473,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &696878470
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27185,7 +27581,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &697270782
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27292,7 +27689,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &698639807
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27399,7 +27797,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &698956838
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27506,7 +27905,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &711264815
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27613,7 +28013,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &715630223
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27720,7 +28121,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &716161176
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27955,7 +28357,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &722750518
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28062,7 +28465,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &728394400
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28169,7 +28573,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &728648951
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28404,7 +28809,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &732871122
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28511,7 +28917,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &735385791
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28618,7 +29025,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &740963180
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28725,7 +29133,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &743235482
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28832,7 +29241,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &744283850
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -29054,7 +29464,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &753404018
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -29161,7 +29572,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &754287884
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -29268,7 +29680,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &760102198
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -29375,7 +29788,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &761614786
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -29482,7 +29896,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &763837254
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -29589,7 +30004,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &763955572
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -29696,7 +30112,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &768233255
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -29803,7 +30220,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &772517747
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -29910,7 +30328,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &779389135
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30017,7 +30436,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &781346450
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30124,7 +30544,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &781600546
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30231,7 +30652,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &784265811
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30338,7 +30760,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &786561440
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30445,7 +30868,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &789653146
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30552,7 +30976,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &793065094
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30659,7 +31084,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &794294902
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30766,7 +31192,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &797863946
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30873,7 +31300,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &798734696
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30980,7 +31408,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &799860275
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31087,7 +31516,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &801353074
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31194,7 +31624,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &809602888
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31301,7 +31732,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &810419121
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31408,7 +31840,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &812106655
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31515,7 +31948,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &813987716
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31622,7 +32056,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &816286404
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31729,7 +32164,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &822316490
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31787,6 +32223,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 822316487}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &822389830
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4534337459207880, guid: 2fc47f6e39cca69418ebf1b5efd52338, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534337459207880, guid: 2fc47f6e39cca69418ebf1b5efd52338, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534337459207880, guid: 2fc47f6e39cca69418ebf1b5efd52338, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534337459207880, guid: 2fc47f6e39cca69418ebf1b5efd52338, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534337459207880, guid: 2fc47f6e39cca69418ebf1b5efd52338, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534337459207880, guid: 2fc47f6e39cca69418ebf1b5efd52338, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534337459207880, guid: 2fc47f6e39cca69418ebf1b5efd52338, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534337459207880, guid: 2fc47f6e39cca69418ebf1b5efd52338, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2fc47f6e39cca69418ebf1b5efd52338, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &824902182
 GameObject:
   m_ObjectHideFlags: 0
@@ -31836,7 +32314,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &824902185
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31943,7 +32422,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &828201724
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32050,7 +32530,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &833832839
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32157,7 +32638,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &834731769
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32264,7 +32746,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &839096799
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32371,7 +32854,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &839501352
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32478,7 +32962,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &839616734
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32585,7 +33070,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &843405058
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32692,7 +33178,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &844320344
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32799,7 +33286,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &848050843
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32906,7 +33394,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &848663899
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33013,7 +33502,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &849046395
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33120,7 +33610,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &850970882
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33227,7 +33718,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &857935518
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33334,7 +33826,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &858668940
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33441,7 +33934,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &859786911
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33548,7 +34042,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &864055559
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33655,7 +34150,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &867799275
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33762,7 +34258,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &869510811
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33869,7 +34366,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &870159770
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33976,7 +34474,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &870934022
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34083,7 +34582,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &871710666
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34190,7 +34690,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &872518700
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34302,7 +34803,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &874854505
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34409,7 +34911,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &875257396
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34516,7 +35019,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &877237330
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34623,7 +35127,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &879209125
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34730,7 +35235,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &880788286
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34837,7 +35343,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &882140770
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34944,7 +35451,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &882811731
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -35051,7 +35559,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &888604620
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -35158,7 +35667,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &891643171
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -35265,7 +35775,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &893505054
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -35451,7 +35962,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &900051105
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -35558,7 +36070,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &904159950
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -35665,7 +36178,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &905083124
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -35803,7 +36317,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &907613378
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -35910,7 +36425,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &908631366
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36017,7 +36533,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &912524319
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36124,7 +36641,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &919844181
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36231,7 +36749,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &920680982
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36338,7 +36857,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &926990816
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36445,7 +36965,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &931409549
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36552,7 +37073,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &935840629
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36659,7 +37181,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &941245986
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36766,7 +37289,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &947751596
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36873,7 +37397,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &950094811
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36980,7 +37505,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &950159348
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37087,7 +37613,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &952868356
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37194,7 +37721,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &957849154
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37301,7 +37829,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &958427250
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37408,7 +37937,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &963533281
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37594,7 +38124,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &967224373
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37701,7 +38232,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &968198391
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37808,7 +38340,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &973704535
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37915,7 +38448,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &977003318
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38022,7 +38556,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &978790593
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38129,7 +38664,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &986524328
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38236,7 +38772,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &989045402
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38343,7 +38880,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &995185198
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38450,7 +38988,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &995237547
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38557,7 +39096,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &995899431
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38664,7 +39204,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1002631874
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38771,7 +39312,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1003046884
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38878,7 +39420,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1009438784
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38985,7 +39528,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1010186330
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39092,7 +39636,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1012822573
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39199,7 +39744,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1015702086
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39306,7 +39852,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1018348741
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39413,7 +39960,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1022218902
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39520,7 +40068,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1022527321
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39627,7 +40176,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1025837147
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39734,7 +40284,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1026767121
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39915,7 +40466,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1030427701
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40022,7 +40574,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1031561832
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40145,7 +40698,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1036165958
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40252,7 +40806,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1038613515
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40438,7 +40993,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1041622138
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40545,7 +41101,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1042784491
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40652,7 +41209,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1044895025
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40759,7 +41317,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1046782986
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40866,7 +41425,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1049432566
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40973,7 +41533,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1050447036
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41080,7 +41641,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1051121341
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41187,7 +41749,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1059375121
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41294,7 +41857,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1059557555
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41401,7 +41965,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1063238404
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41496,7 +42061,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4021088084961932, guid: e60aeb9e4b3fd414886edf20daeb5ebd, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1549163940768664, guid: e60aeb9e4b3fd414886edf20daeb5ebd, type: 2}
       propertyPath: m_Name
@@ -41554,7 +42119,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1068586156
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41661,7 +42227,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1073634077
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41768,7 +42335,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1074702904
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41875,7 +42443,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1081462731
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41982,7 +42551,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1081986970
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42089,7 +42659,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1082654387
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42196,7 +42767,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1082712116
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42303,7 +42875,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1082801512
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42410,7 +42983,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1089283625
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42517,7 +43091,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1091964912
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42624,7 +43199,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1093350873
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42731,7 +43307,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1097205399
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42838,7 +43415,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1097705978
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42945,7 +43523,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1100739584
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43052,7 +43631,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1100798842
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43235,7 +43815,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1113270616
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43342,7 +43923,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1113274534
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43449,7 +44031,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1115230208
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43556,7 +44139,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1116144144
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43663,7 +44247,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1117597054
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43770,7 +44355,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1118153047
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43877,7 +44463,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1118642788
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43984,7 +44571,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1118902055
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -44091,7 +44679,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1125989667
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -44198,7 +44787,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1127433385
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -44305,7 +44895,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1127901254
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -44412,7 +45003,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1130882252
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -44519,7 +45111,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1131113165
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -44626,7 +45219,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1133416090
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -44733,7 +45327,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1142145654
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -44840,7 +45435,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1146439032
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -44947,7 +45543,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1147846877
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45054,7 +45651,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1149137005
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45161,7 +45759,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1149351818
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45268,7 +45867,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1152183990
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45375,7 +45975,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1165267357
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45482,7 +46083,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1166617503
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45589,7 +46191,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1173665366
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45696,7 +46299,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1176507680
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45803,7 +46407,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1177540976
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45910,7 +46515,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1179784741
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46017,7 +46623,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1190744972
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46124,7 +46731,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1192295225
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46231,7 +46839,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1195693859
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46289,6 +46898,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1195693856}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1197080286
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4780245470369838, guid: aa147d4d28968d64082991b1a5e1d975, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780245470369838, guid: aa147d4d28968d64082991b1a5e1d975, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780245470369838, guid: aa147d4d28968d64082991b1a5e1d975, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780245470369838, guid: aa147d4d28968d64082991b1a5e1d975, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780245470369838, guid: aa147d4d28968d64082991b1a5e1d975, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780245470369838, guid: aa147d4d28968d64082991b1a5e1d975, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780245470369838, guid: aa147d4d28968d64082991b1a5e1d975, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780245470369838, guid: aa147d4d28968d64082991b1a5e1d975, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aa147d4d28968d64082991b1a5e1d975, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1200034891
 GameObject:
   m_ObjectHideFlags: 0
@@ -46338,7 +46989,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1200034894
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46524,7 +47176,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1212759700
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46636,7 +47289,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1218478499
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46743,7 +47397,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1218750401
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46850,7 +47505,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1220486923
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46957,7 +47613,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1221069245
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -47061,7 +47718,8 @@ MonoBehaviour:
   EntityType: 33
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 0
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!65 &1221873768
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47124,7 +47782,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1224915786
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -47231,7 +47890,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1227355355
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -47338,7 +47998,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1228550580
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -47445,7 +48106,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1229130375
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -47552,7 +48214,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1230913871
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -47664,7 +48327,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1239970465
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -47771,7 +48435,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1243477480
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -47878,7 +48543,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1248000554
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -47985,7 +48651,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1249312022
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48092,7 +48759,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1250489179
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48199,7 +48867,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1252556376
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48306,7 +48975,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1253051140
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48413,7 +49083,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1263655012
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48520,7 +49191,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1264580404
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48627,7 +49299,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1264726854
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48734,7 +49407,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1264927408
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48841,7 +49515,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1265722165
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48948,7 +49623,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1267199355
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -49055,7 +49731,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1270936670
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -49162,7 +49839,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1275268547
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -49269,7 +49947,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1279350254
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -49376,7 +50055,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1280431264
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -49483,7 +50163,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1282330578
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -49590,7 +50271,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1283112337
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -49697,7 +50379,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1286323135
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -49804,7 +50487,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1287816958
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -49911,7 +50595,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1290339544
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50018,7 +50703,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1293323264
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50125,7 +50811,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1294519937
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50232,7 +50919,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1294872443
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50339,7 +51027,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1297053597
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50446,7 +51135,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1298513037
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50634,7 +51324,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1299672265
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50741,7 +51432,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1300089662
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50848,7 +51540,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1301722871
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50955,7 +51648,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1304464009
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51062,7 +51756,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1304618005
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51169,7 +51864,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1305032776
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51276,7 +51972,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1310894557
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51383,7 +52080,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1311039750
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51490,7 +52188,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1311444168
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51594,7 +52293,8 @@ MonoBehaviour:
   EntityType: 33
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 0
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!65 &1313399415
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51657,7 +52357,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1315088016
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51764,7 +52465,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1315826241
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51871,7 +52573,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1315916334
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51978,7 +52681,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1319959294
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52085,7 +52789,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1322020021
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52192,7 +52897,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1322180243
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52299,7 +53005,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1323688203
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52406,7 +53113,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1326346427
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52513,7 +53221,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1326512140
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52620,7 +53329,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1326863211
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52727,7 +53437,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1335583138
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52834,7 +53545,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1335642277
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52941,7 +53653,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1338147944
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53048,7 +53761,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1345785403
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53155,7 +53869,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1346083676
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53262,7 +53977,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1347813123
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53369,7 +54085,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1352049068
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53476,7 +54193,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1353332174
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53583,7 +54301,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1354944366
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53690,7 +54409,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1355368732
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53797,7 +54517,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1355990328
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53904,7 +54625,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1358150690
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -54011,7 +54733,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1358880058
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -54118,7 +54841,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1362518492
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -54225,7 +54949,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1364619564
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -54332,7 +55057,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1365582741
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -54439,7 +55165,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1366146258
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -54546,7 +55273,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1368807071
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -54604,6 +55332,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1368807068}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1369944887
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4245428981597948, guid: 4be75ba876821934ba333c52d0544fb1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245428981597948, guid: 4be75ba876821934ba333c52d0544fb1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245428981597948, guid: 4be75ba876821934ba333c52d0544fb1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245428981597948, guid: 4be75ba876821934ba333c52d0544fb1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245428981597948, guid: 4be75ba876821934ba333c52d0544fb1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245428981597948, guid: 4be75ba876821934ba333c52d0544fb1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245428981597948, guid: 4be75ba876821934ba333c52d0544fb1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245428981597948, guid: 4be75ba876821934ba333c52d0544fb1, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4be75ba876821934ba333c52d0544fb1, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1373497293
 GameObject:
   m_ObjectHideFlags: 0
@@ -54653,7 +55423,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1373497296
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -54760,7 +55531,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1374428089
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -54867,7 +55639,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1387011520
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -54974,7 +55747,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1390425713
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55081,7 +55855,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1392107462
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55188,7 +55963,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1394168114
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55297,7 +56073,8 @@ MonoBehaviour:
   EntityType: 32
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 0
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!114 &1398679066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55416,7 +56193,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1401527027
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55523,7 +56301,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1411791417
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55630,7 +56409,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1411885147
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55737,7 +56517,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1414078515
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55844,7 +56625,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1414445518
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55951,7 +56733,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1417373480
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -56134,7 +56917,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1428305180
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -56241,7 +57025,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1433204859
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -56348,7 +57133,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1437905117
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -56455,7 +57241,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1440009207
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -56562,7 +57349,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1440273241
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -56669,7 +57457,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1441701686
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -56776,7 +57565,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1442236460
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -56883,7 +57673,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1442787173
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -56990,7 +57781,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1444218380
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57097,7 +57889,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1445832174
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57220,7 +58013,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1447532590
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57327,7 +58121,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1453612160
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57434,7 +58229,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1455085191
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57541,7 +58337,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1460122075
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57648,7 +58445,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1460954733
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57755,7 +58553,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1461510504
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57862,7 +58661,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1461656048
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57969,7 +58769,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1464537797
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -58076,7 +58877,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1467954569
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -58183,7 +58985,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1473080568
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -58290,7 +59093,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1476258828
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -58397,7 +59201,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1477071467
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -58504,7 +59309,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1478385176
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -58611,7 +59417,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1480225119
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -58718,7 +59525,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1480524830
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -58899,7 +59707,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1483337208
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59006,7 +59815,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1484258062
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59241,7 +60051,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1488219306
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59348,7 +60159,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1493499613
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59455,7 +60267,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1494872557
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59562,7 +60375,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1498576286
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59669,7 +60483,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1501944120
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59776,7 +60591,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1502080398
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59883,7 +60699,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1505052262
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59990,7 +60807,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1506126117
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60097,7 +60915,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1510388210
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60204,7 +61023,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1511216606
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60311,7 +61131,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1511406148
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60418,7 +61239,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1512440444
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60525,7 +61347,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1514957494
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60632,7 +61455,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1517602380
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60739,7 +61563,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1519021292
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60846,7 +61671,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1520536011
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60953,7 +61779,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1520962425
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61060,7 +61887,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1520966409
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61167,7 +61995,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1527807435
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61274,7 +62103,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1536491373
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61381,7 +62211,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1538402136
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61488,7 +62319,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1538877643
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61595,7 +62427,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1541166777
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61702,7 +62535,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1541518021
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61809,7 +62643,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1543261413
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61916,7 +62751,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1543639809
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62023,7 +62859,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1544583852
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62130,7 +62967,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1545208341
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62237,7 +63075,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1550713924
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62344,7 +63183,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1551501689
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62451,7 +63291,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1552535227
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62558,7 +63399,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1564336085
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62665,7 +63507,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1568656657
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62772,7 +63615,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1569958021
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62879,7 +63723,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1570169247
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62986,7 +63831,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1571447724
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63093,7 +63939,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1573928496
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63200,7 +64047,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1576185664
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63307,7 +64155,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1576419339
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63414,7 +64263,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1583006573
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63521,7 +64371,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1583697764
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63628,7 +64479,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1590509049
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63723,7 +64575,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4166209003197168, guid: 698eadc8535d5914391e107ddf1170e8, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 698eadc8535d5914391e107ddf1170e8, type: 2}
@@ -63787,13 +64639,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1597175475}
-  m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
+  m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
 --- !u!1 &1598382301
 GameObject:
   m_ObjectHideFlags: 0
@@ -63843,7 +64695,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1598382304
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63950,7 +64803,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1599094332
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64057,7 +64911,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1602125663
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64164,7 +65019,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1602235345
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64271,7 +65127,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1609597546
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64378,7 +65235,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1610314155
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64485,7 +65343,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1612233236
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64592,7 +65451,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1613204093
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64699,7 +65559,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1615261557
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64806,7 +65667,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1616736359
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64913,7 +65775,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1618401968
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65020,7 +65883,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1620019538
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65190,7 +66054,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1625414336
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65297,7 +66162,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1627456180
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65404,7 +66270,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1632578847
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65511,7 +66378,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1632839318
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65618,7 +66486,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1633710789
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65725,7 +66594,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1633748518
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65832,7 +66702,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1637552267
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65939,7 +66810,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1637945276
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66046,7 +66918,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1645078550
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66153,7 +67026,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1659314144
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66260,7 +67134,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1666967448
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66367,7 +67242,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1673028609
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66550,7 +67426,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1677666162
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66657,7 +67534,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1679813516
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66764,7 +67642,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1682450884
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66902,7 +67781,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1689050951
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -67009,7 +67889,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1691911846
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -67195,7 +68076,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1697073199
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -67302,7 +68184,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1700362248
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -67409,7 +68292,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1703313522
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -67516,7 +68400,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1705286411
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -67623,7 +68508,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1706888103
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -67730,7 +68616,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1707544869
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -67837,7 +68724,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1712190522
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -67944,7 +68832,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1730400552
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -68051,7 +68940,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1735391868
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -68158,7 +69048,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1735950742
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -68265,7 +69156,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1746862552
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -68372,7 +69264,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1753765737
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -68479,7 +69372,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1753788865
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -68586,7 +69480,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1754020005
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -68693,7 +69588,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1754241567
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -68800,7 +69696,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1759402601
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -68907,7 +69804,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1760678180
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -69014,7 +69912,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1764794706
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -69121,7 +70020,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1767310090
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -69228,7 +70128,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1767872904
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -69335,7 +70236,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1768945014
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -69442,7 +70344,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1770473867
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -69549,7 +70452,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1771584348
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -69656,7 +70560,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1775589918
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -69838,7 +70743,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1783840928
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -69933,7 +70839,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4021088084961932, guid: e60aeb9e4b3fd414886edf20daeb5ebd, type: 2}
       propertyPath: m_RootOrder
-      value: 739
+      value: 738
       objectReference: {fileID: 0}
     - target: {fileID: 1549163940768664, guid: e60aeb9e4b3fd414886edf20daeb5ebd, type: 2}
       propertyPath: m_Name
@@ -69991,7 +70897,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1803218863
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70171,7 +71078,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1812982443
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70278,7 +71186,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1817961842
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70385,7 +71294,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1821693740
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70492,7 +71402,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1824183265
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70550,6 +71461,52 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1824183262}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1825070878
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4534337459207880, guid: 2fc47f6e39cca69418ebf1b5efd52338, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534337459207880, guid: 2fc47f6e39cca69418ebf1b5efd52338, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534337459207880, guid: 2fc47f6e39cca69418ebf1b5efd52338, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534337459207880, guid: 2fc47f6e39cca69418ebf1b5efd52338, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534337459207880, guid: 2fc47f6e39cca69418ebf1b5efd52338, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534337459207880, guid: 2fc47f6e39cca69418ebf1b5efd52338, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534337459207880, guid: 2fc47f6e39cca69418ebf1b5efd52338, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534337459207880, guid: 2fc47f6e39cca69418ebf1b5efd52338, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1269595582530394, guid: 2fc47f6e39cca69418ebf1b5efd52338, type: 2}
+      propertyPath: m_Name
+      value: Rune_big (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2fc47f6e39cca69418ebf1b5efd52338, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1825906664
 GameObject:
   m_ObjectHideFlags: 0
@@ -70599,7 +71556,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1825906667
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70706,7 +71664,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1828846115
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70813,7 +71772,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1829441146
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70920,7 +71880,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1832175754
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -71027,7 +71988,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1832245467
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -71210,7 +72172,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1839332753
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -71317,7 +72280,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1840221814
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -71424,7 +72388,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1841931386
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -71531,7 +72496,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1842321601
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -71638,7 +72604,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1845677987
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -71745,7 +72712,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1851967371
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -71852,7 +72820,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1852030030
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -71959,7 +72928,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1856786874
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -72066,7 +73036,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1859300809
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -72173,7 +73144,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1859426372
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -72280,7 +73252,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1860126575
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -72387,7 +73360,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1861261076
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -72494,7 +73468,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1863944179
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -72601,7 +73576,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1868200090
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -72708,7 +73684,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1871013386
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -72815,7 +73792,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1872382732
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -72922,7 +73900,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1874338154
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -73029,7 +74008,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1875414157
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -73136,7 +74116,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1881594654
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -73243,7 +74224,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1896780711
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -73350,7 +74332,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1898511265
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -73457,7 +74440,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1898974478
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -73564,7 +74548,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1902820851
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -73671,7 +74656,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1907908481
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -73778,7 +74764,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1917256805
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -73885,7 +74872,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1919001871
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -73992,7 +74980,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1923068675
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -74099,7 +75088,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1924880905
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -74206,7 +75196,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1926689519
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -74313,7 +75304,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1927521256
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -74420,7 +75412,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1938781064
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -74527,7 +75520,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1942112141
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -74634,7 +75628,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1949086881
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -74741,7 +75736,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1951818985
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -74848,7 +75844,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1952117657
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -74955,7 +75952,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1955082895
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -75062,7 +76060,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1955202780
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -75169,7 +76168,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1955751379
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -75276,7 +76276,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1957806765
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -75383,7 +76384,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1961928766
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -75490,7 +76492,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1963678059
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -75597,7 +76600,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1964215387
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -75794,7 +76798,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1968030055
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -75901,7 +76906,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1968543830
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -76762,7 +77768,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1973515073
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -76869,7 +77876,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1974702913
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -76976,7 +77984,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1975530177
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -77083,7 +78092,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1975862601
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -77190,7 +78200,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1983095728
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -77297,7 +78308,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1984403509
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -77404,7 +78416,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1984896479
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -77511,7 +78524,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1987074912
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -77618,7 +78632,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1987295012
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -77725,7 +78740,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1989324941
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -77832,7 +78848,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1989978938
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -77939,7 +78956,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1991414976
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -78046,7 +79064,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1994479997
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -78153,7 +79172,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1995324815
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -78260,7 +79280,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1995898028
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -78367,7 +79388,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1998640337
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -78474,7 +79496,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &1999498692
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -78784,7 +79807,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2010376171
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -78891,7 +79915,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2012711912
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -78998,7 +80023,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2013084272
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -79105,7 +80131,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2020336680
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -79212,7 +80239,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2021450959
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -79319,7 +80347,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2024014069
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -79426,7 +80455,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2026748678
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -79533,7 +80563,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2028165407
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -79640,7 +80671,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2028788988
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -79747,7 +80779,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2029930774
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -79854,7 +80887,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2034144332
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -79961,7 +80995,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2038341636
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -80068,7 +81103,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2044958944
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -80175,7 +81211,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2045247425
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -80282,7 +81319,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2046763684
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -80389,7 +81427,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2048675338
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -80496,7 +81535,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2060683300
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -80603,7 +81643,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2060816909
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -80710,7 +81751,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2067204242
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -80817,7 +81859,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2067521702
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -80924,7 +81967,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2070202239
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -81031,7 +82075,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2070957105
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -81138,7 +82183,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2080390241
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -81245,7 +82291,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2085757030
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -81352,7 +82399,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2087423525
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -81459,7 +82507,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2090553281
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -81695,7 +82744,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2096522618
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -81802,7 +82852,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2099910351
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -81909,7 +82960,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2110922216
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -82016,7 +83068,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2112296248
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -82123,7 +83176,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2118666467
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -82230,7 +83284,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2128365711
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -82288,6 +83343,52 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2128365708}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &2128765788
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470952991085498, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
+      propertyPath: m_Name
+      value: Rune_woodBox (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &2130300223
 GameObject:
   m_ObjectHideFlags: 0
@@ -82337,7 +83438,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2130300226
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -82444,7 +83546,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2130976124
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -82551,7 +83654,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2133024570
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -82658,7 +83762,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2133402202
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -82765,7 +83870,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2139934943
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -82872,7 +83978,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2140801227
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -82979,7 +84086,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2142691999
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -83086,7 +84194,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2143928556
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -83193,7 +84302,8 @@ MonoBehaviour:
   EntityType: 0
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!23 &2145050268
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EntityType: 41
-  IsMovable: 0
+  isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 1
+  blockProjectiles: 1
+  occupySpace: 1
