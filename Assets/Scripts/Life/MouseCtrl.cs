@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LionCtrl : MonoBehaviour
+public class MouseCtrl : MonoBehaviour
 {
     WalkAndJump walkAndJump;
 
     public enum eState
     {
         Idle,
-        Chase,
+        Run,
     }
     public eState _state;
 
@@ -27,11 +27,11 @@ public class LionCtrl : MonoBehaviour
         playerTr = GameObject.Find("player").transform;
     }
 
-    void Start()
+	void Start ()
     {
         _state = eState.Idle;
-    }
-
+	}
+	
     void FixedUpdate()
     {
         Move();
@@ -44,13 +44,13 @@ public class LionCtrl : MonoBehaviour
         if (movementFlag == 1)
         {
             moveVelocity = Vector3.left;
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             transform.rotation = Quaternion.Euler(0, 270, 0);
         }
         else if (movementFlag == 2)
         {
             moveVelocity = Vector3.right;
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
             transform.rotation = Quaternion.Euler(0, 90, 0);
         }
 
@@ -64,12 +64,12 @@ public class LionCtrl : MonoBehaviour
         {
             movementFlag = Random.Range(0, 3);
         }
-        else if(relHab > 3f)
+        else if (relHab > 3f)
         {
             Debug.Log("Too Left" + relHab);
             movementFlag = 2;
         }
-        else if(relHab < -3f)
+        else if (relHab < -3f)
         {
             Debug.Log("Too Right" + relHab);
             movementFlag = 1;
@@ -79,65 +79,60 @@ public class LionCtrl : MonoBehaviour
         isWandering = false;
     }
 
-	void Update()
-	{
+    void Update ()
+    {
         var relPos = playerTr.position - transform.position;
-        if ((relPos.x < 0.5f) && (relPos.x > -0.5f))
-        {
-            Debug.Log("Kill you!");
-            Destroy(GameObject.Find("player"));
-        }
 
         if (_state == eState.Idle)
         {
             movePower = 1f;
-            if (IsInFov(playerTr, 45f, 5f) && (VisionCheck(playerTr, 2f)))
+            if (IsInFov(playerTr, 45f, 5f) && (VisionCheck(playerTr, 3f)))
             {
-                Debug.Log("Saw you!");
+                Debug.Log("Run!");
                 StopCoroutine("Patrolling");
                 isWandering = false;
-                _state = eState.Chase;
+                _state = eState.Run;
             }
 
-            if(isWandering == false)
+            if (isWandering == false)
             {
                 StartCoroutine("Patrolling");
             }
         }
 
-        if (_state == eState.Chase)
+        if (_state == eState.Run)
         {
             movePower = 1.5f;
             if (relPos.x < 0f)
             {
-                Debug.Log("Chasing_left");
-                movementFlag = 1;
+                Debug.Log("Running_right");
+                movementFlag = 2;
             }
             else if (relPos.x > 0f)
             {
-                Debug.Log("Chasing_right");
-                movementFlag = 2;
+                Debug.Log("Running_left");
+                movementFlag = 1;
             }
 
-            if (!IsInFov(playerTr, 45f, 5f) || !(VisionCheck(playerTr, 2f)))
+            if ((relPos.x > 5f) || (relPos.x < -5f))
             {
                 Debug.Log("Where you gone?");
                 _state = eState.Idle;
             }
         }
-	}
+    }
 
     public bool VisionCheck(Transform target, float distance)
     {
         RaycastHit hit;
- 
-        if(Physics.Raycast(_tr.position, target.position-_tr.position,out hit,distance))
+
+        if (Physics.Raycast(_tr.position, target.position - _tr.position, out hit, distance))
         {
-            if(hit.transform == playerTr) return true;
+            if (hit.transform == playerTr) return true;
             else return false;
         }
         else return false;
-    }   
+    }
 
     public bool IsInFov(Transform target, float angle, float maxHeight)
     {
