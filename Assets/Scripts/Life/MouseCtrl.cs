@@ -6,12 +6,12 @@ public class MouseCtrl : MonoBehaviour
 {
     WalkAndJump walkAndJump;
 
-    public enum eState
+    public enum State
     {
         Idle,
         Run,
     }
-    public eState _state;
+    public State _state;
 
     public float movePower = 1f;
     int movementFlag = 0;
@@ -29,7 +29,7 @@ public class MouseCtrl : MonoBehaviour
 
 	void Start ()
     {
-        _state = eState.Idle;
+        _state = State.Idle;
 	}
 	
     void FixedUpdate()
@@ -83,7 +83,7 @@ public class MouseCtrl : MonoBehaviour
     {
         var relPos = playerTr.position - transform.position;
 
-        if (_state == eState.Idle)
+        if (_state == State.Idle)
         {
             movePower = 1f;
             if (IsInFov(playerTr, 45f, 5f) && (VisionCheck(playerTr, 3f)))
@@ -91,7 +91,7 @@ public class MouseCtrl : MonoBehaviour
                 Debug.Log("Run!");
                 StopCoroutine("Patrolling");
                 isWandering = false;
-                _state = eState.Run;
+                _state = State.Run;
             }
 
             if (isWandering == false)
@@ -100,7 +100,7 @@ public class MouseCtrl : MonoBehaviour
             }
         }
 
-        if (_state == eState.Run)
+        if (_state == State.Run)
         {
             movePower = 1.5f;
             if (relPos.x < 0f)
@@ -117,7 +117,7 @@ public class MouseCtrl : MonoBehaviour
             if ((relPos.x > 5f) || (relPos.x < -5f))
             {
                 Debug.Log("Where you gone?");
-                _state = eState.Idle;
+                _state = State.Idle;
             }
         }
     }
@@ -128,8 +128,7 @@ public class MouseCtrl : MonoBehaviour
 
         if (Physics.Raycast(_tr.position, target.position - _tr.position, out hit, distance))
         {
-            if (hit.transform == playerTr) return true;
-            else return false;
+            return hit.transform == playerTr;
         }
         else return false;
     }
@@ -142,14 +141,7 @@ public class MouseCtrl : MonoBehaviour
 
         if (Mathf.Abs(Vector3.Angle(relPos, transform.forward)) < angle)
         {
-            if (Mathf.Abs(height) < maxHeight)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return Mathf.Abs(height) < maxHeight;
         }
         else return false;
     }
