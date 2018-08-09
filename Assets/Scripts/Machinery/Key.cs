@@ -2,21 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Key : MonoBehaviour {
+[RequireComponent(typeof(Consumable))]
+public class Key : MonoBehaviour, IConsumable {
 
-    Output lockedDoor;
+    private IToggleable lockedDoor;
 
-    private void Start()
+    private void Awake()
     {
-        lockedDoor = GetComponentInParent<Output>();
+        lockedDoor = GetComponentInParent<IToggleable>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void ConsumedBehaviour()
     {
-        if(other.gameObject.tag == "Player")
-        {
-            lockedDoor.Activate();
-            Destroy(gameObject);
-        }
+        lockedDoor.Toggle(true);
+        Destroy(gameObject);
     }
 }

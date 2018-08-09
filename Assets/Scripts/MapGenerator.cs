@@ -27,21 +27,33 @@ public class MapGenerator : MonoBehaviour {
     private void Start()
     {
         stageCamera = GameObject.Find("Main Camera");
-        int mapWidth = map.width;
-        int mapHeight = map.height;
-        stageCamera.GetComponent<Camera>().orthographicSize = map.height / 2;
+        int imageWidth = map.width;
+        int imageHeight = map.height;
+
+        int lowest = imageHeight;
+        int highest = 0;
+        //int leftMost;
 
         if (transform.childCount == 0)
         {
-            for (int x = 0; x < mapWidth; x++)
+            for (int x = 0; x < imageWidth; x++)
             {
-                for (int y = 0; y < mapHeight; y++)
+                for (int y = 0; y < imageHeight; y++)
                 {
                     Color pixelColor = map.GetPixel(x, y);
                     if (ObjectOfColor(pixelColor) != null)
-                        Instantiate(ObjectOfColor(pixelColor), new Vector3(x - mapWidth / 2, y - mapHeight / 2, 0), gameObject.transform.rotation, gameObject.transform);
+                    {
+                        Instantiate(ObjectOfColor(pixelColor), new Vector3(x - imageWidth / 2, y), gameObject.transform.rotation, gameObject.transform);
+                        if (y < lowest)
+                            lowest = y;
+                        if (y > highest)
+                            highest = y;
+                    }
                 }
             }
+            int mapHeight = highest - lowest;
+            stageCamera.GetComponent<Camera>().orthographicSize = mapHeight / 2;
+            transform.Translate(new Vector3(0, -mapHeight / 2, 0));
         }
     }
 

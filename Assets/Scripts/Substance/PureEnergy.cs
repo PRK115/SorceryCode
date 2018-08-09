@@ -2,46 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PureEnergy : Substance {
+public class PureEnergy : MonoBehaviour
+{
+    private ISubstance substance;
 
     public float duration;
     float timeLeft;
 
-    public SubstanceState type;
+    private void Awake()
+    {
+        substance = GetComponent<ISubstance>();
+        if (substance == null)
+        {
+            Debug.LogError("PureEnergy must have a substance as a component!");
+        }
+    }
+
     private void Start()
     {
         timeLeft = duration;
-        currentState = type;
-    }
 
-    protected override void intactBehaviour()
-    {
-        Destroy(gameObject);
-    }
-
-    protected override void burningBehaviour()
-    {
-        
-    }
-
-    protected override void electrifiedBehaviour()
-    {
-        
-    }
-
-    new void FixedUpdate () {
-        if (timeLeft < 0)
-            currentState = SubstanceState.intact;
-        else
-            timeLeft -= Time.deltaTime;
-        base.FixedUpdate();
-	}
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.GetComponent<Conductor>() != null && currentState == SubstanceState.electrified)
+        Conductor conductor = substance as Conductor;
+        if (conductor != null)
         {
-            other.gameObject.GetComponent<Conductor>().Electrify(gameObject, 0);
+            conductor.SetAsElectricitySource();
         }
     }
+
+    void Update() {
+        if (timeLeft < 0)
+            Destroy(gameObject);
+        else
+        {
+            timeLeft -= Time.deltaTime;
+        }
+	}
 }

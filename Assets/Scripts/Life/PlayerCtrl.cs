@@ -2,53 +2,65 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCtrl : Brain {
+public class PlayerCtrl : MonoBehaviour {
 
-    GameStateManager manager;
+    private Organism organism;
+    private WalkAndJump walkAndJump;
+    private GameStateManager manager;
 
-    private void Start()
+    //private bool alive = true;
+
+    private void Awake()
     {
-        if(GameObject.Find("StageCanvas") != null)
-        manager = GameObject.Find("StageCanvas").GetComponent<GameStateManager>();
+        organism = GetComponent<Organism>();
+        walkAndJump = GetComponent<WalkAndJump>();
+        manager = FindObjectOfType<GameStateManager>();
     }
 
     private void Update()
     {
-        if (alive)
+        if (organism.alive)
         {
-            InterpretKey();
+            walkAndJump.Manuever(InterpretKey());
         }
-        else if(manager != null)
-            manager.Funeral();
+        else
+        {
+            if (manager != null)
+                manager.Funeral();
+        }
     }
 
-    void InterpretKey()
+    Direction InterpretKey()
     {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
 
         if (horizontalInput != 0)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space))
             {
                 if (horizontalInput < 0)
-                    command = Direction.leftUp;
+                    return Direction.LeftUp;
                 else
-                    command = Direction.rightUp;
+                    return Direction.RightUp;
             }
             else if (horizontalInput < 0)
             {
-                command = Direction.left;
+                return Direction.Left;
             }
             else
-                command = Direction.right;
+            {
+                return Direction.Right;
+            }
         }
 
         else if (Input.GetKeyDown(KeyCode.Space))
         {
-            command = Direction.up;
+            return Direction.Up;
         }
 
         else
-            command = Direction.none;
+        {
+            return Direction.None;
+        }
     }
 }

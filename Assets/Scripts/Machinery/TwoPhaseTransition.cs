@@ -2,40 +2,64 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TwoPhaseTransition : TwoPhaseMachine
+public class TwoPhaseTransition : MonoBehaviour, IToggleable
 {
+    public TwoPhaseMachine machine = new TwoPhaseMachine();
 
     Vector3 originalPosition;
 
     public Vector3 transition;
-    private Vector3 currentTransition;
+
+    private void Awake()
+    {
+        machine.SetCallbacks(PhaseChange, Return);
+    }
 
     void Start()
     {
         originalPosition = transform.position;
+        machine.TimeTillNextPhase = machine.phaseChangeTime;
     }
 
-
-    protected override void PhaseChange()
+    private void Update()
     {
-        currentTransition = transform.position - originalPosition;
-        if (currentTransition.magnitude >= transition.magnitude)
-            currentPhase = Phase.second;
-
-        else
-            transform.Translate(transition * Time.deltaTime / phaseChangeTime);
+        machine.Update();
     }
 
-    protected override void Return()
+    public void Toggle(bool on)
     {
-        currentTransition = transform.position - originalPosition;
-        if (Vector3.Dot(currentTransition, transition) <= 0)
+        machine.Activate(on);
+    }
+
+    public void PhaseChange()
+    {
+        if (machine.TimeTillNextPhase <= 0)
         {
-            transform.position = originalPosition;
-            currentPhase = Phase.original;
+            machine.TimeTillNextPhase = machine.returnTime;
+            //transform.position = originalPosition;
+            machine.currentPhase = TwoPhaseMachine.Phase.Second;
         }
 
         else
-            transform.Translate(-transition * Time.deltaTime / returnTime);
+        {
+            transform.Translate(transition * Time.deltaTime / machine.phaseChangeTime);
+            machine.TimeTillNextPhase -= Time.deltaTime;
+        }
+    }
+
+    public void Return()
+    {
+        if (machine.TimeTillNextPhase <= 0)
+        {
+            machine.TimeTillNextPhase = machine.phaseChangeTime;
+            transform.position = originalPosition;
+            machine.currentPhase = TwoPhaseMachine.Phase.Original;
+        }
+
+        else
+        {
+            transform.Translate(-transition * Time.deltaTime / machine.returnTime);
+            machine.TimeTillNextPhase -= Time.deltaTime;
+        }
     }
 }
