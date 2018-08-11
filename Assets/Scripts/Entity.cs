@@ -12,6 +12,7 @@ public enum EntityType
     CastleBlock = 0,
     MetalBlock,
     WoodBlock,
+    Spike,
     WoodBox = 8,
     IronBox,
     Rune = 16,
