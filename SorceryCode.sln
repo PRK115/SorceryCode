@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio for Mac
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SorceryCode", "Assembly-CSharp.csproj", "{EAA8A464-2C31-EC26-86D1-E544D9257C77}"
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SorceryCode", "SorceryCode.csproj", "{2E82141F-2176-0B22-C377-72A31B9151B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SorceryCode.Editor", "SorceryCode.Editor.csproj", "{06D01011-6ED9-D212-5116-27D779415626}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EAA8A464-2C31-EC26-86D1-E544D9257C77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EAA8A464-2C31-EC26-86D1-E544D9257C77}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EAA8A464-2C31-EC26-86D1-E544D9257C77}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EAA8A464-2C31-EC26-86D1-E544D9257C77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E82141F-2176-0B22-C377-72A31B9151B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E82141F-2176-0B22-C377-72A31B9151B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E82141F-2176-0B22-C377-72A31B9151B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E82141F-2176-0B22-C377-72A31B9151B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06D01011-6ED9-D212-5116-27D779415626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06D01011-6ED9-D212-5116-27D779415626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06D01011-6ED9-D212-5116-27D779415626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06D01011-6ED9-D212-5116-27D779415626}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

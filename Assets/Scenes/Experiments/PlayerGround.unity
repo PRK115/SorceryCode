@@ -202,6 +202,11 @@ Prefab:
       propertyPath: m_Name
       value: MetalBlock (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 23619032415430756, guid: 54f1e5b86f1be744f87a066609feef81,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a978db7b3a1a40438e5c9d057b75845, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54f1e5b86f1be744f87a066609feef81, type: 2}
   m_IsPrefabAsset: 0
@@ -518,7 +523,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4166209003197168, guid: 698eadc8535d5914391e107ddf1170e8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.95
+      value: -6.35
       objectReference: {fileID: 0}
     - target: {fileID: 4166209003197168, guid: 698eadc8535d5914391e107ddf1170e8, type: 2}
       propertyPath: m_LocalPosition.y
@@ -547,21 +552,6 @@ Prefab:
     - target: {fileID: 4166209003197168, guid: 698eadc8535d5914391e107ddf1170e8, type: 2}
       propertyPath: m_RootOrder
       value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 136725132721556242, guid: 698eadc8535d5914391e107ddf1170e8,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 143349252982016174, guid: 698eadc8535d5914391e107ddf1170e8,
-        type: 2}
-      propertyPath: m_Center.y
-      value: -0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 136725132721556242, guid: 698eadc8535d5914391e107ddf1170e8,
-        type: 2}
-      propertyPath: m_Height
-      value: 2.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 698eadc8535d5914391e107ddf1170e8, type: 2}
@@ -625,6 +615,11 @@ Prefab:
       propertyPath: m_Name
       value: MetalBlock (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 23619032415430756, guid: 54f1e5b86f1be744f87a066609feef81,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a978db7b3a1a40438e5c9d057b75845, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54f1e5b86f1be744f87a066609feef81, type: 2}
   m_IsPrefabAsset: 0
@@ -1439,6 +1434,11 @@ Prefab:
       propertyPath: m_Name
       value: MetalBlock (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 23619032415430756, guid: 54f1e5b86f1be744f87a066609feef81,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a978db7b3a1a40438e5c9d057b75845, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54f1e5b86f1be744f87a066609feef81, type: 2}
   m_IsPrefabAsset: 0

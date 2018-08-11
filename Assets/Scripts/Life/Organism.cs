@@ -13,11 +13,13 @@ public class Organism : MonoBehaviour {
     private Conductor conductor;
     private Flammable flammable;
     private bool physicallyDamaged;
+    private GameObject blood;
 
     private void Awake()
     {
         conductor = GetComponent<Conductor>();
         flammable = GetComponent<Flammable>();
+        //blood = transform.Find("blood").gameObject;
     }
 
     private void Start()
@@ -27,7 +29,7 @@ public class Organism : MonoBehaviour {
 
     void Update()
     {
-        if (conductor.state == Conductor.State.Electrified || flammable.state == Flammable.State.Burning)
+        if (conductor.state == Conductor.State.Electrified || flammable.state == Flammable.State.Burning || physicallyDamaged)
         {
             alive = false;
             if (timeTillDeath < 0)

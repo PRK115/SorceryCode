@@ -62,5 +62,8 @@ public class PlayerCtrl : MonoBehaviour {
         {
             return Direction.None;
         }
+
+
+
     }
 }
