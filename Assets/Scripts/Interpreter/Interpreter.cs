@@ -1,172 +1,258 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Security.Policy;
 using UnityEngine;
 
-namespace Interpreter
+public class Interpreter : MonoBehaviour
 {
-    abstract class Value
+    public abstract class Expr
     {
-
+        public abstract object Eval();
     }
 
-    class Null : Value
+    public abstract class Stmt
     {
+        public delegate void Continuation(StmtResult result);
+
+        public abstract IEnumerator Eval(Continuation cont);
     }
 
-    class Bool : Value
+    public enum StmtResult
     {
-        public bool Contents { get; set; }
+        None, Break
     }
 
-    class Object : Value
+    public class LangException : Exception
     {
-        public string Name { get; set; }
+        public LangException(string message) : base(message) { }
     }
 
-    abstract class Node
+    public class LangCoroutine
     {
-        public abstract Value Execute();
-    }
+        public Coroutine Coroutine { get; private set; }
+        public object Result;
+        private IEnumerator target;
 
-    class ValueNode : Node
-    {
-        public Value Value;
-
-        public override Value Execute()
+        public LangCoroutine(MonoBehaviour owner, IEnumerator target)
         {
-            return Value;
+            this.target = target;
+            this.Coroutine = owner.StartCoroutine(Run());
+        }
+
+        private IEnumerator Run()
+        {
+            while (target.MoveNext())
+            {
+                Result = target.Current;
+                yield return Result;
+            }
         }
     }
 
-    class FnNode : Node
+    public class Entity : Expr
     {
-        public string Name { get; set; }
-        public Node Argument { get; set; }
+        public EntityType Type;
 
-        public Func<Value, Value> Fun { get; set; }
+        public override object Eval() => Type;
+    }
 
-        public override Value Execute()
+    public class Object : Expr
+    {
+        public object Obj;
+
+        public override object Eval() => Obj;
+    }
+
+    public class Call : Expr
+    {
+        public Func<object, object> Fun;
+        public Expr Argument;
+
+        public override object Eval() => Fun(Argument.Eval());
+    }
+
+    public class Expression : Stmt
+    {
+        public Expr Expr;
+
+        public override IEnumerator Eval(Continuation cont)
         {
-            Value value = Argument.Execute();
-            return Fun(value);
+            Expr.Eval();
+            yield return new WaitForSeconds(Inst.Delay);
         }
     }
 
-    class StmtNode : Node
+    public class Block : Stmt
     {
-        public Node Current;
-        public Node Next;
+        public List<Stmt> Statements;
 
-        public override Value Execute()
+        public override IEnumerator Eval(Continuation cont)
         {
-            Current.Execute();
-            Interpreter.Wait();
-            return Next.Execute();
+            foreach (Stmt stmt in Statements)
+            {
+                yield return Inst.StartCoroutine(stmt.Eval(cont));
+            }
         }
     }
 
-    class RepeatNode : Node
+    public class If : Stmt
     {
-        public Node Expr;
+        public Expr Cond;
+        public Stmt Then;
+        public Stmt Else;
 
-        public override Value Execute()
+        public override IEnumerator Eval(Continuation cont)
+        {
+            object condResult = Cond.Eval();
+            if (condResult is bool)
+            {
+                bool condValue = (bool) condResult;
+                if (condValue)
+                {
+                    yield return Inst.StartCoroutine(Then.Eval(cont));
+                }
+                else if (Else != null)
+                {
+                    yield return Inst.StartCoroutine(Else.Eval(cont));
+                }
+            }
+            else
+            {
+                throw new LangException("condition in if is not boolean");
+            }
+        }
+    }
+
+    public class Repeat : Stmt
+    {
+        public Stmt Body;
+
+        public override IEnumerator Eval(Continuation cont)
         {
             while (true)
             {
-                Expr.Execute();
-                Interpreter.Wait();
-            }
-        }
-    }
-
-    class IfNode : Node
-    {
-        public Node Cond;
-        public Node Expr;
-
-        public override Value Execute()
-        {
-            Value value = Cond.Execute();
-            if (value is Bool)
-            {
-                Bool boolean = (Bool) value;
-                if (boolean.Contents)
+                StmtResult result = StmtResult.None;
+                yield return Body.Eval(newResult => result = newResult);
+                if (result == StmtResult.Break)
                 {
-                    Value result = Expr.Execute();
-                    return result;
-                }
-                else
-                {
-                    return new Null();
+                    break;
                 }
             }
-            else
-            {
-                throw new Exception("Condition is not Bool");
-            }
         }
     }
 
-    class Interpreter
+    public class Break : Stmt
     {
-        public static int Gas = 100;
-
-        public Node RootNode;
-
-        public static void Wait()
+        public override IEnumerator Eval(Continuation cont)
         {
-            Debug.Log("Step increased");
-            Gas--;
-            if (Gas == 0)
-            {
-                throw new Exception("Not enough gas!");
-            }
-        }
-
-        public void Execute()
-        {
-            RootNode.Execute();
+            cont(StmtResult.Break);
+            yield return StmtResult.Break;
         }
     }
 
-    class Program
+    // TODO
+    public class Enchant : Stmt
     {
-        static Value GameMoveFunction(Value input)
-        {
-            if (input is Object)
-            {
-                Object obj = (Object) input;
-                Debug.Log($"{obj.Name} is moved!");
-                return new Null();
-            }
-            else
-            {
-                throw new Exception("Can't move something that is not an object");
-            }
-        }
+        public Stmt Body;
 
-        static void Main(string[] args)
+        public override IEnumerator Eval(Continuation cont)
         {
-            Interpreter interpreter = new Interpreter();
-            interpreter.RootNode = new IfNode()
+            yield return Inst.StartCoroutine(Body.Eval(cont));
+        }
+    }
+
+    public class Conjure : Stmt
+    {
+        public Action<EntityType> Fun;
+        public EntityType Entity;
+
+        public override IEnumerator Eval(Continuation cont)
+        {
+            Fun(Entity);
+            yield return new WaitForSeconds(Inst.Delay);
+        }
+    }
+
+    public static Interpreter Inst;
+
+    public float Delay = 1.0f;
+
+    public void Execute(Block program)
+    {
+        Inst.StartCoroutine(program.Eval(_ => { }));
+    }
+
+    void Awake()
+    {
+        Inst = this;
+    }
+
+    void Start()
+    {
+        Func<object, object> Test1 = arg =>
+        {
+            Debug.Log("Test1 Called!");
+            return null;
+        };
+
+        Func<object, object> Test2 = arg =>
+        {
+            Debug.Log("Test2 Called!");
+            return null;
+        };
+
+        Func<object, object> Test3 = arg =>
+        {
+            Debug.Log("Test3 Called!");
+            return null;
+        };
+
+        Block Program = new Block
+        {
+            Statements = new List<Stmt>()
             {
-                Cond = new ValueNode()
+                new Repeat
                 {
-                    Value = new Bool() {Contents = true}
-                },
-                Expr = new FnNode()
-                {
-                    Name = "move",
-                    Argument = new ValueNode()
+                    Body = new If
                     {
-                        Value = new Object() {Name = "Mouse"}
-                    },
-                    Fun = GameMoveFunction
-                }
-            };
-            interpreter.Execute();
-        }
+                        Cond = new Object() { Obj = true },
+                        Then = new Block()
+                        {
+                            Statements = new List<Stmt>()
+                            {
+                                new Expression()
+                                {
+                                    Expr = new Call()
+                                    {
+                                        Argument = new Object() { Obj = 1 },
+                                        Fun = Test1
+                                    }
+                                },
+                                new Expression()
+                                {
+                                    Expr = new Call()
+                                    {
+                                        Argument = new Object() { Obj = 2 },
+                                        Fun = Test2
+                                    }
+                                },
+                                new Break()
+                            }
+                        },
+                        Else = new Expression()
+                        {
+                            Expr = new Call()
+                            {
+                                Argument = new Object() { Obj = 1 },
+                                Fun = Test3
+                            }
+                        }
+                    }
+                },
+            }
+        };
+
+        Execute(Program);
     }
 }

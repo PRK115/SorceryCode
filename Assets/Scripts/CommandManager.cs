@@ -20,6 +20,9 @@ public class CommandManager : MonoBehaviour
 
     public void Conjure(EntityType type)
     {
+        // TODO: 인터프레터 테스트를 위해 임시로 이렇게 구현해놓았음
+        Debug.Log($"{Enum.GetName(type.GetType(), type)} Conjured!");
+        /*
         GameObject prefab = prefabs[type];
         Conjurable conjurable = prefab.GetComponent<Conjurable>();
         if (conjurable != null)
@@ -30,6 +33,7 @@ public class CommandManager : MonoBehaviour
         {
             Debug.LogError($"Cannot conjure entity {type}");
         }
+        */
     }
 
     public void Enchant(EntityType type)
@@ -40,5 +44,23 @@ public class CommandManager : MonoBehaviour
     public void Change(EntityType type)
     {
 
+    }
+
+    // TODO: 인터프레터 테스트를 위해 임시로 이렇게 구현해놓았음
+    public bool IsConjurable(EntityType type)
+    {
+        /*
+        GameObject prefab = prefabs[type];
+        Conjurable conjurable = prefab.GetComponent<Conjurable>();
+        return conjurable != null;
+        */
+        switch (type)
+        {
+            case EntityType.Lion:
+            case EntityType.Mouse:
+                return true;
+        }
+
+        return false;
     }
 }
