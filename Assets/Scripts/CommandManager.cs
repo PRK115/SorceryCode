@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class CommandManager : MonoBehaviour
+public class CommandManager : MonoBehaviour, ICommandManager
 {
     public static CommandManager Inst;
 
@@ -13,54 +13,57 @@ public class CommandManager : MonoBehaviour
 
     public Dictionary<EntityType, GameObject> prefabs;
 
+    private Entity focusedEntity;
+
     void Awake()
     {
         Inst = this;
     }
 
+    // 현재 주문이 걸린 Entity를 이 함수를 통해 세팅 가능.
+    public void SetFocusedEntity(Entity focusedEntity)
+    {
+        this.focusedEntity = focusedEntity;
+    }
+
     public void Conjure(EntityType type)
     {
-        // TODO: 인터프레터 테스트를 위해 임시로 이렇게 구현해놓았음
-        Debug.Log($"{Enum.GetName(type.GetType(), type)} Conjured!");
-        /*
         GameObject prefab = prefabs[type];
         Conjurable conjurable = prefab.GetComponent<Conjurable>();
         if (conjurable != null)
         {
-            // TODO
+            // TODO(경록): 여기를 구현하면 됨.
         }
         else
         {
             Debug.LogError($"Cannot conjure entity {type}");
         }
-        */
     }
 
-    public void Enchant(EntityType type)
+    public void Change(ChangeType type)
     {
-
+        Changeable changeable = focusedEntity.GetComponent<Changeable>();
+        if (changeable != null)
+        { 
+            // TODO(경록): 여기를 구현하면 됨.
+        }
+        else
+        {
+            Debug.LogError($"Cannot change entity {focusedEntity} to ChangeType {type}");
+        }
     }
 
-    public void Change(EntityType type)
-    {
-
-    }
-
-    // TODO: 인터프레터 테스트를 위해 임시로 이렇게 구현해놓았음
     public bool IsConjurable(EntityType type)
     {
-        /*
         GameObject prefab = prefabs[type];
         Conjurable conjurable = prefab.GetComponent<Conjurable>();
         return conjurable != null;
-        */
-        switch (type)
-        {
-            case EntityType.Lion:
-            case EntityType.Mouse:
-                return true;
-        }
+    }
 
-        return false;
+    public bool IsChangeable(EntityType type)
+    {
+        GameObject prefab = prefabs[type];
+        Changeable changeable = prefab.GetComponent<Changeable>();
+        return changeable != null;
     }
 }
