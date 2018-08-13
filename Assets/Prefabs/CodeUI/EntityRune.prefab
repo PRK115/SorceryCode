@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 225374636869507408}
   - component: {fileID: 114333955065266074}
   m_Layer: 5
-  m_Name: RuneBlock
+  m_Name: EntityRune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
