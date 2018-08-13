@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-interface ICommandManager
+public interface ICommandManager
 {
     void Conjure(EntityType type);
     void Change(ChangeType type);

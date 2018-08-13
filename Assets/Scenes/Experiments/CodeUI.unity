@@ -955,8 +955,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 905418906}
-  - component: {fileID: 905418905}
   - component: {fileID: 905418907}
+  - component: {fileID: 905418905}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -972,10 +972,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 905418904}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f39dfbda817cd5f4a8f5976feff99ed0, type: 3}
+  m_Script: {fileID: 11500000, guid: 672f13272ddab474f8395646b69aae24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnPos: {x: 0, y: 0, z: 0}
 --- !u!4 &905418906
 Transform:
   m_ObjectHideFlags: 0

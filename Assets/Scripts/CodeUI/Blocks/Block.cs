@@ -16,6 +16,8 @@ namespace CodeUI
         public RectTransform rectTransform;
         private CanvasGroup canvasGroup;
 
+        protected ICommandManager commandMgr;
+
         protected virtual void Awake()
         {
             rectTransform = GetComponent<RectTransform>();
@@ -24,7 +26,10 @@ namespace CodeUI
 
         protected virtual void Start()
         {
-
+            if (CommandManager.Inst != null)
+                commandMgr = CommandManager.Inst;
+            else
+                commandMgr = DummyCommandManager.Inst;
         }
 
         public void OnBeginDrag(PointerEventData eventData)
