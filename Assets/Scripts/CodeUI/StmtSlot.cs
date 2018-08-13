@@ -53,7 +53,6 @@ namespace CodeUI
             Block draggedBlock = eventData.pointerDrag.GetComponent<Block>();
             if (draggedBlock != null)
             {
-                Debug.Log(draggedBlock);
                 image.color = Color.white;
 
                 if (draggedBlock is StmtBlock)

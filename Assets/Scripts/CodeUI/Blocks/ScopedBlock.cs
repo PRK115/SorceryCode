@@ -26,7 +26,6 @@ namespace CodeUI
             }
             Blocks.Sort((b1, b2) =>
                 (int)(b1.rectTransform.anchoredPosition.y - b2.rectTransform.anchoredPosition.y));
-            Debug.Log($"{Blocks.Count} blocks");
         }
 
         public void AddBlock(StmtBlock block)

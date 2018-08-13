@@ -10,6 +10,7 @@ namespace CodeUI
     {
         private ExprSlot argumentSlot;
 
+        [NonSerialized]
         public ChangeType changeType;
 
         protected override void Awake()
