@@ -11,13 +11,14 @@ public class CommandManager : MonoBehaviour, ICommandManager
 
     public Vector3 SpawnPos;
 
-    public Dictionary<EntityType, GameObject> prefabs;
+    private PrefabDB prefabDB;
 
     private Entity focusedEntity;
 
     void Awake()
     {
         Inst = this;
+        prefabDB = GetComponent<PrefabDB>();
     }
 
     // 현재 주문이 걸린 Entity를 이 함수를 통해 세팅 가능.
@@ -28,7 +29,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
 
     public void Conjure(EntityType type)
     {
-        GameObject prefab = prefabs[type];
+        GameObject prefab = prefabDB.GetPrefab(type);
         Conjurable conjurable = prefab.GetComponent<Conjurable>();
         if (conjurable != null)
         {
@@ -55,14 +56,14 @@ public class CommandManager : MonoBehaviour, ICommandManager
 
     public bool IsConjurable(EntityType type)
     {
-        GameObject prefab = prefabs[type];
+        GameObject prefab = prefabDB.GetPrefab(type);
         Conjurable conjurable = prefab.GetComponent<Conjurable>();
         return conjurable != null;
     }
 
     public bool IsChangeable(EntityType type)
     {
-        GameObject prefab = prefabs[type];
+        GameObject prefab = prefabDB.GetPrefab(type);
         Changeable changeable = prefab.GetComponent<Changeable>();
         return changeable != null;
     }
