@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Policy;
+using CodeUI;
 using UnityEngine;
 
 public class Interpreter : MonoBehaviour
@@ -28,28 +29,6 @@ public class Interpreter : MonoBehaviour
         public LangException(string message) : base(message) { }
     }
 
-    public class LangCoroutine
-    {
-        public Coroutine Coroutine { get; private set; }
-        public object Result;
-        private IEnumerator target;
-
-        public LangCoroutine(MonoBehaviour owner, IEnumerator target)
-        {
-            this.target = target;
-            this.Coroutine = owner.StartCoroutine(Run());
-        }
-
-        private IEnumerator Run()
-        {
-            while (target.MoveNext())
-            {
-                Result = target.Current;
-                yield return Result;
-            }
-        }
-    }
-
     public class Entity : Expr
     {
         public EntityType Type;
@@ -57,19 +36,18 @@ public class Interpreter : MonoBehaviour
         public override object Eval() => Type;
     }
 
-    public class Object : Expr
+    public class ChangeObj : Expr
     {
-        public object Obj;
+        public ChangeType ChangeType;
 
-        public override object Eval() => Obj;
+        public override object Eval() => ChangeType;
     }
 
-    public class Call : Expr
+    public class BoolExpr : Expr
     {
-        public Func<object, object> Fun;
-        public Expr Argument;
+        public bool Value;
 
-        public override object Eval() => Fun(Argument.Eval());
+        public override object Eval() => Value;
     }
 
     public class Expression : Stmt
@@ -151,25 +129,24 @@ public class Interpreter : MonoBehaviour
         }
     }
 
-    // TODO
-    public class Enchant : Stmt
-    {
-        public Stmt Body;
-
-        public override IEnumerator Eval(Continuation cont)
-        {
-            yield return Inst.StartCoroutine(Body.Eval(cont));
-        }
-    }
-
     public class Conjure : Stmt
     {
-        public Action<EntityType> Fun;
         public EntityType Entity;
 
         public override IEnumerator Eval(Continuation cont)
         {
-            Fun(Entity);
+            Inst.CommandMgr.Conjure(Entity);
+            yield return new WaitForSeconds(Inst.Delay);
+        }
+    }
+
+    public class Change : Stmt
+    {
+        public ChangeObj ChangeObj;
+
+        public override IEnumerator Eval(Continuation cont)
+        {
+            Inst.CommandMgr.Change(ChangeObj.ChangeType);
             yield return new WaitForSeconds(Inst.Delay);
         }
     }
@@ -177,6 +154,8 @@ public class Interpreter : MonoBehaviour
     public static Interpreter Inst;
 
     public float Delay = 1.0f;
+
+    public ICommandManager CommandMgr { get; private set; }
 
     public void Execute(Block program)
     {
@@ -190,6 +169,11 @@ public class Interpreter : MonoBehaviour
 
     void Start()
     {
+        if (CommandManager.Inst != null)
+            CommandMgr = CommandManager.Inst;
+        else
+            CommandMgr = DummyCommandManager.Inst;
+
         Func<object, object> Test1 = arg =>
         {
             Debug.Log("Test1 Called!");
@@ -216,38 +200,26 @@ public class Interpreter : MonoBehaviour
                 {
                     Body = new If
                     {
-                        Cond = new Object() { Obj = true },
+                        Cond = new BoolExpr() { Value = true },
                         Then = new Block()
                         {
                             Statements = new List<Stmt>()
                             {
-                                new Expression()
+                                new Conjure()
                                 {
-                                    Expr = new Call()
-                                    {
-                                        Argument = new Object() { Obj = 1 },
-                                        Fun = Test1
-                                    }
+                                    Entity = EntityType.Lion
                                 },
-                                new Expression()
+                                new Conjure()
                                 {
-                                    Expr = new Call()
-                                    {
-                                        Argument = new Object() { Obj = 2 },
-                                        Fun = Test2
-                                    }
+                                    Entity = EntityType.Mouse
                                 },
                                 new Break()
                             }
                         },
-                        Else = new Expression()
+                        Else = new Conjure()
                         {
-                            Expr = new Call()
-                            {
-                                Argument = new Object() { Obj = 1 },
-                                Fun = Test3
-                            }
-                        }
+                            Entity = EntityType.Lion
+                        },
                     }
                 },
             }

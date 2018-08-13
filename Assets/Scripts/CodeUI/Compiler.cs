@@ -29,14 +29,14 @@ namespace CodeUI
                         Body = new Interpreter.Block
                         {
                             Statements = repeatBlock.Blocks
-                                .Select(block => CompileStmt(block)).ToList()
+                                .Select(CompileStmt).ToList()
                         }
                     };
                 }
                 return new Interpreter.Block
                 {
                     Statements = scopedBlock.Blocks
-                        .Select(b => CompileStmt(b)).ToList()
+                        .Select(CompileStmt).ToList()
                 };
             }
             if (stmtBlock is ConjureBlock)
@@ -44,8 +44,15 @@ namespace CodeUI
                 ConjureBlock conjureBlock = (ConjureBlock) stmtBlock;
                 return new Interpreter.Conjure
                 {
-                    Entity = conjureBlock.EntityToConjure,
-                    Fun = CommandManager.Inst.Conjure
+                    Entity = conjureBlock.EntityToConjure
+                };
+            }
+            if (stmtBlock is ChangeBlock)
+            {
+                ChangeBlock changeBlock = (ChangeBlock) stmtBlock;
+                return new Interpreter.Change
+                {
+                    ChangeObj = new Interpreter.ChangeObj { ChangeType = changeBlock.changeType }
                 };
             }
             throw new CompilerException($"Statement block {stmtBlock} is not supported.");

@@ -5,6 +5,8 @@ namespace CodeUI
 {
     public class DummyCommandManager : ICommandManager
     {
+        public static DummyCommandManager Inst = new DummyCommandManager();
+
         public void Conjure(EntityType type)
         {
             Debug.Log($"{Enum.GetName(type.GetType(), type)} Conjured!");
@@ -12,7 +14,7 @@ namespace CodeUI
 
         public void Change(ChangeType type)
         {
-            Debug.Log($"{Enum.GetName(type.GetType(), type)} Changed!");
+            Debug.Log($"Changed to {Enum.GetName(type.GetType(), type)}!");
         }
 
         public bool IsConjurable(EntityType type)
