@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class MouseCtrl : MonoBehaviour
 {
@@ -17,14 +18,29 @@ public class MouseCtrl : MonoBehaviour
     int movementFlag = 0;
     bool isWandering = false;
 
-    public Transform playerTr;
+    bool isInRange = false;
+
+    public List<GameObject> targetlist = new List<GameObject>();
+    public GameObject player;
+    public GameObject mainTarget;
+
     Transform _tr;
     public Vector3 habitat;
 
     void Awake()
     {
         _tr = gameObject.transform;
-        playerTr = GameObject.Find("player").transform;
+        habitat = transform.position;
+
+        if (GameObject.FindWithTag("Player"))
+        {
+            player = GameObject.FindWithTag("Player");
+            targetlist.Add(player);
+        }
+        if (GameObject.FindWithTag("Life"))
+        {
+            targetlist.AddRange(GameObject.FindGameObjectsWithTag("Life"));
+        }
     }
 
 	void Start ()
@@ -60,18 +76,18 @@ public class MouseCtrl : MonoBehaviour
     IEnumerator Patrolling()
     {
         var relHab = habitat.x - transform.position.x;
-        if ((relHab < 3f) && (relHab > -3f))
+        if ((relHab <= 3f) && (relHab >= -3f))
         {
             movementFlag = Random.Range(0, 3);
         }
         else if (relHab > 3f)
         {
-            Debug.Log("Too Left" + relHab);
+            //Debug.Log("Too Left" + relHab);
             movementFlag = 2;
         }
         else if (relHab < -3f)
         {
-            Debug.Log("Too Right" + relHab);
+            //Debug.Log("Too Right" + relHab);
             movementFlag = 1;
         }
         isWandering = true;
@@ -81,68 +97,59 @@ public class MouseCtrl : MonoBehaviour
 
     void Update ()
     {
-        var relPos = playerTr.position - transform.position;
+        isInRange = false;
 
         if (_state == State.Idle)
         {
             movePower = 1f;
-            if (IsInFov(playerTr, 45f, 5f) && (VisionCheck(playerTr, 3f)))
-            {
-                Debug.Log("Run!");
-                StopCoroutine("Patrolling");
-                isWandering = false;
-                _state = State.Run;
-            }
-
             if (isWandering == false)
             {
                 StartCoroutine("Patrolling");
             }
         }
 
-        if (_state == State.Run)
+        if (targetlist.Count > 0)
         {
-            movePower = 1.5f;
-            if (relPos.x < 0f)
+            RaycastHit[] hits = Physics.RaycastAll(_tr.position, _tr.forward, 2f).OrderBy(h=>h.distance).ToArray();
+            foreach (var hit in hits)
             {
-                Debug.Log("Running_right");
-                movementFlag = 2;
-            }
-            else if (relPos.x > 0f)
-            {
-                Debug.Log("Running_left");
-                movementFlag = 1;
+                if ((hit.collider.gameObject.tag == "Player") || (hit.collider.gameObject.tag == "Life"))
+                {
+                    isInRange = true;
+                    mainTarget = hit.collider.gameObject;
+                    Debug.Log("Run!: " + mainTarget.name);
+                    StopCoroutine("Patrolling");
+                    isWandering = false;
+                    _state = State.Run;
+                }
             }
 
-            if ((relPos.x > 5f) || (relPos.x < -5f))
+            if ((_state == State.Run) && (mainTarget != null))
             {
-                Debug.Log("Where you gone?");
-                _state = State.Idle;
+                var relPos = mainTarget.transform.position - transform.position;
+                movePower = 1.5f;
+                if (relPos.x < 0f)
+                {
+                    //Debug.Log("Running_right");
+                    movementFlag = 2;
+                }
+                else if (relPos.x > 0f)
+                {
+                    //Debug.Log("Running_left");
+                    movementFlag = 1;
+                }
+
+                if ((isInRange == false) && ((relPos.x > 3f) || (relPos.x < -3f)))
+                {
+                    Debug.Log("Where you gone?(mouse): " + mainTarget.name);
+                    mainTarget = null;
+                    _state = State.Idle;
+                }
             }
         }
-    }
-
-    public bool VisionCheck(Transform target, float distance)
-    {
-        RaycastHit hit;
-
-        if (Physics.Raycast(_tr.position, target.position - _tr.position, out hit, distance))
+        else
         {
-            return hit.transform == playerTr;
+            _state = State.Idle;
         }
-        else return false;
-    }
-
-    public bool IsInFov(Transform target, float angle, float maxHeight)
-    {
-        var relPos = target.position - _tr.position;
-        float height = relPos.y;
-        relPos.y = 0;
-
-        if (Mathf.Abs(Vector3.Angle(relPos, transform.forward)) < angle)
-        {
-            return Mathf.Abs(height) < maxHeight;
-        }
-        else return false;
     }
 }
