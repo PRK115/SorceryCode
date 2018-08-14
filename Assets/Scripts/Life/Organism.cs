@@ -45,6 +45,7 @@ public class Organism : MonoBehaviour {
 
     public void PhysicalDamage()
     {
+        //blood.SetActive(true);
         physicallyDamaged = true;
     }
 }

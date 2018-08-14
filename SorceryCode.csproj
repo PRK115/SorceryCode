@@ -625,6 +625,8 @@
     <Compile Include="Assets\Scripts\Entity.cs" />
     <Compile Include="Assets\Scripts\GameStateManager.cs" />
     <Compile Include="Assets\Scripts\Goal.cs" />
+    <Compile Include="Assets\Scripts\HelpManager.cs" />
+    <Compile Include="Assets\Scripts\ICommandInvoker.cs" />
     <Compile Include="Assets\Scripts\Interpreter\Interpreter.cs" />
     <Compile Include="Assets\Scripts\Life\LionCtrl.cs" />
     <Compile Include="Assets\Scripts\Life\MouseCtrl.cs" />
@@ -632,6 +634,7 @@
     <Compile Include="Assets\Scripts\Life\PlayerCtrl.cs" />
     <Compile Include="Assets\Scripts\Life\WalkAndJump.cs" />
     <Compile Include="Assets\Scripts\Machinery\Button.cs" />
+    <Compile Include="Assets\Scripts\Machinery\GoalDoor.cs" />
     <Compile Include="Assets\Scripts\Machinery\ITogglable.cs" />
     <Compile Include="Assets\Scripts\Machinery\Key.cs" />
     <Compile Include="Assets\Scripts\Machinery\LockedDoor.cs" />

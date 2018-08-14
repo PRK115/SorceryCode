@@ -7,12 +7,7 @@ using UnityEngine;
 
 public class Changeable : MonoBehaviour, Attribute
 {
-    enum Results
-    {
-        Big, Small,
-        Mouse, Lion,
-        WoodBox, IronBox
-    }
+    bool resizable;
+    public bool Resizable { get; }
 
-    List<Results> PossibleResults;
 }

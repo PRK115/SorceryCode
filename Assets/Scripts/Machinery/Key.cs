@@ -5,13 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(Consumable))]
 public class Key : MonoBehaviour, IConsumable {
 
-    private IToggleable lockedDoor;
+    protected IToggleable lockedDoor;
 
-    private void Awake()
+    protected void Awake()
     {
         lockedDoor = GetComponentInParent<IToggleable>();
     }
-
+   
     public void ConsumedBehaviour()
     {
         lockedDoor.Toggle(true);

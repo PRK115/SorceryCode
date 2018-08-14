@@ -2,21 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Goal : MonoBehaviour, IConsumable {
+public class Goal : Key, IConsumable {
 
     GameStateManager gameStateManager;
-
-    private void Awake()
-    {
-    }
 
     private void Start()
     {
         gameStateManager = GameObject.Find("StageCanvas").GetComponent<GameStateManager>();
     }
 
-    public void ConsumedBehaviour()
+    public new void ConsumedBehaviour()
     {
         gameStateManager.StageClear();
+        base.ConsumedBehaviour();
     }
 }

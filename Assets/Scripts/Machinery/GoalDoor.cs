@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TwoPhaseRotation : MonoBehaviour, IToggleable
+public class GoalDoor : MonoBehaviour, IToggleable
 {
     public TwoPhaseMachine machine;
 
-    Quaternion phase2Rotation;
+    Vector3 originalDirection;
 
     public float angle;
     float timeTillPhase2;
@@ -20,6 +20,7 @@ public class TwoPhaseRotation : MonoBehaviour, IToggleable
     private void Start()
     {
         timeTillPhase2 = machine.phaseChangeTime;
+        originalDirection = gameObject.transform.up;
     }
 
     private void Update()
@@ -36,7 +37,6 @@ public class TwoPhaseRotation : MonoBehaviour, IToggleable
     {
         if (timeTillPhase2 <= 0)
         {
-            transform.rotation = phase2Rotation;
             timeTillPhase2 = machine.phaseChangeTime;
             machine.currentPhase = TwoPhaseMachine.Phase.Second;
         }
@@ -49,6 +49,13 @@ public class TwoPhaseRotation : MonoBehaviour, IToggleable
 
     private void Return()
     {
-       
+        if (Vector3.Angle(gameObject.transform.up.normalized, originalDirection.normalized) <= 0)
+        {
+            machine.currentPhase = TwoPhaseMachine.Phase.Original;
+        }
+        else
+        {
+            transform.Rotate(gameObject.transform.forward, -angle / machine.phaseChangeTime * Time.deltaTime);
+        }
     }
 }

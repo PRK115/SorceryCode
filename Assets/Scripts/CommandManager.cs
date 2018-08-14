@@ -18,13 +18,13 @@ public class CommandManager : MonoBehaviour
         Inst = this;
     }
 
-    public void Conjure(EntityType type)
+    public void Conjure(EntityType type, Vector3 position)
     {
         GameObject prefab = prefabs[type];
         Conjurable conjurable = prefab.GetComponent<Conjurable>();
         if (conjurable != null)
         {
-            // TODO
+            Instantiate(prefab, position, prefabs[type].transform.rotation);
         }
         else
         {
@@ -34,11 +34,50 @@ public class CommandManager : MonoBehaviour
 
     public void Enchant(EntityType type)
     {
-
+        
     }
 
-    public void Change(EntityType type)
+    public void Change(GameObject target, EntityType type)
     {
+        Changeable changable = target.GetComponent<Changeable>();
+        GameObject result = prefabs[type];
 
+        if (changable != null)
+        {
+
+        }
+        else
+        {
+            Debug.LogError("it's not changeable");
+        }
+    }
+
+    public void Change(GameObject target, Rune.Adjective adjective)
+    {
+        Changeable changable = target.GetComponent<Changeable>();
+        if (changable != null)
+        {
+            if (changable.Resizable)
+            {
+                switch (adjective)
+                {
+                    case Rune.Adjective.Big:
+                        target.transform.localScale *= 3;
+                        break;
+                    case Rune.Adjective.Small:
+                        target.transform.localScale /= 3;
+                        break;
+                }
+            }
+            else
+            {
+                Debug.LogError("Can't change its size");
+            }
+        }
+        else
+        {
+            Debug.LogError("it's not changeable");
+        }
+       
     }
 }
