@@ -5,22 +5,25 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class CommandManager : MonoBehaviour
+public class CommandManager : MonoBehaviour, ICommandManager
 {
     public static CommandManager Inst;
 
     public Vector3 SpawnPos;
 
-    public Dictionary<EntityType, GameObject> prefabs;
+    private PrefabDB prefabDB;
+
+    private Entity focusedEntity;
 
     void Awake()
     {
         Inst = this;
+        prefabDB = GetComponent<PrefabDB>();
     }
 
     public void Conjure(EntityType type, Vector3 position)
     {
-        GameObject prefab = prefabs[type];
+        GameObject prefab = prefabDB.GetPrefab(type);
         Conjurable conjurable = prefab.GetComponent<Conjurable>();
         if (conjurable != null)
         {
@@ -32,7 +35,7 @@ public class CommandManager : MonoBehaviour
         }
     }
 
-    public void Enchant(EntityType type)
+    public void Change(ChangeType type)
     {
         
     }

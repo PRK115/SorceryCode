@@ -28,6 +28,12 @@ public enum EntityType
     LightningBall
 }
 
+public enum ChangeType
+{
+    Big = 0,
+    Small
+}
+
 public class Entity : MonoBehaviour
 {
     public EntityType EntityType;

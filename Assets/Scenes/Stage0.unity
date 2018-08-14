@@ -10433,7 +10433,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400002, guid: e282f11082501604aa7b1ae911c01106, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: e282f11082501604aa7b1ae911c01106, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10487,6 +10487,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: e282f11082501604aa7b1ae911c01106, type: 3}
+      propertyPath: m_TagString
+      value: Life
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e282f11082501604aa7b1ae911c01106, type: 3}
   m_IsPrefabAsset: 0
@@ -10513,8 +10517,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: 0
   movePower: 1
-  playerTr: {fileID: 0}
-  habitat: {x: 5, y: 0.5, z: 0}
+  targetlist: []
+  player: {fileID: 0}
+  mainTarget: {fileID: 0}
+  habitat: {x: 0, y: 0, z: 0}
 --- !u!114 &156996208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61209,8 +61215,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _state: 0
   movePower: 1
-  playerTr: {fileID: 0}
-  habitat: {x: 5, y: 0.5, z: 0}
+  targetlist: []
+  player: {fileID: 0}
+  mainTarget: {fileID: 0}
+  habitat: {x: 0, y: 0, z: 0}
 --- !u!114 &1013606743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122368,7 +122376,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: c83d3e61c5babfa4dab2aa25fc27e572, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: c83d3e61c5babfa4dab2aa25fc27e572, type: 3}
+      propertyPath: m_TagString
+      value: Life
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c83d3e61c5babfa4dab2aa25fc27e572, type: 3}
