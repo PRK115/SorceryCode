@@ -621,12 +621,23 @@
     <Compile Include="Assets\Scripts\Attributes\Hazardous.cs" />
     <Compile Include="Assets\Scripts\Attributes\IConsumable.cs" />
     <Compile Include="Assets\Scripts\BoxMove.cs" />
+    <Compile Include="Assets\Scripts\CodeUI\Blocks\Block.cs" />
+    <Compile Include="Assets\Scripts\CodeUI\Blocks\ConjureBlock.cs" />
+    <Compile Include="Assets\Scripts\CodeUI\Blocks\EntityBlock.cs" />
+    <Compile Include="Assets\Scripts\CodeUI\Blocks\RepeatBlock.cs" />
+    <Compile Include="Assets\Scripts\CodeUI\Blocks\ScopedBlock.cs" />
+    <Compile Include="Assets\Scripts\CodeUI\Blocks\StmtBlock.cs" />
+    <Compile Include="Assets\Scripts\CodeUI\CodeUIElement.cs" />
+    <Compile Include="Assets\Scripts\CodeUI\Compiler.cs" />
+    <Compile Include="Assets\Scripts\CodeUI\DummyCommandManager.cs" />
+    <Compile Include="Assets\Scripts\CodeUI\ExprSlot.cs" />
+    <Compile Include="Assets\Scripts\CodeUI\StmtSlot.cs" />
     <Compile Include="Assets\Scripts\CommandManager.cs" />
     <Compile Include="Assets\Scripts\Entity.cs" />
     <Compile Include="Assets\Scripts\GameStateManager.cs" />
     <Compile Include="Assets\Scripts\Goal.cs" />
     <Compile Include="Assets\Scripts\HelpManager.cs" />
-    <Compile Include="Assets\Scripts\ICommandInvoker.cs" />
+    <Compile Include="Assets\Scripts\ICommandManager.cs" />
     <Compile Include="Assets\Scripts\Interpreter\Interpreter.cs" />
     <Compile Include="Assets\Scripts\Life\LionCtrl.cs" />
     <Compile Include="Assets\Scripts\Life\MouseCtrl.cs" />
@@ -643,12 +654,14 @@
     <Compile Include="Assets\Scripts\Machinery\TwoPhaseTransition.cs" />
     <Compile Include="Assets\Scripts\MapComponentData.cs" />
     <Compile Include="Assets\Scripts\MapGenerator.cs" />
+    <Compile Include="Assets\Scripts\PrefabDB.cs" />
     <Compile Include="Assets\Scripts\Rune.cs" />
     <Compile Include="Assets\Scripts\SceneChange.cs" />
     <Compile Include="Assets\Scripts\Substance\Conductor.cs" />
     <Compile Include="Assets\Scripts\Substance\Flammable.cs" />
     <Compile Include="Assets\Scripts\Substance\ISubstance.cs" />
     <Compile Include="Assets\Scripts\Substance\PureEnergy.cs" />
+    <Compile Include="Assets\SerializableDictionary\SerializableDictionary.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
