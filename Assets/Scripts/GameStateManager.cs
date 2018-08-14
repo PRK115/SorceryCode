@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameStateManager : MonoBehaviour {
 
@@ -9,6 +10,10 @@ public class GameStateManager : MonoBehaviour {
     public GameObject inStageFuneralPanel;
     public GameObject grimoire;
     public GameObject clearPanel;
+
+    public GameObject tutorialPanel;
+    public Text tutorialTitleText;
+    public Text tutorialContentText;
 
     private void Start()
     {
@@ -61,5 +66,17 @@ public class GameStateManager : MonoBehaviour {
         inStagePanel.SetActive(false);
         inStagePausePanel.SetActive(false);
         clearPanel.SetActive(true);
+    }
+
+    public void OpenTutorialPanel(string name, string content)
+    {
+        tutorialPanel.SetActive(true);
+        tutorialTitleText.text = name;
+        tutorialContentText.text = content;
+    }
+
+    public void CloseTutorialPanel()
+    {
+        tutorialPanel.SetActive(false);
     }
 }

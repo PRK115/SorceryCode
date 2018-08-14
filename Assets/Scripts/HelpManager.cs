@@ -5,13 +5,21 @@ using UnityEngine.UI;
 
 public class HelpManager : MonoBehaviour {
 
-    public GameObject Help;
-	
-	private void OnTriggerEnter(Collider other)
+    private GameStateManager gsm;
+
+    public string title;
+    public string contents;
+
+    private void Awake()
+    {
+        gsm = FindObjectOfType<GameStateManager>();
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag=="Player")
         {
-            Help.SetActive(true);
+            gsm.OpenTutorialPanel(title, contents);
         }
     }
 
@@ -19,7 +27,7 @@ public class HelpManager : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            Help.SetActive(false);
+            gsm.CloseTutorialPanel();
         }
     }
 }
