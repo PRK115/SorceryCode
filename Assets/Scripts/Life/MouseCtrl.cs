@@ -6,6 +6,7 @@ using System.Linq;
 public class MouseCtrl : MonoBehaviour
 {
     WalkAndJump walkAndJump;
+    CharacterController ctrl;
 
     public enum State
     {
@@ -29,48 +30,53 @@ public class MouseCtrl : MonoBehaviour
 
     void Awake()
     {
+        walkAndJump = GetComponent<WalkAndJump>();
+        ctrl = GetComponent<CharacterController>();
+
         _tr = gameObject.transform;
         habitat = transform.position;
 
-        if (GameObject.FindWithTag("Player"))
-        {
-            player = GameObject.FindWithTag("Player");
-            targetlist.Add(player);
-        }
-        if (GameObject.FindWithTag("Life"))
-        {
-            targetlist.AddRange(GameObject.FindGameObjectsWithTag("Life"));
-        }
+        TargetUpdate();
     }
 
 	void Start ()
     {
         _state = State.Idle;
 	}
-	
-    void FixedUpdate()
+
+    void TargetUpdate()
     {
-        Move();
+        if (GameObject.FindWithTag("Player"))
+        {
+            player = GameObject.FindWithTag("Player");
+            targetlist.Add(player);
+        }
+        else
+        {
+            player = null;
+        }
+
+        if (GameObject.FindWithTag("Life"))
+        {
+            targetlist.AddRange(GameObject.FindGameObjectsWithTag("Life"));
+        }
+        targetlist.Remove(gameObject);
     }
 
     void Move()
     {
-        Vector3 moveVelocity = Vector3.zero;
-
         if (movementFlag == 1)
         {
-            moveVelocity = Vector3.left;
-            transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-            transform.rotation = Quaternion.Euler(0, 270, 0);
+            walkAndJump.Manuever(Direction.Left);
         }
         else if (movementFlag == 2)
         {
-            moveVelocity = Vector3.right;
-            transform.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
-            transform.rotation = Quaternion.Euler(0, 90, 0);
+            walkAndJump.Manuever(Direction.Right);
         }
-
-        transform.position += moveVelocity * movePower * Time.deltaTime;
+        else
+        {
+            walkAndJump.Manuever(Direction.None);
+        }
     }
 
     IEnumerator Patrolling()
@@ -97,11 +103,15 @@ public class MouseCtrl : MonoBehaviour
 
     void Update ()
     {
+        TargetUpdate();
+        Move();
+        //ctrl.isTrigger = true;
+
         isInRange = false;
 
         if (_state == State.Idle)
         {
-            movePower = 1f;
+            walkAndJump.SetWalkSpeed(1.5f);
             if (isWandering == false)
             {
                 StartCoroutine("Patrolling");
@@ -110,24 +120,29 @@ public class MouseCtrl : MonoBehaviour
 
         if (targetlist.Count > 0)
         {
-            RaycastHit[] hits = Physics.RaycastAll(_tr.position, _tr.forward, 2f).OrderBy(h=>h.distance).ToArray();
+            //RaycastHit[] hits = Physics.RaycastAll(_tr.position, _tr.forward, 2f).OrderBy(h=>h.distance).ToArray();
+            var hits = Physics.OverlapSphere(_tr.position, 2.5f);
+
             foreach (var hit in hits)
             {
-                if ((hit.collider.gameObject.tag == "Player") || (hit.collider.gameObject.tag == "Life"))
+                if ((hit.gameObject != gameObject) && (hit.gameObject.layer == 9))
                 {
-                    isInRange = true;
-                    mainTarget = hit.collider.gameObject;
-                    Debug.Log("Run!: " + mainTarget.name);
-                    StopCoroutine("Patrolling");
-                    isWandering = false;
-                    _state = State.Run;
+                    if ((hit.gameObject.tag == "Player") || (hit.gameObject.tag == "Life"))
+                    {
+                        isInRange = true;
+                        mainTarget = hit.gameObject;
+                        Debug.Log("Run!: " + mainTarget.name);
+                        StopCoroutine("Patrolling");
+                        isWandering = false;
+                        _state = State.Run;
+                    }
                 }
             }
 
             if ((_state == State.Run) && (mainTarget != null))
             {
                 var relPos = mainTarget.transform.position - transform.position;
-                movePower = 1.5f;
+                walkAndJump.SetWalkSpeed(2f);
                 if (relPos.x < 0f)
                 {
                     //Debug.Log("Running_right");

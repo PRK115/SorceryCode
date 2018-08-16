@@ -66,6 +66,11 @@ public class WalkAndJump : MonoBehaviour {
         ctrl.Move(jumpDirection * Time.deltaTime);
     }
 
+    public void SetWalkSpeed(float speed)
+    {
+        walkSpeed = speed;
+    }
+
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if (hit.normal == Vector3.up)

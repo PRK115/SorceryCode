@@ -6,6 +6,7 @@ using System.Linq;
 public class LionCtrl : MonoBehaviour
 {
     WalkAndJump walkAndJump;
+    CharacterController ctrl;
 
     public enum State
     {
@@ -29,18 +30,13 @@ public class LionCtrl : MonoBehaviour
 
     void Awake()
     {
+        walkAndJump = GetComponent<WalkAndJump>();
+        ctrl = GetComponent<CharacterController>();
+
         _tr = gameObject.transform;
         habitat = transform.position;
 
-        if (GameObject.FindWithTag("Player"))
-        {
-            player = GameObject.FindWithTag("Player");
-            targetlist.Add(player);
-        }
-        if (GameObject.FindWithTag("Life"))
-        {
-            targetlist.AddRange(GameObject.FindGameObjectsWithTag("Life"));
-        }
+        TargetUpdate();
     }
 
     void Start()
@@ -48,29 +44,39 @@ public class LionCtrl : MonoBehaviour
         _state = State.Idle;
     }
 
-    void FixedUpdate()
+    void TargetUpdate()
     {
-        Move();
+        if (GameObject.FindWithTag("Player"))
+        {
+            player = GameObject.FindWithTag("Player");
+            targetlist.Add(player);
+        }
+        else
+        {
+            player = null;
+        }
+
+        if (GameObject.FindWithTag("Life"))
+        {
+            targetlist.AddRange(GameObject.FindGameObjectsWithTag("Life"));
+        }
+        targetlist.Remove(gameObject);
     }
 
     void Move()
     {
-        Vector3 moveVelocity = Vector3.zero;
-
         if (movementFlag == 1)
         {
-            moveVelocity = Vector3.left;
-            transform.localScale = new Vector3(1, 1, 1);
-            transform.rotation = Quaternion.Euler(0, 270, 0);
+            walkAndJump.Manuever(Direction.Left);
         }
         else if (movementFlag == 2)
         {
-            moveVelocity = Vector3.right;
-            transform.localScale = new Vector3(-1, 1, 1);
-            transform.rotation = Quaternion.Euler(0, 90, 0);
+            walkAndJump.Manuever(Direction.Right);
         }
-
-        transform.position += moveVelocity * movePower * Time.deltaTime;
+        else
+        {
+            walkAndJump.Manuever(Direction.None);
+        }
     }
 
     IEnumerator Patrolling()
@@ -82,12 +88,12 @@ public class LionCtrl : MonoBehaviour
         }
         else if(relHab > 3f)
         {
-            //Debug.Log("Too Left" + relHab);
+            Debug.Log("Too Left" + relHab);
             movementFlag = 2;
         }
         else if(relHab < -3f)
         {
-            //Debug.Log("Too Right" + relHab);
+            Debug.Log("Too Right" + relHab);
             movementFlag = 1;
         }
         isWandering = true;
@@ -95,27 +101,37 @@ public class LionCtrl : MonoBehaviour
         isWandering = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    void Killing(float distance)
     {
-        if (other.gameObject != gameObject)
+        var hits = Physics.OverlapSphere(_tr.position, distance);
+
+        foreach (var hit in hits)
         {
-            if ((other.gameObject.tag == "Player") || (other.gameObject.tag == "Life"))
+            if ((hit.gameObject != gameObject) && (hit.gameObject.layer == 9))
             {
-                Debug.Log("Kill you!: " + other.gameObject.name);
-                Destroy(other.gameObject);
-                targetlist.Remove(other.gameObject);
-                _state = State.Idle;
+                if ((hit.gameObject.tag == "Player") || (hit.gameObject.tag == "Life"))
+                {
+                    Debug.Log("Kill you!: " + hit.gameObject.name);
+                    Destroy(hit.gameObject);
+                    targetlist.Remove(hit.gameObject);
+                    _state = State.Idle;
+                    mainTarget = null;
+                }
             }
         }
     }
 
     void Update()
 	{
+        TargetUpdate();
+        Move();
+        //ctrl.enabled = false;
+
         isInRange = false;
 
         if (_state == State.Idle)
         {
-            movePower = 1f;
+            walkAndJump.SetWalkSpeed(1.5f);
             if (isWandering == false)
             {
                 StartCoroutine("Patrolling");
@@ -124,19 +140,24 @@ public class LionCtrl : MonoBehaviour
 
         if (targetlist.Count > 0)
         {
-            RaycastHit[] hits = Physics.RaycastAll(_tr.position, _tr.forward, 2f).OrderBy(h => h.distance).ToArray();
+            //RaycastHit[] hits = Physics.RaycastAll(_tr.position, _tr.forward, 2f).OrderBy(h => h.distance).ToArray();
+            var hits = Physics.OverlapSphere(_tr.position, 3f);
+
             foreach (var hit in hits)
             {
-                if ((hit.collider.gameObject.tag == "Player") || (hit.collider.gameObject.tag == "Life"))
+                if((hit.gameObject != gameObject) && (hit.gameObject.layer == 9))
                 {
-                    isInRange = true;
-                    if (mainTarget != player)
+                    if ((hit.gameObject.tag == "Player") || (hit.gameObject.tag == "Life"))
                     {
-                        mainTarget = hit.collider.gameObject;
-                        Debug.Log("Saw you!: " + mainTarget.name);
-                        StopCoroutine("Patrolling");
-                        isWandering = false;
-                        _state = State.Chase;
+                        isInRange = true;
+                        if ((mainTarget != player) || (mainTarget == null))
+                        {
+                            mainTarget = hit.gameObject;
+                            Debug.Log("Saw you!: " + mainTarget.name);
+                            StopCoroutine("Patrolling");
+                            isWandering = false;
+                            _state = State.Chase;
+                        }
                     }
                 }
             }
@@ -144,7 +165,8 @@ public class LionCtrl : MonoBehaviour
             if ((_state == State.Chase) && (mainTarget != null))
             {
                 var relPos = mainTarget.transform.position - transform.position;
-                movePower = 1.5f;
+                walkAndJump.SetWalkSpeed(2f);
+
                 if (relPos.x < 0f)
                 {
                     //Debug.Log("Chasing_left");
@@ -168,6 +190,8 @@ public class LionCtrl : MonoBehaviour
         {
             _state = State.Idle;
         }
+
+        Killing(0.5f);
 	}
 
 }
