@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,6 +40,17 @@ public class CommandManager : MonoBehaviour, ICommandManager
         {
             Debug.LogError($"Cannot conjure entity {type}");
         }
+    }
+
+    IEnumerator GradualConjure(GameObject prefab)
+    {
+        Instantiate(prefab, SpawnPos, prefab.transform.rotation);
+        for(int i = 0; i < 100; i++)
+        {
+
+        }
+
+        yield return null;
     }
 
     public void Change(ChangeType type)

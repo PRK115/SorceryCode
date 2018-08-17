@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio for Mac
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SorceryCode", "Assembly-CSharp.csproj", "{EAA8A464-2C31-EC26-86D1-E544D9257C77}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SorceryCode", "Assembly-CSharp-Editor.csproj", "{88993BA1-8D7B-9A99-81FD-2DF8ABAA2A90}"

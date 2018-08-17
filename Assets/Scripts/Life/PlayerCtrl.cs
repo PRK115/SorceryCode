@@ -8,6 +8,10 @@ public class PlayerCtrl : MonoBehaviour {
     private WalkAndJump walkAndJump;
     private GameStateManager manager;
 
+    Camera cam;
+
+    GameObject wand;
+    public GameObject projectile;
     //private bool alive = true;
 
     private void Awake()
@@ -15,6 +19,10 @@ public class PlayerCtrl : MonoBehaviour {
         organism = GetComponent<Organism>();
         walkAndJump = GetComponent<WalkAndJump>();
         manager = FindObjectOfType<GameStateManager>();
+
+        cam = FindObjectOfType<Camera>();
+
+        wand = transform.Find("wand").gameObject;
     }
 
     private void Update()
@@ -22,6 +30,23 @@ public class PlayerCtrl : MonoBehaviour {
         if (organism.alive)
         {
             walkAndJump.Manuever(InterpretKey());
+
+            if (Input.GetKeyDown("mouse 0"))
+            {
+                Vector3 mousePosition = Input.mousePosition;
+
+                mousePosition = cam.ScreenToWorldPoint(mousePosition);
+
+                mousePosition = new Vector3(Mathf.Round(mousePosition.x), Mathf.Round(mousePosition.y), 0);
+
+                transform.LookAt(new Vector3(mousePosition.x, transform.position.y, 0));
+
+                GameObject newProjectile = Instantiate(projectile, wand.transform.position, gameObject.transform.rotation);
+
+                newProjectile.transform.position = wand.transform.position;
+
+                newProjectile.GetComponent<Projectile>().Destination = mousePosition;
+            }
         }
         else
         {
