@@ -210,11 +210,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114083729223302668, guid: 13974f664d89afd44a6796f24134e6e2,
-        type: 2}
-      propertyPath: m_Text
-      value: Lion
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13974f664d89afd44a6796f24134e6e2, type: 2}
   m_IsPrefabAsset: 0
@@ -521,6 +516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 471b8922744c3d94bbd50111ebdd2c1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMovable: 0
   blockListPanel: {fileID: 1401504749}
 --- !u!225 &235098541
 CanvasGroup:
@@ -841,6 +837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54b36e9da73d414c815e8c8545f3808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMovable: 0
   blockListPanel: {fileID: 920596376}
 --- !u!225 &708097658
 CanvasGroup:
@@ -937,6 +934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 471b8922744c3d94bbd50111ebdd2c1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMovable: 0
   blockListPanel: {fileID: 370359936}
 --- !u!225 &714562914
 CanvasGroup:

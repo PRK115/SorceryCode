@@ -27,6 +27,8 @@ namespace CodeUI
 
         protected ICommandManager commandMgr;
 
+        public bool isMovable = true;
+
         protected virtual void Awake()
         {
             rectTransform = GetComponent<RectTransform>();
@@ -79,11 +81,13 @@ namespace CodeUI
 
         public void OnPointerDown(PointerEventData eventData)
         {
+            if (!isMovable) return;
             dragStartPosOffset = new Vector2(transform.position.x, transform.position.y) - eventData.position;
         }
         
         public void OnBeginDrag(PointerEventData eventData)
         {
+            if (!isMovable) return;
             placeHolder = new GameObject();
             var placeHolderTransform = placeHolder.AddComponent<RectTransform>();
             placeHolderTransform.SetParent(transform.parent);
@@ -103,11 +107,13 @@ namespace CodeUI
 
         public void OnDrag(PointerEventData eventData)
         {
+            if (!isMovable) return;
             transform.position = eventData.position + dragStartPosOffset;
         }
 
         public void OnEndDrag(PointerEventData eventData)
         {
+            if (!isMovable) return;
             Destroy(placeHolder);
             transform.position = OriginalPosition;
             transform.SetParent(OriginalParent);

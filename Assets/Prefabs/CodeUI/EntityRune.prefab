@@ -80,7 +80,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ConjurableTestObject
+  m_Text: Lion
 --- !u!114 &114333955065266074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -92,10 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c27de38302fe7743aa5507ae9bb891a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OriginalPosition: {x: 0, y: 0, z: 0}
-  OriginalParent: {fileID: 0}
-  IsInSlot: 0
-  rectTransform: {fileID: 0}
+  isMovable: 1
   EntityType: 64
 --- !u!114 &114821132476344244
 MonoBehaviour:
