@@ -9,13 +9,10 @@ namespace CodeUI
         [NonSerialized]
         public ScopedBlock ParentScope;
 
-        private StmtSlot slot;
-
         protected override void Awake()
         {
             base.Awake();
             ParentScope = GetComponentInParent<ScopedBlock>();
-            slot = GetComponentInChildren<StmtSlot>();
         }
 
         protected override void Start()
