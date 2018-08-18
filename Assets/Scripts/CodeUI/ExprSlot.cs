@@ -18,8 +18,7 @@ namespace CodeUI
         private RectTransform rectTransform;
         private Image image;
 
-        public delegate void OnBlockDrop(Block draggedBlock);
-        public OnBlockDrop OnBlockDropCallback { get; set; }
+        public Block Block { get; private set; }
 
         public delegate bool CheckBlockValid(Block hoveredBlock);
         public CheckBlockValid CheckBlockValidCallback { get; set; }
@@ -84,7 +83,7 @@ namespace CodeUI
                     blockRect.offsetMax = new Vector2(0, 0);
                     draggedBlock.OriginalPosition = draggedBlock.transform.position;
 
-                    OnBlockDropCallback(draggedBlock);
+                    Block = draggedBlock;
                 }
             }
             

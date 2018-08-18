@@ -504,7 +504,7 @@ GameObject:
   - component: {fileID: 235098541}
   - component: {fileID: 235098540}
   m_Layer: 5
-  m_Name: ScopedBlock
+  m_Name: StmtListBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -518,15 +518,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 235098539}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b58c59df92d27244196826c20b429ec2, type: 3}
+  m_Script: {fileID: 11500000, guid: 471b8922744c3d94bbd50111ebdd2c1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OriginalPosition: {x: 0, y: 0, z: 0}
-  OriginalParent: {fileID: 0}
-  OriginalSiblingIndex: 0
-  IsInSlot: 0
-  rectTransform: {fileID: 0}
-  blockListRoot: {fileID: 1401504747}
   blockListPanel: {fileID: 1401504749}
 --- !u!225 &235098541
 CanvasGroup:
@@ -639,7 +633,7 @@ MonoBehaviour:
     m_Bottom: 10
   m_ChildAlignment: 1
   m_Spacing: 5
-  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
@@ -844,15 +838,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 708097653}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b58c59df92d27244196826c20b429ec2, type: 3}
+  m_Script: {fileID: 11500000, guid: e54b36e9da73d414c815e8c8545f3808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OriginalPosition: {x: 0, y: 0, z: 0}
-  OriginalParent: {fileID: 0}
-  OriginalSiblingIndex: 0
-  IsInSlot: 0
-  rectTransform: {fileID: 0}
-  blockListRoot: {fileID: 920596373}
   blockListPanel: {fileID: 920596376}
 --- !u!225 &708097658
 CanvasGroup:
@@ -946,15 +934,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 714562909}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b58c59df92d27244196826c20b429ec2, type: 3}
+  m_Script: {fileID: 11500000, guid: 471b8922744c3d94bbd50111ebdd2c1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OriginalPosition: {x: 0, y: 0, z: 0}
-  OriginalParent: {fileID: 0}
-  OriginalSiblingIndex: 0
-  IsInSlot: 0
-  rectTransform: {fileID: 0}
-  blockListRoot: {fileID: 370359933}
   blockListPanel: {fileID: 370359936}
 --- !u!225 &714562914
 CanvasGroup:
@@ -1248,7 +1230,7 @@ MonoBehaviour:
     m_Bottom: 10
   m_ChildAlignment: 1
   m_Spacing: 5
-  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
@@ -1440,9 +1422,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64831b54037d5bd4ea9c09f68ab0df0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LineWidth: 0
-  LineHeight: 0
-  IndentWidth: 0
   Program: {fileID: 235098540}
 --- !u!224 &972332608 stripped
 RectTransform:

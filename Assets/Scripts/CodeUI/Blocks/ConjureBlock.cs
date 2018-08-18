@@ -9,7 +9,10 @@ namespace CodeUI
     {
         private ExprSlot argumentSlot;
 
-        public EntityType EntityToConjure { get; private set; }
+        public EntityType? EntityToConjure
+        {
+            get { return (argumentSlot.Block as EntityBlock)?.EntityType; }
+        }
 
         protected override void Awake()
         {
@@ -34,11 +37,6 @@ namespace CodeUI
                 }
 
                 return false;
-            };
-            argumentSlot.OnBlockDropCallback = droppedBlock =>
-            {
-                EntityBlock entityBlock = (EntityBlock) droppedBlock;
-                EntityToConjure = entityBlock.EntityType;
             };
         }
     }

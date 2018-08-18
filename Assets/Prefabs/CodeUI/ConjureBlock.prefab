@@ -143,11 +143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df2f0052269df34590f13160b640fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OriginalPosition: {x: 0, y: 0, z: 0}
-  OriginalParent: {fileID: 0}
-  OriginalSiblingIndex: 0
-  IsInSlot: 0
-  rectTransform: {fileID: 0}
 --- !u!114 &114860422325723084
 MonoBehaviour:
   m_ObjectHideFlags: 1

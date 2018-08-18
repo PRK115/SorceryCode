@@ -11,17 +11,17 @@ namespace CodeUI
     [RequireComponent(typeof(CanvasGroup))]
     public class Block : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
-        public Vector3 OriginalPosition;
-        public Transform OriginalParent;
-        public int OriginalSiblingIndex;
+        [NonSerialized] public Vector3 OriginalPosition;
+        [NonSerialized] public Transform OriginalParent;
+        [NonSerialized] public int OriginalSiblingIndex;
 
-        public bool IsInSlot;
+        [NonSerialized] public bool IsInSlot = false;
 
         private GameObject placeHolder = null;
 
         private Vector2 dragStartPosOffset;
 
-        public RectTransform rectTransform;
+        [NonSerialized] public RectTransform rectTransform;
         private CanvasGroup canvasGroup;
         private LayoutElement layoutElement;
 
@@ -42,7 +42,7 @@ namespace CodeUI
                 commandMgr = DummyCommandManager.Inst;
         }
 
-        public void SetPlaceholderBlock(Transform parent, Vector3 position, List<StmtBlock> blocks)
+        public void SetPlaceholderBlock(Transform parent, Vector3 position)
         {
             if (placeHolder != null)
             {

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,12 +10,13 @@ namespace CodeUI
 {
     public class ScopedBlock : StmtBlock, IPointerEnterHandler, IPointerExitHandler, IDropHandler
     {
-        public List<StmtBlock> Blocks { get; private set; } = new List<StmtBlock>();
+        public List<Block> Blocks { get; private set; } = new List<Block>();
 
-        public GameObject blockListRoot;
         public Image blockListPanel;
 
         private Block draggedBlock;
+
+        protected virtual bool IsBlockValid(Block block) => true;
 
         protected override void Start()
         {
@@ -25,16 +27,16 @@ namespace CodeUI
         protected void UpdateBlocks()
         {
             Blocks.Clear();
-            foreach (Transform child in blockListRoot.transform)
+            foreach (Transform child in blockListPanel.transform)
             {
-                StmtBlock stmtBlock = child.GetComponent<StmtBlock>();
-                if (stmtBlock != null)
+                Block block = child.GetComponent<Block>();
+                if (block != null && IsBlockValid(block))
                 {
-                    Blocks.Add(stmtBlock);
+                    Blocks.Add(block);
                 }
             }
             Blocks.Sort((b1, b2) =>
-                (int)(b1.rectTransform.anchoredPosition.y - b2.rectTransform.anchoredPosition.y));
+                (int)(b2.rectTransform.anchoredPosition.y - b1.rectTransform.anchoredPosition.y));
         }
 
         public void OnPointerEnter(PointerEventData eventData)
@@ -44,44 +46,45 @@ namespace CodeUI
             Block block = eventData.pointerDrag.GetComponent<Block>();
             if (block != null)
             {
-                draggedBlock = block;
-                if (block is StmtBlock)
-
+                if (IsBlockValid(block))
                 {
+                    draggedBlock = block;
                     blockListPanel.color = new Color(0.0f, 1.0f, 0.0f, 0.3f);
                 }
                 else
                 {
                     blockListPanel.color = new Color(1.0f, 0.0f, 0.0f, 0.3f);
                 }
+                
             }
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
             Debug.Log("OnPointerExit");
+            blockListPanel.color = Color.white;
+            UpdateBlocks();
             if (eventData.pointerDrag == null) return;
             Block block = eventData.pointerDrag.GetComponent<Block>();
             if (block != null)
             {
                 draggedBlock = null;
-                blockListPanel.color = Color.white;
             }
         }
 
         public void OnDrop(PointerEventData eventData)
         {
             Debug.Log("OnDrop");
+            UpdateBlocks();
             if (eventData.pointerDrag == null) return;
             Block block = eventData.pointerDrag.GetComponent<Block>();
             if (block != null)
             {
                 draggedBlock = null;
                 blockListPanel.color = Color.white;
-                if (block is StmtBlock)
+                if (IsBlockValid(block))
                 {
                     block.SetRealBlock();
-                    UpdateBlocks();
                 }
             }
         }
@@ -90,8 +93,7 @@ namespace CodeUI
         {
             if (draggedBlock != null)
             {
-                int originalIndex = draggedBlock.OriginalSiblingIndex;
-                draggedBlock.SetPlaceholderBlock(blockListRoot.transform, draggedBlock.transform.position, Blocks);
+                draggedBlock.SetPlaceholderBlock(blockListPanel.transform, draggedBlock.transform.position);
             }
         }
     }

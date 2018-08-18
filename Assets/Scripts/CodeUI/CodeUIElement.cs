@@ -8,13 +8,9 @@ namespace CodeUI
 {
     public class CodeUIElement : MonoBehaviour
     {
-        public float LineWidth;
-        public float LineHeight;
-        public float IndentWidth;
-
         public static CodeUIElement Instance;
 
-        public ScopedBlock Program;
+        public StmtListBlock Program;
 
         void Awake()
         {

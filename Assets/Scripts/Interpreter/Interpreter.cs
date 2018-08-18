@@ -142,11 +142,11 @@ public class Interpreter : MonoBehaviour
 
     public class Change : Stmt
     {
-        public ChangeObj ChangeObj;
+        public ChangeType ChangeType;
 
         public override IEnumerator Eval(Continuation cont)
         {
-            Inst.CommandMgr.Change(ChangeObj.ChangeType);
+            Inst.CommandMgr.Change(ChangeType);
             yield return new WaitForSeconds(Inst.Delay);
         }
     }
