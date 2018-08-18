@@ -14,6 +14,8 @@ namespace CodeUI
         [NonSerialized] public Vector3 OriginalPosition;
         [NonSerialized] public Transform OriginalParent;
         [NonSerialized] public int OriginalSiblingIndex;
+        [NonSerialized] public float OriginalWidth;
+        [NonSerialized] public float OriginalHeight;
 
         [NonSerialized] public bool IsInSlot = false;
 
@@ -27,13 +29,18 @@ namespace CodeUI
 
         protected ICommandManager commandMgr;
 
-        public bool isMovable = true;
+        public bool IsMovable = true;
+        public ExprSlot ContainedSlot = null;
+        public ScopedBlock ContainedScopedBlock = null;
 
         protected virtual void Awake()
         {
             rectTransform = GetComponent<RectTransform>();
             canvasGroup = GetComponent<CanvasGroup>();
             layoutElement = GetComponent<LayoutElement>();
+
+            OriginalWidth = rectTransform.rect.width;
+            OriginalHeight = rectTransform.rect.height;
         }
 
         protected virtual void Start()
@@ -73,27 +80,38 @@ namespace CodeUI
 
         public void SetRealBlock()
         {
-            OriginalParent = placeHolder.transform.parent;
-            OriginalPosition = placeHolder.transform.position;
-            OriginalSiblingIndex = placeHolder.transform.GetSiblingIndex();
-            Destroy(placeHolder);
+            if (placeHolder != null)
+            {
+                OriginalParent = placeHolder.transform.parent;
+                OriginalPosition = placeHolder.transform.position;
+                OriginalSiblingIndex = placeHolder.transform.GetSiblingIndex();
+                Destroy(placeHolder);
+
+                rectTransform.anchorMin = new Vector2(0, 1);
+                rectTransform.anchorMax = new Vector2(0, 1);
+                rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, OriginalWidth);
+                rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, OriginalHeight);
+            }
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            if (!isMovable) return;
+            if (!IsMovable) return;
             dragStartPosOffset = new Vector2(transform.position.x, transform.position.y) - eventData.position;
         }
         
         public void OnBeginDrag(PointerEventData eventData)
         {
-            if (!isMovable) return;
+            if (!IsMovable) return;
+
             placeHolder = new GameObject();
             var placeHolderTransform = placeHolder.AddComponent<RectTransform>();
             placeHolderTransform.SetParent(transform.parent);
             placeHolderTransform.SetSiblingIndex(transform.GetSiblingIndex());
-            placeHolderTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, rectTransform.rect.width);
-            placeHolderTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, rectTransform.rect.height);
+            placeHolderTransform.anchorMin = new Vector2(0, 1);
+            placeHolderTransform.anchorMax = new Vector2(0, 1);
+            placeHolderTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, OriginalWidth);
+            placeHolderTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, OriginalHeight);
 
             OriginalPosition = transform.position;
             OriginalParent = transform.parent;
@@ -103,22 +121,38 @@ namespace CodeUI
 
             transform.SetParent(CodeUIElement.Instance.transform);
             canvasGroup.blocksRaycasts = false;
+
+            if (ContainedSlot != null)
+            {
+                ContainedSlot.Filled = false;
+                ContainedSlot = null;
+            }
+            if (ContainedScopedBlock != null)
+            {
+                ContainedScopedBlock.UpdateBlocks();
+                ContainedScopedBlock = null;
+            }
         }
 
         public void OnDrag(PointerEventData eventData)
         {
-            if (!isMovable) return;
+            if (!IsMovable) return;
             transform.position = eventData.position + dragStartPosOffset;
         }
 
-        public void OnEndDrag(PointerEventData eventData)
+        public virtual void OnEndDrag(PointerEventData eventData)
         {
-            if (!isMovable) return;
+            if (!IsMovable) return;
             Destroy(placeHolder);
             transform.position = OriginalPosition;
             transform.SetParent(OriginalParent);
             transform.SetSiblingIndex(OriginalSiblingIndex);
             canvasGroup.blocksRaycasts = true;
+
+            if (ContainedScopedBlock != null)
+            {
+                ContainedScopedBlock.UpdateBlocks();
+            }
         }
     }
 }

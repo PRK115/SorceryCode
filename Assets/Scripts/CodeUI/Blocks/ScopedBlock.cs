@@ -24,7 +24,7 @@ namespace CodeUI
             UpdateBlocks();
         }
 
-        protected void UpdateBlocks()
+        public void UpdateBlocks()
         {
             Blocks.Clear();
             foreach (Transform child in blockListPanel.transform)
@@ -41,12 +41,11 @@ namespace CodeUI
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            Debug.Log("OnPointerEnter");
             if (eventData.pointerDrag == null) return;
             Block block = eventData.pointerDrag.GetComponent<Block>();
             if (block != null)
             {
-                if (IsBlockValid(block))
+                if (IsBlockValid(block) && block.IsMovable)
                 {
                     draggedBlock = block;
                     blockListPanel.color = new Color(0.0f, 1.0f, 0.0f, 0.3f);
@@ -55,15 +54,12 @@ namespace CodeUI
                 {
                     blockListPanel.color = new Color(1.0f, 0.0f, 0.0f, 0.3f);
                 }
-                
             }
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            Debug.Log("OnPointerExit");
             blockListPanel.color = Color.white;
-            UpdateBlocks();
             if (eventData.pointerDrag == null) return;
             Block block = eventData.pointerDrag.GetComponent<Block>();
             if (block != null)
@@ -74,8 +70,6 @@ namespace CodeUI
 
         public void OnDrop(PointerEventData eventData)
         {
-            Debug.Log("OnDrop");
-            UpdateBlocks();
             if (eventData.pointerDrag == null) return;
             Block block = eventData.pointerDrag.GetComponent<Block>();
             if (block != null)
@@ -85,6 +79,8 @@ namespace CodeUI
                 if (IsBlockValid(block))
                 {
                     block.SetRealBlock();
+                    block.ContainedSlot = null;
+                    block.ContainedScopedBlock = this;
                 }
             }
         }

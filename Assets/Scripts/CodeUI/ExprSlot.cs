@@ -68,6 +68,8 @@ namespace CodeUI
                 {
                     Filled = true;
                     draggedBlock.IsInSlot = true;
+                    draggedBlock.ContainedSlot = this;
+                    draggedBlock.ContainedScopedBlock = null;
 
                     // Change parent of dragged block
                     draggedBlock.transform.SetParent(this.transform);
@@ -81,6 +83,7 @@ namespace CodeUI
                     blockRect.sizeDelta = rectTransform.sizeDelta;
                     blockRect.offsetMin = new Vector2(0, 0);
                     blockRect.offsetMax = new Vector2(0, 0);
+
                     draggedBlock.OriginalPosition = draggedBlock.transform.position;
 
                     Block = draggedBlock;

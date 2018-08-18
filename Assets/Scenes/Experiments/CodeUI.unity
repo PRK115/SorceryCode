@@ -516,7 +516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 471b8922744c3d94bbd50111ebdd2c1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMovable: 0
+  IsMovable: 0
   blockListPanel: {fileID: 1401504749}
 --- !u!225 &235098541
 CanvasGroup:
@@ -837,7 +837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54b36e9da73d414c815e8c8545f3808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMovable: 0
+  IsMovable: 0
   blockListPanel: {fileID: 920596376}
 --- !u!225 &708097658
 CanvasGroup:
@@ -934,7 +934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 471b8922744c3d94bbd50111ebdd2c1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMovable: 0
+  IsMovable: 0
   blockListPanel: {fileID: 370359936}
 --- !u!225 &714562914
 CanvasGroup:
