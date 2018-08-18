@@ -773,6 +773,8 @@ GameObject:
   - component: {fileID: 708097654}
   - component: {fileID: 708097656}
   - component: {fileID: 708097655}
+  - component: {fileID: 708097658}
+  - component: {fileID: 708097657}
   m_Layer: 5
   m_Name: RunePanel
   m_TagString: Untagged
@@ -834,6 +836,35 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 708097653}
   m_CullTransparentMesh: 0
+--- !u!114 &708097657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 708097653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58c59df92d27244196826c20b429ec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OriginalPosition: {x: 0, y: 0, z: 0}
+  OriginalParent: {fileID: 0}
+  OriginalSiblingIndex: 0
+  IsInSlot: 0
+  rectTransform: {fileID: 0}
+  blockListRoot: {fileID: 920596373}
+  blockListPanel: {fileID: 920596376}
+--- !u!225 &708097658
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 708097653}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &714562909
 GameObject:
   m_ObjectHideFlags: 0

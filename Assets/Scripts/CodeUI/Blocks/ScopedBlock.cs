@@ -39,6 +39,7 @@ namespace CodeUI
 
         public void OnPointerEnter(PointerEventData eventData)
         {
+            Debug.Log("OnPointerEnter");
             if (eventData.pointerDrag == null) return;
             Block block = eventData.pointerDrag.GetComponent<Block>();
             if (block != null)
@@ -58,6 +59,7 @@ namespace CodeUI
 
         public void OnPointerExit(PointerEventData eventData)
         {
+            Debug.Log("OnPointerExit");
             if (eventData.pointerDrag == null) return;
             Block block = eventData.pointerDrag.GetComponent<Block>();
             if (block != null)
@@ -69,6 +71,7 @@ namespace CodeUI
 
         public void OnDrop(PointerEventData eventData)
         {
+            Debug.Log("OnDrop");
             if (eventData.pointerDrag == null) return;
             Block block = eventData.pointerDrag.GetComponent<Block>();
             if (block != null)

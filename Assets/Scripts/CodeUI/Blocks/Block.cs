@@ -9,7 +9,7 @@ using UnityEngine.UI;
 namespace CodeUI
 {
     [RequireComponent(typeof(CanvasGroup))]
-    public class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+    public class Block : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
         public Vector3 OriginalPosition;
         public Transform OriginalParent;
@@ -18,6 +18,8 @@ namespace CodeUI
         public bool IsInSlot;
 
         private GameObject placeHolder = null;
+
+        private Vector2 dragStartPosOffset;
 
         public RectTransform rectTransform;
         private CanvasGroup canvasGroup;
@@ -75,6 +77,11 @@ namespace CodeUI
             Destroy(placeHolder);
         }
 
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            dragStartPosOffset = new Vector2(transform.position.x, transform.position.y) - eventData.position;
+        }
+        
         public void OnBeginDrag(PointerEventData eventData)
         {
             placeHolder = new GameObject();
@@ -96,7 +103,7 @@ namespace CodeUI
 
         public void OnDrag(PointerEventData eventData)
         {
-            transform.position = eventData.position;
+            transform.position = eventData.position + dragStartPosOffset;
         }
 
         public void OnEndDrag(PointerEventData eventData)
