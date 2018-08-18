@@ -11,6 +11,8 @@ public class GameStateManager : MonoBehaviour {
     public GameObject grimoire;
     public GameObject clearPanel;
 
+    RectTransform grimoireTransform;
+
     public GameObject tutorialPanel;
     public Text tutorialTitleText;
     public Text tutorialContentText;
@@ -23,8 +25,9 @@ public class GameStateManager : MonoBehaviour {
         inStagePanel.SetActive(true);
         inStagePausePanel.SetActive(false);
         inStageFuneralPanel.SetActive(false);
-        grimoire.SetActive(false);
-            clearPanel.SetActive(false);
+        clearPanel.SetActive(false);
+        grimoireTransform = grimoire.GetComponent<RectTransform>();
+        grimoireTransform.position = new Vector3(-2000, 0, 0);
     }
 
     //일시 정지 메뉴
@@ -45,13 +48,13 @@ public class GameStateManager : MonoBehaviour {
     public void OpenGrimoire()
     {
         inStagePanel.SetActive(false);
-        grimoire.SetActive(true);
+        grimoireTransform.localPosition = Vector3.zero;
     }
 
     public void CloseGrimoire()
     {
         inStagePanel.SetActive(true);
-        grimoire.SetActive(false);
+        grimoireTransform.position = new Vector3(-2000, 0, 0);
     }
 
     public void Funeral()

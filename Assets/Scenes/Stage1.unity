@@ -20501,6 +20501,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 683900969}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &687195833
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4948467378900648, guid: d3b4b17432cddfe4a9a247b6a79d90b2, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948467378900648, guid: d3b4b17432cddfe4a9a247b6a79d90b2, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948467378900648, guid: d3b4b17432cddfe4a9a247b6a79d90b2, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 4.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948467378900648, guid: d3b4b17432cddfe4a9a247b6a79d90b2, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948467378900648, guid: d3b4b17432cddfe4a9a247b6a79d90b2, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948467378900648, guid: d3b4b17432cddfe4a9a247b6a79d90b2, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948467378900648, guid: d3b4b17432cddfe4a9a247b6a79d90b2, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948467378900648, guid: d3b4b17432cddfe4a9a247b6a79d90b2, type: 2}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d3b4b17432cddfe4a9a247b6a79d90b2, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &690872698
 GameObject:
   m_ObjectHideFlags: 0
@@ -53186,6 +53228,9 @@ MonoBehaviour:
   inStageFuneralPanel: {fileID: 1752541732}
   grimoire: {fileID: 1492813869}
   clearPanel: {fileID: 1525787124}
+  tutorialPanel: {fileID: 0}
+  tutorialTitleText: {fileID: 0}
+  tutorialContentText: {fileID: 0}
 --- !u!114 &2006731617
 MonoBehaviour:
   m_ObjectHideFlags: 0

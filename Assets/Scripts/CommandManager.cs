@@ -16,6 +16,8 @@ public class CommandManager : MonoBehaviour, ICommandManager
 
     private Entity target;
 
+    float delay = 1;
+
     void Awake()
     {
         Inst = this;
@@ -34,7 +36,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
         Conjurable conjurable = prefab.GetComponent<Conjurable>();
         if (conjurable != null)
         {
-            // TODO(경록): 여기를 구현하면 됨.
+            StartCoroutine(GradualConjure(prefab));
         }
         else
         {
@@ -44,12 +46,26 @@ public class CommandManager : MonoBehaviour, ICommandManager
 
     IEnumerator GradualConjure(GameObject prefab)
     {
-        Instantiate(prefab, SpawnPos, prefab.transform.rotation);
-        for(int i = 0; i < 100; i++)
+        GameObject conjured;
+        conjured = Instantiate(prefab, SpawnPos, prefab.transform.rotation);
+        conjured.transform.localScale = new Vector3(1,1,1) * 0.02f;
+        Rigidbody rb;
+        rb = conjured.GetComponent<Rigidbody>();
+        if(rb != null)
         {
-
+            rb.useGravity = false;
         }
-
+        for(int i = 1; i < 50; i++)
+        {
+            conjured.transform.localScale = new Vector3(1, 1, 1) * 0.02f * i;
+            yield return new WaitForSeconds(0.02f);
+        }
+        target = conjured.GetComponent<Entity>();
+        if (rb != null)
+        {
+            rb.useGravity = true;
+        }
+        
         yield return null;
     }
 
@@ -79,6 +95,15 @@ public class CommandManager : MonoBehaviour, ICommandManager
         else
         {
             Debug.LogError($"Cannot change entity {target} to ChangeType {type}");
+        }
+    }
+
+    IEnumerator GradualGrowth()
+    {
+        for(int i = 1; i <= 10; i++)
+        {
+            target.transform.localScale = new Vector3(1, 1, 1);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 
