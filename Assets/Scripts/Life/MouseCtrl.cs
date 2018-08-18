@@ -8,6 +8,8 @@ public class MouseCtrl : MonoBehaviour
     WalkAndJump walkAndJump;
     CharacterController ctrl;
 
+    Animator animator;
+
     public enum State
     {
         Idle,
@@ -135,6 +137,7 @@ public class MouseCtrl : MonoBehaviour
                         StopCoroutine("Patrolling");
                         isWandering = false;
                         _state = State.Run;
+                        animator.SetInteger("State", 1);
                     }
                 }
             }
@@ -159,6 +162,7 @@ public class MouseCtrl : MonoBehaviour
                     Debug.Log("Where you gone?(mouse): " + mainTarget.name);
                     mainTarget = null;
                     _state = State.Idle;
+                    animator.SetInteger("State", 0);
                 }
             }
         }

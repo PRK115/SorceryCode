@@ -8,11 +8,19 @@ public class PlayerCtrl : MonoBehaviour {
     private WalkAndJump walkAndJump;
     private GameStateManager manager;
 
+    public enum State { Walking, Weaving, Casting, Cleared }
+    private State currentState;
+
     Camera cam;
 
     GameObject wand;
     public GameObject projectile;
     //private bool alive = true;
+
+    Animator animator;
+    float exitTime = 1;
+
+    bool cleared;
 
     private void Awake()
     {
@@ -23,29 +31,40 @@ public class PlayerCtrl : MonoBehaviour {
         cam = FindObjectOfType<Camera>();
 
         wand = transform.Find("wand").gameObject;
+
+        animator = transform.Find("witch").GetComponent<Animator>();
     }
 
     private void Update()
     {
         if (organism.alive)
         {
-            walkAndJump.Manuever(InterpretKey());
-
-            if (Input.GetKeyDown("mouse 0"))
+            switch(currentState)
             {
-                Vector3 mousePosition = Input.mousePosition;
+                case State.Walking:
+                    walkAndJump.Manuever(InterpretKey());
+                    if (Input.GetKeyDown("mouse 0"))
+                    {
+                        SetState(State.Casting);
+                    }
+                    break;
 
-                mousePosition = cam.ScreenToWorldPoint(mousePosition);
+                case State.Casting:
+                    StartCoroutine(Cast());
+                    break;
 
-                mousePosition = new Vector3(Mathf.Round(mousePosition.x), Mathf.Round(mousePosition.y), 0);
-
-                transform.LookAt(new Vector3(mousePosition.x, transform.position.y, 0));
-
-                GameObject newProjectile = Instantiate(projectile, wand.transform.position, gameObject.transform.rotation);
-
-                newProjectile.transform.position = wand.transform.position;
-
-                newProjectile.GetComponent<Projectile>().Destination = mousePosition;
+                case State.Cleared:
+                    transform.LookAt(transform.position + new Vector3(0, 0, 1));
+                    if(exitTime <= 0)
+                    {
+                        cleared = true;
+                    }
+                    else
+                    {
+                        transform.Translate(Vector3.forward * Time.deltaTime);
+                        exitTime -= Time.deltaTime;
+                    }    
+                    break;
             }
         }
         else
@@ -88,7 +107,34 @@ public class PlayerCtrl : MonoBehaviour {
             return Direction.None;
         }
 
+    }
 
+    IEnumerator Cast()
+    {
+        Vector3 mousePosition = Input.mousePosition;
 
+        mousePosition = cam.ScreenToWorldPoint(mousePosition);
+
+        mousePosition = new Vector3(Mathf.Round(mousePosition.x), Mathf.Round(mousePosition.y), 0);
+
+        transform.LookAt(new Vector3(mousePosition.x, transform.position.y, 0));
+
+        GameObject newProjectile = Instantiate(projectile, wand.transform.position, gameObject.transform.rotation);
+
+        newProjectile.transform.position = wand.transform.position;
+
+        newProjectile.GetComponent<Projectile>().Destination = mousePosition;
+
+        yield return new WaitForSeconds(0.2f);
+
+        SetState(State.Walking);
+
+        yield return null;
+    }
+
+    public void SetState(State state)
+    {
+        currentState = state;
+        animator.SetInteger("State", (int)state);
     }
 }

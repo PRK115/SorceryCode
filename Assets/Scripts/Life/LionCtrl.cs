@@ -8,6 +8,8 @@ public class LionCtrl : MonoBehaviour
     WalkAndJump walkAndJump;
     CharacterController ctrl;
 
+    Animator animator;
+
     public enum State
     {
         Idle,
@@ -37,6 +39,8 @@ public class LionCtrl : MonoBehaviour
         habitat = transform.position;
 
         TargetUpdate();
+
+        animator = GetComponent<Animator>();
     }
 
     void Start()
@@ -115,6 +119,7 @@ public class LionCtrl : MonoBehaviour
                     Destroy(hit.gameObject);
                     targetlist.Remove(hit.gameObject);
                     _state = State.Idle;
+                    animator.SetInteger("State", 0);
                     mainTarget = null;
                 }
             }
@@ -157,6 +162,7 @@ public class LionCtrl : MonoBehaviour
                             StopCoroutine("Patrolling");
                             isWandering = false;
                             _state = State.Chase;
+                            animator.SetInteger("State", 1);
                         }
                     }
                 }
@@ -183,12 +189,14 @@ public class LionCtrl : MonoBehaviour
                     Debug.Log("Where you gone?(lion): " + mainTarget.name);
                     mainTarget = null;
                     _state = State.Idle;
+                    animator.SetInteger("State", 0);
                 }
             }
         }
         else
         {
             _state = State.Idle;
+            animator.SetInteger("State", 0);
         }
 
         Killing(0.5f);
