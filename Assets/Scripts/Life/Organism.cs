@@ -19,7 +19,7 @@ public class Organism : MonoBehaviour {
     {
         conductor = GetComponent<Conductor>();
         flammable = GetComponent<Flammable>();
-        //blood = transform.Find("blood").gameObject;
+        blood = transform.Find("blood").gameObject;
     }
 
     private void Start()
@@ -45,7 +45,7 @@ public class Organism : MonoBehaviour {
 
     public void PhysicalDamage()
     {
-        //blood.SetActive(true);
+        blood.SetActive(true);
         physicallyDamaged = true;
     }
 }

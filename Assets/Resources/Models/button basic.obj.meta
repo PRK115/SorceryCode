@@ -16,7 +16,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: button_basicMat
-    second: {fileID: 2100000, guid: f8a78a47bd7c5d842b50cc6fc1631587, type: 2}
+    second: {fileID: 2100000, guid: 87431723407d2684ca900ed0692b61a4, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

@@ -38,6 +38,8 @@ public class MouseCtrl : MonoBehaviour
         _tr = gameObject.transform;
         habitat = transform.position;
 
+        animator = GetComponent<Animator>();
+
         TargetUpdate();
     }
 
