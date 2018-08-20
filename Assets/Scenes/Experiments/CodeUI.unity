@@ -1058,6 +1058,7 @@ MonoBehaviour:
   ContainedScopedBlock: {fileID: 0}
   Depth: 0
   blockListPanel: {fileID: 920596376}
+  InitialBlankHeight: 30
 --- !u!225 &708097658
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1143,7 +1144,7 @@ Prefab:
     - target: {fileID: 224832469951740878, guid: ed42f9d2b0f703a4ab5ec1e3c2b2cca8,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -170
+      value: -220
       objectReference: {fileID: 0}
     - target: {fileID: 224832469951740878, guid: ed42f9d2b0f703a4ab5ec1e3c2b2cca8,
         type: 2}
@@ -1153,7 +1154,7 @@ Prefab:
     - target: {fileID: 224832469951740878, guid: ed42f9d2b0f703a4ab5ec1e3c2b2cca8,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 300
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 224832469951740878, guid: ed42f9d2b0f703a4ab5ec1e3c2b2cca8,
         type: 2}
@@ -1282,6 +1283,7 @@ MonoBehaviour:
   ContainedScopedBlock: {fileID: 0}
   Depth: 0
   blockListPanel: {fileID: 370359936}
+  InitialBlankHeight: 30
 --- !u!225 &714562914
 CanvasGroup:
   m_ObjectHideFlags: 0

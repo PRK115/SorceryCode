@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Interpreter : MonoBehaviour
@@ -13,9 +14,7 @@ public class Interpreter : MonoBehaviour
 
     public abstract class Stmt
     {
-        public delegate void Continuation(StmtResult result);
-
-        public abstract IEnumerator Eval(Continuation cont);
+        public abstract Task<StmtResult> Eval();
     }
 
     public enum StmtResult
@@ -53,10 +52,11 @@ public class Interpreter : MonoBehaviour
     {
         public Expr Expr;
 
-        public override IEnumerator Eval(Continuation cont)
+        public override async Task<StmtResult> Eval()
         {
             Expr.Eval();
-            yield return new WaitForSeconds(Inst.Delay);
+            await new WaitForSeconds(Inst.Delay);
+            return StmtResult.None;
         }
     }
 
@@ -64,12 +64,15 @@ public class Interpreter : MonoBehaviour
     {
         public List<Stmt> Statements;
 
-        public override IEnumerator Eval(Continuation cont)
+        public override async Task<StmtResult> Eval()
         {
             foreach (Stmt stmt in Statements)
             {
-                yield return Inst.StartCoroutine(stmt.Eval(cont));
+                StmtResult result = await stmt.Eval();
+                if (result == StmtResult.Break)
+                    return StmtResult.Break;
             }
+            return StmtResult.None;
         }
     }
 
@@ -79,7 +82,7 @@ public class Interpreter : MonoBehaviour
         public Stmt Then;
         public Stmt Else;
 
-        public override IEnumerator Eval(Continuation cont)
+        public override async Task<StmtResult> Eval()
         {
             object condResult = Cond.Eval();
             if (condResult is bool)
@@ -87,12 +90,13 @@ public class Interpreter : MonoBehaviour
                 bool condValue = (bool) condResult;
                 if (condValue)
                 {
-                    yield return Inst.StartCoroutine(Then.Eval(cont));
+                    return await Then.Eval();
                 }
-                else if (Else != null)
+                if (Else != null)
                 {
-                    yield return Inst.StartCoroutine(Else.Eval(cont));
+                    return await Else.Eval();
                 }
+                return StmtResult.None;
             }
             else
             {
@@ -105,15 +109,14 @@ public class Interpreter : MonoBehaviour
     {
         public Stmt Body;
 
-        public override IEnumerator Eval(Continuation cont)
+        public override async Task<StmtResult> Eval()
         {
             while (true)
             {
-                StmtResult result = StmtResult.None;
-                yield return Body.Eval(newResult => result = newResult);
+                StmtResult result = await Body.Eval();
                 if (result == StmtResult.Break)
                 {
-                    break;
+                    return StmtResult.None;
                 }
             }
         }
@@ -121,10 +124,9 @@ public class Interpreter : MonoBehaviour
 
     public class Break : Stmt
     {
-        public override IEnumerator Eval(Continuation cont)
+        public override async Task<StmtResult> Eval()
         {
-            cont(StmtResult.Break);
-            yield return StmtResult.Break;
+            return StmtResult.Break;
         }
     }
 
@@ -132,10 +134,11 @@ public class Interpreter : MonoBehaviour
     {
         public EntityType Entity;
 
-        public override IEnumerator Eval(Continuation cont)
+        public override async Task<StmtResult> Eval()
         {
             Inst.CommandMgr.Conjure(Entity);
-            yield return new WaitForSeconds(Inst.Delay);
+            await new WaitForSeconds(Inst.Delay);
+            return StmtResult.None;
         }
     }
 
@@ -143,10 +146,11 @@ public class Interpreter : MonoBehaviour
     {
         public ChangeType ChangeType;
 
-        public override IEnumerator Eval(Continuation cont)
+        public override async Task<StmtResult> Eval()
         {
             Inst.CommandMgr.Change(ChangeType);
-            yield return new WaitForSeconds(Inst.Delay);
+            await new WaitForSeconds(Inst.Delay);
+            return StmtResult.None;
         }
     }
 
@@ -156,9 +160,9 @@ public class Interpreter : MonoBehaviour
 
     public ICommandManager CommandMgr { get; private set; }
 
-    public void Execute(Block program)
+    public async void Execute(Block program)
     {
-        Inst.StartCoroutine(program.Eval(_ => { }));
+        await program.Eval();
     }
 
     void Awake()
