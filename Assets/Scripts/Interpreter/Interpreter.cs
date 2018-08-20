@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using Util;
 
 public class Interpreter : MonoBehaviour
 {
@@ -144,11 +145,18 @@ public class Interpreter : MonoBehaviour
 
     public class Change : Stmt
     {
-        public ChangeType ChangeType;
+        public Either<ChangeType, EntityType> Adjective;
 
         public override async Task<StmtResult> Eval()
         {
-            Inst.CommandMgr.Change(ChangeType);
+            if (Adjective.IsLeft)
+            {
+                Inst.CommandMgr.Change(Adjective.Left);
+            }
+            else
+            {
+                // Inst.CommandMgr.Change(Adjective.Right);
+            }
             await new WaitForSeconds(Inst.Delay);
             return StmtResult.None;
         }

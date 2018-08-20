@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Util;
 
 namespace CodeUI
 {
@@ -78,7 +79,7 @@ namespace CodeUI
                     throw new CompilerException($"Missing argument in statement Change.");
                 return new Interpreter.Change
                 {
-                    ChangeType = changeBlock.ChangeType.Value
+                    Adjective = new Either<ChangeType, EntityType>(changeBlock.ChangeType.Value)
                 };
             }
             if (stmtBlock is BreakBlock)
