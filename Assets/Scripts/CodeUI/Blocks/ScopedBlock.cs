@@ -18,9 +18,12 @@ namespace CodeUI
 
         protected virtual bool IsBlockValid(Block block) => true;
 
+        private LayoutElement layoutElement;
+
         protected override void Awake()
         {
             base.Awake();
+            layoutElement = GetComponent<LayoutElement>();
         }
 
         protected override void Start()
@@ -43,7 +46,10 @@ namespace CodeUI
             Blocks.Sort((b1, b2) =>
                 (int)(b2.rectTransform.anchoredPosition.y - b1.rectTransform.anchoredPosition.y));
 
-
+            if (DynamicHeight)
+            {
+                layoutElement.minHeight = 60f + Blocks.Count * 35f;
+            }
         }
 
         public void OnDrop(PointerEventData eventData)
@@ -55,12 +61,6 @@ namespace CodeUI
             {
                 if (IsBlockValid(block))
                 {
-                    if (DynamicHeight)
-                    {
-                        // TODO: Hardcoded, ugly ugly code
-                        rectTransform.SetSizeWithCurrentAnchors(
-                            RectTransform.Axis.Vertical, OriginalHeight + (Blocks.Count + 1) * 35);
-                    }
                     block.SetRealBlock();
                     block.ContainedSlot = null;
                     block.ContainedScopedBlock = this;
