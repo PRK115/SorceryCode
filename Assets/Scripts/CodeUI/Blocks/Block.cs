@@ -25,7 +25,7 @@ namespace CodeUI
 
         [NonSerialized] public RectTransform rectTransform;
         private CanvasGroup canvasGroup;
-        private LayoutElement layoutElement;
+        [NonSerialized] public LayoutElement layoutElement;
 
         protected ICommandManager commandMgr;
 

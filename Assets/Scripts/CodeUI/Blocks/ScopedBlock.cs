@@ -20,6 +20,8 @@ namespace CodeUI
 
         private LayoutElement layoutElement;
 
+        public float InitialBlankHeight = 30f;
+
         protected override void Awake()
         {
             base.Awake();
@@ -46,9 +48,20 @@ namespace CodeUI
             Blocks.Sort((b1, b2) =>
                 (int)(b2.rectTransform.anchoredPosition.y - b1.rectTransform.anchoredPosition.y));
 
+            UpdateBlockHeight();
+        }
+
+        public void UpdateBlockHeight()
+        {
             if (DynamicHeight)
             {
-                layoutElement.minHeight = 60f + Blocks.Count * 35f;
+                float blockHeightSum = Blocks
+                    .Select(block => block.layoutElement.minHeight + 5f).Sum();
+                layoutElement.minHeight = Mathf.Max(OriginalHeight, OriginalHeight - InitialBlankHeight + blockHeightSum + 35f);
+                if (ContainedScopedBlock != null && ContainedScopedBlock.Depth < Depth)
+                {
+                    ContainedScopedBlock.UpdateBlockHeight();
+                }
             }
         }
 

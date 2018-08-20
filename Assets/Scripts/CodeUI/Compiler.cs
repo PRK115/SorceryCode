@@ -33,6 +33,23 @@ namespace CodeUI
                         }
                     };
                 }
+                if (scopedBlock is IfBlock)
+                {
+                    IfBlock ifBlock = (IfBlock) scopedBlock;
+                    if (ifBlock.Condition == null)
+                    {
+                        throw new CompilerException($"Missing arugment in if block.");
+                    }
+                    return new Interpreter.If
+                    {
+                        Cond = new Interpreter.BoolExpr {Value = ifBlock.Condition.Value},
+                        Then = new Interpreter.Block
+                        {
+                            Statements = ifBlock.StatementBlocks.Select(CompileStmt).ToList()
+                        },
+                        Else = null
+                    };
+                }
                 if (scopedBlock is StmtListBlock)
                 {
                     StmtListBlock stmtListBlock = (StmtListBlock) scopedBlock;

@@ -1,8 +1,7 @@
-﻿using System;
+﻿using CodeUI;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Policy;
-using CodeUI;
 using UnityEngine;
 
 public class Interpreter : MonoBehaviour
@@ -173,58 +172,5 @@ public class Interpreter : MonoBehaviour
             CommandMgr = CommandManager.Inst;
         else
             CommandMgr = DummyCommandManager.Inst;
-
-        Func<object, object> Test1 = arg =>
-        {
-            Debug.Log("Test1 Called!");
-            return null;
-        };
-
-        Func<object, object> Test2 = arg =>
-        {
-            Debug.Log("Test2 Called!");
-            return null;
-        };
-
-        Func<object, object> Test3 = arg =>
-        {
-            Debug.Log("Test3 Called!");
-            return null;
-        };
-
-        Block Program = new Block
-        {
-            Statements = new List<Stmt>()
-            {
-                new Repeat
-                {
-                    Body = new If
-                    {
-                        Cond = new BoolExpr() { Value = true },
-                        Then = new Block()
-                        {
-                            Statements = new List<Stmt>()
-                            {
-                                new Conjure()
-                                {
-                                    Entity = EntityType.Lion
-                                },
-                                new Conjure()
-                                {
-                                    Entity = EntityType.Mouse
-                                },
-                                new Break()
-                            }
-                        },
-                        Else = new Conjure()
-                        {
-                            Entity = EntityType.Lion
-                        },
-                    }
-                },
-            }
-        };
-
-        Execute(Program);
     }
 }

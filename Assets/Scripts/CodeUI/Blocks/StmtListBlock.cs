@@ -12,5 +12,11 @@ namespace CodeUI
 
         protected override bool IsBlockValid(Block block) 
             => block is StmtBlock;
+
+        protected override void Awake()
+        {
+            DynamicHeight = true;
+            base.Awake();
+        }
     }
 }
