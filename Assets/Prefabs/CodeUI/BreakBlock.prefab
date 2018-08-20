@@ -40,10 +40,10 @@ GameObject:
   - component: {fileID: 114978199604056128}
   - component: {fileID: 114481094653626472}
   - component: {fileID: 225849469701361302}
-  - component: {fileID: 114781052180480374}
+  - component: {fileID: 114599359039974668}
   - component: {fileID: 114942338169650232}
   m_Layer: 5
-  m_Name: CommandBlock
+  m_Name: BreakBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +81,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Command Block
+  m_Text: Break
 --- !u!114 &114481094653626472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -123,7 +123,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114781052180480374
+--- !u!114 &114599359039974668
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,12 +131,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1945589692633126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a852001055e24f40a2e4630feedec7f, type: 3}
+  m_Script: {fileID: 11500000, guid: d2427efe8800bbe4dba0935f80d0e64f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   IsMovable: 1
   ContainedSlot: {fileID: 0}
   ContainedScopedBlock: {fileID: 0}
+  Depth: 0
 --- !u!114 &114942338169650232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -203,7 +204,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1945589692633126}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -213,7 +214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 94.9, y: -25}
+  m_AnchoredPosition: {x: 94.89996, y: -195}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224980865779887042

@@ -64,6 +64,10 @@ namespace CodeUI
                     ChangeType = changeBlock.ChangeType.Value
                 };
             }
+            if (stmtBlock is BreakBlock)
+            {
+                return new Interpreter.Break();
+            }
             throw new CompilerException($"Statement block {stmtBlock.GetType().Name} is not supported.");
         }
     }
