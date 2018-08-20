@@ -1,20 +1,26 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace CodeUI
 {
     public class CodeUIElement : MonoBehaviour
     {
-        public float LineWidth;
-        public float LineHeight;
-        public float IndentWidth;
-
         public static CodeUIElement Instance;
 
-        public ScopedBlock Program;
+        public StmtListBlock Program;
+
+        public Block DraggedBlock;
+
+        [SerializeField] private GraphicRaycaster raycaster;
+        [SerializeField] private EventSystem eventSystem;
+        private PointerEventData pointerEventData;
+
+        public List<Block> HoveredBlocks { get; private set; }
 
         void Awake()
         {
@@ -26,6 +32,18 @@ namespace CodeUI
             if (Input.GetKeyDown(KeyCode.R))
             {
                 RunProgram();
+            }
+
+            if (DraggedBlock != null)
+            {
+                pointerEventData = new PointerEventData(eventSystem);
+                pointerEventData.position = Input.mousePosition;
+                List<RaycastResult> results = new List<RaycastResult>();
+                raycaster.Raycast(pointerEventData, results);
+                HoveredBlocks = results
+                    .Select(res => res.gameObject.GetComponent<Block>())
+                    .Where(b => b != null)
+                    .ToList();
             }
         }
 

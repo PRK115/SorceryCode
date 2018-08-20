@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace CodeUI
 {
-    class RepeatBlock : ScopedBlock
+    class RepeatBlock : StmtListBlock
     {
+        protected override void Awake()
+        {
+            base.Awake();
+            DynamicHeight = true;
+        }
     }
 }

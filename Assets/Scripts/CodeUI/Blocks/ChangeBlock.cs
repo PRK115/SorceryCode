@@ -10,8 +10,10 @@ namespace CodeUI
     {
         private ExprSlot argumentSlot;
 
-        [NonSerialized]
-        public ChangeType changeType;
+        public ChangeType? ChangeType
+        {
+            get { return (argumentSlot.Block as ChangeTypeBlock)?.ChangeType; }
+        }
 
         protected override void Awake()
         {
@@ -22,13 +24,7 @@ namespace CodeUI
         protected override void Start()
         {
             base.Start();
-
             argumentSlot.CheckBlockValidCallback = block => block is ChangeTypeBlock;
-            argumentSlot.OnBlockDropCallback = droppedBlock =>
-            {
-                var changeTypeBlock = (ChangeTypeBlock) droppedBlock;
-                changeType = changeTypeBlock.ChangeType;
-            };
         }
     }
 }

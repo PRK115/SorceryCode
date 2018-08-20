@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114821132476344244}
   - component: {fileID: 225374636869507408}
   - component: {fileID: 114333955065266074}
+  - component: {fileID: 114843093303819174}
   m_Layer: 5
   m_Name: EntityRune
   m_TagString: Untagged
@@ -80,7 +81,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ConjurableTestObject
+  m_Text: Lion
 --- !u!114 &114333955065266074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -92,10 +93,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c27de38302fe7743aa5507ae9bb891a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OriginalPosition: {x: 0, y: 0, z: 0}
-  OriginalParent: {fileID: 0}
-  IsInSlot: 0
-  rectTransform: {fileID: 0}
+  IsMovable: 1
+  ContainedSlot: {fileID: 0}
+  ContainedScopedBlock: {fileID: 0}
   EntityType: 64
 --- !u!114 &114821132476344244
 MonoBehaviour:
@@ -138,6 +138,25 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114843093303819174
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1496826141501284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: 160
+  m_MinHeight: 30
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &114856955300668996
 MonoBehaviour:
   m_ObjectHideFlags: 1
