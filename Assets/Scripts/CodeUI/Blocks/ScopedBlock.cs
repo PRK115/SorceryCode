@@ -18,7 +18,18 @@ namespace CodeUI
 
         protected bool DynamicHeight = false;
 
+        private GraphicRaycaster raycaster;
+        private PointerEventData pointerEventData;
+        private EventSystem eventSystem;
+
         protected virtual bool IsBlockValid(Block block) => true;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            raycaster = FindObjectOfType<GraphicRaycaster>();
+            eventSystem = FindObjectOfType<EventSystem>();
+        }
 
         protected override void Start()
         {
@@ -78,7 +89,7 @@ namespace CodeUI
             blockListPanel.color = Color.white;
             if (eventData.pointerDrag == null) return;
             Block block = eventData.pointerDrag.GetComponent<Block>();
-            if (block != null)
+            if (block != null && draggedBlock != null)
             {
                 draggedBlock = null;
                 if (IsBlockValid(block))
@@ -92,6 +103,7 @@ namespace CodeUI
                     block.SetRealBlock();
                     block.ContainedSlot = null;
                     block.ContainedScopedBlock = this;
+                    block.Depth = this.Depth + 1;
                 }
             }
         }
@@ -100,7 +112,21 @@ namespace CodeUI
         {
             if (draggedBlock != null)
             {
-                draggedBlock.SetPlaceholderBlock(blockListPanel.transform, draggedBlock.transform.position);
+                pointerEventData = new PointerEventData(eventSystem);
+                pointerEventData.position = Input.mousePosition;
+                List<RaycastResult> results = new List<RaycastResult>();
+                raycaster.Raycast(pointerEventData, results);
+                List<Block> hoveredBlocks = results
+                    .Select(res => res.gameObject.GetComponent<Block>())
+                    .Where(b => b != null && b != draggedBlock)
+                    .ToList();
+                if (hoveredBlocks.Count == 0) return;
+
+                int maxDepth = hoveredBlocks.Max(b => b.Depth);
+                if (maxDepth == Depth)
+                {
+                    draggedBlock.SetPlaceholderBlock(blockListPanel.transform, draggedBlock.transform.position);
+                }
             }
         }
     }

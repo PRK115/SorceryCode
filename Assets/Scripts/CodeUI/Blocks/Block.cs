@@ -32,6 +32,7 @@ namespace CodeUI
         public bool IsMovable = true;
         public ExprSlot ContainedSlot = null;
         public ScopedBlock ContainedScopedBlock = null;
+        public int Depth = 0;
 
         protected virtual void Awake()
         {
@@ -144,6 +145,7 @@ namespace CodeUI
         public virtual void OnEndDrag(PointerEventData eventData)
         {
             if (!IsMovable) return;
+            Destroy(placeHolder);
             transform.position = OriginalPosition;
             transform.SetParent(OriginalParent);
             transform.SetSiblingIndex(OriginalSiblingIndex);
