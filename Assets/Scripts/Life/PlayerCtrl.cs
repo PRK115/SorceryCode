@@ -17,10 +17,14 @@ public class PlayerCtrl : MonoBehaviour {
     public GameObject projectile;
     //private bool alive = true;
 
+    bool touchingUI;
+
     Animator animator;
     float exitTime = 1;
 
     bool cleared;
+    float goalX;
+    public float GoalX { set { goalX = value; } }
 
     private void Awake()
     {
@@ -43,27 +47,17 @@ public class PlayerCtrl : MonoBehaviour {
             {
                 case State.Walking:
                     walkAndJump.Manuever(InterpretKey());
-                    if (Input.GetKeyDown("mouse 0"))
+                    if (Input.GetKeyDown("mouse 0") && !touchingUI)
                     {
-                        SetState(State.Casting);
+                        StartCoroutine(Cast());
                     }
                     break;
 
                 case State.Casting:
-                    StartCoroutine(Cast());
                     break;
 
                 case State.Cleared:
-                    transform.LookAt(transform.position + new Vector3(0, 0, 1));
-                    if(exitTime <= 0)
-                    {
-                        cleared = true;
-                    }
-                    else
-                    {
-                        transform.Translate(Vector3.forward * Time.deltaTime);
-                        exitTime -= Time.deltaTime;
-                    }    
+                    StartCoroutine(Clear());
                     break;
             }
         }
@@ -132,9 +126,49 @@ public class PlayerCtrl : MonoBehaviour {
         yield return null;
     }
 
+    IEnumerator Clear()
+    {
+        transform.LookAt(transform.position + new Vector3(0, 0, 1));
+        transform.position = new Vector3(goalX, transform.position.y, transform.position.z);
+
+        yield return new WaitForSeconds(0.5f);
+
+        if (exitTime <= 0)
+        {
+            cleared = true;
+            manager.StageClear();
+        }
+        else
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime);
+            exitTime -= Time.deltaTime;
+        }
+        yield return null;
+    }
+
     public void SetState(State state)
     {
         currentState = state;
         animator.SetInteger("State", (int)state);
+    }
+
+    public void ToWeavingState()
+    {
+        SetState(State.Weaving);
+    }
+
+    public void ToWalkingState()
+    {
+        SetState(State.Walking);
+    }
+
+    public void CursorOnUI()
+    {
+        touchingUI = true;
+    }
+
+    public void CursorOffUI()
+    {
+        touchingUI = false;
     }
 }

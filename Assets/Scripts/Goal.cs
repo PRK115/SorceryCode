@@ -5,15 +5,17 @@ using UnityEngine;
 public class Goal : Key, IConsumable {
 
     GameStateManager gameStateManager;
-
+    PlayerCtrl playerCtrl;
     private void Start()
     {
-        gameStateManager = GameObject.Find("StageCanvas").GetComponent<GameStateManager>();
+        playerCtrl = FindObjectOfType<PlayerCtrl>();
+        gameStateManager = FindObjectOfType<GameStateManager>();
     }
 
     public new void ConsumedBehaviour()
     {
-        gameStateManager.StageClear();
         base.ConsumedBehaviour();
+        playerCtrl.GoalX = transform.position.x;
+        playerCtrl.SetState(PlayerCtrl.State.Cleared);
     }
 }
