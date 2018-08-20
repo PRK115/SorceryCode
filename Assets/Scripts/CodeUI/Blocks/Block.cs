@@ -42,6 +42,29 @@ namespace CodeUI
 
             OriginalWidth = rectTransform.rect.width;
             OriginalHeight = rectTransform.rect.height;
+
+            // Find contained slot or scoped block
+            Transform parent = transform.parent;
+            while (parent != null)
+            {
+                ScopedBlock scopedBlock = parent.GetComponent<ScopedBlock>();
+                if (scopedBlock != null)
+                {
+                    ContainedScopedBlock = scopedBlock;
+                    break;
+                }
+                ExprSlot exprSlot = parent.GetComponent<ExprSlot>();
+                if (exprSlot != null)
+                {
+                    ContainedSlot = exprSlot;
+                    break;
+                }
+                parent = parent.parent;
+            }
+
+            // Update depth of this block
+            if (ContainedScopedBlock != null)
+                Depth = ContainedScopedBlock.Depth + 1;
         }
 
         protected virtual void Start()
@@ -105,6 +128,8 @@ namespace CodeUI
         {
             if (!IsMovable) return;
 
+            CodeUIElement.Instance.DraggedBlock = this;
+
             placeHolder = new GameObject();
             var placeHolderTransform = placeHolder.AddComponent<RectTransform>();
             placeHolderTransform.SetParent(transform.parent);
@@ -145,6 +170,9 @@ namespace CodeUI
         public virtual void OnEndDrag(PointerEventData eventData)
         {
             if (!IsMovable) return;
+
+            CodeUIElement.Instance.DraggedBlock = null;
+
             Destroy(placeHolder);
             transform.position = OriginalPosition;
             transform.SetParent(OriginalParent);

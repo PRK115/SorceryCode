@@ -8,32 +8,23 @@ using UnityEngine.EventSystems;
 
 namespace CodeUI
 {
-    public class ScopedBlock : StmtBlock, IPointerEnterHandler, IPointerExitHandler, IDropHandler
+    public class ScopedBlock : StmtBlock, IDropHandler
     {
         public List<Block> Blocks { get; private set; } = new List<Block>();
 
         public Image blockListPanel;
 
-        private Block draggedBlock;
-
         protected bool DynamicHeight = false;
-
-        private GraphicRaycaster raycaster;
-        private PointerEventData pointerEventData;
-        private EventSystem eventSystem;
 
         protected virtual bool IsBlockValid(Block block) => true;
 
         protected override void Awake()
         {
             base.Awake();
-            raycaster = FindObjectOfType<GraphicRaycaster>();
-            eventSystem = FindObjectOfType<EventSystem>();
         }
 
         protected override void Start()
         {
-            draggedBlock = CodeUIElement.Instance.DraggedBlock;
             base.Start();
             UpdateBlocks();
         }
@@ -55,44 +46,13 @@ namespace CodeUI
 
         }
 
-        public void OnPointerEnter(PointerEventData eventData)
-        {
-            if (eventData.pointerDrag == null) return;
-            Block block = eventData.pointerDrag.GetComponent<Block>();
-            if (block != null)
-            {
-                if (IsBlockValid(block) && block.IsMovable)
-                {
-                    draggedBlock = block;
-                    blockListPanel.color = new Color(0.0f, 1.0f, 0.0f, 0.3f);
-                }
-                else
-                {
-                    blockListPanel.color = new Color(1.0f, 0.0f, 0.0f, 0.3f);
-                }
-            }
-        }
-
-        public void OnPointerExit(PointerEventData eventData)
-        {
-            blockListPanel.color = Color.white;
-            if (eventData.pointerDrag == null) return;
-            Block block = eventData.pointerDrag.GetComponent<Block>();
-            if (block != null)
-            {
-                draggedBlock = null;
-            }
-        }
-
         public void OnDrop(PointerEventData eventData)
         {
-            Debug.Log("OnDrop");
             blockListPanel.color = Color.white;
             if (eventData.pointerDrag == null) return;
             Block block = eventData.pointerDrag.GetComponent<Block>();
-            if (block != null && draggedBlock != null)
+            if (block != null)
             {
-                draggedBlock = null;
                 if (IsBlockValid(block))
                 {
                     if (DynamicHeight)
@@ -111,28 +71,35 @@ namespace CodeUI
 
         void Update()
         {
-            if (draggedBlock != null)
-            {
-                pointerEventData = new PointerEventData(eventSystem);
-                pointerEventData.position = Input.mousePosition;
-                List<RaycastResult> results = new List<RaycastResult>();
-                raycaster.Raycast(pointerEventData, results);
-                List<Block> hoveredBlocks = results
-                    .Select(res => res.gameObject.GetComponent<Block>())
-                    .Where(b => b != null && b != draggedBlock)
-                    .ToList();
+            var draggedBlock = CodeUIElement.Instance.DraggedBlock;
 
-                if (hoveredBlocks.Count > 0)
+            if (draggedBlock != null && draggedBlock.IsMovable)
+            {
+                var hoveredBlocks = CodeUIElement.Instance.HoveredBlocks;
+                if (hoveredBlocks.Count > 0 && hoveredBlocks.Contains(this))
                 {
                     int maxDepth = hoveredBlocks.Max(b => b.Depth);
-                    if (maxDepth == Depth)
+                    if (maxDepth == this.Depth)
                     {
-                        draggedBlock.SetPlaceholderBlock(blockListPanel.transform, draggedBlock.transform.position);
-                        blockListPanel.color = new Color(0.0f, 1.0f, 0.0f, 0.3f);
-                        return;
+                        if (IsBlockValid(draggedBlock))
+                        {
+                            draggedBlock.SetPlaceholderBlock(blockListPanel.transform, draggedBlock.transform.position);
+                            blockListPanel.color = new Color(0.0f, 1.0f, 0.0f, 0.3f);
+                        }
+                        else
+                        {
+                            blockListPanel.color = new Color(1.0f, 0.0f, 0.0f, 0.3f);
+                        }
+                    }
+                    else
+                    {
+                        blockListPanel.color = Color.white;
                     }
                 }
-                blockListPanel.color = Color.white;
+                else
+                {
+                    blockListPanel.color = Color.white;
+                }
             }
         }
     }

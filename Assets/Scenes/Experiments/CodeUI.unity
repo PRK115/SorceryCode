@@ -374,6 +374,7 @@ MonoBehaviour:
   IsMovable: 1
   ContainedSlot: {fileID: 0}
   ContainedScopedBlock: {fileID: 0}
+  Depth: 0
   blockListPanel: {fileID: 68521950}
 --- !u!225 &80958912
 CanvasGroup:
@@ -785,6 +786,7 @@ MonoBehaviour:
   IsMovable: 0
   ContainedSlot: {fileID: 0}
   ContainedScopedBlock: {fileID: 0}
+  Depth: 0
   blockListPanel: {fileID: 1401504749}
 --- !u!225 &235098541
 CanvasGroup:
@@ -1108,6 +1110,7 @@ MonoBehaviour:
   IsMovable: 0
   ContainedSlot: {fileID: 0}
   ContainedScopedBlock: {fileID: 0}
+  Depth: 0
   blockListPanel: {fileID: 920596376}
 --- !u!225 &708097658
 CanvasGroup:
@@ -1207,6 +1210,7 @@ MonoBehaviour:
   IsMovable: 0
   ContainedSlot: {fileID: 0}
   ContainedScopedBlock: {fileID: 0}
+  Depth: 0
   blockListPanel: {fileID: 370359936}
 --- !u!225 &714562914
 CanvasGroup:
@@ -1503,7 +1507,7 @@ MonoBehaviour:
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
+  m_ChildControlHeight: 1
 --- !u!114 &920596376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1693,6 +1697,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Program: {fileID: 235098540}
+  DraggedBlock: {fileID: 0}
+  raycaster: {fileID: 183198561}
+  eventSystem: {fileID: 1204308674}
 --- !u!224 &972332608 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224323905753653396, guid: 90030b265057da041bd6f8d792dc4c68,
@@ -1951,7 +1958,7 @@ MonoBehaviour:
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
+  m_ChildControlHeight: 1
 --- !u!1 &1424875410
 GameObject:
   m_ObjectHideFlags: 0
