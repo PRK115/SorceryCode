@@ -16,6 +16,8 @@ namespace CodeUI
 
         private Block draggedBlock;
 
+        protected bool DynamicHeight = false;
+
         protected virtual bool IsBlockValid(Block block) => true;
 
         protected override void Start()
@@ -37,6 +39,8 @@ namespace CodeUI
             }
             Blocks.Sort((b1, b2) =>
                 (int)(b2.rectTransform.anchoredPosition.y - b1.rectTransform.anchoredPosition.y));
+
+
         }
 
         public void OnPointerEnter(PointerEventData eventData)
@@ -70,14 +74,21 @@ namespace CodeUI
 
         public void OnDrop(PointerEventData eventData)
         {
+            Debug.Log("OnDrop");
+            blockListPanel.color = Color.white;
             if (eventData.pointerDrag == null) return;
             Block block = eventData.pointerDrag.GetComponent<Block>();
             if (block != null)
             {
                 draggedBlock = null;
-                blockListPanel.color = Color.white;
                 if (IsBlockValid(block))
                 {
+                    if (DynamicHeight)
+                    {
+                        // TODO: Hardcoded, ugly ugly code
+                        rectTransform.SetSizeWithCurrentAnchors(
+                            RectTransform.Axis.Vertical, OriginalHeight + (Blocks.Count + 1) * 35);
+                    }
                     block.SetRealBlock();
                     block.ContainedSlot = null;
                     block.ContainedScopedBlock = this;

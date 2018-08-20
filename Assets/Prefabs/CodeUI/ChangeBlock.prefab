@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114408930638309776}
   - component: {fileID: 225022037493217500}
   - component: {fileID: 114567704985991344}
+  - component: {fileID: 114951978886914234}
   m_Layer: 5
   m_Name: ChangeBlock
   m_TagString: Untagged
@@ -178,6 +179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd61826d4b303594581f1ec2228f6c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsMovable: 1
+  ContainedSlot: {fileID: 0}
+  ContainedScopedBlock: {fileID: 0}
 --- !u!114 &114588787592058068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -217,6 +221,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Filled: 0
+--- !u!114 &114951978886914234
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1278295024070606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: 160
+  m_MinHeight: 30
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!222 &222330817966720942
 CanvasRenderer:
   m_ObjectHideFlags: 1

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114196590860114110}
   - component: {fileID: 225525660980632844}
   - component: {fileID: 114563177502685888}
+  - component: {fileID: 114540912864942780}
   m_Layer: 5
   m_Name: ChangeTypeRune
   m_TagString: Untagged
@@ -122,6 +123,25 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Big
+--- !u!114 &114540912864942780
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1059049936458372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: 160
+  m_MinHeight: 30
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &114563177502685888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -133,10 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58fbdbcd9f3c02d4596fde6e0beec048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OriginalPosition: {x: 0, y: 0, z: 0}
-  OriginalParent: {fileID: 0}
-  IsInSlot: 0
-  rectTransform: {fileID: 0}
+  IsMovable: 1
+  ContainedSlot: {fileID: 0}
+  ContainedScopedBlock: {fileID: 0}
   ChangeType: 0
 --- !u!114 &114899713238962364
 MonoBehaviour:
@@ -213,7 +232,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 94.89996, y: -80.13}
+  m_AnchoredPosition: {x: 94.89996, y: -60}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &225525660980632844

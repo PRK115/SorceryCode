@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114481094653626472}
   - component: {fileID: 225849469701361302}
   - component: {fileID: 114781052180480374}
+  - component: {fileID: 114942338169650232}
   m_Layer: 5
   m_Name: CommandBlock
   m_TagString: Untagged
@@ -133,6 +134,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a852001055e24f40a2e4630feedec7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsMovable: 1
+  ContainedSlot: {fileID: 0}
+  ContainedScopedBlock: {fileID: 0}
+--- !u!114 &114942338169650232
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1945589692633126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: 160
+  m_MinHeight: 30
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &114978199604056128
 MonoBehaviour:
   m_ObjectHideFlags: 1

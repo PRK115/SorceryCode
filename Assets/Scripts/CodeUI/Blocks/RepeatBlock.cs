@@ -8,5 +8,10 @@ namespace CodeUI
 {
     class RepeatBlock : StmtListBlock
     {
+        protected override void Start()
+        {
+            base.Start();
+            DynamicHeight = true;
+        }
     }
 }

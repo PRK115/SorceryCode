@@ -110,8 +110,9 @@ namespace CodeUI
             placeHolderTransform.SetSiblingIndex(transform.GetSiblingIndex());
             placeHolderTransform.anchorMin = new Vector2(0, 1);
             placeHolderTransform.anchorMax = new Vector2(0, 1);
-            placeHolderTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, OriginalWidth);
-            placeHolderTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, OriginalHeight);
+            LayoutElement layoutElement = placeHolder.AddComponent<LayoutElement>();
+            layoutElement.minWidth = OriginalWidth;
+            layoutElement.minHeight = OriginalHeight;
 
             OriginalPosition = transform.position;
             OriginalParent = transform.parent;
@@ -143,7 +144,6 @@ namespace CodeUI
         public virtual void OnEndDrag(PointerEventData eventData)
         {
             if (!IsMovable) return;
-            Destroy(placeHolder);
             transform.position = OriginalPosition;
             transform.SetParent(OriginalParent);
             transform.SetSiblingIndex(OriginalSiblingIndex);
