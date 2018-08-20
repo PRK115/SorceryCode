@@ -12,6 +12,8 @@ namespace CodeUI
 
         public StmtListBlock Program;
 
+        public Block DraggedBlock;
+
         void Awake()
         {
             Instance = this;

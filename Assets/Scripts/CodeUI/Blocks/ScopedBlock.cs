@@ -33,6 +33,7 @@ namespace CodeUI
 
         protected override void Start()
         {
+            draggedBlock = CodeUIElement.Instance.DraggedBlock;
             base.Start();
             UpdateBlocks();
         }
@@ -120,13 +121,18 @@ namespace CodeUI
                     .Select(res => res.gameObject.GetComponent<Block>())
                     .Where(b => b != null && b != draggedBlock)
                     .ToList();
-                if (hoveredBlocks.Count == 0) return;
 
-                int maxDepth = hoveredBlocks.Max(b => b.Depth);
-                if (maxDepth == Depth)
+                if (hoveredBlocks.Count > 0)
                 {
-                    draggedBlock.SetPlaceholderBlock(blockListPanel.transform, draggedBlock.transform.position);
+                    int maxDepth = hoveredBlocks.Max(b => b.Depth);
+                    if (maxDepth == Depth)
+                    {
+                        draggedBlock.SetPlaceholderBlock(blockListPanel.transform, draggedBlock.transform.position);
+                        blockListPanel.color = new Color(0.0f, 1.0f, 0.0f, 0.3f);
+                        return;
+                    }
                 }
+                blockListPanel.color = Color.white;
             }
         }
     }
