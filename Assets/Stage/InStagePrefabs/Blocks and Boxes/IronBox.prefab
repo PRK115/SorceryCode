@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 54519780680177918}
   - component: {fileID: 114090738834773120}
   - component: {fileID: 114729704828519816}
+  - component: {fileID: 114911041145632336}
   m_Layer: 0
   m_Name: IronBox
   m_TagString: Block
@@ -216,6 +217,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   electricityDuration: 0.2
+--- !u!114 &114911041145632336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271772143535170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df279e93a2c06c44ba1fd9bd88dcc189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198821112077931628
 ParticleSystem:
   m_ObjectHideFlags: 1

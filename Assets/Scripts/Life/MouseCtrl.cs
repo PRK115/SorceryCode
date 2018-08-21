@@ -135,7 +135,6 @@ public class MouseCtrl : MonoBehaviour
                     {
                         isInRange = true;
                         mainTarget = hit.gameObject;
-                        Debug.Log("Run!: " + mainTarget.name);
                         StopCoroutine("Patrolling");
                         isWandering = false;
                         _state = State.Run;

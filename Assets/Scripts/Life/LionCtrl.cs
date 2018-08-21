@@ -158,7 +158,6 @@ public class LionCtrl : MonoBehaviour
                         if ((mainTarget != player) || (mainTarget == null))
                         {
                             mainTarget = hit.gameObject;
-                            Debug.Log("Saw you!: " + mainTarget.name);
                             StopCoroutine("Patrolling");
                             isWandering = false;
                             _state = State.Chase;

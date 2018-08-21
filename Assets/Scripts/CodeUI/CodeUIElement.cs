@@ -12,9 +12,9 @@ namespace CodeUI
     {
         public static CodeUIElement Instance;
 
-        public StmtListBlock Program;
-
         public Block DraggedBlock;
+
+        public StmtListBlock Program;
 
         [SerializeField] private GraphicRaycaster raycaster;
         [SerializeField] private EventSystem eventSystem;
@@ -29,11 +29,6 @@ namespace CodeUI
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                RunProgram();
-            }
-
             if (DraggedBlock != null)
             {
                 pointerEventData = new PointerEventData(eventSystem);

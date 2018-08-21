@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using CodeUI;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameStateManager : MonoBehaviour {
+public class GameStateManager : MonoBehaviour
+{
+    public static GameStateManager instance = null;
 
     public GameObject inStagePanel;
     public GameObject inStagePausePanel;
@@ -11,23 +14,42 @@ public class GameStateManager : MonoBehaviour {
     public GameObject grimoire;
     public GameObject clearPanel;
 
-    RectTransform grimoireTransform;
-
     public GameObject tutorialPanel;
     public Text tutorialTitleText;
     public Text tutorialContentText;
 
+    public CodeUIElement codeUIElement;
+
+    private StmtListBlock Program;
+
+    private void Awake()
+    {
+        instance = this;
+        Program = codeUIElement.Program;
+    }
+
     private void Start()
     {
-        //inStagePanel = GameObject.Find("InStagePanel");
-        //inStagePausePanel = GameObject.Find("PausePanel");
-        //inStageFuneralPanel = GameObject.Find("FuneralPanel");
         inStagePanel.SetActive(true);
         inStagePausePanel.SetActive(false);
         inStageFuneralPanel.SetActive(false);
         clearPanel.SetActive(false);
-        grimoireTransform = grimoire.GetComponent<RectTransform>();
-        grimoireTransform.position = new Vector3(-2000, 0, 0);
+        grimoire.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            CloseGrimoire();
+            Resume();
+        }
+    }
+
+    public void ExecuteCode()
+    {
+        var code = Compiler.Compile(Program);
+        Interpreter.Inst.Execute(code);
     }
 
     //일시 정지 메뉴
@@ -48,13 +70,13 @@ public class GameStateManager : MonoBehaviour {
     public void OpenGrimoire()
     {
         inStagePanel.SetActive(false);
-        grimoireTransform.localPosition = Vector3.zero;
+        grimoire.SetActive(true);
     }
 
     public void CloseGrimoire()
     {
         inStagePanel.SetActive(true);
-        grimoireTransform.position = new Vector3(-2000, 0, 0);
+        grimoire.SetActive(false);
     }
 
     public void Funeral()

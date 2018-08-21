@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerCtrl : MonoBehaviour {
 
@@ -47,7 +48,7 @@ public class PlayerCtrl : MonoBehaviour {
             {
                 case State.Walking:
                     walkAndJump.Manuever(InterpretKey());
-                    if (Input.GetKeyDown("mouse 0") && !touchingUI)
+                    if (Input.GetKeyDown(KeyCode.Mouse0) && !EventSystem.current.IsPointerOverGameObject())
                     {
                         StartCoroutine(Cast());
                     }
