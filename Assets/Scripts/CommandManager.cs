@@ -66,7 +66,11 @@ public class CommandManager : MonoBehaviour, ICommandManager
                 yield return null;
                 timer += Time.deltaTime;
             }
-            else break;
+            else
+            {
+                conjured.transform.localScale = new Vector3(1, 1, 1);
+                break;
+            }
         }
         if (rb != null)
         {
