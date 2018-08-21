@@ -519,7 +519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c52e648b5bf1aeb4888e1eb2b3722854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathTime: 0
+  deathTime: 0.5
   alive: 1
 --- !u!114 &114116378633018068
 MonoBehaviour:
@@ -535,7 +535,7 @@ MonoBehaviour:
   state: 0
   indestructable: 0
   burnDelay: 0
-  burningDuration: 0
+  burningDuration: 1
 --- !u!114 &114176733408111538
 MonoBehaviour:
   m_ObjectHideFlags: 1

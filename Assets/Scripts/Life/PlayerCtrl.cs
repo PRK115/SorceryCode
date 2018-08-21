@@ -16,7 +16,9 @@ public class PlayerCtrl : MonoBehaviour {
 
     GameObject wand;
     public GameObject projectile;
-    //private bool alive = true;
+    public List<EntityType> EntityRunes;
+    public List<ChangeType> AdjRunes;
+    public List<Rune.Direction> DirectionRunes;
 
     bool touchingUI;
 
@@ -161,15 +163,5 @@ public class PlayerCtrl : MonoBehaviour {
     public void ToWalkingState()
     {
         SetState(State.Walking);
-    }
-
-    public void CursorOnUI()
-    {
-        touchingUI = true;
-    }
-
-    public void CursorOffUI()
-    {
-        touchingUI = false;
     }
 }
