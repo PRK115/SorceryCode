@@ -5,6 +5,12 @@ using CodeUI;
 
 public class Projectile : MonoBehaviour {
 
+    public enum State
+    {
+        Flying, Explode, Aftermath
+    }
+    private State state = State.Flying;
+
     Vector3 destination;
     public Vector3 Destination { set { destination = value; } }
     float speed = 5f;
@@ -33,18 +39,23 @@ public class Projectile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Vector3.Distance(transform.position, destination) < 0.1f)
-        {
-            Pop();
-            Execute();
-        }
-		if(going)
-        {
+	    if (state == State.Flying)
+	    {
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        }
-        else
-        {
-            if(destroyTime <= 0)
+            if (Vector3.Distance(transform.position, destination) < 0.1f)
+            {
+                state = State.Explode;
+            }
+	    }
+	    else if (state == State.Explode)
+	    {
+	        Pop();
+	        Execute();
+	        state = State.Aftermath;
+	    }
+        else if (state == State.Aftermath)
+	    {
+            if (destroyTime <= 0)
             {
                 Destroy(gameObject);
             }
@@ -52,7 +63,7 @@ public class Projectile : MonoBehaviour {
             {
                 destroyTime -= Time.deltaTime;
             }
-        }
+	    }
 	}
 
     void Pop()

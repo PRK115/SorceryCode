@@ -49,7 +49,6 @@ namespace CodeUI
                 (int)(b2.rectTransform.anchoredPosition.y - b1.rectTransform.anchoredPosition.y));
 
             UpdateBlockHeight();
-            Debug.Log($"{Blocks.Count} blocks");
         }
 
         public void UpdateBlockHeight()
