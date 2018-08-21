@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 114343459573225718}
   - component: {fileID: 114315526829065044}
   - component: {fileID: 114044951302846602}
+  - component: {fileID: 114723325936769336}
   m_Layer: 0
   m_Name: fireBall
   m_TagString: Untagged
@@ -141,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 2
+  indestructable: 0
   burnDelay: 0
   burningDuration: 1000
 --- !u!114 &114343459573225718
@@ -155,8 +157,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EntityType: 96
-  IsMovable: 0
+  isMovable: 0
   IsButtonPushable: 0
+  blockProjectiles: 0
+  occupySpace: 0
+--- !u!114 &114723325936769336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1743315362948778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df279e93a2c06c44ba1fd9bd88dcc189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198227166343206580
 ParticleSystem:
   m_ObjectHideFlags: 1

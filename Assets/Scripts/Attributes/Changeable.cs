@@ -7,7 +7,5 @@ using UnityEngine;
 
 public class Changeable : MonoBehaviour, Attribute
 {
-    bool resizable;
-    public bool Resizable { get; }
-
+    public bool Resizable;
 }

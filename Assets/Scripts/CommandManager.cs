@@ -55,18 +55,23 @@ public class CommandManager : MonoBehaviour, ICommandManager
         {
             rb.useGravity = false;
         }
-        for(int i = 1; i < 50; i++)
-        {
-            conjured.transform.localScale = new Vector3(1, 1, 1) * 0.02f * i;
-            yield return new WaitForSeconds(0.02f);
-        }
         target = conjured.GetComponent<Entity>();
+        int nounce = Interpreter.Inst.Nounce;
+        float timer = 0.0f;
+        while (timer < 1.0f)
+        {
+            conjured.transform.localScale = Vector3.Lerp(new Vector3(0, 0, 0), new Vector3(1, 1, 1), timer);
+            if (Interpreter.Inst.Nounce == nounce)
+            {
+                yield return null;
+                timer += Time.deltaTime;
+            }
+            else break;
+        }
         if (rb != null)
         {
             rb.useGravity = true;
         }
-        
-        yield return null;
     }
 
     public void Change(ChangeType type)

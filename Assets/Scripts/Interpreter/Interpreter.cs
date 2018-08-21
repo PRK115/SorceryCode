@@ -79,6 +79,7 @@ public class Interpreter : MonoBehaviour
         {
             Expr.Eval();
             await new WaitForSeconds(Inst.Delay);
+            Inst.Nounce++;
             return StmtResult.None;
         }
     }
@@ -161,6 +162,7 @@ public class Interpreter : MonoBehaviour
         {
             Inst.CommandMgr.Conjure(Entity);
             await new WaitForSeconds(Inst.Delay);
+            Inst.Nounce++;
             return StmtResult.None;
         }
     }
@@ -180,15 +182,18 @@ public class Interpreter : MonoBehaviour
                 // Inst.CommandMgr.Change(Adjective.Right);
             }
             await new WaitForSeconds(Inst.Delay);
+            Inst.Nounce++;
             return StmtResult.None;
         }
     }
 
     public static Interpreter Inst;
 
-    public float Delay = 1.0f;
+    public float Delay = 1.1f;
 
     public ICommandManager CommandMgr { get; private set; }
+
+    public int Nounce = 0;
 
     public async void Execute(Block program)
     {

@@ -89,7 +89,7 @@ public class Projectile : MonoBehaviour {
         {
             if (otherEntity.blockProjectiles)
             {
-                Pop();
+                state = State.Explode;
             }
 
             else

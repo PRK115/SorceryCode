@@ -53,7 +53,6 @@ public class WalkAndJump : MonoBehaviour {
             }
             if(platformRb != null)
             {
-                Debug.Log(platformRb.velocity);
                 moveDirection += platformRb.velocity * 2;
             }
             ctrl.Move(moveDirection * Time.deltaTime);
