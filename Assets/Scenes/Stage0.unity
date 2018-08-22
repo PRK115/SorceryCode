@@ -950,35 +950,13 @@ MonoBehaviour:
   - eventID: 0
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1594755554}
-          m_MethodName: CursorOnUI
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   - eventID: 1
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1594755554}
-          m_MethodName: CursorOffUI
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
@@ -1021,18 +999,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 318889405}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2021884648}
-        m_MethodName: OpenGrimoire
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &318889405
@@ -3823,7 +3790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1162591601
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6309,6 +6276,7 @@ GameObject:
   - component: {fileID: 2021884649}
   - component: {fileID: 2021884647}
   - component: {fileID: 2021884648}
+  - component: {fileID: 2021884651}
   m_Layer: 5
   m_Name: StageCanvas
   m_TagString: Untagged
@@ -6375,6 +6343,11 @@ MonoBehaviour:
   inStageFuneralPanel: {fileID: 704355791}
   grimoire: {fileID: 1162591600}
   clearPanel: {fileID: 530917162}
+  codeButton: {fileID: 318889404}
+  pauseButton: {fileID: 1230651272}
+  resumeButton: {fileID: 442655603}
+  restartButton: {fileID: 28514385}
+  exitButton: {fileID: 1626038382}
   tutorialPanel: {fileID: 39116492}
   tutorialTitleText: {fileID: 524952521}
   tutorialContentText: {fileID: 1781194408}
@@ -6422,6 +6395,17 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &2021884651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2021884645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e85c4ec07788549836a10a534e477b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2024998441
 Prefab:
   m_ObjectHideFlags: 0

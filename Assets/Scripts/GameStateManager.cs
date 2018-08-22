@@ -1,18 +1,26 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using CodeUI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameStateManager : MonoBehaviour
 {
-    public static GameStateManager instance = null;
+    private SceneChange sceneChange;
 
     public GameObject inStagePanel;
     public GameObject inStagePausePanel;
     public GameObject inStageFuneralPanel;
     public GameObject grimoire;
     public GameObject clearPanel;
+
+    public UnityEngine.UI.Button codeButton;
+    public UnityEngine.UI.Button pauseButton;
+    public UnityEngine.UI.Button resumeButton;
+    public UnityEngine.UI.Button restartButton;
+    public UnityEngine.UI.Button exitButton;
 
     public GameObject tutorialPanel;
     public Text tutorialTitleText;
@@ -22,10 +30,101 @@ public class GameStateManager : MonoBehaviour
 
     private StmtListBlock Program;
 
+    public enum UIState
+    {
+        Game, Code, Pause, GameOver, StageClear
+    }
+
+    private UIState state = UIState.Game;
+        public static GameStateManager instance = null;
+
+    public void SetState(UIState nextState)
+    {
+        if (state == nextState) return;
+        switch (state)
+        {
+            case UIState.Game:
+                if (nextState == UIState.Code)
+                {
+                    inStagePanel.SetActive(false);
+                    grimoire.SetActive(true);
+                }
+                else if (nextState == UIState.Pause)
+                {
+                    inStagePanel.SetActive(false);
+                    inStagePausePanel.SetActive(true);
+                    Time.timeScale = 0;
+                }
+                else if (nextState == UIState.GameOver)
+                {
+                    inStagePanel.SetActive(false);
+                    inStagePausePanel.SetActive(false);
+                    inStageFuneralPanel.SetActive(true);
+                }
+                else if (nextState == UIState.StageClear)
+                {
+                    inStagePanel.SetActive(false);
+                    inStagePausePanel.SetActive(false);
+                    clearPanel.SetActive(true);
+                }
+                else throw new Exception($"Invalid UI State {state} -> {nextState}");
+                break;
+            case UIState.Code:
+                if (nextState == UIState.Game)
+                {
+                    inStagePanel.SetActive(true);
+                    grimoire.SetActive(false);
+                }
+                else if (nextState == UIState.GameOver)
+                {
+                    grimoire.SetActive(false);
+                    inStagePanel.SetActive(false);
+                    inStagePausePanel.SetActive(false);
+                    inStageFuneralPanel.SetActive(true);
+                }
+                else if (nextState == UIState.StageClear)
+                {
+                    grimoire.SetActive(false);
+                    inStagePanel.SetActive(false);
+                    inStagePausePanel.SetActive(false);
+                    clearPanel.SetActive(true);
+                }
+                else throw new Exception($"Invalid UI State {state} -> {nextState}");
+                break;
+            case UIState.Pause:
+                if (nextState == UIState.Game)
+                {
+                    inStagePausePanel.SetActive(false);
+                    inStagePanel.SetActive(true);
+                    Time.timeScale = 1;
+                }
+                else throw new Exception($"Invalid UI State {state} -> {nextState}");
+                break;
+            default:
+                return;
+        }
+        state = nextState;
+    }
+
     private void Awake()
     {
+        sceneChange = FindObjectOfType<SceneChange>();
+
         instance = this;
         Program = codeUIElement.Program;
+        codeButton.onClick.AddListener(() => SetState(UIState.Code));
+        pauseButton.onClick.AddListener(() => SetState(UIState.Pause));
+        resumeButton.onClick.AddListener(() => SetState(UIState.Game));
+        restartButton.onClick.AddListener(() =>
+        {
+            Time.timeScale = 1;
+            sceneChange.Restart();
+        });
+        exitButton.onClick.AddListener(() =>
+        {
+            Time.timeScale = 1;
+            sceneChange.ToStageSelection();
+        });
     }
 
     private void Start()
@@ -41,8 +140,7 @@ public class GameStateManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            CloseGrimoire();
-            Resume();
+            SetState(UIState.Game);
         }
     }
 
@@ -50,47 +148,6 @@ public class GameStateManager : MonoBehaviour
     {
         var code = Compiler.Compile(Program);
         Interpreter.Inst.Execute(code);
-    }
-
-    //일시 정지 메뉴
-    public void Pause()
-    {
-        inStagePanel.SetActive(false);
-        inStagePausePanel.SetActive(true);
-        Time.timeScale = 0;
-    }
-
-    public void Resume()
-    {
-        inStagePausePanel.SetActive(false);
-        inStagePanel.SetActive(true);
-        Time.timeScale = 1;
-    }
-
-    public void OpenGrimoire()
-    {
-        inStagePanel.SetActive(false);
-        grimoire.SetActive(true);
-    }
-
-    public void CloseGrimoire()
-    {
-        inStagePanel.SetActive(true);
-        grimoire.SetActive(false);
-    }
-
-    public void Funeral()
-    {
-        inStagePanel.SetActive(false);
-        inStagePausePanel.SetActive(false);
-        inStageFuneralPanel.SetActive(true);
-    }
-
-    public void StageClear()
-    {
-        inStagePanel.SetActive(false);
-        inStagePausePanel.SetActive(false);
-        clearPanel.SetActive(true);
     }
 
     public void OpenTutorialPanel(string name, string content)

@@ -67,7 +67,7 @@ public class PlayerCtrl : MonoBehaviour {
         else
         {
             if (manager != null)
-                manager.Funeral();
+                manager.SetState(GameStateManager.UIState.GameOver);
         }
     }
 
@@ -139,7 +139,7 @@ public class PlayerCtrl : MonoBehaviour {
         if (exitTime <= 0)
         {
             cleared = true;
-            manager.StageClear();
+            manager.SetState(GameStateManager.UIState.StageClear);
         }
         else
         {
