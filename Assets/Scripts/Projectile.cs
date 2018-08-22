@@ -7,7 +7,7 @@ public class Projectile : MonoBehaviour {
 
     public enum State
     {
-        Flying, Explode, Aftermath
+        Flying, Arrival, Explode, Aftermath
     }
     private State state = State.Flying;
 
@@ -17,8 +17,8 @@ public class Projectile : MonoBehaviour {
 
     GameObject aura;
     GameObject hit;
+    GameObject fail;
 
-    bool going = true;
     float destroyTime = 0.5f;
 
     CommandManager commandManager;
@@ -30,6 +30,7 @@ public class Projectile : MonoBehaviour {
 	void Start () {
         aura = transform.Find("aura").gameObject;
         hit = transform.Find("hit").gameObject;
+        fail = transform.Find("puff").gameObject;
 
         commandManager = FindObjectOfType<CommandManager>();
         cue = FindObjectOfType<CodeUIElement>();
@@ -44,15 +45,23 @@ public class Projectile : MonoBehaviour {
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
             if (Vector3.Distance(transform.position, destination) < 0.1f)
             {
-                state = State.Explode;
+                state = State.Arrival;
             }
 	    }
-	    else if (state == State.Explode)
+	    else if (state == State.Arrival)
 	    {
-	        Pop();
-	        Execute();
+            aura.SetActive(false);
+            hit.SetActive(true);
+            Execute();
 	        state = State.Aftermath;
 	    }
+
+        else if (state == State.Explode)
+        {
+            aura.SetActive(false);
+            fail.SetActive(true);
+            state = State.Aftermath;
+        }
         else if (state == State.Aftermath)
 	    {
             if (destroyTime <= 0)
@@ -65,14 +74,6 @@ public class Projectile : MonoBehaviour {
             }
 	    }
 	}
-
-    void Pop()
-    {
-        aura.SetActive(false);
-        hit.SetActive(true);
-
-        going = false;
-    }
 
     void Execute()
     {
