@@ -36,7 +36,30 @@ public class CommandManager : MonoBehaviour, ICommandManager
         Conjurable conjurable = prefab.GetComponent<Conjurable>();
         if (conjurable != null)
         {
-            StartCoroutine(GradualConjure(prefab));
+            GameObject conjured;
+            conjured = Instantiate(prefab, SpawnPos, prefab.transform.rotation);
+            conjured.transform.localScale = new Vector3(1,1,1) * 0.02f;
+            Rigidbody rb;
+            rb = conjured.GetComponent<Rigidbody>();
+            if(rb != null)
+            {
+                rb.useGravity = false;
+            }
+            target = conjured.GetComponent<Entity>();
+
+            StartCoroutine(
+                StartGradualAction(
+                    timer =>
+                    {
+                        conjured.transform.localScale = Vector3.Lerp(new Vector3(0, 0, 0), new Vector3(1, 1, 1), timer);
+                    }, () =>
+                    {
+                        conjured.transform.localScale = new Vector3(1, 1, 1);
+                        if (rb != null) rb.useGravity = true;
+                    },
+                    1.0f
+                )
+            );
         }
         else
         {
@@ -44,76 +67,93 @@ public class CommandManager : MonoBehaviour, ICommandManager
         }
     }
 
-    IEnumerator GradualConjure(GameObject prefab)
-    {
-        GameObject conjured;
-        conjured = Instantiate(prefab, SpawnPos, prefab.transform.rotation);
-        conjured.transform.localScale = new Vector3(1,1,1) * 0.02f;
-        Rigidbody rb;
-        rb = conjured.GetComponent<Rigidbody>();
-        if(rb != null)
-        {
-            rb.useGravity = false;
-        }
-        target = conjured.GetComponent<Entity>();
-        int nounce = Interpreter.Inst.Nounce;
-        float timer = 0.0f;
-        while (timer < 1.0f)
-        {
-            conjured.transform.localScale = Vector3.Lerp(new Vector3(0, 0, 0), new Vector3(1, 1, 1), timer);
-            if (Interpreter.Inst.Nounce == nounce)
-            {
-                yield return null;
-                timer += Time.deltaTime;
-            }
-            else
-            {
-                conjured.transform.localScale = new Vector3(1, 1, 1);
-                break;
-            }
-        }
-        if (rb != null)
-        {
-            rb.useGravity = true;
-        }
-    }
 
     public void Change(ChangeType type)
     {
         Changeable changeable = target.GetComponent<Changeable>();
-        if (changeable != null)
-        {
-            // TODO(경록): 여기를 구현하면 됨.
-            if (changeable.Resizable)
-            {
-                switch (type)
-                {
-                    case ChangeType.Big:
-                        target.transform.localScale *= 3;
-                        break;
-                    case ChangeType.Small:
-                        target.transform.localScale /= 3;
-                        break;
-                }
-            }
-            else
-            {
-                Debug.LogError("Can't change its size");
-            }
-        }
-        else
+        if (changeable == null)
         {
             Debug.LogError($"Cannot change entity {target} to ChangeType {type}");
+            return;
         }
+        if (!changeable.Resizable)
+        {
+            Debug.LogError("Can't change its size");
+            return;
+        }
+
+        Vector3 finalSize;
+        switch (type)
+        {
+            case ChangeType.Big:
+                finalSize = target.transform.localScale * 3;
+                break;
+            case ChangeType.Small:
+                finalSize = target.transform.localScale / 3;
+                break;
+            default:
+                Debug.LogError($"Unsupported ChangeType {type}");
+                return;
+        }
+
+        StartCoroutine(
+            StartGradualAction(timer =>
+                {
+                    target.transform.localScale = Vector3.Lerp(
+                        target.transform.localScale, finalSize, timer);
+                }, () =>
+                {
+                    target.transform.localScale = finalSize;
+                },
+                1.0f
+            )
+        );
     }
 
-    IEnumerator GradualGrowth()
+    public void Move(MoveDirection direction, int distance)
     {
-        for(int i = 1; i <= 10; i++)
+        if (distance <= 0 || distance > 4)
         {
-            target.transform.localScale = new Vector3(1, 1, 1);
-            yield return new WaitForSeconds(0.1f);
+            Debug.LogError("Can only move object with distance between 1 and 3");
+            return;
         }
+
+        Moveable moveable = target.GetComponent<Moveable>();
+        if (moveable == null)
+        {
+            Debug.LogError($"Target is not moveable");
+            return;
+        }
+
+        Vector3 finalPos = target.transform.position;
+        switch (direction)
+        {
+            case MoveDirection.Left:
+                finalPos.x -= 1.0f;
+                break;
+            case MoveDirection.Right:
+                finalPos.x += 1.0f;
+                break;
+            case MoveDirection.Up:
+                finalPos.y += 1.0f;
+                break;
+            case MoveDirection.Down:
+                finalPos.y -= 1.0f;
+                break;
+        }
+
+        StartCoroutine(
+            StartGradualAction(timer =>
+                {
+                    target.transform.position = Vector3.Lerp(
+                        target.transform.position, finalPos, timer);
+                }, () =>
+                {
+                    target.transform.position = finalPos;
+                },
+                1.0f
+            )
+        );
     }
 
     public bool IsConjurable(EntityType type)
@@ -128,5 +168,33 @@ public class CommandManager : MonoBehaviour, ICommandManager
         GameObject prefab = prefabDB.GetPrefab(type);
         Changeable changeable = prefab.GetComponent<Changeable>();
         return changeable != null;
+    }
+
+    public bool IsMoveable(EntityType type)
+    {
+        GameObject prefab = prefabDB.GetPrefab(type);
+        Moveable moveable = prefab.GetComponent<Moveable>();
+        return moveable != null;
+    }
+
+    private delegate void GradualAction(float timer);
+    private IEnumerator StartGradualAction(GradualAction action, Action onFinished, float time)
+    {
+        int nounce = Interpreter.Inst.Nounce;
+        float timer = 0.0f;
+        while (timer < time)
+        {
+            action(timer);
+            if (Interpreter.Inst.Nounce == nounce)
+            {
+                yield return null;
+                timer += Time.deltaTime;
+            }
+            else
+            {
+                break;
+            }
+        }
+        onFinished();
     }
 }

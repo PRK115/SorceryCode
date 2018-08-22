@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 114711685296160464}
   - component: {fileID: 114767547606100878}
   - component: {fileID: 114531006737796994}
+  - component: {fileID: 114811356475152990}
   m_Layer: 0
   m_Name: WoodBox
   m_TagString: Block
@@ -319,6 +320,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df279e93a2c06c44ba1fd9bd88dcc189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114811356475152990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1549163940768664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 539d357d99c20dd4b98cb3c9eafde502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!198 &198037049063964448
