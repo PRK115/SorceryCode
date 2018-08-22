@@ -9,12 +9,17 @@ namespace CodeUI
 
         public void Conjure(EntityType type)
         {
-            Debug.Log($"{Enum.GetName(type.GetType(), type)} Conjured!");
+            Debug.Log($"{type.ToString()} Conjured!");
         }
 
         public void Change(ChangeType type)
         {
-            Debug.Log($"Changed to {Enum.GetName(type.GetType(), type)}!");
+            Debug.Log($"Changed to {type.ToString()}!");
+        }
+
+        public void Move(MoveDirection direction, int distance)
+        {
+            Debug.Log($"Moved to {direction.ToString()} by distance {distance}");
         }
 
         public bool IsConjurable(EntityType type)
@@ -39,6 +44,11 @@ namespace CodeUI
                 default:
                     return false;
             }
+        }
+
+        public bool IsMoveable(EntityType type)
+        {
+            return true;
         }
     }
 }

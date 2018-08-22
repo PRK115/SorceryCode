@@ -82,6 +82,13 @@ namespace CodeUI
                     Adjective = new Either<ChangeType, EntityType>(changeBlock.ChangeType.Value)
                 };
             }
+            if (stmtBlock is MoveBlock)
+            {
+                MoveBlock moveBlock = (MoveBlock) stmtBlock;
+                if (moveBlock.Distance == null || moveBlock.Distance <= 0 || moveBlock.Distance > 3)
+                    throw new CompilerException($"Missing argument in statement Move.");
+                return new Interpreter.Move {Dir = moveBlock.Dir, Distance = moveBlock.Distance.Value};
+            }
             if (stmtBlock is BreakBlock)
             {
                 return new Interpreter.Break();

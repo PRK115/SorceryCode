@@ -187,6 +187,20 @@ public class Interpreter : MonoBehaviour
         }
     }
 
+    public class Move : Stmt
+    {
+        public MoveDirection Dir;
+        public int Distance;
+
+        public override async Task<StmtResult> Eval()
+        {
+            Inst.CommandMgr.Move(Dir, Distance);
+            await new WaitForSeconds(Inst.Delay);
+            Inst.Nounce++;
+            return StmtResult.None;
+        }
+    }
+
     public static Interpreter Inst;
 
     public float Delay = 1.1f;
@@ -212,4 +226,4 @@ public class Interpreter : MonoBehaviour
         else
             CommandMgr = DummyCommandManager.Inst;
     }
-}
+} 
