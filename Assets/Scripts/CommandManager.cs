@@ -38,28 +38,35 @@ public class CommandManager : MonoBehaviour, ICommandManager
         {
             GameObject conjured;
             conjured = Instantiate(prefab, SpawnPos, prefab.transform.rotation);
-            conjured.transform.localScale = new Vector3(1,1,1) * 0.02f;
-            Rigidbody rb;
-            rb = conjured.GetComponent<Rigidbody>();
-            if(rb != null)
+            if(type == EntityType.FireBall || type == EntityType.LightningBall)
             {
-                rb.useGravity = false;
+                
             }
-            target = conjured.GetComponent<Entity>();
+            else
+            {
+                conjured.transform.localScale = new Vector3(1, 1, 1) * 0.02f;
+                Rigidbody rb;
+                rb = conjured.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    rb.useGravity = false;
+                }
+                target = conjured.GetComponent<Entity>();
 
-            StartCoroutine(
-                StartGradualAction(
-                    timer =>
-                    {
-                        conjured.transform.localScale = Vector3.Lerp(new Vector3(0, 0, 0), new Vector3(1, 1, 1), timer);
-                    }, () =>
-                    {
-                        conjured.transform.localScale = new Vector3(1, 1, 1);
-                        if (rb != null) rb.useGravity = true;
-                    },
-                    1.0f
-                )
-            );
+                StartCoroutine(
+                    StartGradualAction(
+                        timer =>
+                        {
+                            conjured.transform.localScale = Vector3.Lerp(new Vector3(0, 0, 0), new Vector3(1, 1, 1), timer);
+                        }, () =>
+                        {
+                            conjured.transform.localScale = new Vector3(1, 1, 1);
+                            if (rb != null) rb.useGravity = true;
+                        },
+                        1.0f
+                    )
+                );
+            }
         }
         else
         {
