@@ -7,12 +7,13 @@ public class Rune : MonoBehaviour, IConsumable {
 
     private GameObject stone;
 
+    PlayerCtrl player;
+
     public enum RuneType { Entity, Adjective, Direction}
     public RuneType runeType;
 
     public EntityType entity;
-    public enum Adjective { Big, Small}
-    public Adjective adjective;
+    public ChangeType adjective;
     public enum Direction { Up, Down, Left, Right}
     public Direction direction;
 
@@ -20,6 +21,7 @@ public class Rune : MonoBehaviour, IConsumable {
 
     private void Awake()
     {
+        player = FindObjectOfType<PlayerCtrl>();
         stone = transform.Find("stone").gameObject;
     }
 
@@ -47,16 +49,16 @@ public class Rune : MonoBehaviour, IConsumable {
 
     void AddRune(EntityType entity)
     {
-
+        player.EntityRunes.Add(entity);
     }
 
-    void AddRune(Adjective adjective)
+    void AddRune(ChangeType adjective)
     {
-
+        player.AdjRunes.Add(adjective);
     }
 
     void AddRune(Direction direction)
     {
-
+        player.DirectionRunes.Add(direction);
     }
 }
