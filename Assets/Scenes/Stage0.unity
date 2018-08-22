@@ -3572,11 +3572,6 @@ Prefab:
       propertyPath: m_Name
       value: WoodBox (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 198650486588759256, guid: e60aeb9e4b3fd414886edf20daeb5ebd,
-        type: 2}
-      propertyPath: scalingMode
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e60aeb9e4b3fd414886edf20daeb5ebd, type: 2}
   m_IsPrefabAsset: 0

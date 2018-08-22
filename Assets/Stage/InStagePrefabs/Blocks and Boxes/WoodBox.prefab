@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4188788052198048}
   - component: {fileID: 198037049063964448}
   - component: {fileID: 199722601538991784}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4343443554779660}
   - component: {fileID: 198650486588759256}
   - component: {fileID: 199673496914073428}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 114767547606100878}
   - component: {fileID: 114531006737796994}
   - component: {fileID: 114811356475152990}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WoodBox
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 4659920458622558}
   - component: {fileID: 33945043636796624}
   - component: {fileID: 23280239341662654}
+  - component: {fileID: 65245372220990446}
   m_Layer: 0
   m_Name: wood_box
   m_TagString: Untagged
@@ -96,7 +97,7 @@ GameObject:
   - component: {fileID: 4178953448349478}
   - component: {fileID: 198446395109474368}
   - component: {fileID: 199678139406304780}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,8 +110,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1549163940768664}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6, y: 10, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8, y: -7, z: 0}
   m_LocalScale: {x: 0.99, y: 0.99, z: 0.99}
   m_Children:
   - {fileID: 4343443554779660}
@@ -241,6 +242,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65245372220990446
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1655915329836098}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.99599993, y: 0.99599993, z: 0.99599993}
+  m_Center: {x: 0, y: 0.49800044, z: 0}
 --- !u!65 &65302037906273906
 BoxCollider:
   m_ObjectHideFlags: 1
