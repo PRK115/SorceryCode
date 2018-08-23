@@ -1,28 +1,17 @@
 fileFormatVersion: 2
-guid: a8433cfe5ef0c5344971b27c066bcf91
+guid: 2d3ac398af74cb145921ec361aab5361
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: fire
+    100000: door
     100002: //RootNode
-    400000: fire
+    400000: door
     400002: //RootNode
     2100000: palette
-    2100002: fireMat
-    2300000: fire
-    3300000: fire
-    4300000: fire
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: fireMat
-    second: {fileID: 2100000, guid: 87431723407d2684ca900ed0692b61a4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: palette
-    second: {fileID: 2100000, guid: 87431723407d2684ca900ed0692b61a4, type: 2}
+    2300000: door
+    3300000: door
+    4300000: door
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -53,7 +42,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.015
+    globalScale: 0.05
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

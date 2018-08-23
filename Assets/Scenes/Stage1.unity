@@ -57739,6 +57739,10 @@ Prefab:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CursorOffUI
       objectReference: {fileID: 0}
+    - target: {fileID: 1103444352091276, guid: a796f80422a83e8499c18d3b9b3d605e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a796f80422a83e8499c18d3b9b3d605e, type: 2}
   m_IsPrefabAsset: 0

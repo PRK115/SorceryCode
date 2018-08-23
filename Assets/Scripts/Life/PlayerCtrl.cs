@@ -53,6 +53,7 @@ public class PlayerCtrl : MonoBehaviour {
                     if (Input.GetKeyDown(KeyCode.Mouse0) && !EventSystem.current.IsPointerOverGameObject())
                     {
                         StartCoroutine(Cast());
+                        SetState(State.Casting);
                     }
                     break;
 
