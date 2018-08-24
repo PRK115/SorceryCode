@@ -33,6 +33,7 @@ namespace CodeUI
         public ExprSlot ContainedSlot = null;
         public ScopedBlock ContainedScopedBlock = null;
         public int Depth = 0;
+        public bool IsRune = true;
 
         protected virtual void Awake()
         {

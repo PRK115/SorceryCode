@@ -26,6 +26,7 @@ namespace CodeUI
         {
             base.Awake();
             layoutElement = GetComponent<LayoutElement>();
+            IsRune = false;
         }
 
         protected override void Start()

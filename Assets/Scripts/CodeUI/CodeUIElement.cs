@@ -25,6 +25,7 @@ namespace CodeUI
         void Awake()
         {
             Instance = this;
+            HoveredBlocks = new List<Block>();
         }
 
         void Update()

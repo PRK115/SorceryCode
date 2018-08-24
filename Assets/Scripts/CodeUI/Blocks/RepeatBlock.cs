@@ -11,6 +11,7 @@ namespace CodeUI
         protected override void Awake()
         {
             base.Awake();
+            IsRune = false;
             DynamicHeight = true;
         }
     }

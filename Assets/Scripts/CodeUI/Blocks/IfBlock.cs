@@ -12,6 +12,7 @@
         protected override void Awake()
         {
             base.Awake();
+            IsRune = false;
             conditionSlot = GetComponentInChildren<ExprSlot>();
             DynamicHeight = true;
         }
