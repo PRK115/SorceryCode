@@ -2,24 +2,23 @@
 {
     public class MoveBlock : StmtBlock
     {
-        private ExprSlot dirSlot;
+        public ExprSlot dirSlot;
+        public ExprSlot distanceSlot;
 
-        public MoveDirection Dir;
+        public MoveDirection? Dir
+        {
+            get { return (dirSlot.Block as MoveDirBlock)?.Dir; }
+        }
         public int? Distance
         {
-            get { return (dirSlot.Block as MoveDistanceBlock)?.Distance; }
-        }
-
-        protected override void Awake()
-        {
-            base.Awake();
-            dirSlot = GetComponentInChildren<ExprSlot>();
+            get { return (distanceSlot.Block as MoveDistanceBlock)?.Distance; }
         }
 
         protected override void Start()
         {
             base.Start();
-            dirSlot.CheckBlockValidCallback = block =>
+            dirSlot.CheckBlockValidCallback = block => block is MoveDirBlock;
+            distanceSlot.CheckBlockValidCallback = block =>
             {
                 if (block is MoveDistanceBlock)
                 {
