@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 114116378633018068}
   - component: {fileID: 114377779113641134}
   - component: {fileID: 114176733408111538}
+  - component: {fileID: 114547388575350612}
   m_Layer: 9
   m_Name: Mouse
   m_TagString: Life
@@ -369,7 +370,7 @@ Transform:
   m_GameObject: {fileID: 1525892520556632}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 5.21, y: 1.74, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4472520467995628}
   - {fileID: 4747380469940414}
@@ -580,6 +581,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   electricityDuration: 0
+--- !u!114 &114547388575350612
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1525892520556632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927dd6ac6f44c8d4da744262e751162d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityType: 65
+  isMovable: 0
+  IsButtonPushable: 0
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!137 &137818195883514388
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

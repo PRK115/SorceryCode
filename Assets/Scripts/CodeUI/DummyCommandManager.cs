@@ -17,6 +17,11 @@ namespace CodeUI
             Debug.Log($"Changed to {type.ToString()}!");
         }
 
+        public void Change(EntityType entity)
+        {
+            Debug.Log($"Changed to {entity.ToString()}!");
+        }
+
         public void Move(MoveDirection direction, int distance)
         {
             Debug.Log($"Moved to {direction.ToString()} by distance {distance}");
@@ -34,7 +39,7 @@ namespace CodeUI
             }
         }
 
-        public bool IsChangeable(EntityType type)
+        public bool IsSizeChangeable(EntityType type)
         {
             switch (type)
             {
@@ -44,6 +49,11 @@ namespace CodeUI
                 default:
                     return false;
             }
+        }
+
+        public bool IsChangeable(EntityType from, EntityType to)
+        {
+            return true;
         }
 
         public bool IsMoveable(EntityType type)

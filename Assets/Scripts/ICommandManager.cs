@@ -14,9 +14,11 @@ public interface ICommandManager
 {
     void Conjure(EntityType type);
     void Change(ChangeType type);
+    void Change(EntityType type);
     void Move(MoveDirection direction, int distance);
 
     bool IsConjurable(EntityType type);
-    bool IsChangeable(EntityType type);
+    bool IsSizeChangeable(EntityType type);
+    bool IsChangeable(EntityType from, EntityType to);
     bool IsMoveable(EntityType type);
 }

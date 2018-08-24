@@ -389,6 +389,8 @@ GameObject:
   - component: {fileID: 114940577714158900}
   - component: {fileID: 114434107785032976}
   - component: {fileID: 114149760145112138}
+  - component: {fileID: 114540358607357138}
+  - component: {fileID: 114227796849292910}
   m_Layer: 9
   m_Name: Lion
   m_TagString: Life
@@ -1002,6 +1004,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathTime: 1
   alive: 1
+--- !u!114 &114227796849292910
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1772566877903910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 398b42ebdae92cb459f8e662dfa2fcf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Resizable: 0
 --- !u!114 &114434107785032976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1015,6 +1029,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   electricityDuration: 0
+--- !u!114 &114540358607357138
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1772566877903910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927dd6ac6f44c8d4da744262e751162d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityType: 64
+  isMovable: 0
+  IsButtonPushable: 0
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!114 &114764409926681582
 MonoBehaviour:
   m_ObjectHideFlags: 1

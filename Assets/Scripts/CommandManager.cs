@@ -36,8 +36,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
         Conjurable conjurable = prefab.GetComponent<Conjurable>();
         if (conjurable != null)
         {
-            GameObject conjured;
-            conjured = Instantiate(prefab, SpawnPos, prefab.transform.rotation);
+            GameObject conjured = Instantiate(prefab, SpawnPos, prefab.transform.rotation);
             if(type == EntityType.FireBall || type == EntityType.LightningBall)
             {
                 
@@ -45,8 +44,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
             else
             {
                 conjured.transform.localScale = new Vector3(1, 1, 1) * 0.02f;
-                Rigidbody rb;
-                rb = conjured.GetComponent<Rigidbody>();
+                Rigidbody rb = conjured.GetComponent<Rigidbody>();
                 if (rb != null)
                 {
                     rb.useGravity = false;
@@ -117,6 +115,41 @@ public class CommandManager : MonoBehaviour, ICommandManager
         );
     }
 
+    public void Change(EntityType entity)
+    {
+        Changeable changeable = target.GetComponent<Changeable>();
+        if (changeable == null)
+        {
+            Debug.LogError($"Cannot change entity {target} to Entity {entity}");
+            return;
+        }
+
+        Destroy(target.gameObject);
+        GameObject prefab = prefabDB.GetPrefab(entity);
+        target = Instantiate(prefab, SpawnPos, prefab.transform.rotation).GetComponent<Entity>();
+
+        Rigidbody rb = target.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.useGravity = false;
+        }
+
+        StartCoroutine(
+            StartGradualAction(timer =>
+            {
+                target.transform.localScale = Vector3.Lerp(
+                    new Vector3(0, 0, 0), new Vector3(1, 1, 1), timer);
+            }, () =>
+            {
+                target.transform.localScale = new Vector3(1, 1, 1);
+                if (rb != null) rb.useGravity = true;
+            },
+            1.0f)
+        );
+
+
+    }
+
     public void Move(MoveDirection direction, int distance)
     {
         if (distance <= 0 || distance > 4)
@@ -170,11 +203,17 @@ public class CommandManager : MonoBehaviour, ICommandManager
         return conjurable != null;
     }
 
-    public bool IsChangeable(EntityType type)
+    public bool IsSizeChangeable(EntityType type)
     {
         GameObject prefab = prefabDB.GetPrefab(type);
         Changeable changeable = prefab.GetComponent<Changeable>();
-        return changeable != null;
+        return changeable != null && changeable.Resizable;
+    }
+
+    public bool IsChangeable(EntityType from, EntityType to)
+    {
+        // TODO: 어떤 종류가 어떤 종류로 변환 가능한지에 대한 정보가 필요함
+        return true;
     }
 
     public bool IsMoveable(EntityType type)

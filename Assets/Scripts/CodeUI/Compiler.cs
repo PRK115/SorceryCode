@@ -75,11 +75,11 @@ namespace CodeUI
             if (stmtBlock is ChangeBlock)
             {
                 ChangeBlock changeBlock = (ChangeBlock) stmtBlock;
-                if (changeBlock.ChangeType == null)
+                if (changeBlock.Adjective == null)
                     throw new CompilerException($"Missing argument in statement Change.");
                 return new Interpreter.Change
                 {
-                    Adjective = new Either<ChangeType, EntityType>(changeBlock.ChangeType.Value)
+                    Adjective = changeBlock.Adjective.Value
                 };
             }
             if (stmtBlock is MoveBlock)

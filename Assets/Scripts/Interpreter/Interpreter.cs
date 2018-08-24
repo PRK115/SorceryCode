@@ -179,7 +179,7 @@ public class Interpreter : MonoBehaviour
             }
             else
             {
-                // Inst.CommandMgr.Change(Adjective.Right);
+                Inst.CommandMgr.Change(Adjective.Right);
             }
             await new WaitForSeconds(Inst.Delay);
             Inst.Nounce++;
