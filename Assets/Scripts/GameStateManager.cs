@@ -26,10 +26,6 @@ public class GameStateManager : MonoBehaviour
     public Text tutorialTitleText;
     public Text tutorialContentText;
 
-    public CodeUIElement codeUIElement;
-
-    private StmtListBlock Program;
-
     public enum UIState
     {
         Game, Code, Pause, GameOver, StageClear
@@ -111,7 +107,6 @@ public class GameStateManager : MonoBehaviour
         sceneChange = FindObjectOfType<SceneChange>();
 
         instance = this;
-        Program = codeUIElement.Program;
         codeButton.onClick.AddListener(() => SetState(UIState.Code));
         pauseButton.onClick.AddListener(() => SetState(UIState.Pause));
         resumeButton.onClick.AddListener(() => SetState(UIState.Game));
@@ -142,12 +137,6 @@ public class GameStateManager : MonoBehaviour
         {
             SetState(UIState.Game);
         }
-    }
-
-    public void ExecuteCode()
-    {
-        var code = Compiler.Compile(Program);
-        Interpreter.Inst.Execute(code);
     }
 
     public void OpenTutorialPanel(string name, string content)

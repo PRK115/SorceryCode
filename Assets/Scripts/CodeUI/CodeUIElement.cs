@@ -42,11 +42,5 @@ namespace CodeUI
                     .ToList();
             }
         }
-
-        public void RunProgram()
-        {
-            var code = Compiler.Compile(Program);
-            Interpreter.Inst.Execute(code);
-        }
     }
 }

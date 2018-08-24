@@ -77,10 +77,7 @@ public class Projectile : MonoBehaviour {
 
     void Execute()
     {
-        commandManager.SpawnPos = destination;
-        commandManager.SetFocusedEntity(touchingEntity);
-
-        GameStateManager.instance.ExecuteCode();
+        commandManager.Execute(touchingEntity, destination);
     }
 
     private void OnTriggerEnter(Collider other)

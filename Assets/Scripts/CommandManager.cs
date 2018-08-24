@@ -4,17 +4,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CodeUI;
 using UnityEngine;
 
 public class CommandManager : MonoBehaviour, ICommandManager
 {
     public static CommandManager Inst;
 
-    public Vector3 SpawnPos;
-
     private PrefabDB prefabDB;
 
     private Entity target;
+    private Vector3 spawnPos;
+
+    [SerializeField] private CodeUIElement codeUIElement;
 
     float delay = 1;
 
@@ -24,10 +26,14 @@ public class CommandManager : MonoBehaviour, ICommandManager
         prefabDB = GetComponent<PrefabDB>();
     }
 
-    // 현재 주문이 걸린 Entity를 이 함수를 통해 세팅 가능.
-    public void SetFocusedEntity(Entity focusedEntity)
+    public void Execute(Entity focusedEntity, Vector3 targetLocation)
     {
-        this.target = focusedEntity;
+        var code = Compiler.Compile(codeUIElement.Program);
+        Interpreter.Inst.Execute(code, () =>
+        {
+            this.target = focusedEntity;
+            this.spawnPos = targetLocation;
+        });
     }
 
     public void Conjure(EntityType type)
@@ -36,7 +42,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
         Conjurable conjurable = prefab.GetComponent<Conjurable>();
         if (conjurable != null)
         {
-            GameObject conjured = Instantiate(prefab, SpawnPos, prefab.transform.rotation);
+            GameObject conjured = Instantiate(prefab, spawnPos, prefab.transform.rotation);
             if(type == EntityType.FireBall || type == EntityType.LightningBall)
             {
                 
@@ -126,7 +132,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
 
         Destroy(target.gameObject);
         GameObject prefab = prefabDB.GetPrefab(entity);
-        target = Instantiate(prefab, SpawnPos, prefab.transform.rotation).GetComponent<Entity>();
+        target = Instantiate(prefab, spawnPos, prefab.transform.rotation).GetComponent<Entity>();
 
         Rigidbody rb = target.GetComponent<Rigidbody>();
         if (rb != null)

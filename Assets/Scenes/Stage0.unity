@@ -2658,6 +2658,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 23
       objectReference: {fileID: 0}
+    - target: {fileID: 114172812294065892, guid: 83f2736bdcd59454ba240eaa33fe9418,
+        type: 2}
+      propertyPath: codeUIElement
+      value: 
+      objectReference: {fileID: 1162591602}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83f2736bdcd59454ba240eaa33fe9418, type: 2}
   m_IsPrefabAsset: 0
@@ -3958,7 +3963,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1162591601
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6581,7 +6586,6 @@ MonoBehaviour:
   tutorialPanel: {fileID: 39116492}
   tutorialTitleText: {fileID: 524952521}
   tutorialContentText: {fileID: 1781194408}
-  codeUIElement: {fileID: 1162591602}
 --- !u!114 &2021884649
 MonoBehaviour:
   m_ObjectHideFlags: 0

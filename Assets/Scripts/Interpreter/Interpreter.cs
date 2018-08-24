@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 using Util;
@@ -15,7 +16,15 @@ public class Interpreter : MonoBehaviour
 
     public abstract class Stmt
     {
-        public abstract Task<StmtResult> Eval();
+        public virtual async Task<StmtResult> Eval()
+        {
+            if (Inst.CancelRequest)
+            {
+                Inst.IsRunning = false;
+                throw new CancelException();
+            }
+            return StmtResult.None;
+        }
     }
 
     public enum StmtResult
@@ -28,26 +37,9 @@ public class Interpreter : MonoBehaviour
         public LangException(string message) : base(message) { }
     }
 
-    public class LangCoroutine
+    public class CancelException : LangException
     {
-        public Coroutine Coroutine { get; private set; }
-        public object Result;
-        private IEnumerator target;
-
-        public LangCoroutine(MonoBehaviour owner, IEnumerator target)
-        {
-            this.target = target;
-            this.Coroutine = owner.StartCoroutine(Run());
-        }
-
-        private IEnumerator Run()
-        {
-            while (target.MoveNext())
-            {
-                Result = target.Current;
-                yield return Result;
-            }
-        }
+        public CancelException() : base("Cancelling running code.") { }
     }
 
     public class Entity : Expr
@@ -77,6 +69,7 @@ public class Interpreter : MonoBehaviour
 
         public override async Task<StmtResult> Eval()
         {
+            await base.Eval();
             Expr.Eval();
             await new WaitForSeconds(Inst.Delay);
             Inst.Nounce++;
@@ -90,6 +83,7 @@ public class Interpreter : MonoBehaviour
 
         public override async Task<StmtResult> Eval()
         {
+            await base.Eval();
             foreach (Stmt stmt in Statements)
             {
                 StmtResult result = await stmt.Eval();
@@ -108,6 +102,7 @@ public class Interpreter : MonoBehaviour
 
         public override async Task<StmtResult> Eval()
         {
+            await base.Eval();
             object condResult = Cond.Eval();
             if (condResult is bool)
             {
@@ -135,6 +130,7 @@ public class Interpreter : MonoBehaviour
 
         public override async Task<StmtResult> Eval()
         {
+            await base.Eval();
             while (true)
             {
                 StmtResult result = await Body.Eval();
@@ -150,6 +146,7 @@ public class Interpreter : MonoBehaviour
     {
         public override async Task<StmtResult> Eval()
         {
+            await base.Eval();
             return StmtResult.Break;
         }
     }
@@ -160,6 +157,7 @@ public class Interpreter : MonoBehaviour
 
         public override async Task<StmtResult> Eval()
         {
+            await base.Eval();
             Inst.CommandMgr.Conjure(Entity);
             await new WaitForSeconds(Inst.Delay);
             Inst.Nounce++;
@@ -173,6 +171,7 @@ public class Interpreter : MonoBehaviour
 
         public override async Task<StmtResult> Eval()
         {
+            await base.Eval();
             if (Adjective.IsLeft)
             {
                 Inst.CommandMgr.Change(Adjective.Left);
@@ -194,6 +193,7 @@ public class Interpreter : MonoBehaviour
 
         public override async Task<StmtResult> Eval()
         {
+            await base.Eval();
             Inst.CommandMgr.Move(Dir, Distance);
             await new WaitForSeconds(Inst.Delay);
             Inst.Nounce++;
@@ -209,9 +209,46 @@ public class Interpreter : MonoBehaviour
 
     public int Nounce = 0;
 
-    public async void Execute(Block program)
+    public bool IsRunning = false;
+    public bool CancelRequest = false;
+
+    public async void Execute(Block program, Action onStart)
     {
-        await program.Eval();
+        if (IsRunning)
+        {
+            CancelRequest = true;
+        }
+        await new WaitUntil(() => !IsRunning);
+        CancelRequest = false;
+
+        onStart();
+        IsRunning = true;
+        try
+        {
+            await program.Eval();
+        }
+        catch (CancelException ex)
+        {
+            Debug.Log(ex);
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError(ex);
+        }
+        finally
+        {
+            IsRunning = false;
+        }
+    }
+
+    public async void Stop(Action onStop)
+    {
+        if (IsRunning)
+        {
+            CancelRequest = true;
+        }
+        await new WaitUntil(() => !IsRunning);
+        onStop();
     }
 
     void Awake()
