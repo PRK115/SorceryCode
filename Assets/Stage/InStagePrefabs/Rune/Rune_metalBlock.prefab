@@ -289,10 +289,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4334677f13e05294782f0e23cc9c41be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runeType: 0
-  entity: 1
-  adjective: 1
-  direction: 0
+  runeType:
+    type: 0
+    entity: 1
+    adjective: 0
+    direction: 0
 --- !u!135 &135129267896690988
 SphereCollider:
   m_ObjectHideFlags: 1

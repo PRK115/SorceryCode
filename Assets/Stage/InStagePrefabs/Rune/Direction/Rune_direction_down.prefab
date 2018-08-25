@@ -273,10 +273,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4334677f13e05294782f0e23cc9c41be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runeType: 2
-  entity: 64
-  adjective: 0
-  direction: 1
+  runeType:
+    type: 2
+    entity: 0
+    adjective: 0
+    direction: 1
 --- !u!114 &114598701180383522
 MonoBehaviour:
   m_ObjectHideFlags: 1

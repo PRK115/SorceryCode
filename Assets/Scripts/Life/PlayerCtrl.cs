@@ -16,9 +16,6 @@ public class PlayerCtrl : MonoBehaviour {
 
     GameObject wand;
     public GameObject projectile;
-    public List<EntityType> EntityRunes;
-    public List<ChangeType> AdjRunes;
-    public List<Rune.Direction> DirectionRunes;
 
     bool touchingUI;
 

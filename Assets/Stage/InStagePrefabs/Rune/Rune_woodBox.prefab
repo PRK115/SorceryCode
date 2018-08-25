@@ -273,10 +273,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4334677f13e05294782f0e23cc9c41be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runeType: 0
-  entity: 8
-  adjective: 0
-  direction: 0
+  runeType:
+    type: 0
+    entity: 8
+    adjective: 0
+    direction: 0
 --- !u!114 &114992251701710338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -291,7 +292,8 @@ MonoBehaviour:
   EntityType: 16
   isMovable: 0
   IsButtonPushable: 0
-  BlockProjectiles: 0
+  blockProjectiles: 0
+  occupySpace: 0
 --- !u!135 &135661568425699062
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -7,21 +7,15 @@ public class Rune : MonoBehaviour, IConsumable {
 
     private GameObject stone;
 
-    PlayerCtrl player;
+    RuneStock stock;
 
-    public enum RuneType { Entity, Adjective, Direction}
-    public RuneType runeType;
-
-    public EntityType entity;
-    public ChangeType adjective;
-    public enum Direction { Up, Down, Left, Right}
-    public Direction direction;
+    [SerializeField] private RuneType runeType;
 
     float timeTillDestroy = 0.5f;
 
     private void Awake()
     {
-        player = FindObjectOfType<PlayerCtrl>();
+        stock = FindObjectOfType<RuneStock>();
         stone = transform.Find("stone").gameObject;
     }
 
@@ -30,16 +24,16 @@ public class Rune : MonoBehaviour, IConsumable {
         stone.SetActive(false);
         if (timeTillDestroy <= 0)
         {
-            switch (runeType)
+            switch (runeType.type)
             {
-                case RuneType.Entity:
-                    AddRune(entity);
+                case RuneType.Type.Entity:
+                    AddRune(runeType.Entity);
                     break;
-                case RuneType.Adjective:
-                    AddRune(adjective);
+                case RuneType.Type.Adjective:
+                    AddRune(runeType.adjective);
                     break;
-                case RuneType.Direction:
-                    AddRune(direction);
+                case RuneType.Type.Direction:
+                    AddRune(runeType.direction);
                     break;
             }
             Destroy(gameObject);
@@ -49,16 +43,16 @@ public class Rune : MonoBehaviour, IConsumable {
 
     void AddRune(EntityType entity)
     {
-        player.EntityRunes.Add(entity);
+        stock.EntityRunes.Add(entity);
     }
 
     void AddRune(ChangeType adjective)
     {
-        player.AdjRunes.Add(adjective);
+        stock.AdjRunes.Add(adjective);
     }
 
-    void AddRune(Direction direction)
+    void AddRune(RuneType.Direction direction)
     {
-        player.DirectionRunes.Add(direction);
+        stock.DirectionRunes.Add(direction);
     }
 }
