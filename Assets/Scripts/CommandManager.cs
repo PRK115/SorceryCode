@@ -169,16 +169,16 @@ public class CommandManager : MonoBehaviour, ICommandManager
         switch (direction)
         {
             case MoveDirection.Left:
-                finalPos.x -= 1.0f;
+                finalPos.x -= distance;
                 break;
             case MoveDirection.Right:
-                finalPos.x += 1.0f;
+                finalPos.x += distance;
                 break;
             case MoveDirection.Up:
-                finalPos.y += 1.0f;
+                finalPos.y += distance;
                 break;
             case MoveDirection.Down:
-                finalPos.y -= 1.0f;
+                finalPos.y -= distance;
                 break;
         }
 
