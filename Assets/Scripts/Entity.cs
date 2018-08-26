@@ -25,7 +25,7 @@ public enum EntityType
     Lion = 64,
     Mouse,
     FireBall = 96,
-    LightningBall
+    LightningBall,
 }
 
 public enum ChangeType

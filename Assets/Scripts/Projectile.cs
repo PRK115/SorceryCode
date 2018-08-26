@@ -77,10 +77,14 @@ public class Projectile : MonoBehaviour {
 
     void Execute()
     {
-        commandManager.SpawnPos = destination;
-        commandManager.SetFocusedEntity(touchingEntity);
-
-        GameStateManager.instance.ExecuteCode();
+        if (touchingEntity == null)
+        {
+            CommandManager.Inst.ExecuteCode(null, transform.position);
+        }
+        else
+        {
+            CommandManager.Inst.ExecuteCode(touchingEntity, touchingEntity.transform.position);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

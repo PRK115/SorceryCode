@@ -68,7 +68,7 @@ MonoBehaviour:
     - {fileID: 1659442514955882, guid: 2e6104010d3ec7b4d9349a50dc4dc2fc, type: 2}
     - {fileID: 1265080576677376, guid: 081271c9b83b27640a329dd301912cb7, type: 2}
     - {fileID: 1768849196855400, guid: 89efabcde036e444b975390e0fcd2619, type: 2}
-    - {fileID: 1912722062843292, guid: fe7f03a5216ddae43a96d03c7d8debf0, type: 2}
+    - {fileID: 0}
     - {fileID: 1772566877903910, guid: 0e420b485f3e861418b022901a6e6a9a, type: 2}
     - {fileID: 1525892520556632, guid: 6f44734388ffdcc4388d736e9cb059f0, type: 2}
     - {fileID: 1743315362948778, guid: a87c36f4dd3877646bd0653a98596cfa, type: 2}
@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPos: {x: 0, y: 0, z: 0}
+  codeUIElement: {fileID: 0}
 --- !u!114 &114571698434850074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -97,3 +98,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Delay: 1
+  Nounce: 0

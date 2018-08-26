@@ -4,17 +4,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CodeUI;
 using UnityEngine;
 
 public class CommandManager : MonoBehaviour, ICommandManager
 {
     public static CommandManager Inst;
 
-    public Vector3 SpawnPos;
-
     private PrefabDB prefabDB;
 
-    private Entity target;
+    private StmtListBlock program;
+    [SerializeField] private CodeUIElement codeUIElement;
 
     float delay = 1;
 
@@ -22,24 +22,24 @@ public class CommandManager : MonoBehaviour, ICommandManager
     {
         Inst = this;
         prefabDB = GetComponent<PrefabDB>();
+        program = codeUIElement.Program;
     }
 
-    // 현재 주문이 걸린 Entity를 이 함수를 통해 세팅 가능.
-    public void SetFocusedEntity(Entity focusedEntity)
+    public void ExecuteCode(Entity target, Vector3 location)
     {
-        this.target = focusedEntity;
+        var code = Compiler.Compile(program);
+        Interpreter.Inst.Execute(new EvalContext{Target = target, Location = location}, code);
     }
 
-    public void Conjure(EntityType type)
+    public void Conjure(Vector3 location, EntityType type)
     {
         GameObject prefab = prefabDB.GetPrefab(type);
         Conjurable conjurable = prefab.GetComponent<Conjurable>();
         if (conjurable != null)
         {
-            GameObject conjured = Instantiate(prefab, SpawnPos, prefab.transform.rotation);
+            GameObject conjured = Instantiate(prefab, location, prefab.transform.rotation);
             if(type == EntityType.FireBall || type == EntityType.LightningBall)
             {
-                
             }
             else
             {
@@ -49,7 +49,6 @@ public class CommandManager : MonoBehaviour, ICommandManager
                 {
                     rb.useGravity = false;
                 }
-                target = conjured.GetComponent<Entity>();
 
                 StartCoroutine(
                     StartGradualAction(
@@ -73,7 +72,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
     }
 
 
-    public void Change(ChangeType type)
+    public void Change(Entity target, ChangeType type)
     {
         Changeable changeable = target.GetComponent<Changeable>();
         if (changeable == null)
@@ -115,7 +114,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
         );
     }
 
-    public void Change(EntityType entity)
+    public void Change(Entity target, EntityType entity)
     {
         Changeable changeable = target.GetComponent<Changeable>();
         if (changeable == null)
@@ -126,7 +125,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
 
         Destroy(target.gameObject);
         GameObject prefab = prefabDB.GetPrefab(entity);
-        target = Instantiate(prefab, SpawnPos, prefab.transform.rotation).GetComponent<Entity>();
+        target = Instantiate(prefab, target.transform.position, prefab.transform.rotation).GetComponent<Entity>();
 
         Rigidbody rb = target.GetComponent<Rigidbody>();
         if (rb != null)
@@ -150,7 +149,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
 
     }
 
-    public void Move(MoveDirection direction, int distance)
+    public void Move(Entity target, MoveDirection direction, int distance)
     {
         if (distance <= 0 || distance > 4)
         {

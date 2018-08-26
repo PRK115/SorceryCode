@@ -144,12 +144,6 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    public void ExecuteCode()
-    {
-        var code = Compiler.Compile(Program);
-        Interpreter.Inst.Execute(code);
-    }
-
     public void OpenTutorialPanel(string name, string content)
     {
         tutorialPanel.SetActive(true);

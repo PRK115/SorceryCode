@@ -2894,6 +2894,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 23
       objectReference: {fileID: 0}
+    - target: {fileID: 114172812294065892, guid: 83f2736bdcd59454ba240eaa33fe9418,
+        type: 2}
+      propertyPath: codeUIElement
+      value: 
+      objectReference: {fileID: 1162591602}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83f2736bdcd59454ba240eaa33fe9418, type: 2}
   m_IsPrefabAsset: 0
