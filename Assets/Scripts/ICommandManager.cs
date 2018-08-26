@@ -12,10 +12,10 @@ public enum MoveDirection
 
 public interface ICommandManager
 {
-    void Conjure(Vector3 location, EntityType type);
-    void Change(Entity target, ChangeType type);
-    void Change(Entity target, EntityType type);
-    void Move(Entity target, MoveDirection direction, int distance);
+    void Conjure(EvalContext context, EntityType type);
+    void Change(EvalContext context, ChangeType type);
+    void Change(EvalContext context, EntityType type);
+    void Move(EvalContext context, MoveDirection direction, int distance);
 
     bool IsConjurable(EntityType type);
     bool IsSizeChangeable(EntityType type);

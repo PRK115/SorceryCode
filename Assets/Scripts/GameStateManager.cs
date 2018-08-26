@@ -81,6 +81,9 @@ public class GameStateManager : MonoBehaviour
                     inStagePanel.SetActive(false);
                     inStagePausePanel.SetActive(false);
                     inStageFuneralPanel.SetActive(true);
+
+                    // When game over, stop all running programs
+                    Interpreter.Inst.CancelAll();
                 }
                 else if (nextState == UIState.StageClear)
                 {
@@ -88,6 +91,9 @@ public class GameStateManager : MonoBehaviour
                     inStagePanel.SetActive(false);
                     inStagePausePanel.SetActive(false);
                     clearPanel.SetActive(true);
+
+                    // When stage is clear, stop all running programs
+                    Interpreter.Inst.CancelAll();
                 }
                 else throw new Exception($"Invalid UI State {state} -> {nextState}");
                 break;

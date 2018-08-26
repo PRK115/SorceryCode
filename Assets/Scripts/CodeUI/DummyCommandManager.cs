@@ -7,22 +7,22 @@ namespace CodeUI
     {
         public static DummyCommandManager Inst = new DummyCommandManager();
 
-        public void Conjure(Vector3 location, EntityType type)
+        public void Conjure(EvalContext context, EntityType type)
         {
             Debug.Log($"{type.ToString()} Conjured!");
         }
 
-        public void Change(Entity target, ChangeType type)
+        public void Change(EvalContext context, ChangeType type)
         {
             Debug.Log($"Changed to {type.ToString()}!");
         }
 
-        public void Change(Entity target, EntityType entity)
+        public void Change(EvalContext context, EntityType entity)
         {
             Debug.Log($"Changed to {entity.ToString()}!");
         }
 
-        public void Move(Entity target, MoveDirection direction, int distance)
+        public void Move(EvalContext context, MoveDirection direction, int distance)
         {
             Debug.Log($"Moved to {direction.ToString()} by distance {distance}");
         }

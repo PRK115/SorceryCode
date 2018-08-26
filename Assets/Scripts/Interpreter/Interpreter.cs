@@ -21,7 +21,14 @@ public class Interpreter : MonoBehaviour
 
     public abstract class Stmt
     {
-        public abstract Task<StmtResult> Eval(EvalContext context);
+        public virtual async Task<StmtResult> Eval(EvalContext context)
+        {
+            if (Inst.CancelAllPrograms)
+            {
+                throw new CancelException();
+            }
+            return StmtResult.None;
+        }
     }
 
     public enum StmtResult
@@ -32,6 +39,16 @@ public class Interpreter : MonoBehaviour
     public class LangException : Exception
     {
         public LangException(string message) : base(message) { }
+    }
+
+    public class CancelException : LangException
+    {
+        public CancelException() : base("Cancelling running code.") { }
+    }
+
+    public class NullTargetException : LangException
+    {
+        public NullTargetException(string command) : base($"Target not specified for command {command}") { }
     }
 
     public class BoolExpr : Expr
@@ -47,6 +64,7 @@ public class Interpreter : MonoBehaviour
 
         public override async Task<StmtResult> Eval(EvalContext context)
         {
+            await base.Eval(context);
             Expr.Eval();
             await new WaitForSeconds(Inst.Delay);
             Inst.Nounce++;
@@ -60,6 +78,7 @@ public class Interpreter : MonoBehaviour
 
         public override async Task<StmtResult> Eval(EvalContext context)
         {
+            await base.Eval(context);
             foreach (Stmt stmt in Statements)
             {
                 StmtResult result = await stmt.Eval(context);
@@ -78,6 +97,7 @@ public class Interpreter : MonoBehaviour
 
         public override async Task<StmtResult> Eval(EvalContext context)
         {
+            await base.Eval(context);
             object condResult = Cond.Eval();
             if (condResult is bool)
             {
@@ -105,6 +125,7 @@ public class Interpreter : MonoBehaviour
 
         public override async Task<StmtResult> Eval(EvalContext context)
         {
+            await base.Eval(context);
             while (true)
             {
                 StmtResult result = await Body.Eval(context);
@@ -120,6 +141,7 @@ public class Interpreter : MonoBehaviour
     {
         public override async Task<StmtResult> Eval(EvalContext context)
         {
+            await base.Eval(context);
             return StmtResult.Break;
         }
     }
@@ -130,7 +152,8 @@ public class Interpreter : MonoBehaviour
 
         public override async Task<StmtResult> Eval(EvalContext context)
         {
-            Inst.CommandMgr.Conjure(context.Location, Entity);
+            await base.Eval(context);
+            Inst.CommandMgr.Conjure(context, Entity);
             await new WaitForSeconds(Inst.Delay);
             Inst.Nounce++;
             return StmtResult.None;
@@ -143,13 +166,18 @@ public class Interpreter : MonoBehaviour
 
         public override async Task<StmtResult> Eval(EvalContext context)
         {
+            await base.Eval(context);
+            if (context.Target == null)
+            {
+                throw new NullTargetException("Change");
+            }
             if (Adjective.IsLeft)
             {
-                Inst.CommandMgr.Change(context.Target, Adjective.Left);
+                Inst.CommandMgr.Change(context, Adjective.Left);
             }
             else
             {
-                Inst.CommandMgr.Change(context.Target, Adjective.Right);
+                Inst.CommandMgr.Change(context, Adjective.Right);
             }
             await new WaitForSeconds(Inst.Delay);
             Inst.Nounce++;
@@ -164,7 +192,12 @@ public class Interpreter : MonoBehaviour
 
         public override async Task<StmtResult> Eval(EvalContext context)
         {
-            Inst.CommandMgr.Move(context.Target, Dir, Distance);
+            await base.Eval(context);
+            if (context.Target == null)
+            {
+                throw new NullTargetException("Move");
+            }
+            Inst.CommandMgr.Move(context, Dir, Distance);
             await new WaitForSeconds(Inst.Delay);
             Inst.Nounce++;
             return StmtResult.None;
@@ -177,11 +210,42 @@ public class Interpreter : MonoBehaviour
 
     public ICommandManager CommandMgr { get; private set; }
 
-    public int Nounce = 0;
+    public int Nounce { get; set; } = 0;
+
+    public int ExecutingPrograms { get; set; } = 0;
+
+    public bool CancelAllPrograms { get; private set; } = false;
 
     public async void Execute(EvalContext context, Block program)
     {
-        await program.Eval(context);
+        ExecutingPrograms++;
+        try
+        {
+            await program.Eval(context);
+        }
+        catch (CancelException ex)
+        {
+            Debug.Log(ex);
+        }
+        catch (NullTargetException ex)
+        {
+            Debug.Log(ex);
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError(ex);
+        }
+        finally
+        {
+            ExecutingPrograms--;
+        }
+    }
+
+    public async void CancelAll()
+    {
+        CancelAllPrograms = true;
+        await new WaitUntil(() => ExecutingPrograms == 0);
+        CancelAllPrograms = false;
     }
 
     void Awake()

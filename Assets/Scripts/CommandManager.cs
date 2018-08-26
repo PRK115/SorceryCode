@@ -31,13 +31,21 @@ public class CommandManager : MonoBehaviour, ICommandManager
         Interpreter.Inst.Execute(new EvalContext{Target = target, Location = location}, code);
     }
 
-    public void Conjure(Vector3 location, EntityType type)
+    public void Conjure(EvalContext context, EntityType type)
     {
         GameObject prefab = prefabDB.GetPrefab(type);
         Conjurable conjurable = prefab.GetComponent<Conjurable>();
         if (conjurable != null)
         {
-            GameObject conjured = Instantiate(prefab, location, prefab.transform.rotation);
+            GameObject conjured = Instantiate(prefab, context.Location, prefab.transform.rotation);
+            Entity conjuredEntity = conjured.GetComponent<Entity>();
+            if (conjuredEntity == null)
+            {
+                Debug.LogError("Conjured entity does not have Entity component!");
+                return;
+            }
+            context.Target = conjuredEntity;
+
             if(type == EntityType.FireBall || type == EntityType.LightningBall)
             {
             }
@@ -72,8 +80,9 @@ public class CommandManager : MonoBehaviour, ICommandManager
     }
 
 
-    public void Change(Entity target, ChangeType type)
+    public void Change(EvalContext context, ChangeType type)
     {
+        Entity target = context.Target;
         Changeable changeable = target.GetComponent<Changeable>();
         if (changeable == null)
         {
@@ -114,8 +123,9 @@ public class CommandManager : MonoBehaviour, ICommandManager
         );
     }
 
-    public void Change(Entity target, EntityType entity)
+    public void Change(EvalContext context, EntityType entity)
     {
+        Entity target = context.Target;
         Changeable changeable = target.GetComponent<Changeable>();
         if (changeable == null)
         {
@@ -126,12 +136,10 @@ public class CommandManager : MonoBehaviour, ICommandManager
         Destroy(target.gameObject);
         GameObject prefab = prefabDB.GetPrefab(entity);
         target = Instantiate(prefab, target.transform.position, prefab.transform.rotation).GetComponent<Entity>();
+        context.Target = target; // Assign new target (because object has changed)
 
         Rigidbody rb = target.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.useGravity = false;
-        }
+        if (rb != null) rb.useGravity = false;
 
         StartCoroutine(
             StartGradualAction(timer =>
@@ -145,11 +153,9 @@ public class CommandManager : MonoBehaviour, ICommandManager
             },
             1.0f)
         );
-
-
     }
 
-    public void Move(Entity target, MoveDirection direction, int distance)
+    public void Move(EvalContext context, MoveDirection direction, int distance)
     {
         if (distance <= 0 || distance > 4)
         {
@@ -157,6 +163,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
             return;
         }
 
+        Entity target = context.Target;
         Moveable moveable = target.GetComponent<Moveable>();
         if (moveable == null)
         {
