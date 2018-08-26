@@ -92,12 +92,10 @@ public class LionCtrl : MonoBehaviour
         }
         else if(relHab > 3f)
         {
-            Debug.Log("Too Left" + relHab);
             movementFlag = 2;
         }
         else if(relHab < -3f)
         {
-            Debug.Log("Too Right" + relHab);
             movementFlag = 1;
         }
         isWandering = true;
@@ -115,7 +113,6 @@ public class LionCtrl : MonoBehaviour
             {
                 if ((hit.gameObject.tag == "Player") || (hit.gameObject.tag == "Life"))
                 {
-                    Debug.Log("Kill you!: " + hit.gameObject.name);
                     Destroy(hit.gameObject);
                     targetlist.Remove(hit.gameObject);
                     _state = State.Idle;
@@ -139,7 +136,7 @@ public class LionCtrl : MonoBehaviour
             walkAndJump.SetWalkSpeed(1.5f);
             if (isWandering == false)
             {
-                StartCoroutine("Patrolling");
+                StartCoroutine(Patrolling());
             }
         }
 
@@ -158,7 +155,7 @@ public class LionCtrl : MonoBehaviour
                         if ((mainTarget != player) || (mainTarget == null))
                         {
                             mainTarget = hit.gameObject;
-                            StopCoroutine("Patrolling");
+                            StopCoroutine(Patrolling());
                             isWandering = false;
                             _state = State.Chase;
                             animator.SetInteger("State", 1);
@@ -185,7 +182,6 @@ public class LionCtrl : MonoBehaviour
 
                 if (isInRange == false)
                 {
-                    Debug.Log("Where you gone?(lion): " + mainTarget.name);
                     mainTarget = null;
                     _state = State.Idle;
                     animator.SetInteger("State", 0);

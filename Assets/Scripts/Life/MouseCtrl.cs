@@ -92,12 +92,10 @@ public class MouseCtrl : MonoBehaviour
         }
         else if (relHab > 3f)
         {
-            //Debug.Log("Too Left" + relHab);
             movementFlag = 2;
         }
         else if (relHab < -3f)
         {
-            //Debug.Log("Too Right" + relHab);
             movementFlag = 1;
         }
         isWandering = true;
@@ -118,7 +116,7 @@ public class MouseCtrl : MonoBehaviour
             walkAndJump.SetWalkSpeed(1.5f);
             if (isWandering == false)
             {
-                StartCoroutine("Patrolling");
+                StartCoroutine(Patrolling());
             }
         }
 
@@ -135,7 +133,7 @@ public class MouseCtrl : MonoBehaviour
                     {
                         isInRange = true;
                         mainTarget = hit.gameObject;
-                        StopCoroutine("Patrolling");
+                        StopCoroutine(Patrolling());
                         isWandering = false;
                         _state = State.Run;
                         animator.SetInteger("State", 1);
@@ -149,18 +147,15 @@ public class MouseCtrl : MonoBehaviour
                 walkAndJump.SetWalkSpeed(2f);
                 if (relPos.x < 0f)
                 {
-                    //Debug.Log("Running_right");
                     movementFlag = 2;
                 }
                 else if (relPos.x > 0f)
                 {
-                    //Debug.Log("Running_left");
                     movementFlag = 1;
                 }
 
                 if ((isInRange == false) && ((relPos.x > 3f) || (relPos.x < -3f)))
                 {
-                    Debug.Log("Where you gone?(mouse): " + mainTarget.name);
                     mainTarget = null;
                     _state = State.Idle;
                     animator.SetInteger("State", 0);
