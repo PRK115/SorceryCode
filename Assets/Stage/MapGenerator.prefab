@@ -33,8 +33,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1421788778291878}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -384.5, y: -178, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -51,10 +51,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d622a5738edf064fa4bca4ecf2e355d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  map: {fileID: 2800000, guid: 07cd5596b10074542939315c3cc8da40, type: 3}
+  map: {fileID: 2800000, guid: 431df05a32e6fb041b6d45c4c9bb6c82, type: 3}
   player: {fileID: 1849303232956244, guid: 698eadc8535d5914391e107ddf1170e8, type: 2}
   stoneBlock: {fileID: 1775645419542812, guid: ed29241107e2f734ebf16ecb3a74ba84, type: 2}
   metalBlock: {fileID: 1961037955922088, guid: 54f1e5b86f1be744f87a066609feef81, type: 2}
-  goal: {fileID: 1892976698572906, guid: 560e5d40a1c4e2c4f8550f9b27b86810, type: 2}
+  goal: {fileID: 1478319088583380, guid: 653f88be2ff5e834db981892789efe68, type: 2}
   button: {fileID: 1824877913607850, guid: e47b40ee2ac90f94daca64c368663a79, type: 2}
   key: {fileID: 1265080576677376, guid: 081271c9b83b27640a329dd301912cb7, type: 2}
+  resizeCamera: 0

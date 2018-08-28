@@ -12,6 +12,8 @@ public class Conductor : MonoBehaviour, ISubstance
 
     public State state;
 
+    public bool source;
+
     public float electricityDuration;
     float electricityTimeLeft = 0;
 
@@ -27,15 +29,17 @@ public class Conductor : MonoBehaviour, ISubstance
     //{
     //    action = OnElectrify;
     //}
-
-    public void SetAsElectricitySource()
-    {
-        Electrify(this, -1);
-    }
-
     void Awake()
     {
         spark = transform.Find("spark").gameObject;
+    }
+
+    private void Start()
+    {
+        if(source)
+        {
+            Electrify(this, -1);
+        }
     }
 
     void Update()

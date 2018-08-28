@@ -22,7 +22,7 @@ public class Rune : MonoBehaviour, IConsumable {
     public void ConsumedBehaviour()
     {
         stone.SetActive(false);
-        if (timeTillDestroy <= 0)
+        if (timeTillDestroy <= 0 && stock != null)
         {
             switch (runeType.type)
             {

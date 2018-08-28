@@ -21,12 +21,6 @@ public class PureEnergy : MonoBehaviour
     private void Start()
     {
         timeLeft = duration;
-
-        Conductor conductor = substance as Conductor;
-        if (conductor != null)
-        {
-            conductor.SetAsElectricitySource();
-        }
     }
 
     void Update() {

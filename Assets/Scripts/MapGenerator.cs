@@ -15,14 +15,18 @@ public class MapGenerator : MonoBehaviour {
     public GameObject key;
 
     GameObject stageCamera;
+    public bool resizeCamera;
 
-    //GameObject player = MapComponentData.instance.player;
-    //GameObject stoneBlock = MapComponentData.instance.stoneBlock;
-    //GameObject metalBlock = MapComponentData.instance.metalBlock;
-    //GameObject goal = MapComponentData.instance.goal;
+    //private void Awake()
+    //{
+    //    GameObject player;
+    //    GameObject stoneBlock;
+    //    GameObject metalBlock;
+    //    GameObject goal;
 
-    //GameObject button = MapComponentData.instance.goal;
-    //GameObject key = MapComponentData.instance.key;
+    //    GameObject button;
+    //    GameObject key;
+    //}
 
     private void Start()
     {
@@ -42,9 +46,10 @@ public class MapGenerator : MonoBehaviour {
                 for (int y = 0; y < imageHeight; y++)
                 {
                     Color pixelColor = map.GetPixel(x, y);
-                    if (ObjectOfColor(pixelColor) != null)
+                    GameObject pixelObject = ObjectOfColor(pixelColor);
+                    if (pixelObject != null)
                     {
-                        Instantiate(ObjectOfColor(pixelColor), new Vector3(x - imageWidth / 2, y), gameObject.transform.rotation, gameObject.transform);
+                        Instantiate(pixelObject, new Vector3(x - imageWidth / 2, y), pixelObject.transform.rotation, gameObject.transform);
                         if (y < lowest)
                             lowest = y;
                         if (y > highest)
@@ -54,8 +59,9 @@ public class MapGenerator : MonoBehaviour {
             }
             int mapHeight = highest - lowest;
             Debug.Log(mapHeight);
-            stageCamera.GetComponent<Camera>().orthographicSize = mapHeight / 2;
-            transform.Translate(new Vector3(0, -mapHeight / 2, 0));
+            if(resizeCamera)
+                stageCamera.GetComponent<Camera>().orthographicSize = mapHeight / 2;
+            transform.Translate(new Vector3(0, -imageHeight / 2, 0));
         }
     }
 
