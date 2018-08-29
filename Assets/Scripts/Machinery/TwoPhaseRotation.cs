@@ -7,10 +7,11 @@ public class TwoPhaseRotation : MonoBehaviour, IToggleable
 {
     public TwoPhaseMachine machine;
 
+    Quaternion originalRotation;
+    public float phase2angle;
     Quaternion phase2Rotation;
 
-    public float angle;
-    float timeTillPhase2;
+    float timeTillNextPhase;
 
     private void Awake()
     {
@@ -19,7 +20,10 @@ public class TwoPhaseRotation : MonoBehaviour, IToggleable
 
     private void Start()
     {
-        timeTillPhase2 = machine.phaseChangeTime;
+        originalRotation = transform.rotation;
+        phase2Rotation = Quaternion.AngleAxis(phase2angle, transform.forward);
+        
+        timeTillNextPhase = machine.phaseChangeTime;
     }
 
     private void Update()
@@ -34,21 +38,32 @@ public class TwoPhaseRotation : MonoBehaviour, IToggleable
 
     private void PhaseChange()
     {
-        if (timeTillPhase2 <= 0)
+        if (timeTillNextPhase <= 0)
         {
             transform.rotation = phase2Rotation;
-            timeTillPhase2 = machine.phaseChangeTime;
+            timeTillNextPhase = machine.returnTime;
             machine.currentPhase = TwoPhaseMachine.Phase.Second;
         }
         else
         {
-            transform.Rotate(gameObject.transform.up, angle / machine.phaseChangeTime * Time.deltaTime);
-            timeTillPhase2 -= Time.deltaTime;
+            transform.rotation = Quaternion.Lerp(phase2Rotation, originalRotation, timeTillNextPhase/machine.phaseChangeTime);
+            timeTillNextPhase -= Time.deltaTime;
+
         }
     }
 
     private void Return()
     {
-       
+        if (timeTillNextPhase <= 0)
+        {
+            transform.rotation = originalRotation;
+            timeTillNextPhase = machine.phaseChangeTime;
+            machine.currentPhase = TwoPhaseMachine.Phase.Original;
+        }
+        else
+        {
+            transform.rotation = Quaternion.Lerp(originalRotation, phase2Rotation, timeTillNextPhase / machine.returnTime);
+            timeTillNextPhase -= Time.deltaTime;
+        }
     }
 }
