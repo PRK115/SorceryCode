@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4479564690805384}
   - component: {fileID: 198194064369942944}
   - component: {fileID: 199927769429558504}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: spark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4122203676965014}
   - component: {fileID: 198455710236747932}
   - component: {fileID: 199968144609711180}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: spark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4962605669009710}
   - component: {fileID: 198214011313739852}
   - component: {fileID: 199296279254826580}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: blast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 114384504073996500}
   - component: {fileID: 114148388758092292}
   - component: {fileID: 114064679443439998}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: lightningBall
   m_TagString: PowerSupply
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4777005225767020}
   - component: {fileID: 198121626469092606}
   - component: {fileID: 199981730420749454}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: spark (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 4539038140194108}
   - component: {fileID: 198824937472587536}
   - component: {fileID: 199165200585204748}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: burst
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,6 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 1
+  isPowerSource: 1
   electricityDuration: 1000
 --- !u!198 &198121626469092606
 ParticleSystem:

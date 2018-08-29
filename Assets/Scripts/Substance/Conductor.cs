@@ -12,7 +12,7 @@ public class Conductor : MonoBehaviour, ISubstance
 
     public State state;
 
-    public bool source;
+    public bool isPowerSource;
 
     public float electricityDuration;
     float electricityTimeLeft = 0;
@@ -36,7 +36,7 @@ public class Conductor : MonoBehaviour, ISubstance
 
     private void Start()
     {
-        if(source)
+        if(isPowerSource)
         {
             Electrify(this, -1);
         }

@@ -63,7 +63,6 @@ public class Flammable : MonoBehaviour, ISubstance {
                 else
                     burningTimeLeft -= Time.deltaTime;
 
-                // TODO: 잿더미 이펙트 넣기
                 if (burningTimeLeft < 1 && meshRenderer != null)
                 {
                     meshRenderer.enabled = false;

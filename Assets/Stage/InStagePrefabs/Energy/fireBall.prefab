@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4524635372327678}
   - component: {fileID: 198479192466768426}
   - component: {fileID: 199886081740101164}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: puff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4176731887053496}
   - component: {fileID: 198227166343206580}
   - component: {fileID: 199148676977156116}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 114315526829065044}
   - component: {fileID: 114044951302846602}
   - component: {fileID: 114723325936769336}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: fireBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

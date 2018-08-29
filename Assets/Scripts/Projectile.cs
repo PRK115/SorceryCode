@@ -22,7 +22,6 @@ public class Projectile : MonoBehaviour {
     float destroyTime = 0.5f;
 
     CommandManager commandManager;
-    CodeUIElement cue;
 
     Entity touchingEntity;
 
@@ -33,7 +32,6 @@ public class Projectile : MonoBehaviour {
         fail = transform.Find("puff").gameObject;
 
         commandManager = FindObjectOfType<CommandManager>();
-        cue = FindObjectOfType<CodeUIElement>();
 
         transform.LookAt(destination);
 	}
