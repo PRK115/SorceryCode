@@ -8,4 +8,5 @@ using UnityEngine;
 public class Changeable : MonoBehaviour, Attribute
 {
     public bool Resizable;
+    public bool big;
 }

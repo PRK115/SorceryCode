@@ -52,10 +52,10 @@ public class CommandManager : MonoBehaviour, ICommandManager
             else
             {
                 conjured.transform.localScale = new Vector3(1, 1, 1) * 0.02f;
-                Rigidbody rb = conjured.GetComponent<Rigidbody>();
-                if (rb != null)
+                Moveable moveable = conjured.GetComponent<Moveable>();
+                if (moveable != null)
                 {
-                    rb.useGravity = false;
+                    moveable.Gravitated = false;
                 }
 
                 StartCoroutine(
@@ -66,7 +66,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
                         }, () =>
                         {
                             conjured.transform.localScale = new Vector3(1, 1, 1);
-                            if (rb != null) rb.useGravity = true;
+                            if (moveable != null) moveable.Gravitated = true;
                         },
                         1.0f
                     )

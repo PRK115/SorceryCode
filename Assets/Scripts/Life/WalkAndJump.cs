@@ -9,9 +9,6 @@ public class WalkAndJump : MonoBehaviour {
     public float verticalJumpImpulse;
     public float horizontalJumpImpulse;
 
-    GameObject top;
-    //public Platform platform;
-
     private CharacterController ctrl;
     private Vector3 jumpDirection = Vector3.zero;
     private float g = 9.8f;
@@ -45,14 +42,19 @@ public class WalkAndJump : MonoBehaviour {
                     break;
                 case Direction.Up:
                     jumpDirection = new Vector3(0, verticalJumpImpulse, 0);
+                    transform.parent = null;
                     break;
                 case Direction.LeftUp:
                     transform.LookAt(transform.position + Vector3.left);
                     jumpDirection = new Vector3(-horizontalJumpImpulse, verticalJumpImpulse, 0);
+                    transform.parent = null;
+
                     break;
                 case Direction.RightUp:
                     transform.LookAt(transform.position + Vector3.right);
                     jumpDirection = new Vector3(horizontalJumpImpulse, verticalJumpImpulse, 0);
+                    transform.parent = null;
+
                     break;
             }
             ctrl.Move(moveDirection * Time.deltaTime);
@@ -62,7 +64,6 @@ public class WalkAndJump : MonoBehaviour {
         {
             jumpDirection.y -= g * Time.deltaTime;
             ctrl.Move(jumpDirection * Time.deltaTime);
-
         }
     }
 
@@ -73,8 +74,10 @@ public class WalkAndJump : MonoBehaviour {
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.normal == Vector3.up && hit.gameObject.GetComponentInParent<Moveable>() != null)
-        { 
+        if (hit.normal == Vector3.up && hit.gameObject.GetComponent<Moveable>() != null)
+        {
+            transform.parent = hit.transform;
+            //transform.localScale = new Vector3 (1/transform.parent.localScale.x, 1 / transform.parent.localScale.x, 1 / transform.parent.localScale.x);
         }
     }
 }
