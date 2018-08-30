@@ -215,6 +215,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1519227500197298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4111998611022308}
+  - component: {fileID: 114174204516161660}
+  m_Layer: 0
+  m_Name: Platform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1541485599916996
 GameObject:
   m_ObjectHideFlags: 1
@@ -385,6 +401,19 @@ Transform:
   m_Father: {fileID: 4835794784831634}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4111998611022308
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1519227500197298}
+  m_LocalRotation: {x: 0.043577887, y: -0.043577887, z: 0.0019026523, w: 0.99809736}
+  m_LocalPosition: {x: 0, y: -1.69, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4166209003197168}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4166209003197168
 Transform:
   m_ObjectHideFlags: 1
@@ -400,6 +429,7 @@ Transform:
   - {fileID: 4907283608655524}
   - {fileID: 4835794784831634}
   - {fileID: 4453040075297712}
+  - {fileID: 4111998611022308}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -683,6 +713,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114174204516161660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1519227500197298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c440aa72e26a4d44f98600907c2de565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114413294078987054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -723,6 +764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  isPowerSource: 0
   electricityDuration: 1
 --- !u!114 &114957211925591270
 MonoBehaviour:
@@ -750,6 +792,7 @@ MonoBehaviour:
   walkSpeed: 8
   verticalJumpImpulse: 5.2
   horizontalJumpImpulse: 1.6
+  platform: {fileID: 0}
 --- !u!136 &136725132721556242
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -757,7 +800,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1849303232956244}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.6010503
   m_Height: 2.6

@@ -16,7 +16,7 @@ public class BoxMove : MonoBehaviour {
         if (Input.GetKey("b"))
         {
             rb.useGravity = false;
-            rb.velocity = Vector3.right * 5;
+            rb.velocity = Vector3.up * 5;
         }
 
         if(Input.GetKeyUp("b"))

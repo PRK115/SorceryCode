@@ -9,8 +9,8 @@ public class WalkAndJump : MonoBehaviour {
     public float verticalJumpImpulse;
     public float horizontalJumpImpulse;
 
-    Rigidbody platformRb;
-    Vector3 platformOffset;
+    GameObject top;
+    //public Platform platform;
 
     private CharacterController ctrl;
     private Vector3 jumpDirection = Vector3.zero;
@@ -19,6 +19,8 @@ public class WalkAndJump : MonoBehaviour {
     void Awake()
     {
         ctrl = GetComponent<CharacterController>();
+        //ctrl.detectCollisions = false;
+        //platform = GetComponentInParent<Platform>();
     }
 
     public void Manuever(Direction direction)
@@ -45,15 +47,13 @@ public class WalkAndJump : MonoBehaviour {
                     jumpDirection = new Vector3(0, verticalJumpImpulse, 0);
                     break;
                 case Direction.LeftUp:
+                    transform.LookAt(transform.position + Vector3.left);
                     jumpDirection = new Vector3(-horizontalJumpImpulse, verticalJumpImpulse, 0);
                     break;
                 case Direction.RightUp:
+                    transform.LookAt(transform.position + Vector3.right);
                     jumpDirection = new Vector3(horizontalJumpImpulse, verticalJumpImpulse, 0);
                     break;
-            }
-            if(platformRb != null)
-            {
-                moveDirection += platformRb.velocity * 2;
             }
             ctrl.Move(moveDirection * Time.deltaTime);
         }
@@ -61,8 +61,9 @@ public class WalkAndJump : MonoBehaviour {
         else
         {
             jumpDirection.y -= g * Time.deltaTime;
+            ctrl.Move(jumpDirection * Time.deltaTime);
+
         }
-        ctrl.Move(jumpDirection * Time.deltaTime);
     }
 
     public void SetWalkSpeed(float speed)
@@ -72,9 +73,8 @@ public class WalkAndJump : MonoBehaviour {
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.normal == Vector3.up)
-        {
-            platformRb = hit.gameObject.GetComponent<Rigidbody>();
+        if (hit.normal == Vector3.up && hit.gameObject.GetComponentInParent<Moveable>() != null)
+        { 
         }
     }
 }

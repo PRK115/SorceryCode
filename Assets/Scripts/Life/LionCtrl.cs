@@ -22,7 +22,7 @@ public class LionCtrl : MonoBehaviour
     bool isWandering = false;
 
     bool isInRange = false;
-
+    
     public List<GameObject> targetlist = new List<GameObject>();
     public GameObject player;
     public GameObject mainTarget;
@@ -111,9 +111,10 @@ public class LionCtrl : MonoBehaviour
         {
             if ((hit.gameObject != gameObject) && (hit.gameObject.layer == 9))
             {
-                if ((hit.gameObject.tag == "Player") || (hit.gameObject.tag == "Life"))
+                Organism org = hit.GetComponent<Organism>();
+                if(org != null)
                 {
-                    Destroy(hit.gameObject);
+                    org.PhysicalDamage();
                     targetlist.Remove(hit.gameObject);
                     _state = State.Idle;
                     animator.SetInteger("State", 0);
