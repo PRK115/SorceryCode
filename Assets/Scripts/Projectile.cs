@@ -88,10 +88,6 @@ public class Projectile : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         Entity otherEntity = other.GetComponent<Entity>();
-        if(otherEntity == null)
-        {
-            other.transform.parent.GetComponent<Entity>();
-        }
         if(otherEntity != null)
         {
             Debug.Log(otherEntity);

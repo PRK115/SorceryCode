@@ -131,7 +131,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  source: 0
+  isPowerSource: 0
   electricityDuration: 0.2
 --- !u!114 &114965526905209616
 MonoBehaviour:
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  source: 0
+  isPowerSource: 0
   electricityDuration: 0.2
 --- !u!198 &198369084682247770
 ParticleSystem:

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4554847192389610}
   - component: {fileID: 33345656852984652}
   - component: {fileID: 23710244511717434}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hinge_door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4001357622774008}
   - component: {fileID: 114581824357351138}
   - component: {fileID: 114173641873949898}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RotatingDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
     phaseChangeTime: 1
     returnTime: 1
     activated: 0
-  angle: 90
+  phase2angle: 0
 --- !u!114 &114581824357351138
 MonoBehaviour:
   m_ObjectHideFlags: 1

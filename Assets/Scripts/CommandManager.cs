@@ -52,10 +52,10 @@ public class CommandManager : MonoBehaviour, ICommandManager
             else
             {
                 conjured.transform.localScale = new Vector3(1, 1, 1) * 0.02f;
-                Moveable moveable = conjured.GetComponent<Moveable>();
-                if (moveable != null)
+                Rigidbody rb = conjured.GetComponent<Rigidbody>();
+                if (rb != null)
                 {
-                    moveable.Gravitated = false;
+                    rb.isKinematic = true;
                 }
 
                 StartCoroutine(
@@ -66,7 +66,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
                         }, () =>
                         {
                             conjured.transform.localScale = new Vector3(1, 1, 1);
-                            if (moveable != null) moveable.Gravitated = true;
+                            if (rb != null) rb.isKinematic = false;
                         },
                         1.0f
                     )
@@ -95,11 +95,15 @@ public class CommandManager : MonoBehaviour, ICommandManager
             return;
         }
 
+        Rigidbody rb = target.GetComponent<Rigidbody>();
+
         Vector3 finalSize;
         switch (type)
         {
             case ChangeType.Big:
                 finalSize = target.transform.localScale * 3;
+                rb.isKinematic = false;
+                Debug.Log(rb.isKinematic);
                 break;
             case ChangeType.Small:
                 finalSize = target.transform.localScale / 3;
@@ -117,6 +121,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
                 }, () =>
                 {
                     target.transform.localScale = finalSize;
+                    rb.isKinematic = true;
                 },
                 1.0f
             )
@@ -171,35 +176,57 @@ public class CommandManager : MonoBehaviour, ICommandManager
             return;
         }
 
+        Rigidbody rb = target.GetComponent<Rigidbody>();
+
+        rb.isKinematic = true;
+
         Vector3 finalPos = target.transform.position;
         switch (direction)
         {
             case MoveDirection.Left:
                 finalPos.x -= distance;
+                moveable.XTendency = -distance;
                 break;
             case MoveDirection.Right:
                 finalPos.x += distance;
+                moveable.XTendency = distance;
                 break;
             case MoveDirection.Up:
                 finalPos.y += distance;
+                moveable.YTendency = distance;
                 break;
             case MoveDirection.Down:
                 finalPos.y -= distance;
+                moveable.YTendency = -distance;
                 break;
         }
-
-        StartCoroutine(
-            StartGradualAction(timer =>
+        StartCoroutine
+        (
+            StartGradualAction
+            (
+                timer => { }
+                , () =>
                 {
-                    target.transform.position = Vector3.Lerp(
-                        target.transform.position, finalPos, timer);
-                }, () =>
-                {
-                    target.transform.position = finalPos;
-                },
-                1.0f
+                    target.transform.position = new Vector3(Mathf.Round(target.transform.position.x), Mathf.Round(target.transform.position.y), 0);
+                    rb.isKinematic = false;
+                    moveable.XTendency = moveable.YTendency = 0;
+                }
+                , 1.0f
             )
         );
+
+        //StartCoroutine(
+        //    StartGradualAction(timer =>
+        //        {
+        //            target.transform.position = Vector3.Lerp(
+        //                target.transform.position, finalPos, timer);
+        //        }, () =>
+        //        {
+        //            target.transform.position = finalPos;
+        //        },
+        //        1.0f
+        //    )
+        //);
     }
 
     public bool IsConjurable(EntityType type)

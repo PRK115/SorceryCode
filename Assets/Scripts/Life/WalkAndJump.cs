@@ -13,8 +13,15 @@ public class WalkAndJump : MonoBehaviour {
     private Vector3 jumpDirection = Vector3.zero;
     private float g = 9.8f;
 
+    Moveable platform;
+    //Vector3 originalScale;
+
+    bool isGrounded_delayed;
+    int airborneDelay = 4;
+
     void Awake()
     {
+        //originalScale = transform.localScale;
         ctrl = GetComponent<CharacterController>();
         //ctrl.detectCollisions = false;
         //platform = GetComponentInParent<Platform>();
@@ -22,9 +29,22 @@ public class WalkAndJump : MonoBehaviour {
 
     public void Manuever(Direction direction)
     {
+        if (ctrl.isGrounded)
+        {
+            isGrounded_delayed = true;
+            airborneDelay = 4;
+        }
+        else
+        {
+            if (airborneDelay == 0)
+                isGrounded_delayed = false;
+            else
+                airborneDelay--;
+        }
+
 
         Vector3 moveDirection = Vector3.zero;
-        if (ctrl.isGrounded)
+        if (isGrounded_delayed)
         {
             jumpDirection = Vector3.zero;
             switch (direction)
@@ -57,13 +77,27 @@ public class WalkAndJump : MonoBehaviour {
 
                     break;
             }
+            if (platform != null)
+            {
+                moveDirection += new Vector3(platform.XTendency, platform.YTendency, 0) * 1.4f;
+            }
             ctrl.Move(moveDirection * Time.deltaTime);
         }
 
         else
         {
-            jumpDirection.y -= g * Time.deltaTime;
+            if(platform == null)
+            {
+                jumpDirection.y -= g * Time.deltaTime;  
+            }
+            else
+            {
+                platform = null;
+                //transform.parent = null;
+                //transform.localScale = originalScale;
+            }
             ctrl.Move(jumpDirection * Time.deltaTime);
+
         }
     }
 
@@ -74,10 +108,11 @@ public class WalkAndJump : MonoBehaviour {
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.normal == Vector3.up && hit.gameObject.GetComponent<Moveable>() != null)
+        if (hit.normal == Vector3.up)
         {
-            transform.parent = hit.transform;
-            //transform.localScale = new Vector3 (1/transform.parent.localScale.x, 1 / transform.parent.localScale.x, 1 / transform.parent.localScale.x);
+            platform = hit.gameObject.GetComponent<Moveable>();
+            //transform.parent = hit.transform;
+            //transform.localScale = new Vector3 (originalScale.x/transform.parent.localScale.x, originalScale.y / transform.parent.localScale.y, originalScale.z / transform.parent.localScale.z);
         }
     }
 }
