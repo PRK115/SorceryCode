@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4188788052198048}
   - component: {fileID: 198037049063964448}
   - component: {fileID: 199722601538991784}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4343443554779660}
   - component: {fileID: 198650486588759256}
   - component: {fileID: 199673496914073428}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 54810408935715314}
   - component: {fileID: 65197913123457056}
   - component: {fileID: 114564929505255710}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WoodBox
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4795504636868416}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 33945043636796624}
   - component: {fileID: 23280239341662654}
   - component: {fileID: 65730153217382220}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: wood_box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 4178953448349478}
   - component: {fileID: 198446395109474368}
   - component: {fileID: 199678139406304780}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.99, y: 0.99, z: 0.99}
+  m_Size: {x: 0.9, y: 0.9, z: 0.9}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65730153217382220
 BoxCollider:

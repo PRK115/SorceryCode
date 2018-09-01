@@ -23,6 +23,7 @@ public class Moveable : MonoBehaviour, Attribute
 
         if (rb.isKinematic)
         {
+            Debug.Log($"{XTendency}");
             if ((XTendency > 0 && !cd.rightBlocked) || (XTendency < 0 && !cd.leftBlocked))
             {
                 transform.Translate(Vector3.right * XTendency * Time.deltaTime, Space.World);
@@ -33,22 +34,6 @@ public class Moveable : MonoBehaviour, Attribute
                 transform.position = new Vector3(Mathf.Round(transform.position.x), transform.position.y, 0);
             }
 
-            //if (Gravitated)
-            //{
-            //    if (cd.downBlocked)
-            //    {
-            //        YTendency = 0;
-            //    }
-            //    else
-            //    {
-            //        YTendency -= g * Time.deltaTime;
-            //    }
-            //}
-            //else if(YTendency == 0)
-            //{
-            //    transform.position = new Vector3(transform.position.x, Mathf.Round(transform.position.y), 0);
-            //}
-
             if ((YTendency > 0 && !cd.upBlocked) || (YTendency < 0 && !cd.downBlocked))
             {
                 transform.Translate(Vector3.up * YTendency * Time.deltaTime, Space.World);
@@ -58,20 +43,12 @@ public class Moveable : MonoBehaviour, Attribute
                 YTendency = 0;
                 transform.position = new Vector3(transform.position.x, Mathf.Round(transform.position.y), 0);
             }
-
         }
 
         else if (rb.velocity.y < 0 && cd.downBlocked)
         {
             transform.position = new Vector3(transform.position.x, Mathf.Round(transform.position.y), 0);
             rb.isKinematic = true;
-        }
-
-
-        if (Input.GetKey(KeyCode.B))
-        {
-            //Gravitated = false;
-            XTendency = 2;
         }
     }
 

@@ -62,17 +62,20 @@ public class WalkAndJump : MonoBehaviour {
                     break;
                 case Direction.Up:
                     jumpDirection = new Vector3(0, verticalJumpImpulse, 0);
+                    isGrounded_delayed = false;
                     transform.parent = null;
                     break;
                 case Direction.LeftUp:
                     transform.LookAt(transform.position + Vector3.left);
                     jumpDirection = new Vector3(-horizontalJumpImpulse, verticalJumpImpulse, 0);
+                    isGrounded_delayed = false;
                     transform.parent = null;
 
                     break;
                 case Direction.RightUp:
                     transform.LookAt(transform.position + Vector3.right);
                     jumpDirection = new Vector3(horizontalJumpImpulse, verticalJumpImpulse, 0);
+                    isGrounded_delayed = false;
                     transform.parent = null;
 
                     break;
@@ -93,12 +96,9 @@ public class WalkAndJump : MonoBehaviour {
             else
             {
                 platform = null;
-                //transform.parent = null;
-                //transform.localScale = originalScale;
             }
-            ctrl.Move(jumpDirection * Time.deltaTime);
-
         }
+        ctrl.Move(jumpDirection * Time.deltaTime);
     }
 
     public void SetWalkSpeed(float speed)

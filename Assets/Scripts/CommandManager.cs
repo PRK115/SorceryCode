@@ -101,12 +101,14 @@ public class CommandManager : MonoBehaviour, ICommandManager
         switch (type)
         {
             case ChangeType.Big:
-                finalSize = target.transform.localScale * 3;
+                finalSize = target.transform.localScale * (changeable.big ? 1 : 3);
                 rb.isKinematic = false;
-                Debug.Log(rb.isKinematic);
+                changeable.big = true;
                 break;
             case ChangeType.Small:
-                finalSize = target.transform.localScale / 3;
+                finalSize = target.transform.localScale / (!changeable.big ? 1 : 3);
+                rb.isKinematic = false;
+                changeable.big = false;
                 break;
             default:
                 Debug.LogError($"Unsupported ChangeType {type}");
@@ -118,10 +120,13 @@ public class CommandManager : MonoBehaviour, ICommandManager
                 {
                     target.transform.localScale = Vector3.Lerp(
                         target.transform.localScale, finalSize, timer);
+                    //Debug.Log(rb.isKinematic);
+                    if(type == ChangeType.Big)
+                        changeable.BePushed();
                 }, () =>
                 {
                     target.transform.localScale = finalSize;
-                    rb.isKinematic = true;
+                    changeable.AdjustPosition();
                 },
                 1.0f
             )
@@ -245,8 +250,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
 
     public bool IsChangeable(EntityType from, EntityType to)
     {
-        // TODO: 어떤 종류가 어떤 종류로 변환 가능한지에 대한 정보가 필요함
-        return true;
+        return (prefabDB.GetPrefab(from).GetComponent<Changeable>() != null && prefabDB.GetPrefab(to).GetComponent<Changeable>() != null);
     }
 
     public bool IsMoveable(EntityType type)

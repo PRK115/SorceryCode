@@ -19,45 +19,43 @@ public class ContactDetector : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(true)
+        ContactPoint[] c = collision.contacts;
+
+        int rightSum = 0;
+        int leftSum = 0;
+        int upSum = 0;
+        int downSum = 0;
+        for (int i = 0; i < c.Length; i++)
         {
-            ContactPoint[] c = collision.contacts;
-
-            int rightSum = 0;
-            int leftSum = 0;
-            int upSum = 0;
-            int downSum = 0;
-            for (int i = 0; i < c.Length; i++)
-            {
-                if (c[i].normal == Vector3.right)
-                    leftSum++;
-                else if (c[i].normal == -Vector3.right)
-                    rightSum++;
-                else if (c[i].normal == Vector3.up)
-                    downSum++;
-                else if (c[i].normal == -Vector3.up)
-                    upSum++;
-            }
-            if (rightSum >= 3)
-                rightBlocked = true;
-            else
-                rightBlocked = false;
-
-            if (downSum >= 3)
-                downBlocked = true;
-            else
-                downBlocked = false;
-
-            if (leftSum >= 3)
-                leftBlocked = true;
-            else
-                leftBlocked = false;
-
-            if (upSum >= 3)
-                upBlocked = true;
-            else
-                upBlocked = false;
+            if (c[i].normal == Vector3.right)
+                leftSum++;
+            else if (c[i].normal == -Vector3.right)
+                rightSum++;
+            else if (c[i].normal == Vector3.up)
+                downSum++;
+            else if (c[i].normal == -Vector3.up)
+                upSum++;
         }
+        if (rightSum >= 1)
+            rightBlocked = true;
+        else
+            rightBlocked = false;
+
+        if (downSum >= 1)
+            downBlocked = true;
+        else
+            downBlocked = false;
+
+        if (leftSum >= 1)
+            leftBlocked = true;
+        else
+            leftBlocked = false;
+
+        if (upSum >= 1)
+            upBlocked = true;
+        else
+            upBlocked = false;
+        //Debug.Log($"{upBlocked} {downBlocked} {leftBlocked} {rightBlocked}");
     }
 
     private void OnCollisionExit(Collision collision)
