@@ -986,7 +986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _state: 0
-  movePower: 1
+  runSpeed: 4
   targetlist: []
   player: {fileID: 0}
   mainTarget: {fileID: 0}
@@ -1016,6 +1016,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Resizable: 0
+  big: 0
+  changing: 0
 --- !u!114 &114434107785032976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1028,6 +1030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  isPowerSource: 0
   electricityDuration: 0
 --- !u!114 &114540358607357138
 MonoBehaviour:

@@ -6,6 +6,7 @@ using System.Linq;
 public class MouseCtrl : MonoBehaviour
 {
     WalkAndJump walkAndJump;
+    Organism org;
     //CharacterController ctrl;
 
     Animator animator;
@@ -17,7 +18,7 @@ public class MouseCtrl : MonoBehaviour
     }
     public State _state;
 
-    public float movePower = 1f;
+    public float runSpeed;
     int movementFlag = 0;
     bool isWandering = false;
 
@@ -33,6 +34,7 @@ public class MouseCtrl : MonoBehaviour
     void Awake()
     {
         walkAndJump = GetComponent<WalkAndJump>();
+        org = GetComponent<Organism>();
         //ctrl = GetComponent<CharacterController>();
 
         _tr = gameObject.transform;
@@ -105,6 +107,10 @@ public class MouseCtrl : MonoBehaviour
 
     void Update ()
     {
+        if (!org.alive)
+        {
+            return;
+        }
         TargetUpdate();
         Move();
         //ctrl.isTrigger = true;
@@ -144,7 +150,7 @@ public class MouseCtrl : MonoBehaviour
             if ((_state == State.Run) && (mainTarget != null))
             {
                 var relPos = mainTarget.transform.position - transform.position;
-                walkAndJump.SetWalkSpeed(4.2f);
+                walkAndJump.SetWalkSpeed(runSpeed);
                 if (relPos.x < 0f)
                 {
                     movementFlag = 2;

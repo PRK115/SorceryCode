@@ -6,6 +6,7 @@ using System.Linq;
 public class LionCtrl : MonoBehaviour
 {
     WalkAndJump walkAndJump;
+    Organism org;
     //CharacterController ctrl;
 
     Animator animator;
@@ -17,7 +18,7 @@ public class LionCtrl : MonoBehaviour
     }
     public State _state;
 
-    public float movePower = 1f;
+    public float runSpeed;
     int movementFlag = 0;
     bool isWandering = false;
 
@@ -33,6 +34,8 @@ public class LionCtrl : MonoBehaviour
     void Awake()
     {
         walkAndJump = GetComponent<WalkAndJump>();
+        org = GetComponent<Organism>();
+
         //ctrl = GetComponent<CharacterController>();
 
         _tr = gameObject.transform;
@@ -140,6 +143,10 @@ public class LionCtrl : MonoBehaviour
 
     void Update()
 	{
+        if(!org.alive)
+        {
+            return;
+        }
         TargetUpdate();
         Move();
         //ctrl.enabled = false;
@@ -227,7 +234,7 @@ public class LionCtrl : MonoBehaviour
                     break;
 
                 case State.Chase:
-                    walkAndJump.SetWalkSpeed(4.5f);
+                    walkAndJump.SetWalkSpeed(runSpeed);
                     isWandering = false;
                     //Debug.Log("false");
                     break;

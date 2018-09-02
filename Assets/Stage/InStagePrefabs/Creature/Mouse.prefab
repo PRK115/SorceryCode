@@ -549,7 +549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _state: 0
-  movePower: 1
+  runSpeed: 3
   targetlist: []
   player: {fileID: 0}
   mainTarget: {fileID: 0}
@@ -580,6 +580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  isPowerSource: 0
   electricityDuration: 0
 --- !u!114 &114547388575350612
 MonoBehaviour:
