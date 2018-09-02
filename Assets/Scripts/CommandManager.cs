@@ -101,14 +101,30 @@ public class CommandManager : MonoBehaviour, ICommandManager
         switch (type)
         {
             case ChangeType.Big:
-                finalSize = target.transform.localScale * (changeable.big ? 1 : 3);
-                rb.isKinematic = false;
-                changeable.big = true;
+                if (!changeable.big)
+                {
+                    target.GetComponent<ContactDetector>().CheckSurroundingObstacles();
+                    rb.isKinematic = true;
+                    changeable.BePushed();
+                    finalSize = target.transform.localScale * 3;
+                    changeable.big = true;
+                }
+                else
+                {
+                    finalSize = target.transform.localScale;
+                }
                 break;
             case ChangeType.Small:
-                finalSize = target.transform.localScale / (!changeable.big ? 1 : 3);
-                rb.isKinematic = false;
-                changeable.big = false;
+                if (changeable.big)
+                {
+                    finalSize = target.transform.localScale / 3;
+                    rb.isKinematic = false;
+                    changeable.big = false;
+                }
+                else
+                {
+                    finalSize = target.transform.localScale;
+                }
                 break;
             default:
                 Debug.LogError($"Unsupported ChangeType {type}");
@@ -121,8 +137,6 @@ public class CommandManager : MonoBehaviour, ICommandManager
                     target.transform.localScale = Vector3.Lerp(
                         target.transform.localScale, finalSize, timer);
                     //Debug.Log(rb.isKinematic);
-                    if(type == ChangeType.Big)
-                        changeable.BePushed();
                 }, () =>
                 {
                     target.transform.localScale = finalSize;

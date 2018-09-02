@@ -90,7 +90,7 @@ public class Projectile : MonoBehaviour {
         Entity otherEntity = other.GetComponent<Entity>();
         if(otherEntity != null)
         {
-            Debug.Log(otherEntity);
+            //Debug.Log(otherEntity);
             if (otherEntity.blockProjectiles)
             {
                 state = State.Explode;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ContactDetector : MonoBehaviour {
 
-    Rigidbody rb;
+    //Rigidbody rb;
 
     public bool rightBlocked;
     public bool leftBlocked;
@@ -12,10 +12,10 @@ public class ContactDetector : MonoBehaviour {
     public bool upBlocked;
     public bool downBlocked;
 
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
+    //private void Awake()
+    //{
+    //    rb = GetComponent<Rigidbody>();
+    //}
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -56,6 +56,21 @@ public class ContactDetector : MonoBehaviour {
         else
             upBlocked = false;
         //Debug.Log($"{upBlocked} {downBlocked} {leftBlocked} {rightBlocked}");
+    }
+
+    public void CheckSurroundingObstacles()
+    {
+        int layerMask = ~ (9 << 9);
+        upBlocked = Physics.CheckBox(transform.position + Vector3.up * 0.8f, new Vector3(0.3f, 0.1f, 0.5f), Quaternion.identity, layerMask);
+        downBlocked = Physics.CheckBox(transform.position + Vector3.down * 0.8f, new Vector3(0.3f, 0.1f, 0.5f), Quaternion.identity, layerMask);
+        leftBlocked = Physics.CheckBox(transform.position + Vector3.left * 0.8f, new Vector3(0.1f, 0.3f, 0.5f), Quaternion.identity, layerMask);
+        rightBlocked = Physics.CheckBox(transform.position + Vector3.right * 0.8f, new Vector3(0.1f, 0.3f, 0.5f), Quaternion.identity, layerMask);
+        Collider[] c = Physics.OverlapBox(transform.position + Vector3.up * 0.8f, new Vector3(0.3f, 0.1f, 0.5f), Quaternion.identity, layerMask);
+        for (int i = 0; i < c.Length; i++)
+        {
+            Debug.Log(c[i].name);
+        }
+        Debug.Log($"{upBlocked} {downBlocked} {leftBlocked} {rightBlocked}");
     }
 
     private void OnCollisionExit(Collision collision)
