@@ -22,7 +22,7 @@ public class PlayerCtrl : MonoBehaviour {
     Animator animator;
     float exitTime = 1;
 
-    bool cleared;
+    //bool cleared;
     float goalX;
     public float GoalX { set { goalX = value; } }
 
@@ -136,7 +136,7 @@ public class PlayerCtrl : MonoBehaviour {
 
         if (exitTime <= 0)
         {
-            cleared = true;
+            //cleared = true;
             manager.SetState(GameStateManager.UIState.StageClear);
         }
         else

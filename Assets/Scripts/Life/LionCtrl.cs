@@ -6,7 +6,7 @@ using System.Linq;
 public class LionCtrl : MonoBehaviour
 {
     WalkAndJump walkAndJump;
-    CharacterController ctrl;
+    //CharacterController ctrl;
 
     Animator animator;
 
@@ -33,7 +33,7 @@ public class LionCtrl : MonoBehaviour
     void Awake()
     {
         walkAndJump = GetComponent<WalkAndJump>();
-        ctrl = GetComponent<CharacterController>();
+        //ctrl = GetComponent<CharacterController>();
 
         _tr = gameObject.transform;
         habitat = transform.position;
@@ -45,7 +45,7 @@ public class LionCtrl : MonoBehaviour
 
     void Start()
     {
-        _state = State.Idle;
+        SetState(State.Idle);
     }
 
     void TargetUpdate()
@@ -64,6 +64,22 @@ public class LionCtrl : MonoBehaviour
         {
             targetlist.AddRange(GameObject.FindGameObjectsWithTag("Life"));
         }
+
+        for(int i = 0; i < targetlist.Count; i++)
+        {
+            if (!targetlist[i].GetComponent<Organism>().alive)
+            {
+                targetlist.Remove(targetlist[i]);
+            }
+        }
+
+        //foreach(GameObject animal in targetlist)
+        //{
+        //    if(!animal.GetComponent<Organism>().alive)
+        //    {
+        //        targetlist.Remove(animal);
+        //    }
+        //}
         targetlist.Remove(gameObject);
     }
 
@@ -85,10 +101,12 @@ public class LionCtrl : MonoBehaviour
 
     IEnumerator Patrolling()
     {
+        //isWandering = true;
         var relHab = habitat.x - transform.position.x;
         if ((relHab <= 3f) && (relHab >= -3f))
         {
             movementFlag = Random.Range(0, 3);
+            //Debug.Log(isWandering);
         }
         else if(relHab > 3f)
         {
@@ -98,9 +116,9 @@ public class LionCtrl : MonoBehaviour
         {
             movementFlag = 1;
         }
-        isWandering = true;
         yield return new WaitForSeconds(1.5f);
         isWandering = false;
+        //Debug.Log("끝");
     }
 
     void Killing(float distance)
@@ -112,14 +130,10 @@ public class LionCtrl : MonoBehaviour
             if ((hit.gameObject != gameObject) && (hit.gameObject.layer == 9))
             {
                 Organism org = hit.GetComponent<Organism>();
-                if(org != null)
-                {
-                    org.PhysicalDamage();
-                    targetlist.Remove(hit.gameObject);
-                    _state = State.Idle;
-                    animator.SetInteger("State", 0);
-                    mainTarget = null;
-                }
+                org.PhysicalDamage();
+                targetlist.Remove(hit.gameObject);
+                SetState(State.Idle);
+                mainTarget = null;
             }
         }
     }
@@ -134,9 +148,11 @@ public class LionCtrl : MonoBehaviour
 
         if (_state == State.Idle)
         {
-            walkAndJump.SetWalkSpeed(1.5f);
             if (isWandering == false)
             {
+                //Debug.Log($"{isWandering}  start");
+                isWandering = true;
+
                 StartCoroutine(Patrolling());
             }
         }
@@ -157,9 +173,9 @@ public class LionCtrl : MonoBehaviour
                         {
                             mainTarget = hit.gameObject;
                             StopCoroutine(Patrolling());
-                            isWandering = false;
-                            _state = State.Chase;
-                            animator.SetInteger("State", 1);
+                            if(mainTarget.GetComponent<Organism>().alive)
+                                SetState(State.Chase);
+                            //isWandering = false;
                         }
                     }
                 }
@@ -168,7 +184,8 @@ public class LionCtrl : MonoBehaviour
             if ((_state == State.Chase) && (mainTarget != null))
             {
                 var relPos = mainTarget.transform.position - transform.position;
-                walkAndJump.SetWalkSpeed(2f);
+
+                Killing(0.5f);
 
                 if (relPos.x < 0f)
                 {
@@ -184,18 +201,38 @@ public class LionCtrl : MonoBehaviour
                 if (isInRange == false)
                 {
                     mainTarget = null;
-                    _state = State.Idle;
-                    animator.SetInteger("State", 0);
+                    Debug.Log("시야 내에 없다");
+                    SetState(State.Idle);
                 }
             }
         }
         else
         {
-            _state = State.Idle;
-            animator.SetInteger("State", 0);
+            Debug.Log("타겟 없음");
+            SetState(State.Idle);
         }
 
-        Killing(0.5f);
 	}
 
+    private void SetState(State state)
+    {
+        if(_state != state)
+        {
+            _state = state;
+            Debug.Log(state);
+            switch (state)
+            {
+                case State.Idle:
+                    walkAndJump.SetWalkSpeed(1.5f);
+                    break;
+
+                case State.Chase:
+                    walkAndJump.SetWalkSpeed(4.5f);
+                    isWandering = false;
+                    //Debug.Log("false");
+                    break;
+            }
+            animator.SetInteger("State", (int)state);
+        }
+    }
 }

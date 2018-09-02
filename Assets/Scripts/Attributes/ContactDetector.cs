@@ -59,7 +59,7 @@ public class ContactDetector : MonoBehaviour {
 
     public void CheckSurroundingObstacles()
     {
-        int layerMask = ~ (9 << 9);
+        int layerMask = ~ (11 << 9);
         upBlocked = Physics.CheckBox(transform.position + Vector3.up * 0.8f, new Vector3(0.3f, 0.1f, 0.5f), Quaternion.identity, layerMask);
         downBlocked = Physics.CheckBox(transform.position + Vector3.down * 0.8f, new Vector3(0.3f, 0.1f, 0.5f), Quaternion.identity, layerMask);
         leftBlocked = Physics.CheckBox(transform.position + Vector3.left * 0.8f, new Vector3(0.1f, 0.3f, 0.5f), Quaternion.identity, layerMask);
