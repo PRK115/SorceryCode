@@ -52,10 +52,11 @@ public class CommandManager : MonoBehaviour, ICommandManager
             else
             {
                 conjured.transform.localScale = new Vector3(1, 1, 1) * 0.02f;
-                Rigidbody rb = conjured.GetComponent<Rigidbody>();
-                if (rb != null)
+                //Rigidbody rb = conjured.GetComponent<Rigidbody>();
+                Moveable moveable = conjured.GetComponent<Moveable>();
+                if (moveable != null)
                 {
-                    rb.isKinematic = true;
+                    moveable.Ungravitate();
                 }
 
                 StartCoroutine(
@@ -63,10 +64,11 @@ public class CommandManager : MonoBehaviour, ICommandManager
                         timer =>
                         {
                             conjured.transform.localScale = Vector3.Lerp(new Vector3(0, 0, 0), new Vector3(1, 1, 1), timer);
+                            Debug.Log(moveable);
                         }, () =>
                         {
                             conjured.transform.localScale = new Vector3(1, 1, 1);
-                            if (rb != null) rb.isKinematic = false;
+                            if (moveable != null) moveable.Gravitate();
                         },
                         1.0f
                     )
@@ -95,7 +97,8 @@ public class CommandManager : MonoBehaviour, ICommandManager
             return;
         }
 
-        Rigidbody rb = target.GetComponent<Rigidbody>();
+        //Rigidbody rb = target.GetComponent<Rigidbody>();
+        Moveable moveable = target.GetComponent<Moveable>();
         ContactDetector cd = target.GetComponent<ContactDetector>();
 
         Vector3 finalSize;
@@ -105,8 +108,9 @@ public class CommandManager : MonoBehaviour, ICommandManager
                 if (!changeable.big)
                 {
                     cd.CheckSurroundingObstacles();
-                    rb.isKinematic = true;
+                    
                     changeable.BePushed();
+                    moveable.Ungravitate();
                     finalSize = target.transform.localScale * 3;
                     changeable.changing = true;
                     changeable.big = true;
@@ -119,8 +123,8 @@ public class CommandManager : MonoBehaviour, ICommandManager
             case ChangeType.Small:
                 if (changeable.big)
                 {
+                    moveable.Ungravitate();
                     finalSize = target.transform.localScale / 3;
-                    rb.isKinematic = false;
                     changeable.changing = true;
                     changeable.big = false;
                 }
@@ -134,18 +138,20 @@ public class CommandManager : MonoBehaviour, ICommandManager
                 return;
         }
 
+        //cd.IndicateBlocked();
+
         StartCoroutine(
             StartGradualAction(timer =>
                 {
                     target.transform.localScale = Vector3.Slerp(
                         target.transform.localScale, finalSize, timer);
 
-                    //Debug.Log(cd.leftBlocked);
-                    Debug.Log(target.GetComponent<Moveable>().XTendency);
+                    //Debug.Log($"({Mathf.Round(10 * (10 - target.transform.position.x)/timer)/10}, {Mathf.Round(10 * (target.transform.position.y - 6)/timer) / 10} kinematic:{target.GetComponent<Rigidbody>().isKinematic} { moveable.YTendency })");
                 }, () =>
                 {
                     target.transform.localScale = finalSize;
                     changeable.changing = false;
+                    moveable.Gravitate();
                     changeable.AdjustPosition();
                 },
                 1.0f
@@ -201,9 +207,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
             return;
         }
 
-        Rigidbody rb = target.GetComponent<Rigidbody>();
-
-        rb.isKinematic = true;
+        //Rigidbody rb = target.GetComponent<Rigidbody>();
 
         Vector3 finalPos = target.transform.position;
         switch (direction)
@@ -225,6 +229,9 @@ public class CommandManager : MonoBehaviour, ICommandManager
                 moveable.YTendency = -distance;
                 break;
         }
+
+        moveable.Ungravitate();
+
         StartCoroutine
         (
             StartGradualAction
@@ -233,8 +240,8 @@ public class CommandManager : MonoBehaviour, ICommandManager
                 , () =>
                 {
                     target.transform.position = new Vector3(Mathf.Round(target.transform.position.x), Mathf.Round(target.transform.position.y), 0);
-                    rb.isKinematic = false;
                     moveable.XTendency = moveable.YTendency = 0;
+                    moveable.Gravitate();
                 }
                 , 1.0f
             )

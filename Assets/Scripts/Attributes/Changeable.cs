@@ -13,11 +13,11 @@ public class Changeable : MonoBehaviour, Attribute
 
     Moveable moveable;
     ContactDetector cd;
-    Rigidbody rb;
+    //Rigidbody rb;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
         cd = GetComponent<ContactDetector>();
         moveable = GetComponent<Moveable>();
     }
@@ -39,7 +39,7 @@ public class Changeable : MonoBehaviour, Attribute
     {
         moveable.XTendency = moveable.YTendency = 0;
         transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), 0);
-        rb.isKinematic = false  ;
+        moveable.Gravitate();
         //Debug.Log($"{moveable.XTendency} {moveable.YTendency} {rb.isKinematic}");
     }
 }

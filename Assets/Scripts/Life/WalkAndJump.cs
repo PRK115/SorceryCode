@@ -114,5 +114,10 @@ public class WalkAndJump : MonoBehaviour {
             //transform.parent = hit.transform;
             //transform.localScale = new Vector3 (originalScale.x/transform.parent.localScale.x, originalScale.y / transform.parent.localScale.y, originalScale.z / transform.parent.localScale.z);
         }
+
+        //if(hit.normal == Vector3.right || hit.normal == Vector3.left)
+        //{
+        //    jumpDirection.x = 0;
+        //}
     }
 }

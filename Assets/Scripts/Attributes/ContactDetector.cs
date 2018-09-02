@@ -55,7 +55,6 @@ public class ContactDetector : MonoBehaviour {
             upBlocked = true;
         else
             upBlocked = false;
-        //Debug.Log($"{upBlocked} {downBlocked} {leftBlocked} {rightBlocked}");
     }
 
     public void CheckSurroundingObstacles()
@@ -70,11 +69,16 @@ public class ContactDetector : MonoBehaviour {
         {
             Debug.Log(c[i].name);
         }
-        Debug.Log($"{upBlocked} {downBlocked} {leftBlocked} {rightBlocked}");
+        //Debug.Log($"{upBlocked} {downBlocked} {leftBlocked} {rightBlocked}");
     }
 
     private void OnCollisionExit(Collision collision)
     {
         downBlocked = upBlocked = leftBlocked = rightBlocked = false;
+    }
+
+    public void IndicateBlocked()
+    {
+        Debug.Log($"{upBlocked} {downBlocked} {leftBlocked} {rightBlocked}");
     }
 }
