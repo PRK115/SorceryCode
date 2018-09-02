@@ -96,6 +96,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
         }
 
         Rigidbody rb = target.GetComponent<Rigidbody>();
+        ContactDetector cd = target.GetComponent<ContactDetector>();
 
         Vector3 finalSize;
         switch (type)
@@ -103,10 +104,11 @@ public class CommandManager : MonoBehaviour, ICommandManager
             case ChangeType.Big:
                 if (!changeable.big)
                 {
-                    target.GetComponent<ContactDetector>().CheckSurroundingObstacles();
+                    cd.CheckSurroundingObstacles();
                     rb.isKinematic = true;
                     changeable.BePushed();
                     finalSize = target.transform.localScale * 3;
+                    changeable.changing = true;
                     changeable.big = true;
                 }
                 else
@@ -119,6 +121,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
                 {
                     finalSize = target.transform.localScale / 3;
                     rb.isKinematic = false;
+                    changeable.changing = true;
                     changeable.big = false;
                 }
                 else
@@ -134,12 +137,15 @@ public class CommandManager : MonoBehaviour, ICommandManager
         StartCoroutine(
             StartGradualAction(timer =>
                 {
-                    target.transform.localScale = Vector3.Lerp(
+                    target.transform.localScale = Vector3.Slerp(
                         target.transform.localScale, finalSize, timer);
-                    //Debug.Log(rb.isKinematic);
+
+                    //Debug.Log(cd.leftBlocked);
+                    Debug.Log(target.GetComponent<Moveable>().XTendency);
                 }, () =>
                 {
                     target.transform.localScale = finalSize;
+                    changeable.changing = false;
                     changeable.AdjustPosition();
                 },
                 1.0f

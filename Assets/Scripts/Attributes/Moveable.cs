@@ -7,12 +7,14 @@ public class Moveable : MonoBehaviour, Attribute
 
     Rigidbody rb;
     ContactDetector cd;
+    Changeable changeable;
 
     //public bool Gravitated { private get; set; } = true;
     //float g = 9.8f;
 
     private void Awake()
     {
+        changeable = GetComponent<Changeable>();
         rb = GetComponent<Rigidbody>();
         cd = GetComponent<ContactDetector>();
     }
@@ -28,8 +30,9 @@ public class Moveable : MonoBehaviour, Attribute
             {
                 transform.Translate(Vector3.right * XTendency * Time.deltaTime, Space.World);
             }
-            else
+            else if (!changeable.changing)
             {
+                //Debug.Log($"{XTendency} {cd.leftBlocked}");
                 XTendency = 0;
                 transform.position = new Vector3(Mathf.Round(transform.position.x), transform.position.y, 0);
             }
@@ -38,7 +41,7 @@ public class Moveable : MonoBehaviour, Attribute
             {
                 transform.Translate(Vector3.up * YTendency * Time.deltaTime, Space.World);
             }
-            else
+            else if (!changeable.changing)
             {
                 YTendency = 0;
                 transform.position = new Vector3(transform.position.x, Mathf.Round(transform.position.y), 0);

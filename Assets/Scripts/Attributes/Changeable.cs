@@ -9,6 +9,7 @@ public class Changeable : MonoBehaviour, Attribute
 {
     public bool Resizable;
     public bool big;
+    public bool changing;
 
     Moveable moveable;
     ContactDetector cd;
@@ -32,9 +33,6 @@ public class Changeable : MonoBehaviour, Attribute
             moveable.YTendency = -1;
         else if (cd.downBlocked)
             moveable.YTendency = 1;
-
-        if (cd.downBlocked || cd.upBlocked || cd.rightBlocked || cd.leftBlocked)
-            rb.isKinematic = true;
     }
 
     public void AdjustPosition()
