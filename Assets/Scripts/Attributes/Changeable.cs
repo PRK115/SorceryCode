@@ -40,10 +40,7 @@ public class Changeable : MonoBehaviour, Attribute
     public void AdjustPosition()
     {
         moveable.XTendency = moveable.YTendency = 0;
-        if (cd.rightBlocked || cd.leftBlocked)
-        {
-            transform.position = new Vector3(Mathf.Round(transform.position.x), transform.position.y, 0);
-        }
+        transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), 0);
         rb.isKinematic = false;
         //Debug.Log($"{moveable.XTendency} {moveable.YTendency} {rb.isKinematic}");
     }

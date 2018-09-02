@@ -45,6 +45,12 @@ public class Moveable : MonoBehaviour, Attribute
             }
         }
 
+        else if(rb.velocity == Vector3.zero)
+        {
+            transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), 0);
+            rb.isKinematic = true;
+        }
+
         else if (rb.velocity.y < 0 && cd.downBlocked)
         {
             transform.position = new Vector3(transform.position.x, Mathf.Round(transform.position.y), 0);
