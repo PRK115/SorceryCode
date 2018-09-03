@@ -9,6 +9,8 @@ public class PlayerCtrl : MonoBehaviour {
     private WalkAndJump walkAndJump;
     private GameStateManager manager;
 
+    //public Vector3 mp;
+
     public enum State { Walking, Weaving, Casting, Cleared }
     private State currentState;
 
@@ -110,9 +112,15 @@ public class PlayerCtrl : MonoBehaviour {
 
         mousePosition = cam.ScreenToWorldPoint(mousePosition);
 
+        Ray r = new Ray();
+        r.origin = mousePosition;
+        r.direction = cam.transform.forward;
+
+        mousePosition = r.GetPoint(- r.origin.z / Mathf.Cos(Vector3.Angle(r.direction, Vector3.forward * Mathf.PI/180)));
+
         mousePosition = new Vector3(Mathf.Round(mousePosition.x), Mathf.Round(mousePosition.y), 0);
 
-        transform.LookAt(new Vector3(mousePosition.x, transform.position.y, 0));
+        transform.LookAt(new Vector3 (mousePosition.x, transform.position.y, 0));
 
         GameObject newProjectile = Instantiate(projectile, wand.transform.position, gameObject.transform.rotation);
 
@@ -146,6 +154,7 @@ public class PlayerCtrl : MonoBehaviour {
         }
         yield return null;
     }
+
 
     public void SetState(State state)
     {
