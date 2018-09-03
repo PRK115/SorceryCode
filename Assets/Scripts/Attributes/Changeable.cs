@@ -22,17 +22,36 @@ public class Changeable : MonoBehaviour, Attribute
         moveable = GetComponent<Moveable>();
     }
 
-    public void BePushed()
+    public bool IsConfined()
+    {
+        return (cd.rightBlocked && cd.leftBlocked) || (cd.upBlocked && cd.downBlocked);
+    }
+
+    public Vector3 BePushed(Vector3 position)
     {
         if (cd.rightBlocked)
-            moveable.XTendency = -1;
+        {
+            moveable.XTendency = -1f;
+            position += Vector3.left;
+        }
         else if (cd.leftBlocked)
-            moveable.XTendency = 1;
+        {
+            moveable.XTendency = 1f;
+            position += Vector3.right;
+        }
 
         if (cd.upBlocked)
-            moveable.YTendency = -1;
+        {
+            moveable.YTendency = -1f;
+            position += Vector3.down;
+        }
         else if (cd.downBlocked)
-            moveable.YTendency = 1;
+        {
+            moveable.YTendency = 1f;
+            position += Vector3.up;
+        }
+
+        return position;
     }
 
     public void AdjustPosition()

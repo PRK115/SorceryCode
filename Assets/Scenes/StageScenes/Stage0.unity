@@ -4563,15 +4563,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4948467378900648, guid: d3b4b17432cddfe4a9a247b6a79d90b2, type: 2}
       propertyPath: m_LocalScale.x
-      value: 5.4418063
+      value: 6.806067
       objectReference: {fileID: 0}
     - target: {fileID: 4948467378900648, guid: d3b4b17432cddfe4a9a247b6a79d90b2, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.9841997
+      value: 1.2309386
       objectReference: {fileID: 0}
     - target: {fileID: 4948467378900648, guid: d3b4b17432cddfe4a9a247b6a79d90b2, type: 2}
       propertyPath: m_LocalScale.z
-      value: 3.0886555
+      value: 3.8629813
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3b4b17432cddfe4a9a247b6a79d90b2, type: 2}

@@ -24,13 +24,14 @@ public class Moveable : MonoBehaviour, Attribute
     {
         if (rb.isKinematic)
         {
-            if ((YTendency > 0 && (!cd.upBlocked || changeable.changing) || (YTendency < 0 && (!cd.downBlocked) || changeable.changing)))
+            if ((YTendency > 0 && (!cd.upBlocked && !changeable.changing) || (YTendency < 0 && (!cd.downBlocked) && !changeable.changing)))
             {
                 transform.Translate(Vector3.up * YTendency * Time.deltaTime, Space.World);
                 //Debug.Log($"    Y {Time.deltaTime}");
             }
             else
             {
+                //Debug.Log("y막힘");
                 YTendency = 0;
                 transform.position = new Vector3(transform.position.x, Mathf.Round(transform.position.y), 0);
                 if (cd.downBlocked)

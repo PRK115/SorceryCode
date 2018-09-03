@@ -226,7 +226,6 @@ public class LionCtrl : MonoBehaviour
         if(_state != state)
         {
             _state = state;
-            Debug.Log(state);
             switch (state)
             {
                 case State.Idle:

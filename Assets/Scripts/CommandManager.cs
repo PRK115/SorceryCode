@@ -101,15 +101,14 @@ public class CommandManager : MonoBehaviour, ICommandManager
         Moveable moveable = target.GetComponent<Moveable>();
         ContactDetector cd = target.GetComponent<ContactDetector>();
 
-        Vector3 finalSize;
+        Vector3 finalSize = Vector3.one;
         switch (type)
         {
             case ChangeType.Big:
                 if (!changeable.big)
                 {
                     cd.CheckSurroundingObstacles();
-                    
-                    changeable.BePushed();
+                    if (changeable.IsConfined()) return;
                     moveable.Ungravitate();
                     finalSize = target.transform.localScale * 3;
                     changeable.changing = true;
@@ -117,7 +116,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
                 }
                 else
                 {
-                    finalSize = target.transform.localScale;
+                    return;
                 }
                 break;
             case ChangeType.Small:
@@ -130,7 +129,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
                 }
                 else
                 {
-                    finalSize = target.transform.localScale;
+                    return;
                 }
                 break;
             default:
@@ -138,25 +137,29 @@ public class CommandManager : MonoBehaviour, ICommandManager
                 return;
         }
 
-        //cd.IndicateBlocked();
+        Vector3 originalPosition = target.transform.position;
+        Vector3 finalPosition = (type == ChangeType.Big) ? changeable.BePushed(originalPosition) : originalPosition;
 
         StartCoroutine(
-            StartGradualAction(timer =>
-                {
-                    target.transform.localScale = Vector3.Slerp(
-                        target.transform.localScale, finalSize, timer);
+        StartGradualAction(timer =>
+        {
+            target.transform.position = Vector3.Lerp(
+                  originalPosition, finalPosition, timer
+                  );
 
-                    //Debug.Log($"({Mathf.Round(10 * (10 - target.transform.position.x)/timer)/10}, {Mathf.Round(10 * (target.transform.position.y - 6)/timer) / 10} kinematic:{target.GetComponent<Rigidbody>().isKinematic} { moveable.YTendency })");
-                }, () =>
-                {
-                    target.transform.localScale = finalSize;
-                    changeable.changing = false;
-                    moveable.Gravitate();
-                    changeable.AdjustPosition();
-                },
-                1.0f
-            )
-        );
+            target.transform.localScale = Vector3.Lerp(
+                    target.transform.localScale, finalSize, timer);
+
+                //Debug.Log($"({Mathf.Round(10 * (-5 - target.transform.position.x)/timer)/10}, { (target.transform.position.y + 2) / timer} kinematic:{target.GetComponent<Rigidbody>().isKinematic} { moveable.YTendency })");
+            }, () =>
+            {
+                target.transform.localScale = finalSize;
+                changeable.changing = false;
+                changeable.AdjustPosition();
+            },
+            1.0f
+        )
+    );
     }
 
     public void Change(EvalContext context, EntityType entity)
