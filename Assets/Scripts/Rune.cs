@@ -27,32 +27,17 @@ public class Rune : MonoBehaviour, IConsumable {
             switch (runeType.type)
             {
                 case RuneType.Type.Entity:
-                    AddRune(runeType.Entity);
+                    stock.AddRune(runeType.Entity);
                     break;
                 case RuneType.Type.Adjective:
-                    AddRune(runeType.adjective);
+                    stock.AddRune(runeType.adjective);
                     break;
                 case RuneType.Type.Direction:
-                    AddRune(runeType.direction);
+                    stock.AddRune(runeType.direction);
                     break;
             }
             Destroy(gameObject);
         }
         else timeTillDestroy -= Time.deltaTime;
-    }
-
-    void AddRune(EntityType entity)
-    {
-        stock.EntityRunes.Add(entity);
-    }
-
-    void AddRune(ChangeType adjective)
-    {
-        stock.AdjRunes.Add(adjective);
-    }
-
-    void AddRune(RuneType.Direction direction)
-    {
-        stock.DirectionRunes.Add(direction);
     }
 }
