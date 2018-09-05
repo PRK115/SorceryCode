@@ -88,7 +88,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
         Changeable changeable = target.GetComponent<Changeable>();
         if (changeable == null)
         {
-            Debug.LogError($"Cannot change entity {target} to ChangeType {type}");
+            //Debug.LogError($"Cannot change entity {target} to ChangeType {type}");
             return;
         }
         if (!changeable.Resizable)
