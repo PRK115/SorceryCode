@@ -391,6 +391,7 @@ GameObject:
   - component: {fileID: 114149760145112138}
   - component: {fileID: 114540358607357138}
   - component: {fileID: 114227796849292910}
+  - component: {fileID: 114847448946194524}
   m_Layer: 9
   m_Name: Lion
   m_TagString: Life
@@ -1062,6 +1063,17 @@ MonoBehaviour:
   walkSpeed: 0
   verticalJumpImpulse: 5.2
   horizontalJumpImpulse: 1.6
+--- !u!114 &114847448946194524
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1772566877903910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df279e93a2c06c44ba1fd9bd88dcc189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114940577714158900
 MonoBehaviour:
   m_ObjectHideFlags: 1
