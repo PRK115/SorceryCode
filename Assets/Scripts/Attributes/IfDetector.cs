@@ -6,8 +6,6 @@ public class IfDetector : MonoBehaviour{
 
     EntityType myType;
     
-    bool touchingSwitch;
-
     private void Awake()
     {
         myType = GetComponent<Entity>().EntityType;
@@ -19,7 +17,7 @@ public class IfDetector : MonoBehaviour{
         //스위치 탐지
         if (target == EntityType.Switch)
         {
-            return touchingSwitch;
+            return Physics.CheckBox(transform.position, Vector3.one * 0.5f, Quaternion.identity, 1024);
         }
 
         //에너지 탐지
@@ -103,23 +101,5 @@ public class IfDetector : MonoBehaviour{
             ColliderList.Add(Colliders[i]);
         }
         return ColliderList;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Entity entity = other.GetComponent<Entity>();
-        if (entity != null && entity.EntityType == EntityType.Switch)
-        {
-            touchingSwitch = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        Entity entity = other.GetComponent<Entity>();
-        if (entity != null && entity.EntityType == EntityType.Switch)
-        {
-            touchingSwitch = false;
-        }
     }
 }
