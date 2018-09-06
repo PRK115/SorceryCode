@@ -84,7 +84,7 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1252528353258480}
-  m_Mesh: {fileID: 4300000, guid: dc9ec993dc5ff1840917670ec5c0951e, type: 3}
+  m_Mesh: {fileID: 4300002, guid: dc9ec993dc5ff1840917670ec5c0951e, type: 3}
 --- !u!114 &114492574429587262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -96,8 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6c1903ed768b4497bb9be60f9f1bc53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: 
-  contents: 
+  tutorialPanel: {fileID: 0}
 --- !u!135 &135039666682168154
 SphereCollider:
   m_ObjectHideFlags: 1
