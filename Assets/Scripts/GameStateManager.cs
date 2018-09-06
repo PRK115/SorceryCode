@@ -17,6 +17,7 @@ public class GameStateManager : MonoBehaviour
     public GameObject clearPanel;
 
     public UnityEngine.UI.Button codeButton;
+    public UnityEngine.UI.Button closeCodeButton;
     public UnityEngine.UI.Button pauseButton;
     public UnityEngine.UI.Button resumeButton;
     public UnityEngine.UI.Button restartButton;
@@ -121,6 +122,7 @@ public class GameStateManager : MonoBehaviour
         codeButton.onClick.AddListener(() => SetState(UIState.Code));
         pauseButton.onClick.AddListener(() => SetState(UIState.Pause));
         resumeButton.onClick.AddListener(() => SetState(UIState.Game));
+        closeCodeButton.onClick.AddListener(() => SetState(UIState.Game));
         restartButton.onClick.AddListener(() =>
         {
             Time.timeScale = 1;
