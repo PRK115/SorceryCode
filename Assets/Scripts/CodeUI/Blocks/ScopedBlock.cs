@@ -68,7 +68,7 @@ namespace CodeUI
 
         public void OnDrop(PointerEventData eventData)
         {
-            blockListPanel.color = Color.white;
+            blockListPanel.color = Color.clear;
             if (eventData.pointerDrag == null) return;
             Block block = eventData.pointerDrag.GetComponent<Block>();
             if (block != null)
@@ -107,12 +107,12 @@ namespace CodeUI
                     }
                     else
                     {
-                        blockListPanel.color = Color.white;
+                        blockListPanel.color = Color.clear;
                     }
                 }
                 else
                 {
-                    blockListPanel.color = Color.white;
+                    blockListPanel.color = Color.clear;
                 }
             }
         }
