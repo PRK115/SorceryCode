@@ -34,6 +34,22 @@ namespace CodeUI
         public ScopedBlock ContainedScopedBlock = null;
         public int Depth = 0;
         public bool IsRune = true;
+        public RuneType runeType;
+
+        public RuneCountIcon runeCountIcon;
+        public void SetRuneCount(int count)
+        {
+            if (IsRune)
+            {
+                if (runeCountIcon == null)
+                {
+                    runeCountIcon = Instantiate(CodeUIElement.Instance.RuneCountIconPrefab);
+                    runeCountIcon.transform.SetParent(this.transform);
+                }
+                runeCountIcon.Count = count;
+            }
+            else throw new Exception("Cannot set rune count of block that is not rune");
+        }
 
         protected virtual void Awake()
         {

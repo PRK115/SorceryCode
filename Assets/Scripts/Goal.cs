@@ -12,7 +12,7 @@ public class Goal : Key, IConsumable {
         gameStateManager = FindObjectOfType<GameStateManager>();
     }
 
-    public new void ConsumedBehaviour()
+    public override void ConsumedBehaviour()
     {
         base.ConsumedBehaviour();
         playerCtrl.GoalX = transform.position.x;

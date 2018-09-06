@@ -194,7 +194,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
         );
     }
 
-    public void Move(EvalContext context, MoveDirection direction, int distance)
+    public void Move(EvalContext context, RuneType.Direction direction, int distance)
     {
         if (distance <= 0 || distance > 4)
         {
@@ -215,19 +215,19 @@ public class CommandManager : MonoBehaviour, ICommandManager
         Vector3 finalPos = target.transform.position;
         switch (direction)
         {
-            case MoveDirection.Left:
+            case RuneType.Direction.Left:
                 finalPos.x -= distance;
                 moveable.XTendency = -distance;
                 break;
-            case MoveDirection.Right:
+            case RuneType.Direction.Right:
                 finalPos.x += distance;
                 moveable.XTendency = distance;
                 break;
-            case MoveDirection.Up:
+            case RuneType.Direction.Up:
                 finalPos.y += distance;
                 moveable.YTendency = distance;
                 break;
-            case MoveDirection.Down:
+            case RuneType.Direction.Down:
                 finalPos.y -= distance;
                 moveable.YTendency = -distance;
                 break;

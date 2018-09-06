@@ -22,22 +22,30 @@ public class Rune : MonoBehaviour, IConsumable {
     public void ConsumedBehaviour()
     {
         stone.SetActive(false);
-        if (timeTillDestroy <= 0 && stock != null)
+        switch (runeType.type)
         {
-            switch (runeType.type)
-            {
-                case RuneType.Type.Entity:
-                    stock.AddRune(runeType.Entity);
-                    break;
-                case RuneType.Type.Adjective:
-                    stock.AddRune(runeType.adjective);
-                    break;
-                case RuneType.Type.Direction:
-                    stock.AddRune(runeType.direction);
-                    break;
-            }
-            Destroy(gameObject);
+            case RuneType.Type.Entity:
+                stock.AddRune(new RuneType(runeType.Entity));
+                break;
+            case RuneType.Type.Adjective:
+                stock.AddRune(new RuneType(runeType.adjective));
+                break;
+            case RuneType.Type.Direction:
+                stock.AddRune(new RuneType(runeType.direction));
+                break;
         }
-        else timeTillDestroy -= Time.deltaTime;
+
+        StartCoroutine(DelayedDestroy());
+    }
+
+    private IEnumerator DelayedDestroy()
+    {
+        if (timeTillDestroy <= 0)
+        {
+            Destroy(gameObject);
+            yield break;
+        }
+        timeTillDestroy -= Time.deltaTime;
+        yield return new WaitForEndOfFrame();
     }
 }
