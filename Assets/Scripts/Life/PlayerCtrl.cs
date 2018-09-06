@@ -94,7 +94,7 @@ public class PlayerCtrl : MonoBehaviour {
             }
         }
 
-        else if (Input.GetKeyDown(KeyCode.Space))
+        else if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             return Direction.Up;
         }

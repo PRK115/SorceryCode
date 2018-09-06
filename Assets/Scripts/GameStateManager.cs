@@ -23,7 +23,7 @@ public class GameStateManager : MonoBehaviour
     public UnityEngine.UI.Button restartButton;
     public UnityEngine.UI.Button exitButton;
 
-    public GameObject tutorialPanel;
+    //public GameObject tutorialPanel;
     public Text tutorialTitleText;
     public Text tutorialContentText;
 
@@ -152,14 +152,14 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    public void OpenTutorialPanel(string name, string content)
+    public void OpenTutorialPanel(GameObject tutorialPanel)
     {
         tutorialPanel.SetActive(true);
-        tutorialTitleText.text = name;
-        tutorialContentText.text = content;
+        //tutorialTitleText.text = name;
+        //tutorialContentText.text = content;
     }
 
-    public void CloseTutorialPanel()
+    public void CloseTutorialPanel(GameObject tutorialPanel)
     {
         tutorialPanel.SetActive(false);
     }
