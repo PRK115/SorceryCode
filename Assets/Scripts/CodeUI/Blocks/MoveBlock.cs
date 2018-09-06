@@ -3,7 +3,7 @@
     public class MoveBlock : StmtBlock
     {
         public ExprSlot dirSlot;
-        public ExprSlot distanceSlot;
+        public UnityEngine.UI.Dropdown dropdown;
 
         public MoveDirection? Dir
         {
@@ -11,22 +11,13 @@
         }
         public int? Distance
         {
-            get { return (distanceSlot.Block as MoveDistanceBlock)?.Distance; }
+            get { return dropdown.value + 1; }
         }
 
         protected override void Start()
         {
             base.Start();
             dirSlot.CheckBlockValidCallback = block => block is MoveDirBlock;
-            distanceSlot.CheckBlockValidCallback = block =>
-            {
-                if (block is MoveDistanceBlock)
-                {
-                    int dist = ((MoveDistanceBlock) block).Distance;
-                    return dist > 0 && dist <= 3;
-                }
-                return false;
-            };
         }
     }
 }
