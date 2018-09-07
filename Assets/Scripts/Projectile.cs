@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour {
 
     Vector3 destination;
     public Vector3 Destination { set { destination = value; } }
-    float speed = 5f;
+    float speed = 10f;
 
     GameObject aura;
     GameObject hit;
