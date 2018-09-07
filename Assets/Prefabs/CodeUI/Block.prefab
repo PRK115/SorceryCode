@@ -135,7 +135,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 568080a9027e2b848a4ca10dc4336d1f, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -180,6 +180,7 @@ MonoBehaviour:
   ContainedSlot: {fileID: 0}
   ContainedScopedBlock: {fileID: 0}
   Depth: 0
+  IsRune: 1
   blockListPanel: {fileID: 114846500660284562}
   InitialBlankHeight: 360
 --- !u!114 &114846500660284562
@@ -194,14 +195,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -304,7 +305,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 30.000015, y: 15}
+  m_AnchoredPosition: {x: 42, y: 35.8}
   m_SizeDelta: {x: 58.89, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224177239457941714
@@ -322,7 +323,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 29.720001, y: -15}
+  m_AnchoredPosition: {x: 37.1, y: -35.3}
   m_SizeDelta: {x: 59.450012, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224832469951740878
@@ -343,8 +344,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 230, y: -220}
-  m_SizeDelta: {x: 420, y: 400}
+  m_AnchoredPosition: {x: 230, y: -303.35}
+  m_SizeDelta: {x: 420, y: 566.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224966450487166808
 RectTransform:

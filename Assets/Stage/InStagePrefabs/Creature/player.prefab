@@ -335,7 +335,6 @@ GameObject:
   - component: {fileID: 114620234786695006}
   - component: {fileID: 114590748959766540}
   - component: {fileID: 143349252982016174}
-  - component: {fileID: 136725132721556242}
   m_Layer: 9
   m_Name: player
   m_TagString: Player
@@ -751,19 +750,6 @@ MonoBehaviour:
   walkSpeed: 3
   verticalJumpImpulse: 5.2
   horizontalJumpImpulse: 1.6
---- !u!136 &136725132721556242
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1849303232956244}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.6010503
-  m_Height: 2.6
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.3649061, z: -0.016303984}
 --- !u!137 &137540835659747166
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

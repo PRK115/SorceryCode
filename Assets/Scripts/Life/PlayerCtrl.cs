@@ -77,7 +77,7 @@ public class PlayerCtrl : MonoBehaviour {
 
         if (horizontalInput != 0)
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 if (horizontalInput < 0)
                     return Direction.LeftUp;

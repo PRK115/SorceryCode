@@ -1,8 +1,7 @@
 fileFormatVersion: 2
-guid: 20f5f8efce9d3114c98a8c83cb354a46
+guid: 6dfd2d61fc7843f499b225a2d7515d44
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: ui2-1_0
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -83,31 +82,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: ui2-1_0
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 24
-        width: 1878
-        height: 1042
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a04d5d3a76cab914aa27c6b1dd98e76c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: efb4929f19f8b0a48b5878e584fa80aa
+    spriteID: 
     vertices: []
     indices: 
     edges: []
