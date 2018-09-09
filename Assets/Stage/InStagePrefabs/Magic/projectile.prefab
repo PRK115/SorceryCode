@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4407591687464700}
   - component: {fileID: 198617675734376350}
   - component: {fileID: 199238353377698768}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: puff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 54438522426236426}
   - component: {fileID: 114214389104225644}
   - component: {fileID: 82026904130989994}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 4430860692142816}
   - component: {fileID: 198850936064847408}
   - component: {fileID: 199715149917209078}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 4822732871878306}
   - component: {fileID: 198597348508118810}
   - component: {fileID: 199156761153274982}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: aura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 4403112638667926}
   - component: {fileID: 198419266637901926}
   - component: {fileID: 199593267087424058}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,10 +178,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Constraints: 14
+  m_CollisionDetection: 2
 --- !u!82 &82026904130989994
 AudioSource:
   m_ObjectHideFlags: 1

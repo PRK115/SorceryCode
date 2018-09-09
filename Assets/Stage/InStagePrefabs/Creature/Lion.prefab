@@ -1083,7 +1083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _state: 0
-  runSpeed: 4
+  runSpeed: 2
   targetlist: []
   player: {fileID: 0}
   mainTarget: {fileID: 0}

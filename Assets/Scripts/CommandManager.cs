@@ -33,10 +33,28 @@ public class CommandManager : MonoBehaviour, ICommandManager
 
     public void Conjure(EvalContext context, EntityType type)
     {
+        //Entity target = context.Target;
+        
         GameObject prefab = prefabDB.GetPrefab(type);
         Conjurable conjurable = prefab.GetComponent<Conjurable>();
         if (conjurable != null)
         {
+            if (prefab.GetComponent<Entity>().occupySpace)
+            {
+                //Debug.Log("겹치는 거 소환");
+                Collider[] hits = Physics.OverlapBox(context.Location, Vector3.one * 0.4f, Quaternion.identity, 2105);
+                for (int i = 0; i < hits.Length; i++)
+                {
+                    //Debug.Log("체크");
+                    Entity e = hits[i].GetComponent<Entity>();
+                    if (e != null && e.occupySpace)
+                    {
+                        //Debug.Log("겹침");
+                        return;
+                    }
+                }
+            }
+
             GameObject conjured = Instantiate(prefab, context.Location, prefab.transform.rotation);
             Entity conjuredEntity = conjured.GetComponent<Entity>();
             if (conjuredEntity == null)
@@ -64,7 +82,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
                         timer =>
                         {
                             conjured.transform.localScale = Vector3.Lerp(new Vector3(0, 0, 0), new Vector3(1, 1, 1), timer);
-                            Debug.Log(moveable);
+                            //Debug.Log(moveable);
                         }, () =>
                         {
                             conjured.transform.localScale = new Vector3(1, 1, 1);

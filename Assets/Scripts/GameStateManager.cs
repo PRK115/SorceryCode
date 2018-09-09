@@ -18,6 +18,7 @@ public class GameStateManager : MonoBehaviour
 
     public UnityEngine.UI.Button codeButton;
     public UnityEngine.UI.Button closeCodeButton;
+    public UnityEngine.UI.Button aimButton;
     public UnityEngine.UI.Button pauseButton;
     public UnityEngine.UI.Button resumeButton;
     public UnityEngine.UI.Button restartButton;
@@ -30,6 +31,8 @@ public class GameStateManager : MonoBehaviour
     public CodeUIElement codeUIElement;
 
     private StmtListBlock Program;
+
+    PlayerCtrl player;
 
     public enum UIState
     {
@@ -121,6 +124,7 @@ public class GameStateManager : MonoBehaviour
         instance = this;
         Program = codeUIElement.Program;
         codeButton.onClick.AddListener(() => SetState(UIState.Code));
+        aimButton.onClick.AddListener(() => SetState(UIState.Game));
         pauseButton.onClick.AddListener(() => SetState(UIState.Pause));
         resumeButton.onClick.AddListener(() => SetState(UIState.Game));
         closeCodeButton.onClick.AddListener(() => SetState(UIState.Game));
@@ -134,6 +138,9 @@ public class GameStateManager : MonoBehaviour
             Time.timeScale = 1;
             sceneChange.ToStageSelection();
         });
+
+        player = FindObjectOfType<PlayerCtrl>();
+        aimButton.onClick.AddListener(() => player.SetState(PlayerCtrl.State.Aiming));
     }
 
     private void Start()

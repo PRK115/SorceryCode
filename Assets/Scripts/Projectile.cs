@@ -98,8 +98,8 @@ public class Projectile : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         Entity otherEntity = other.GetComponent<Entity>();
-        Debug.Log(otherEntity);
-        Debug.Log(other.name);
+        //Debug.Log(otherEntity);
+        //Debug.Log(other.name);
         if(otherEntity != null)
         {
             //Debug.Log(otherEntity);

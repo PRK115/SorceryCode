@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class PlayerCtrl : MonoBehaviour {
 
+    public PlayerCtrl inst;
+
     private Organism organism;
     private WalkAndJump walkAndJump;
     private GameStateManager manager;
@@ -18,6 +20,10 @@ public class PlayerCtrl : MonoBehaviour {
 
     GameObject wand;
     public GameObject projectile;
+    Vector3 mousePosition;
+    public GameObject aim;
+    GameObject X;
+    GameObject mouse;
 
     bool touchingUI;
 
@@ -32,6 +38,7 @@ public class PlayerCtrl : MonoBehaviour {
 
     private void Awake()
     {
+        inst = this;
         organism = GetComponent<Organism>();
         walkAndJump = GetComponent<WalkAndJump>();
         manager = FindObjectOfType<GameStateManager>();
@@ -40,7 +47,16 @@ public class PlayerCtrl : MonoBehaviour {
 
         wand = transform.Find("wand").gameObject;
 
+        aim = GameObject.Find("Aim");
+        X = aim.transform.Find("X").gameObject;
+        mouse = aim.transform.Find("mouse").gameObject;
+
         animator = transform.Find("witch").GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
+        SetState(State.Walking);
     }
 
     private void Update()
@@ -54,6 +70,49 @@ public class PlayerCtrl : MonoBehaviour {
                     break;
 
                 case State.Aiming:
+                    mousePosition = Input.mousePosition;
+
+                    mousePosition = cam.ScreenToWorldPoint(mousePosition);
+
+                    Ray r = new Ray();
+                    r.origin = mousePosition;
+                    r.direction = cam.transform.forward;
+
+                    mousePosition = r.GetPoint(-r.origin.z / Mathf.Cos(Vector3.Angle(r.direction, Vector3.forward * Mathf.PI / 180)));
+
+                    mousePosition = new Vector3(Mathf.Round(mousePosition.x), Mathf.Round(mousePosition.y), 0);
+
+                    transform.LookAt(new Vector3(mousePosition.x, transform.position.y, 0));
+
+                    aim.GetComponent<RectTransform>().position = cam.WorldToScreenPoint(mousePosition);
+
+                    RaycastHit[] hits = Physics.SphereCastAll(wand.transform.position, 0.2f, mousePosition - wand.transform.position, Vector3.Distance(wand.transform.position, mousePosition), 257, QueryTriggerInteraction.Collide);
+                    //Debug.DrawLine(wand.transform.position, mousePosition);
+
+                    bool blocked = false;
+                    for(int i = 0; i< hits.Length; i++)
+                    {
+                        Entity e = hits[i].collider.GetComponent<Entity>();
+                        if (e != null && e.blockProjectiles == true)
+                        {
+                            blocked = true;
+                            //Debug.Log(e.name);
+                            break;
+                        }
+                    }
+
+                    if(blocked)
+                    {
+                        mouse.SetActive(false);
+                        X.SetActive(true);
+                    }
+
+                    else
+                    {
+                        mouse.SetActive(true);
+                        X.SetActive(false);
+                    }
+
                     if (Input.GetKeyDown(KeyCode.Mouse0) && !EventSystem.current.IsPointerOverGameObject())
                     {
                         StartCoroutine(Cast());
@@ -118,21 +177,7 @@ public class PlayerCtrl : MonoBehaviour {
 
     IEnumerator Cast()
     {
-        Vector3 mousePosition = Input.mousePosition;
-
-        mousePosition = cam.ScreenToWorldPoint(mousePosition);
-
-        Ray r = new Ray();
-        r.origin = mousePosition;
-        r.direction = cam.transform.forward;
-
-        mousePosition = r.GetPoint(- r.origin.z / Mathf.Cos(Vector3.Angle(r.direction, Vector3.forward * Mathf.PI/180)));
-
-        mousePosition = new Vector3(Mathf.Round(mousePosition.x), Mathf.Round(mousePosition.y), 0);
-
-        transform.LookAt(new Vector3 (mousePosition.x, transform.position.y, 0));
-
-        GameObject newProjectile = Instantiate(projectile, wand.transform.position, gameObject.transform.rotation);
+        GameObject newProjectile = Instantiate(projectile, wand.transform.position, Quaternion.identity);
 
         newProjectile.GetComponent<Projectile>().Destination = mousePosition;
 
@@ -168,6 +213,12 @@ public class PlayerCtrl : MonoBehaviour {
     {
         currentState = state;
         animator.SetInteger("State", (int)state);
+        if (state == State.Aiming)
+        {
+            aim.SetActive(true);
+        }
+        else
+            aim.SetActive(false);
     }
 
     public void ToWeavingState()
