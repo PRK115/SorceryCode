@@ -22,6 +22,8 @@ public class Flammable : MonoBehaviour, ISubstance {
 
     public Action OnBurn;
 
+    AudioSource sound;
+
     public void SetBurnCallback(Action action)
     {
         OnBurn = action;
@@ -31,6 +33,7 @@ public class Flammable : MonoBehaviour, ISubstance {
     {
         meshRenderer = GetComponentInChildren<MeshRenderer>();
         fire = transform.Find("fire").gameObject;
+        sound = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -45,6 +48,10 @@ public class Flammable : MonoBehaviour, ISubstance {
         {
             if (timeTillIgnition <= 0)
             {
+                if(sound != null)
+                {
+                    sound.Play();
+                }
                 state = State.Burning;
                 fire.SetActive(true);
             }

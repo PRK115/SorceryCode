@@ -11,7 +11,7 @@ public class PlayerCtrl : MonoBehaviour {
 
     //public Vector3 mp;
 
-    public enum State { Walking, Weaving, Casting, Cleared }
+    public enum State { Walking, Weaving, Aiming, Casting, Cleared }
     private State currentState;
 
     Camera cam;
@@ -27,6 +27,8 @@ public class PlayerCtrl : MonoBehaviour {
     //bool cleared;
     float goalX;
     public float GoalX { set { goalX = value; } }
+
+    //public AudioClip runeGot;
 
     private void Awake()
     {
@@ -49,10 +51,18 @@ public class PlayerCtrl : MonoBehaviour {
             {
                 case State.Walking:
                     walkAndJump.Manuever(InterpretKey());
+                    break;
+
+                case State.Aiming:
                     if (Input.GetKeyDown(KeyCode.Mouse0) && !EventSystem.current.IsPointerOverGameObject())
                     {
                         StartCoroutine(Cast());
                         SetState(State.Casting);
+                    }
+
+                    if (Input.GetKeyDown(KeyCode.Mouse1) && !EventSystem.current.IsPointerOverGameObject())
+                    {
+                        SetState(State.Walking);
                     }
                     break;
 
@@ -123,8 +133,6 @@ public class PlayerCtrl : MonoBehaviour {
         transform.LookAt(new Vector3 (mousePosition.x, transform.position.y, 0));
 
         GameObject newProjectile = Instantiate(projectile, wand.transform.position, gameObject.transform.rotation);
-
-        newProjectile.transform.position = wand.transform.position;
 
         newProjectile.GetComponent<Projectile>().Destination = mousePosition;
 

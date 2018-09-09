@@ -113,6 +113,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
                     finalSize = target.transform.localScale * 3;
                     changeable.changing = true;
                     changeable.big = true;
+                    changeable.SwellSound();
                 }
                 else
                 {
@@ -126,6 +127,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
                     finalSize = target.transform.localScale / 3;
                     changeable.changing = true;
                     changeable.big = false;
+                    changeable.ShrinkSound();
                 }
                 else
                 {

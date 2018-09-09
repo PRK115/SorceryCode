@@ -67,6 +67,7 @@ public class GameStateManager : MonoBehaviour
                     inStagePanel.SetActive(false);
                     inStagePausePanel.SetActive(false);
                     clearPanel.SetActive(true);
+                    StartCoroutine(ReturnAfterClear());
                 }
                 else throw new Exception($"Invalid UI State {state} -> {nextState}");
                 break;
@@ -162,5 +163,11 @@ public class GameStateManager : MonoBehaviour
     public void CloseTutorialPanel(GameObject tutorialPanel)
     {
         tutorialPanel.SetActive(false);
+    }
+
+    IEnumerator ReturnAfterClear()
+    {
+        yield return new WaitForSeconds(1.2f);
+        sceneChange.ToStageSelection();
     }
 }

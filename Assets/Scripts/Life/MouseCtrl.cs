@@ -119,7 +119,7 @@ public class MouseCtrl : MonoBehaviour
 
         if (_state == State.Idle)
         {
-            walkAndJump.SetWalkSpeed(1.5f);
+            walkAndJump.SetWalkSpeed(0.8f);
             if (isWandering == false)
             {
                 StartCoroutine(Patrolling());

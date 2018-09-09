@@ -10,6 +10,7 @@ public class LionCtrl : MonoBehaviour
     //CharacterController ctrl;
 
     Animator animator;
+    AudioSource sound;
 
     public enum State
     {
@@ -35,6 +36,7 @@ public class LionCtrl : MonoBehaviour
     {
         walkAndJump = GetComponent<WalkAndJump>();
         org = GetComponent<Organism>();
+        sound = GetComponent<AudioSource>();
 
         //ctrl = GetComponent<CharacterController>();
 
@@ -133,6 +135,7 @@ public class LionCtrl : MonoBehaviour
             if ((hit.gameObject != gameObject) && (hit.gameObject.layer == 9))
             {
                 Organism org = hit.GetComponent<Organism>();
+                sound.Play();
                 org.PhysicalDamage();
                 targetlist.Remove(hit.gameObject);
                 SetState(State.Idle);
@@ -229,7 +232,7 @@ public class LionCtrl : MonoBehaviour
             switch (state)
             {
                 case State.Idle:
-                    walkAndJump.SetWalkSpeed(1.5f);
+                    walkAndJump.SetWalkSpeed(0.8f);
                     break;
 
                 case State.Chase:

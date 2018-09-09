@@ -10,7 +10,9 @@ public class WalkAndJump : MonoBehaviour {
     public float horizontalJumpImpulse;
 
     private CharacterController ctrl;
-    private Vector3 jumpDirection = Vector3.zero;
+    //private Vector3 moveDirection = Vector3.zero;
+    Vector3 moveDirection = Vector3.zero;
+
     private float g = 9.8f;
 
     Moveable platform;
@@ -19,10 +21,13 @@ public class WalkAndJump : MonoBehaviour {
     bool isGrounded_delayed;
     int airborneDelay = 4;
 
+    AudioSource sound;
+
     void Awake()
     {
         //originalScale = transform.localScale;
         ctrl = GetComponent<CharacterController>();
+        sound = GetComponent<AudioSource>();
         //ctrl.detectCollisions = false;
         //platform = GetComponentInParent<Platform>();
     }
@@ -41,40 +46,43 @@ public class WalkAndJump : MonoBehaviour {
             else
                 airborneDelay--;
         }
-
-
-        Vector3 moveDirection = Vector3.zero;
         if (isGrounded_delayed)
         {
-            jumpDirection = Vector3.zero;
             switch (direction)
             {
                 case Direction.None:
+                    //Debug.Log("none");
                     moveDirection = Vector3.zero;
                     break;
+
                 case Direction.Left:
                     transform.LookAt(transform.position + Vector3.left);
                     moveDirection = Vector3.left * walkSpeed;
                     break;
+
                 case Direction.Right:
                     transform.LookAt(transform.position + Vector3.right);
                     moveDirection = Vector3.right * walkSpeed;
                     break;
+
                 case Direction.Up:
-                    jumpDirection = new Vector3(0, verticalJumpImpulse, 0);
+                    moveDirection = new Vector3(0, verticalJumpImpulse, 0);
                     isGrounded_delayed = false;
+                    sound.Play();
                     transform.parent = null;
                     break;
                 case Direction.LeftUp:
                     transform.LookAt(transform.position + Vector3.left);
-                    jumpDirection = new Vector3(-horizontalJumpImpulse, verticalJumpImpulse, 0);
+                    moveDirection = new Vector3(-horizontalJumpImpulse, verticalJumpImpulse, 0);
+                    sound.Play();
                     isGrounded_delayed = false;
                     transform.parent = null;
 
                     break;
                 case Direction.RightUp:
                     transform.LookAt(transform.position + Vector3.right);
-                    jumpDirection = new Vector3(horizontalJumpImpulse, verticalJumpImpulse, 0);
+                    moveDirection = new Vector3(horizontalJumpImpulse, verticalJumpImpulse, 0);
+                    sound.Play();
                     isGrounded_delayed = false;
                     transform.parent = null;
 
@@ -82,7 +90,7 @@ public class WalkAndJump : MonoBehaviour {
             }
             if (platform != null)
             {
-                moveDirection += new Vector3(platform.XTendency, platform.YTendency, 0) * 1.4f;
+                moveDirection += new Vector3(platform.XTendency, platform.YTendency, 0) * 0.8f;
             }
             ctrl.Move(moveDirection * Time.deltaTime);
         }
@@ -91,14 +99,30 @@ public class WalkAndJump : MonoBehaviour {
         {
             if(platform == null)
             {
-                jumpDirection.y -= g * Time.deltaTime;  
+                moveDirection.y -= g * Time.deltaTime;
+                switch (direction)
+                {
+                    case Direction.None:
+                        moveDirection = new Vector3(0, moveDirection.y, 0);
+                        break;
+
+                    case Direction.Left:
+                        transform.LookAt(transform.position + Vector3.left);
+                        moveDirection = new Vector3(-walkSpeed, moveDirection.y, 0);
+                        break;
+
+                    case Direction.Right:
+                        transform.LookAt(transform.position + Vector3.right);
+                        moveDirection = new Vector3(walkSpeed, moveDirection.y, 0);
+                        break;
+                }
             }
             else
             {
                 platform = null;
             }
         }
-        ctrl.Move(jumpDirection * Time.deltaTime);
+        ctrl.Move(moveDirection * Time.deltaTime);
     }
 
     public void SetWalkSpeed(float speed)

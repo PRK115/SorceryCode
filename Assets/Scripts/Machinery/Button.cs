@@ -8,6 +8,13 @@ public class Button : MonoBehaviour {
 
     private IToggleable[] outputs;
 
+    AudioSource sound;
+
+    private void Awake()
+    {
+        sound = GetComponent<AudioSource>();
+    }
+
     private void Start()
     {
         outputs = GetComponentsInChildren<IToggleable>();
@@ -43,6 +50,7 @@ public class Button : MonoBehaviour {
         {
             outputs[i].Toggle(true);
         }
+        sound.Play();
     }
 
     private void OnTriggerExit(Collider other)

@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{EAA8A464-2C31-EC26-86D1-E544D9257C77}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SorceryCode", "Assembly-CSharp.csproj", "{EAA8A464-2C31-EC26-86D1-E544D9257C77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{60D111F0-9D3A-C5D3-BF0D-0F3D1EF713CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SorceryCode", "Assembly-CSharp-firstpass.csproj", "{60D111F0-9D3A-C5D3-BF0D-0F3D1EF713CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{88993BA1-8D7B-9A99-81FD-2DF8ABAA2A90}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SorceryCode", "Assembly-CSharp-Editor.csproj", "{88993BA1-8D7B-9A99-81FD-2DF8ABAA2A90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -15,11 +15,16 @@ public class Changeable : MonoBehaviour, Attribute
     ContactDetector cd;
     //Rigidbody rb;
 
+    AudioSource sound;
+    public AudioClip shrink;
+    public AudioClip swell;
+
     private void Awake()
     {
         //rb = GetComponent<Rigidbody>();
         cd = GetComponent<ContactDetector>();
         moveable = GetComponent<Moveable>();
+        sound = GetComponent<AudioSource>();
     }
 
     public bool IsConfined()
@@ -60,5 +65,17 @@ public class Changeable : MonoBehaviour, Attribute
         transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), 0);
         moveable.Gravitate();
         //Debug.Log($"{moveable.XTendency} {moveable.YTendency} {rb.isKinematic}");
+    }
+
+    public void ShrinkSound()
+    {
+        sound.clip = shrink;
+        sound.Play();
+    }
+
+    public void SwellSound()
+    {
+        sound.clip = swell;
+        sound.Play();
     }
 }

@@ -13,15 +13,21 @@ public class Rune : MonoBehaviour, IConsumable {
 
     float timeTillDestroy = 0.5f;
 
+    AudioSource sound;
+
     private void Awake()
     {
         stock = FindObjectOfType<RuneStock>();
         stone = transform.Find("stone").gameObject;
+        //sound = gameObject.AddComponent<AudioSource>();
+        //sound.playOnAwake = false;
+        //sound.clip = FindObjectOfType<PlayerCtrl>().runeGot;
     }
 
     public void ConsumedBehaviour()
     {
         stone.SetActive(false);
+        //sound.Play();
         if (timeTillDestroy <= 0 && stock != null)
         {
             switch (runeType.type)

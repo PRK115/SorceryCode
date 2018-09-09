@@ -12,12 +12,15 @@ public class Projectile : MonoBehaviour {
     private State state = State.Flying;
 
     Vector3 destination;
+    float travelTime;
     public Vector3 Destination { set { destination = value; } }
-    float speed = 10f;
+    float speed = 7.2f;
 
     GameObject aura;
     GameObject hit;
     GameObject fail;
+
+    AudioSource sound;
 
     float destroyTime = 0.5f;
 
@@ -27,10 +30,11 @@ public class Projectile : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        sound = GetComponent<AudioSource>();
         aura = transform.Find("aura").gameObject;
         hit = transform.Find("hit").gameObject;
         fail = transform.Find("puff").gameObject;
-
+        travelTime = Vector3.Distance(transform.position, destination) / speed;
         //commandManager = FindObjectOfType<CommandManager>();
 
         transform.LookAt(destination);
@@ -40,12 +44,17 @@ public class Projectile : MonoBehaviour {
 	void Update () {
 	    if (state == State.Flying)
 	    {
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
-            if (Vector3.Distance(transform.position, destination) < 0.1f)
+            if (travelTime <= 0)
             {
+                transform.position = destination;
                 state = State.Arrival;
             }
-	    }
+            else
+            {
+                transform.Translate(Vector3.forward * speed * Time.deltaTime);
+                travelTime -= Time.deltaTime;
+            }
+        }
 	    else if (state == State.Arrival)
 	    {
             aura.SetActive(false);
@@ -56,6 +65,7 @@ public class Projectile : MonoBehaviour {
 
         else if (state == State.Explode)
         {
+            sound.Play();
             aura.SetActive(false);
             fail.SetActive(true);
             state = State.Aftermath;
@@ -88,6 +98,8 @@ public class Projectile : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         Entity otherEntity = other.GetComponent<Entity>();
+        Debug.Log(otherEntity);
+        Debug.Log(other.name);
         if(otherEntity != null)
         {
             //Debug.Log(otherEntity);
