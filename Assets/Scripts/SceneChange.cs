@@ -9,6 +9,11 @@ public class SceneChange : MonoBehaviour {
         SceneManager.LoadScene("StageSelection");
     }
 
+    public void ToIntro()
+    {
+        SceneManager.LoadScene("Intro");
+    }
+
     public void ToStage(int stageNumber)
     {
         if (stageNumber == 2)

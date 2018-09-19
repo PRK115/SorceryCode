@@ -80,14 +80,22 @@ public class Flammable : MonoBehaviour, ISubstance {
 
     private void OnTriggerStay(Collider other)
     {
-        Flammable flammable = other.GetComponent<Flammable>();
-        if (flammable != null)
+        if(state == State.Burning)
         {
-            if (flammable.state == State.Burning)
+            Flammable flammable = other.GetComponent<Flammable>();
+            if (flammable != null)
             {
-                state = State.BurnReady;
-                fire.SetActive(true);
+                if (flammable.state == State.Intact)
+                {
+                    flammable.Ignite();
+                }
             }
+
         }
+    }
+
+    public void Ignite()
+    {
+        state = State.BurnReady;
     }
 }
