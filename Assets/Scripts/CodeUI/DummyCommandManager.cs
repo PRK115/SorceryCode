@@ -60,5 +60,10 @@ namespace CodeUI
         {
             return true;
         }
+
+        public bool Sense(EvalContext context, EntityType entityToBeDetected)
+        {
+            return true;
+        }
     }
 }

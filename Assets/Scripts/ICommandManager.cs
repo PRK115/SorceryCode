@@ -21,4 +21,6 @@ public interface ICommandManager
     bool IsSizeChangeable(EntityType type);
     bool IsChangeable(EntityType from, EntityType to);
     bool IsMoveable(EntityType type);
+
+    bool Sense(EvalContext context, EntityType entityToBeDetected);
 }

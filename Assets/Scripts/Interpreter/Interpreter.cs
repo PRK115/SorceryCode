@@ -53,6 +53,8 @@ public class Interpreter : MonoBehaviour
 
     public class BoolExpr : Expr
     {
+        public EntityType type;
+
         public bool Value;
 
         public override object Eval() => Value;
@@ -91,14 +93,16 @@ public class Interpreter : MonoBehaviour
 
     public class If : Stmt
     {
-        public Expr Cond;
+        //public Expr Cond;
+        public BoolExpr Cond;
         public Stmt Then;
         public Stmt Else;
 
         public override async Task<StmtResult> Eval(EvalContext context)
         {
             await base.Eval(context);
-            object condResult = Cond.Eval();
+            //object condResult = Cond.Eval();    
+            object condResult = Inst.CommandMgr.Sense(context, Cond.type);
             if (condResult is bool)
             {
                 bool condValue = (bool) condResult;

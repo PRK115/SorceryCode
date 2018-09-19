@@ -9,6 +9,11 @@
             get { return (conditionSlot.Block as ConditionBlock)?.condition; }
         }
 
+        public EntityType? EntityToCheck
+        {
+            get { return (conditionSlot.Block as EntityBlock)?.EntityType; }
+        }
+
         protected override void Awake()
         {
             base.Awake();
@@ -21,7 +26,7 @@
         {
             base.Start();
             conditionSlot.CheckBlockValidCallback = 
-                block => block is ConditionBlock;
+                block => block is EntityBlock;
         }
     }
 }

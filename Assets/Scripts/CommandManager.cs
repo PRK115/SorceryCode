@@ -330,4 +330,12 @@ public class CommandManager : MonoBehaviour, ICommandManager
         }
         onFinished();
     }
+
+    public bool Sense(EvalContext context, EntityType entityToBeDetected)
+    {
+        IfDetector detector = context.Target.GetComponent<IfDetector>();
+        if(detector == null)
+            detector = context.Target.gameObject.AddComponent<IfDetector>();
+        return detector.Detect(entityToBeDetected);
+    }
 }

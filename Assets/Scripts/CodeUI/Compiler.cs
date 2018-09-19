@@ -37,13 +37,13 @@ namespace CodeUI
                 if (scopedBlock is IfBlock)
                 {
                     IfBlock ifBlock = (IfBlock) scopedBlock;
-                    if (ifBlock.Condition == null)
+                    if (ifBlock.EntityToCheck == null)
                     {
                         throw new CompilerException($"Missing arugment in if block.");
                     }
                     return new Interpreter.If
                     {
-                        Cond = new Interpreter.BoolExpr {Value = ifBlock.Condition.Value},
+                        Cond = new Interpreter.BoolExpr {type = ifBlock.EntityToCheck.Value},
                         Then = new Interpreter.Block
                         {
                             Statements = ifBlock.StatementBlocks.Select(CompileStmt).ToList()
