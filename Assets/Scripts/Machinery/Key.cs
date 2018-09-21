@@ -12,7 +12,7 @@ public class Key : MonoBehaviour, IConsumable {
         lockedDoor = GetComponentInParent<IToggleable>();
     }
    
-    public void ConsumedBehaviour()
+    public virtual void ConsumedBehaviour()
     {
         lockedDoor.Toggle(true);
         Destroy(gameObject);

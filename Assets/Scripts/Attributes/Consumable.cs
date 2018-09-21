@@ -18,20 +18,26 @@ public class Consumable : MonoBehaviour {
         this.ConsumedBehaviour = consumableComponent.ConsumedBehaviour;
     }
 
+    /*
     private void Update()
     {
         if(consumed)
         {
             if (ConsumedBehaviour != null)
+            {
                 ConsumedBehaviour();
+                consumed = false;
+            }
         }
     }
+    */
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            consumed = true;
+            if (ConsumedBehaviour != null) 
+                ConsumedBehaviour();
             if (consumedEffect != null)
                 consumedEffect.SetActive(true);
         }

@@ -5,7 +5,7 @@
         public ExprSlot dirSlot;
         public UnityEngine.UI.Dropdown dropdown;
 
-        public MoveDirection? Dir
+        public RuneType.Direction? Dir
         {
             get { return (dirSlot.Block as MoveDirBlock)?.Dir; }
         }

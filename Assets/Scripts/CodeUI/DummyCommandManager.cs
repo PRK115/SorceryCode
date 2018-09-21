@@ -22,7 +22,7 @@ namespace CodeUI
             Debug.Log($"Changed to {entity.ToString()}!");
         }
 
-        public void Move(EvalContext context, MoveDirection direction, int distance)
+        public void Move(EvalContext context, RuneType.Direction direction, int distance)
         {
             Debug.Log($"Moved to {direction.ToString()} by distance {distance}");
         }

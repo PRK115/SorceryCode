@@ -5,17 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public enum MoveDirection
-{
-    Left, Right, Up, Down
-}
-
 public interface ICommandManager
 {
     void Conjure(EvalContext context, EntityType type);
     void Change(EvalContext context, ChangeType type);
     void Change(EvalContext context, EntityType type);
-    void Move(EvalContext context, MoveDirection direction, int distance);
+    void Move(EvalContext context, RuneType.Direction direction, int distance);
 
     bool IsConjurable(EntityType type);
     bool IsSizeChangeable(EntityType type);

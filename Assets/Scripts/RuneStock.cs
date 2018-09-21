@@ -1,66 +1,40 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RuneStock : MonoBehaviour {
-
-    public Dictionary<EntityType, int> EntityRuneStock = new Dictionary<EntityType, int>
+public class RuneStock : MonoBehaviour
+{
+    public Dictionary<RuneType, int> RuneCount = new Dictionary<RuneType, int>()
     {
-        {EntityType.CastleBlock, 0 },
-        {EntityType.WoodBlock, 0 },
-        {EntityType.MetalBlock, 0 },
-
-        {EntityType.Switch , 0},
-
-        {EntityType.WoodBox, 0 },
-        {EntityType.IronBox, 0 },
-
-        {EntityType.FireBall, 0 },
-        {EntityType.LightningBall, 0 },
-
-        {EntityType.Lion, 0 },
-        {EntityType.Mouse, 0 }
+        {new RuneType(EntityType.CastleBlock), 0},
+        {new RuneType(EntityType.WoodBlock), 0},
+        {new RuneType(EntityType.MetalBlock), 0},
+        {new RuneType(EntityType.Switch), 0},
+        {new RuneType(EntityType.WoodBox), 0},
+        {new RuneType(EntityType.IronBox), 0},
+        {new RuneType(EntityType.FireBall), 0},
+        {new RuneType(EntityType.LightningBall), 0},
+        {new RuneType(EntityType.Lion), 0},
+        {new RuneType(ChangeType.Big), 0},
+        {new RuneType(ChangeType.Small), 0},
+        {new RuneType(RuneType.Direction.Up), 0},
+        {new RuneType(RuneType.Direction.Down), 0},
+        {new RuneType(RuneType.Direction.Left), 0},
+        {new RuneType(RuneType.Direction.Right), 0},
     };
 
-    public Dictionary<ChangeType, int> ChangetypeRuneStock = new Dictionary<ChangeType, int>
-    {
-        {ChangeType.Big, 0 },
-        {ChangeType.Small, 0 }
-    };
+    public event Action<RuneType, int> OnRuneUpdate;
 
-    public Dictionary<RuneType.Direction, int> DirectionRuneStock = new Dictionary<RuneType.Direction, int>
+    public void AddRune(RuneType type)
     {
-        {RuneType.Direction.Up , 0 },
-        {RuneType.Direction.Down, 0 },
-        {RuneType.Direction.Left, 0 },
-        {RuneType.Direction.Right, 0 }
-    };
-
-    public void AddRune(EntityType entity)
-    {
-        EntityRuneStock[entity]++;
+        RuneCount[type]++;
+        Debug.Log($"rune count: {RuneCount[type]}");
+        OnRuneUpdate(type, RuneCount[type]);
     }
-    public void AddRune(ChangeType adjective)
+    void DeductRune(RuneType type)
     {
-        ChangetypeRuneStock[adjective]++;
-    }
-
-    public void AddRune(RuneType.Direction direction)
-    {
-        DirectionRuneStock[direction]++;
-    }
-
-    void DeductRune(EntityType entity)
-    {
-        EntityRuneStock[entity]--;
-    }
-    void DeductRune(ChangeType adjective)
-    {
-        ChangetypeRuneStock[adjective]--;
-    }
-
-    void DeductRune(RuneType.Direction direction)
-    {
-        DirectionRuneStock[direction]--;
+        RuneCount[type]--;
+        Debug.Log($"rune count: {RuneCount[type]}");
+        OnRuneUpdate(type, RuneCount[type]);
     }
 }

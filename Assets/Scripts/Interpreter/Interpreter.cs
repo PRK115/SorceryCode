@@ -191,7 +191,7 @@ public class Interpreter : MonoBehaviour
 
     public class Move : Stmt
     {
-        public MoveDirection Dir;
+        public RuneType.Direction Dir;
         public int Distance;
 
         public override async Task<StmtResult> Eval(EvalContext context)

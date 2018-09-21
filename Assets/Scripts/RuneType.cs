@@ -49,4 +49,21 @@ public struct RuneType
         this.adjective = ChangeType.Big;
         this.direction = direction;
     }
+
+    public static bool operator ==(RuneType r1, RuneType r2)
+    {
+        if (r1.type != r2.type) return false;
+        switch (r1.type)
+        {
+            case Type.Entity: return r1.entity == r2.entity;
+            case Type.Adjective: return r1.adjective == r2.adjective;
+            case Type.Direction: return r1.direction == r2.direction;
+            default: return false;
+        }
+    }
+
+    public static bool operator !=(RuneType r1, RuneType r2)
+    {
+        return !(r1 == r2);
+    }
 }

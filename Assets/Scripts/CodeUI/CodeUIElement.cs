@@ -22,6 +22,8 @@ namespace CodeUI
 
         public List<Block> HoveredBlocks { get; private set; }
 
+        public RuneCountIcon RuneCountIconPrefab;
+
         void Awake()
         {
             Instance = this;
