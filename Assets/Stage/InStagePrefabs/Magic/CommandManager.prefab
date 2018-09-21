@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114172812294065892}
   - component: {fileID: 114136648540771714}
   - component: {fileID: 114571698434850074}
+  - component: {fileID: 114149643372531268}
   m_Layer: 0
   m_Name: CommandManager
   m_TagString: Untagged
@@ -73,6 +74,17 @@ MonoBehaviour:
     - {fileID: 1525892520556632, guid: 6f44734388ffdcc4388d736e9cb059f0, type: 2}
     - {fileID: 1743315362948778, guid: a87c36f4dd3877646bd0653a98596cfa, type: 2}
     - {fileID: 1457927989000272, guid: 8148e62d8daba4947972186c2d2402f7, type: 2}
+--- !u!114 &114149643372531268
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1312813996257178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 749c664ab1901cd448674044f7bf9172, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114172812294065892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -84,7 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39dfbda817cd5f4a8f5976feff99ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnPos: {x: 0, y: 0, z: 0}
   codeUIElement: {fileID: 0}
 --- !u!114 &114571698434850074
 MonoBehaviour:
@@ -98,4 +109,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Delay: 1
-  Nounce: 0

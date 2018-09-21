@@ -7,8 +7,6 @@ public class Rune : MonoBehaviour, IConsumable {
 
     private GameObject stone;
 
-    RuneStock stock;
-
     [SerializeField] private RuneType runeType;
 
     float timeTillDestroy = 0.5f;
@@ -17,7 +15,6 @@ public class Rune : MonoBehaviour, IConsumable {
 
     private void Awake()
     {
-        stock = FindObjectOfType<RuneStock>();
         stone = transform.Find("stone").gameObject;
         //sound = gameObject.AddComponent<AudioSource>();
         //sound.playOnAwake = false;
@@ -27,17 +24,17 @@ public class Rune : MonoBehaviour, IConsumable {
     public void ConsumedBehaviour()
     {
         stone.SetActive(false);
-        //sound.Play();
-        if (timeTillDestroy <= 0 && stock != null)
+        GetComponent<Collider>().enabled = false;
+        switch (runeType.type)
         {
             case RuneType.Type.Entity:
-                stock.AddRune(new RuneType(runeType.Entity));
+                RuneStock.Inst.AddRune(new RuneType(runeType.Entity));
                 break;
             case RuneType.Type.Adjective:
-                stock.AddRune(new RuneType(runeType.adjective));
+                RuneStock.Inst.AddRune(new RuneType(runeType.adjective));
                 break;
             case RuneType.Type.Direction:
-                stock.AddRune(new RuneType(runeType.direction));
+                RuneStock.Inst.AddRune(new RuneType(runeType.direction));
                 break;
         }
 
@@ -46,12 +43,16 @@ public class Rune : MonoBehaviour, IConsumable {
 
     private IEnumerator DelayedDestroy()
     {
-        if (timeTillDestroy <= 0)
-        {
-            Destroy(gameObject);
-            yield break;
-        }
-        timeTillDestroy -= Time.deltaTime;
-        yield return new WaitForEndOfFrame();
+        //if (timeTillDestroy <= 0)
+        //{
+        //    Destroy(gameObject);
+        //    yield break;
+        //}
+        //timeTillDestroy -= Time.deltaTime;
+        //yield return new WaitForEndOfFrame();
+
+        yield return new WaitForSeconds(timeTillDestroy);
+        Destroy(gameObject);
+        yield break;
     }
 }

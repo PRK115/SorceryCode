@@ -46,8 +46,8 @@ namespace CodeUI
                     Blocks.Add(block);
                 }
             }
-            Blocks.Sort((b1, b2) =>
-                (int)(b2.rectTransform.anchoredPosition.y - b1.rectTransform.anchoredPosition.y));
+            //Blocks.Sort((b1, b2) =>
+            //    (int)(b2.rectTransform.anchoredPosition.y - b1.rectTransform.anchoredPosition.y));
 
             UpdateBlockHeight();
         }

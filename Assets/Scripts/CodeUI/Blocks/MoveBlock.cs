@@ -14,6 +14,11 @@
             get { return dropdown.value + 1; }
         }
 
+        private void Awake()
+        {
+            IsRune = false;
+        }
+
         protected override void Start()
         {
             base.Start();

@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class RuneStock : MonoBehaviour
 {
+    public static RuneStock Inst;
+
+    private void Awake()
+    {
+        Inst = this;
+    }
+
     public Dictionary<RuneType, int> RuneCount = new Dictionary<RuneType, int>()
     {
         {new RuneType(EntityType.CastleBlock), 0},
@@ -15,6 +22,7 @@ public class RuneStock : MonoBehaviour
         {new RuneType(EntityType.FireBall), 0},
         {new RuneType(EntityType.LightningBall), 0},
         {new RuneType(EntityType.Lion), 0},
+        {new RuneType(EntityType.Mouse), 0},
         {new RuneType(ChangeType.Big), 0},
         {new RuneType(ChangeType.Small), 0},
         {new RuneType(RuneType.Direction.Up), 0},
@@ -31,7 +39,7 @@ public class RuneStock : MonoBehaviour
         Debug.Log($"rune count: {RuneCount[type]}");
         OnRuneUpdate(type, RuneCount[type]);
     }
-    void DeductRune(RuneType type)
+    public void DeductRune(RuneType type)
     {
         RuneCount[type]--;
         Debug.Log($"rune count: {RuneCount[type]}");

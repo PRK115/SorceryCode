@@ -31,6 +31,7 @@ namespace CodeUI
         {
             base.Awake();
             argumentSlot = GetComponentInChildren<ExprSlot>();
+            IsRune = false;
         }
 
         protected override void Start()
