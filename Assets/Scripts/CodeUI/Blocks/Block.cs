@@ -139,6 +139,7 @@ namespace CodeUI
         {
             if (!IsMovable) return;
             dragStartPosOffset = new Vector2(transform.position.x, transform.position.y) - eventData.position;
+            return;
         }
         
         public void OnBeginDrag(PointerEventData eventData)
@@ -164,6 +165,7 @@ namespace CodeUI
             IsInSlot = false;
 
             transform.SetParent(CodeUIElement.Instance.transform);
+            Debug.Log($"{gameObject.name}, {canvasGroup}");
             canvasGroup.blocksRaycasts = false;
 
             if (ContainedSlot != null)

@@ -70,7 +70,9 @@ namespace CodeUI
         {
             blockListPanel.color = Color.clear;
             if (eventData.pointerDrag == null) return;
-            Block block = eventData.pointerDrag.GetComponent<Block>();
+            //Block block = eventData.pointerDrag.GetComponent<Block>();
+            Block block = CodeUIElement.Instance.DraggedBlock;
+            
             if (block != null)
             {
                 if (IsBlockValid(block))

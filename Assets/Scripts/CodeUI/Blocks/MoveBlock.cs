@@ -16,6 +16,7 @@
 
         private void Awake()
         {
+            base.Awake();
             IsRune = false;
         }
 
