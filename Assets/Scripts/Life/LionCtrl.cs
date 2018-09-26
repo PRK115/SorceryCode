@@ -108,16 +108,16 @@ public class LionCtrl : MonoBehaviour
     {
         //isWandering = true;
         var relHab = habitat.x - transform.position.x;
-        if ((relHab <= 3f) && (relHab >= -3f))
-        {
-            movementFlag = Random.Range(0, 3);
-            //Debug.Log(isWandering);
-        }
-        else if(relHab > 3f)
+        //if ((relHab <= 3f) && (relHab >= -3f))
+        //{
+        //    movementFlag = Random.Range(0, 3);
+        //}
+        //else if(relHab > 3f)
+        if(relHab>1f)
         {
             movementFlag = 2;
         }
-        else if(relHab < -3f)
+        else if(relHab < -1f)
         {
             movementFlag = 1;
         }

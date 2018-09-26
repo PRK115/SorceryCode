@@ -19,6 +19,7 @@ namespace CodeUI
 
         protected override void Awake()
         {
+            base.Awake();
             text = GetComponentInChildren<Text>();
         }
     }

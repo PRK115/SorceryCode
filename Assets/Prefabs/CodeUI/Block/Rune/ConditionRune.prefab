@@ -125,6 +125,12 @@ MonoBehaviour:
   ContainedScopedBlock: {fileID: 0}
   Depth: 0
   IsRune: 1
+  runeType:
+    type: 0
+    entity: 0
+    adjective: 0
+    direction: 0
+  runeCountIcon: {fileID: 0}
   condition: 1
 --- !u!114 &114831934793634514
 MonoBehaviour:

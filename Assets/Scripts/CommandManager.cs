@@ -29,6 +29,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
     {
         var code = Compiler.Compile(program);
         Interpreter.Inst.Execute(new EvalContext{Target = target, Location = location}, code);
+        BlockListRoot.inst.Clear();
     }
 
     public void Conjure(EvalContext context, EntityType type)

@@ -69,6 +69,7 @@ namespace CodeUI
         public void OnDrop(PointerEventData eventData)
         {
             blockListPanel.color = Color.clear;
+
             if (eventData.pointerDrag == null) return;
             //Block block = eventData.pointerDrag.GetComponent<Block>();
             Block block = CodeUIElement.Instance.DraggedBlock;
@@ -85,7 +86,7 @@ namespace CodeUI
             }
         }
 
-        void Update()
+        protected void Update()
         {
             var draggedBlock = CodeUIElement.Instance.DraggedBlock;
 
@@ -100,7 +101,8 @@ namespace CodeUI
                         if (IsBlockValid(draggedBlock))
                         {
                             draggedBlock.SetPlaceholderBlock(blockListPanel.transform, draggedBlock.transform.position);
-                            blockListPanel.color = new Color(0.0f, 1.0f, 0.0f, 0.3f);
+                            //blockListPanel.color = new Color(0.0f, 1.0f, 0.0f, 0.3f);
+                            //Debug.Log("green");
                         }
                         else
                         {

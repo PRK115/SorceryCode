@@ -55,6 +55,7 @@ namespace CodeUI
         {
             rectTransform = GetComponent<RectTransform>();
             canvasGroup = GetComponent<CanvasGroup>();
+            Debug.Log(canvasGroup);
             layoutElement = GetComponent<LayoutElement>();
 
             OriginalWidth = rectTransform.rect.width;
@@ -165,7 +166,6 @@ namespace CodeUI
             IsInSlot = false;
 
             transform.SetParent(CodeUIElement.Instance.transform);
-            Debug.Log($"{gameObject.name}, {canvasGroup}");
             canvasGroup.blocksRaycasts = false;
 
             if (ContainedSlot != null)
