@@ -119,6 +119,7 @@ public class GameStateManager : MonoBehaviour
 
     private void Awake()
     {
+        Interpreter.Inst.CancelAll();
         sceneChange = FindObjectOfType<SceneChange>();
 
         instance = this;

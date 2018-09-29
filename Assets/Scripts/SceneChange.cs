@@ -6,6 +6,8 @@ public class SceneChange : MonoBehaviour {
 
     public void ToStageSelection()
     {
+        if (Interpreter.Inst != null)
+            Interpreter.Inst.CancelAll();
         SceneManager.LoadScene("StageSelection");
     }
 
@@ -16,14 +18,14 @@ public class SceneChange : MonoBehaviour {
 
     public void ToStage(int stageNumber)
     {
-        if (stageNumber == 2)
-            SceneManager.LoadScene("MapGenerator");
-        else
-            SceneManager.LoadScene("Stage" + stageNumber);
+
+        SceneManager.LoadScene("Stage" + stageNumber);
     }
 
     public void Restart()
     {
+        Interpreter.Inst.CancelAll();
+        //Destroy(Interpreter.Inst.gameObject);
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
         Time.timeScale = 1;

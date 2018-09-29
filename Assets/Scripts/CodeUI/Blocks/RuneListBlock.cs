@@ -17,6 +17,7 @@ namespace CodeUI
         {
             base.Awake();
             runeStock = FindObjectOfType<RuneStock>();
+            //Debug.Log("runelistblock");
             runeStock.OnRuneUpdate += RuneUpdate;
         }
 

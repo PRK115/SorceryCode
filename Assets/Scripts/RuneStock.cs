@@ -36,7 +36,7 @@ public class RuneStock : MonoBehaviour
     public void AddRune(RuneType type)
     {
         RuneCount[type]++;
-        Debug.Log($"rune count: {RuneCount[type]}");
+        //Debug.Log($"rune count: {RuneCount[type]} {type}");
         OnRuneUpdate(type, RuneCount[type]);
     }
     public void DeductRune(RuneType type)

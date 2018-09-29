@@ -70,15 +70,19 @@ public class PlayerCtrl : MonoBehaviour {
                     break;
 
                 case State.Aiming:
-                    mousePosition = Input.mousePosition;
+                    //mousePosition = Input.mousePosition;
 
-                    mousePosition = cam.ScreenToWorldPoint(mousePosition);
+                    //mousePosition = cam.ScreenToWorldPoint(mousePosition);
 
-                    Ray r = new Ray();
-                    r.origin = mousePosition;
-                    r.direction = cam.transform.forward;
+                    //Ray r = new Ray();
+                    //r.origin = mousePosition;
+                    //r.direction = cam.transform.forward;
 
-                    mousePosition = r.GetPoint(-r.origin.z / Mathf.Cos(Vector3.Angle(r.direction, Vector3.forward * Mathf.PI / 180)));
+                    //    mousePosition = r.GetPoint(-r.origin.z / Mathf.Cos(Vector3.Angle(r.direction, Vector3.forward * Mathf.PI / 180)));
+
+                    var mousePos = Input.mousePosition;
+                    mousePos.z = -cam.transform.position.z;
+                    mousePosition = (cam.ScreenToWorldPoint(mousePos));
 
                     mousePosition = new Vector3(Mathf.Round(mousePosition.x), Mathf.Round(mousePosition.y), 0);
 

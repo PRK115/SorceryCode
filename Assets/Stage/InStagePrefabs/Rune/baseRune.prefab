@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114521218272388982}
   - component: {fileID: 114138267697868954}
   - component: {fileID: 114080006396455046}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: baseRune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 4119473177914308}
   - component: {fileID: 198033948166872822}
   - component: {fileID: 199845458627029124}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Aura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 4308963322716032}
   - component: {fileID: 198149803435519340}
   - component: {fileID: 199014342699334002}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Consumed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 4765233717250890}
   - component: {fileID: 33041972839854282}
   - component: {fileID: 23060222465968084}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

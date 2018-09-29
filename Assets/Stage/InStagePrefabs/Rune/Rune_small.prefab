@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4913810288523244}
   - component: {fileID: 33537577088730396}
   - component: {fileID: 23537879371864078}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4554548143532782}
   - component: {fileID: 198274206266482550}
   - component: {fileID: 199384980905040870}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Aura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 114425532604317104}
   - component: {fileID: 114236263616024612}
   - component: {fileID: 114778132330606450}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Rune_small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 4531509796410924}
   - component: {fileID: 33320363146555402}
   - component: {fileID: 23438256186353538}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 4955439797119274}
   - component: {fileID: 198682755565976712}
   - component: {fileID: 199581932009590116}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Consumed
   m_TagString: Untagged
   m_Icon: {fileID: 0}

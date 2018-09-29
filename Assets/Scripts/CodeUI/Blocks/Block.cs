@@ -55,7 +55,6 @@ namespace CodeUI
         {
             rectTransform = GetComponent<RectTransform>();
             canvasGroup = GetComponent<CanvasGroup>();
-            Debug.Log(canvasGroup);
             layoutElement = GetComponent<LayoutElement>();
 
             OriginalWidth = rectTransform.rect.width;

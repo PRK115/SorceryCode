@@ -4,10 +4,10 @@
     {
         private ExprSlot conditionSlot;
 
-        public bool? Condition
-        {
-            get { return (conditionSlot.Block as ConditionBlock)?.condition; }
-        }
+        //public bool? Condition
+        //{
+        //    get { return (conditionSlot.Block as ConditionBlock)?.condition; }
+        //}
 
         public EntityType? EntityToCheck
         {

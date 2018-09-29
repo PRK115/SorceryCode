@@ -56,7 +56,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
                 }
             }
 
-            RuneStock.Inst.DeductRune(new RuneType(type));
+            //RuneStock.Inst.DeductRune(new RuneType(type));
 
             GameObject conjured = Instantiate(prefab, context.Location, prefab.transform.rotation);
             Entity conjuredEntity = conjured.GetComponent<Entity>();
@@ -160,7 +160,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
                 return;
         }
 
-        RuneStock.Inst.DeductRune(new RuneType(type));
+        //RuneStock.Inst.DeductRune(new RuneType(type));
 
         Vector3 originalPosition = target.transform.position;
         Vector3 finalPosition = (type == ChangeType.Big) ? changeable.BePushed(originalPosition) : originalPosition;
@@ -205,7 +205,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
         Rigidbody rb = target.GetComponent<Rigidbody>();
         if (rb != null) rb.useGravity = false;
 
-        RuneStock.Inst.DeductRune(new RuneType(entity));
+        //RuneStock.Inst.DeductRune(new RuneType(entity));
 
         StartCoroutine(
             StartGradualAction(timer =>
@@ -239,7 +239,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
 
         //Rigidbody rb = target.GetComponent<Rigidbody>();
 
-        RuneStock.Inst.DeductRune(new RuneType(direction));
+        //RuneStock.Inst.DeductRune(new RuneType(direction));
 
         Vector3 finalPos = target.transform.position;
         switch (direction)
@@ -345,6 +345,15 @@ public class CommandManager : MonoBehaviour, ICommandManager
         IfDetector detector = context.Target.GetComponent<IfDetector>();
         if(detector == null)
             detector = context.Target.gameObject.AddComponent<IfDetector>();
-        return detector.Detect(entityToBeDetected);
+        Moveable moveable = context.Target.GetComponent<Moveable>();
+        if (moveable != null)
+            moveable.Ungravitate();
+    
+        bool value =  detector.Detect(entityToBeDetected);
+
+        if (moveable != null)
+            moveable.Gravitate();
+
+        return value;
     }
 }
