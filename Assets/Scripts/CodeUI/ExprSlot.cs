@@ -33,7 +33,9 @@ namespace CodeUI
         public void OnPointerEnter(PointerEventData eventData)
         {
             if (eventData.pointerDrag == null) return;
-            Block draggedBlock = eventData.pointerDrag.GetComponent<Block>();
+            //Block draggedBlock = eventData.pointerDrag.GetComponent<Block>();
+            Block draggedBlock = CodeUIElement.Instance.DraggedBlock;
+
             if (!Filled && draggedBlock != null)
             {
                 if (CheckBlockValidCallback(draggedBlock))
@@ -50,7 +52,9 @@ namespace CodeUI
         public void OnPointerExit(PointerEventData eventData)
         {
             if (eventData.pointerDrag == null) return;
-            Block draggedBlock = eventData.pointerDrag.GetComponent<Block>();
+            //Block draggedBlock = eventData.pointerDrag.GetComponent<Block>();
+            Block draggedBlock = CodeUIElement.Instance.DraggedBlock;
+
             if (!Filled && draggedBlock != null)
             {
                 image.color = Color.white;
@@ -59,14 +63,43 @@ namespace CodeUI
 
         public void OnDrop(PointerEventData eventData)
         {
-            Block draggedBlock = eventData.pointerDrag.GetComponent<Block>();
+            //Block draggedBlock = eventData.pointerDrag.GetComponent<Block>();
+            Block draggedBlock = CodeUIElement.Instance.DraggedBlock;
+
             if (draggedBlock != null)
             {
                 image.color = Color.white;
 
-                if (!Filled && CheckBlockValidCallback(draggedBlock))
+                //if (!Filled && CheckBlockValidCallback(draggedBlock))
+                //{
+                //    Filled = true;
+                //    draggedBlock.IsInSlot = true;
+                //    draggedBlock.ContainedSlot = this;
+                //    draggedBlock.ContainedScopedBlock = null;
+
+                //    // Change parent of dragged block
+                //    draggedBlock.transform.SetParent(this.transform);
+                //    draggedBlock.OriginalParent = this.transform;
+
+                //    // Snap dragged block to slot
+                //    RectTransform blockRect = draggedBlock.rectTransform;
+                //    blockRect.anchorMin = new Vector2(0, 0);
+                //    blockRect.anchorMax = new Vector2(1, 1);
+                //    blockRect.pivot = new Vector2(0.5f, 0.5f);
+                //    blockRect.sizeDelta = rectTransform.sizeDelta;
+                //    blockRect.offsetMin = new Vector2(0, 0);
+                //    blockRect.offsetMax = new Vector2(0, 0);
+
+                //    draggedBlock.OriginalPosition = draggedBlock.transform.position;
+
+                //    Block = draggedBlock;
+                //}
+                if (CheckBlockValidCallback(draggedBlock))
                 {
-                    Filled = true;
+                    if(Filled)
+                    {
+                        Destroy(transform.GetChild(0).gameObject);
+                    }
                     draggedBlock.IsInSlot = true;
                     draggedBlock.ContainedSlot = this;
                     draggedBlock.ContainedScopedBlock = null;
@@ -87,6 +120,7 @@ namespace CodeUI
                     draggedBlock.OriginalPosition = draggedBlock.transform.position;
 
                     Block = draggedBlock;
+
                 }
             }
             

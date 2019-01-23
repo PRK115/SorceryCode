@@ -1,13 +1,14 @@
 fileFormatVersion: 2
 guid: 2d3ac398af74cb145921ec361aab5361
 ModelImporter:
-  serializedVersion: 23
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: door
     100002: //RootNode
     400000: door
     400002: //RootNode
     2100000: palette
+    2100002: doorMat
     2300000: door
     3300000: door
     4300000: door
@@ -62,8 +63,6 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

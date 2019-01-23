@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace CodeUI
 {
-    public class RuneListBlock : ScopedBlock
+    public class RuneListBlock : ScopedBlock, IDropHandler
     {
         protected override bool IsBlockValid(Block block) => block.IsRune;
 
@@ -13,52 +15,75 @@ namespace CodeUI
 
         private RuneStock runeStock;
 
+        public static RuneListBlock inst;
+
         protected override void Awake()
         {
             base.Awake();
             runeStock = FindObjectOfType<RuneStock>();
             //Debug.Log("runelistblock");
             runeStock.OnRuneUpdate += RuneUpdate;
+            inst = this;
         }
 
-        public void RuneUpdate(RuneType runeType, int runeCount)
+        public void RuneUpdate(RuneType runeType, int runeCount, bool adding)
         {
             if (runeCount == 0)
             {
                 // Remove rune from list
-                Blocks.RemoveAll(block => block.IsRune && block.runeType == runeType);
+                Blocks.RemoveAll(block => block.IsRune && block.RuneType == runeType);
             }
-            else if (runeCount == 1)
+            else if (runeCount == 1 && adding)
             {
                 // Add rune to list
-                Block runeBlock = null;
+                RuneBlock runeBlock = null;
                 if (runeType.type == RuneType.Type.Entity)
                 {
-                    EntityBlock block = Instantiate(entityBlockPrefab);
-                    block.EntityType = runeType.Entity;
-                    runeBlock = block;
+                    runeBlock = Instantiate(entityBlockPrefab);
                 }
                 else if (runeType.type == RuneType.Type.Adjective)
                 {
-                    ChangeTypeBlock block = Instantiate(changeTypeBlockPrefab);
-                    block.ChangeType = runeType.adjective;
-                    runeBlock = block;
+                    runeBlock = Instantiate(changeTypeBlockPrefab);
                 }
                 else if (runeType.type == RuneType.Type.Direction)
                 {
-                    MoveDirBlock block = Instantiate(moveDirBlockPrefab);
-                    block.Dir = runeType.direction;
-                    runeBlock = block;
+                    runeBlock = Instantiate(moveDirBlockPrefab);
                 }
+                runeBlock.RuneType = runeType;
+                BlockListRoot.inst.OnUse += runeBlock.SetUsed;
+                BlockListRoot.inst.SetAllUnused += runeBlock.SetUnused;
                 runeBlock.transform.SetParent(blockListPanel.transform);
+                runeBlock.FindWhereYouBelong();
                 Blocks.Add(runeBlock);
                 runeBlock.SetRuneCount(runeCount);
             }
             else
             {
                 // Update rune count
-                Block runeBlock = Blocks.Find(block => block.IsRune && block.runeType == runeType);
-                runeBlock.SetRuneCount(runeCount);
+                Block runeBlock = Blocks.Find(block => block.IsRune && block.RuneType == runeType);
+                if(runeBlock != null)
+                    runeBlock.SetRuneCount(runeCount);
+            }
+            //Debug.Log(runeCount);
+        }
+
+        public new void OnDrop(PointerEventData eventData)
+        {
+            Block draggedBlock = CodeUIElement.Instance.DraggedBlock;
+            base.OnDrop(eventData);
+            if(draggedBlock != null)
+            {
+                if(draggedBlock is RuneBlock)
+                {
+                    Block runeBlockInList = Blocks.Find(block => block.IsRune && block.RuneType == draggedBlock.RuneType);
+                    if(runeBlockInList != null || true)
+                    {
+                        Destroy(draggedBlock.gameObject);
+                    }
+
+                }
+                else
+                    Destroy(draggedBlock.gameObject);
             }
         }
     }

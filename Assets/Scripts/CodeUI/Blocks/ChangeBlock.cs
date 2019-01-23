@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Util;
+using UnityEngine;
 
 namespace CodeUI
 {
@@ -21,6 +22,7 @@ namespace CodeUI
                 }
                 else if (argumentSlot.Block is EntityBlock)
                 {
+                    Debug.Log((argumentSlot.Block as EntityBlock).EntityType);
                     return new Either<ChangeType, EntityType>(((EntityBlock) argumentSlot.Block).EntityType);
                 }
                 else return null;

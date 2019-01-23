@@ -6,5 +6,11 @@ namespace CodeUI
 {
     public class StmtBlock : Block
     {
+        protected void Update()
+        {
+            if (transform.parent == null)
+                Destroy(gameObject);
+        }
+
     }
 }

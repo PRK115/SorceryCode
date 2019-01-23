@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class BlockListRoot : MonoBehaviour {
 
     public static BlockListRoot inst;
+    public event Action OnUse;
+    public event Action SetAllUnused;
 
     private void Awake()
     {
@@ -13,10 +16,15 @@ public class BlockListRoot : MonoBehaviour {
 
     public void Clear()
     {
+        OnUse();
         foreach (Transform child in transform)
         {
             Destroy(child.gameObject);
         }
+    }
 
+    public void ResetUsed()
+    {
+        SetAllUnused();
     }
 }

@@ -131,7 +131,7 @@ public class WalkAndJump : MonoBehaviour {
             }
         }
         
-        if (Physics.Raycast(transform.position + ctrl.center, Vector3.down, halfHeight, 1 + (1 << 11)))
+        if (Physics.Raycast(transform.position + ctrl.center, Vector3.down, halfHeight, 1 + (1 << 11) +(1 << 8)))
         {
            
             return true;

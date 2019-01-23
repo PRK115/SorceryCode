@@ -18,7 +18,7 @@ namespace CodeUI
 
         protected virtual bool IsBlockValid(Block block) => true;
 
-        private LayoutElement layoutElement;
+        private new LayoutElement layoutElement;
 
         public float InitialBlankHeight = 30f;
 
@@ -86,7 +86,7 @@ namespace CodeUI
             }
         }
 
-        protected void Update()
+        protected new void Update()
         {
             var draggedBlock = CodeUIElement.Instance.DraggedBlock;
 

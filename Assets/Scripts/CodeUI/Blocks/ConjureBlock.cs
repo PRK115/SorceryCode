@@ -11,7 +11,8 @@ namespace CodeUI
 
         public EntityType? EntityToConjure
         {
-            get { return (argumentSlot.Block as EntityBlock)?.EntityType; }
+            get {
+                return (argumentSlot.Block as EntityBlock)?.EntityType;  }
         }
 
         protected override void Awake()

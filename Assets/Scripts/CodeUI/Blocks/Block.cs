@@ -34,7 +34,28 @@ namespace CodeUI
         public ScopedBlock ContainedScopedBlock = null;
         public int Depth = 0;
         public bool IsRune = true;
-        public RuneType runeType;
+        [SerializeField]
+        protected RuneType runeType;
+        public RuneType RuneType
+        {
+            get { return runeType; }
+            set
+            {
+                runeType = value;
+                if(this is EntityBlock)
+                {
+                    (this as EntityBlock).EntityType = runeType.Entity;
+                }
+                if (this is ChangeTypeBlock)
+                {
+                    (this as ChangeTypeBlock).ChangeType = runeType.adjective;
+                }
+                if (this is MoveDirBlock)
+                {
+                    (this as MoveDirBlock).Dir = runeType.direction;
+                }
+            }
+        }
 
         public RuneCountIcon runeCountIcon;
         public void SetRuneCount(int count)
@@ -47,6 +68,7 @@ namespace CodeUI
                     runeCountIcon.transform.SetParent(this.transform);
                 }
                 runeCountIcon.Count = count;
+                if (count > 1) IsMovable = false;
             }
             else throw new Exception("Cannot set rune count of block that is not rune");
         }
@@ -61,24 +83,9 @@ namespace CodeUI
             OriginalHeight = rectTransform.rect.height;
 
             // Find contained slot or scoped block
-            Transform parent = transform.parent;
-            while (parent != null)
-            {
-                ScopedBlock scopedBlock = parent.GetComponent<ScopedBlock>();
-                if (scopedBlock != null)
-                {
-                    ContainedScopedBlock = scopedBlock;
-                    break;
-                }
-                ExprSlot exprSlot = parent.GetComponent<ExprSlot>();
-                if (exprSlot != null)
-                {
-                    ContainedSlot = exprSlot;
-                    break;
-                }
-                parent = parent.parent;
-            }
 
+            FindWhereYouBelong();
+            
             // Update depth of this block
             if (ContainedScopedBlock != null)
                 Depth = ContainedScopedBlock.Depth + 1;
@@ -200,6 +207,38 @@ namespace CodeUI
             if (ContainedScopedBlock != null)
             {
                 ContainedScopedBlock.UpdateBlocks();
+            }
+            if (ContainedSlot != null)
+            {
+                ContainedSlot.Filled = true;
+            }
+        }
+
+        protected bool unused;
+        public void CheckUsed()
+        {
+            unused = false;
+        }
+
+        public void FindWhereYouBelong()
+        {
+            Transform parent = transform.parent;
+
+            while (parent != null)
+            {
+                ScopedBlock scopedBlock = parent.GetComponent<ScopedBlock>();
+                if (scopedBlock != null)
+                {
+                    ContainedScopedBlock = scopedBlock;
+                    break;
+                }
+                ExprSlot exprSlot = parent.GetComponent<ExprSlot>();
+                if (exprSlot != null)
+                {
+                    ContainedSlot = exprSlot;
+                    break;
+                }
+                parent = parent.parent;
             }
         }
     }

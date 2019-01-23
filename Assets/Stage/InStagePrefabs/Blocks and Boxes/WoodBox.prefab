@@ -38,7 +38,8 @@ GameObject:
   - component: {fileID: 4343443554779660}
   - component: {fileID: 198650486588759256}
   - component: {fileID: 199673496914073428}
-  m_Layer: 11
+  - component: {fileID: 65032109994944532}
+  m_Layer: 12
   m_Name: fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +97,6 @@ GameObject:
   - component: {fileID: 4659920458622558}
   - component: {fileID: 33945043636796624}
   - component: {fileID: 23280239341662654}
-  - component: {fileID: 65730153217382220}
   m_Layer: 11
   m_Name: wood_box
   m_TagString: Untagged
@@ -230,6 +230,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 2
+--- !u!65 &65032109994944532
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1466197232851286}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 1.2, z: 1.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65197913123457056
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -242,18 +254,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.9, z: 0.9}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65730153217382220
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1655915329836098}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.2, y: 1.2, z: 0.99599993}
-  m_Center: {x: 0, y: 0.49799997, z: 0}
 --- !u!82 &82585071099912000
 AudioSource:
   m_ObjectHideFlags: 1

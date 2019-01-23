@@ -211,14 +211,14 @@ public class LionCtrl : MonoBehaviour
                 if (isInRange == false)
                 {
                     mainTarget = null;
-                    Debug.Log("시야 내에 없다");
+                    //Debug.Log("시야 내에 없다");
                     SetState(State.Idle);
                 }
             }
         }
         else
         {
-            Debug.Log("타겟 없음");
+            //Debug.Log("타겟 없음");
             SetState(State.Idle);
         }
 

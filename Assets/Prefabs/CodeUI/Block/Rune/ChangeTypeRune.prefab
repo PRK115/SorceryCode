@@ -164,6 +164,7 @@ MonoBehaviour:
     adjective: 0
     direction: 0
   runeCountIcon: {fileID: 0}
+  blockPrefab: {fileID: 114563177502685888}
 --- !u!114 &114899713238962364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -239,7 +240,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 94.89996, y: -235}
+  m_AnchoredPosition: {x: 94.89997, y: -25}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &225525660980632844
