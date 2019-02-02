@@ -23,6 +23,7 @@ public class RuneStock : MonoBehaviour
         runeStockDictionary.Add(new RuneType(EntityType.WoodBlock), 0);
         runeStockDictionary.Add(new RuneType(EntityType.MetalBlock), 0);
         runeStockDictionary.Add(new RuneType(EntityType.Switch), 0);
+        runeStockDictionary.Add(new RuneType(EntityType.SlidingDoor), 0);
         runeStockDictionary.Add(new RuneType(EntityType.WoodBox), 0);
         runeStockDictionary.Add(new RuneType(EntityType.IronBox), 0);
         runeStockDictionary.Add(new RuneType(EntityType.FireBall), 0);
@@ -82,5 +83,10 @@ public class RuneStock : MonoBehaviour
     {
         yield return new WaitForUpdate();
         AddRune(runeType);
+    }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
     }
 }
