@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4585809434608894}
   - component: {fileID: 198821112077931628}
   - component: {fileID: 199407283919914526}
-  m_Layer: 0
+  - component: {fileID: 65648390734178624}
+  m_Layer: 12
   m_Name: spark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +61,6 @@ GameObject:
   - component: {fileID: 114911041145632336}
   - component: {fileID: 114513172331825490}
   - component: {fileID: 114434411949543504}
-  - component: {fileID: 65474489258283668}
   - component: {fileID: 114352445514740528}
   - component: {fileID: 114074987518874038}
   m_Layer: 11
@@ -104,7 +104,7 @@ Transform:
   m_GameObject: {fileID: 1271772143535170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.635995, y: 6.0361147, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4585809434608894}
   - {fileID: 4471256427331430}
@@ -180,12 +180,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.9, z: 0.9}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65474489258283668
+--- !u!65 &65648390734178624
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1271772143535170}
+  m_GameObject: {fileID: 1029909513033756}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1

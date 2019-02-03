@@ -107,6 +107,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
     {
         Entity target = context.Target;
         Changeable changeable = target.GetComponent<Changeable>();
+        BoxCollider collider = target.GetComponent<BoxCollider>();
         if (changeable == null)
         {
             //Debug.LogError($"Cannot change entity {target} to ChangeType {type}");
@@ -181,6 +182,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
                 target.transform.localScale = finalSize;
                 changeable.changing = false;
                 changeable.AdjustPosition();
+                collider.size = type == ChangeType.Big ? new Vector3(0.97f, 0.97f) : new Vector3(0.9f,0.9f);
             },
             1.0f
         )

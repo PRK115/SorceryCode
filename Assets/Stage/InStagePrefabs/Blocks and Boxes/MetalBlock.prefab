@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4362028551423764}
   - component: {fileID: 198369084682247770}
   - component: {fileID: 199312163881440248}
-  m_Layer: 0
+  - component: {fileID: 65639039898518678}
+  m_Layer: 12
   m_Name: spark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +38,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4017975073298688}
   - component: {fileID: 33003654909135502}
-  - component: {fileID: 65508866746575508}
   - component: {fileID: 23619032415430756}
   - component: {fileID: 114982887028947550}
   - component: {fileID: 65281304390222984}
@@ -58,7 +58,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1961037955922088}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.620295, y: 1.2371441, z: 1.502}
+  m_LocalPosition: {x: -37.431744, y: -16.762135, z: 4.6800017}
   m_LocalScale: {x: 1, y: 1, z: 4}
   m_Children:
   - {fileID: 4362028551423764}
@@ -147,18 +147,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65508866746575508
+--- !u!65 &65639039898518678
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1961037955922088}
+  m_GameObject: {fileID: 1120309061083800}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.2, y: 1.4, z: 1}
+  m_Center: {x: 0, y: 0, z: 0.5}
 --- !u!114 &114382813402609288
 MonoBehaviour:
   m_ObjectHideFlags: 1

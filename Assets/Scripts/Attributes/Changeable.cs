@@ -11,6 +11,8 @@ public class Changeable : MonoBehaviour, Attribute
     public bool big;
     public bool changing;
 
+    BoxCollider boxCollider;
+
     Moveable moveable;
     ContactDetector cd;
     //Rigidbody rb;
@@ -25,6 +27,8 @@ public class Changeable : MonoBehaviour, Attribute
         cd = GetComponent<ContactDetector>();
         moveable = GetComponent<Moveable>();
         sound = GetComponent<AudioSource>();
+        boxCollider = GetComponent<BoxCollider>();
+        boxCollider.size = big ? new Vector3(0.97f, 0.97f) : new Vector3(0.9f, 0.9f);
     }
 
     public bool IsConfined()

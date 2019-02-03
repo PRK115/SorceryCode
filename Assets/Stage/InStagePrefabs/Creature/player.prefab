@@ -916,9 +916,9 @@ CharacterController:
   m_Height: 2.4
   m_Radius: 0.4
   m_SlopeLimit: 0
-  m_StepOffset: 0.1
-  m_SkinWidth: 0.04
-  m_MinMoveDistance: 0.001
+  m_StepOffset: 0.01
+  m_SkinWidth: 0.01
+  m_MinMoveDistance: 0
   m_Center: {x: 0, y: -0.35, z: 0}
 --- !u!198 &198165762466344852
 ParticleSystem:
