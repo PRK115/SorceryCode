@@ -4837,7 +4837,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.263, y: 0.7313697}
-  m_AnchoredPosition: {x: 12, y: 0}
+  m_AnchoredPosition: {x: 11.9999695, y: 0}
   m_SizeDelta: {x: -4, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1314475863
@@ -5610,7 +5610,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 0.24, z: 1}
-  m_Center: {x: 0, y: -0.36, z: 0}
+  m_Center: {x: 0, y: -0.1, z: 0}
 --- !u!1001 &1539944831
 Prefab:
   m_ObjectHideFlags: 0
