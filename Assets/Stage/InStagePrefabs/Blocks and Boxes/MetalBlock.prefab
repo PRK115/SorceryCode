@@ -157,7 +157,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2, y: 1.4, z: 1}
+  m_Size: {x: 1.2, y: 1.6, z: 1}
   m_Center: {x: 0, y: 0, z: 0.5}
 --- !u!114 &114382813402609288
 MonoBehaviour:
@@ -173,6 +173,7 @@ MonoBehaviour:
   state: 0
   isPowerSource: 0
   electricityDuration: 0.2
+  predecessor: {fileID: 0}
 --- !u!114 &114965526905209616
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -203,6 +204,7 @@ MonoBehaviour:
   state: 0
   isPowerSource: 0
   electricityDuration: 0.2
+  predecessor: {fileID: 0}
 --- !u!198 &198369084682247770
 ParticleSystem:
   m_ObjectHideFlags: 1

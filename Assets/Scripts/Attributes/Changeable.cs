@@ -28,7 +28,8 @@ public class Changeable : MonoBehaviour, Attribute
         moveable = GetComponent<Moveable>();
         sound = GetComponent<AudioSource>();
         boxCollider = GetComponent<BoxCollider>();
-        boxCollider.size = big ? new Vector3(0.97f, 0.97f) : new Vector3(0.9f, 0.9f);
+        if(boxCollider != null)
+            boxCollider.size = big ? new Vector3(0.97f, 0.97f, 1f) : new Vector3(0.9f, 0.9f, 1f);
     }
 
     public bool IsConfined()
