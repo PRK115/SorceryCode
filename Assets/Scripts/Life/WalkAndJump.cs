@@ -16,10 +16,11 @@ public class WalkAndJump : MonoBehaviour {
     private float g = 9.8f;
 
     float halfHeight;
+    float radius;
     Moveable platform;
     //Vector3 originalScale;
 
-    bool isGrounded_delayed;
+    public bool isGrounded_delayed;
     int airborneDelay = 5;
 
     AudioSource sound;
@@ -30,6 +31,7 @@ public class WalkAndJump : MonoBehaviour {
         ctrl = GetComponent<CharacterController>();
         sound = GetComponent<AudioSource>();
         halfHeight = ctrl.height / 2 *transform.localScale.x + 0.02f;
+        radius = ctrl.radius;
     }
 
     public void Manuever(Direction direction)
@@ -120,7 +122,8 @@ public class WalkAndJump : MonoBehaviour {
 
     private bool CheckUnderFoot()
     {
-        if (Physics.Raycast(transform.position + ctrl.center, Vector3.down, halfHeight, (1 << 11)))
+        Ray ray = new Ray(transform.position + ctrl.center, Vector3.down);
+        if (Physics.SphereCast(ray, radius, halfHeight - radius, (1 << 11)))
         {
             RaycastHit[] Moveables = new RaycastHit[1];
             Physics.RaycastNonAlloc(transform.position + ctrl.center, Vector3.down, Moveables, halfHeight, 1 << 11);
@@ -130,10 +133,9 @@ public class WalkAndJump : MonoBehaviour {
                 return true;
             }
         }
-        
-        if (Physics.Raycast(transform.position + ctrl.center, Vector3.down, halfHeight, 1 + (1 << 11) +(1 << 8)))
+
+        if (Physics.SphereCast(ray, radius, halfHeight - radius, 1 +(1 << 8)))
         {
-           
             return true;
         }
 
