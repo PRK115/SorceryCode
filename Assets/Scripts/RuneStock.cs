@@ -82,7 +82,8 @@ public class RuneStock : MonoBehaviour
     public IEnumerator DelayedReturnRune(RuneType runeType)
     {
         yield return new WaitForUpdate();
-        AddRune(runeType);
+        if(RuneStock.Inst != null)
+            AddRune(runeType);
     }
 
     private void OnDestroy()

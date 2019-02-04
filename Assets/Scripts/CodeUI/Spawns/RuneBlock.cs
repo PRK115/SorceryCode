@@ -121,6 +121,7 @@ namespace CodeUI
             Debug.Log(used);
             if (!used)
             {
+                if(RuneStock.Inst != null)
                 RuneStock.Inst.ReturnRune(runeType);
             }
             else if(used)

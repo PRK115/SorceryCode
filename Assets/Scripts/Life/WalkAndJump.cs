@@ -126,7 +126,7 @@ public class WalkAndJump : MonoBehaviour {
         if (Physics.SphereCast(ray, radius, halfHeight - radius, (1 << 11)))
         {
             RaycastHit[] Moveables = new RaycastHit[1];
-            Physics.RaycastNonAlloc(transform.position + ctrl.center, Vector3.down, Moveables, halfHeight, 1 << 11);
+            Physics.SphereCastNonAlloc(ray, radius, Moveables, halfHeight - radius, 1 << 11);
             if (Moveables.Length != 0)
             {
                 platform = Moveables[0].collider.GetComponent<Moveable>();
