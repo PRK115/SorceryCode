@@ -628,6 +628,22 @@ Prefab:
       propertyPath: machine.phaseChangeTime
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1135031775155250, guid: afd6a6151b9f500428b0719d72b376f5, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297688319243344, guid: afd6a6151b9f500428b0719d72b376f5, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485312067660332, guid: afd6a6151b9f500428b0719d72b376f5, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387927301857602, guid: afd6a6151b9f500428b0719d72b376f5, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afd6a6151b9f500428b0719d72b376f5, type: 2}
   m_IsPrefabAsset: 0

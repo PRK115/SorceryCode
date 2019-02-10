@@ -3490,7 +3490,7 @@ GameObject:
   - component: {fileID: 436146618}
   - component: {fileID: 436146620}
   - component: {fileID: 436146619}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4967,7 +4967,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 597265086}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Consumed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5549,7 +5549,7 @@ GameObject:
   - component: {fileID: 721409340}
   - component: {fileID: 721409339}
   - component: {fileID: 721409338}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11375,7 +11375,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1452351804}
   m_LocalRotation: {x: -0, y: -0.99916226, z: 0.040923685, w: 0}
-  m_LocalPosition: {x: 0.49, y: 2.3, z: 8.82}
+  m_LocalPosition: {x: 0.49, y: 1.86, z: 8.85}
   m_LocalScale: {x: 1, y: 1.1103681, z: 1.000743}
   m_Children: []
   m_Father: {fileID: 797625436}
@@ -15182,7 +15182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1966639515}
   - component: {fileID: 1966639516}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: goalDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
