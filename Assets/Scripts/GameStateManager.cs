@@ -159,6 +159,11 @@ public class GameStateManager : MonoBehaviour
         {
             SetState(UIState.Game);
         }
+
+        if(Input.GetKeyDown(KeyCode.M))
+        {
+            SetState(UIState.Code);
+        }
     }
 
     public void OpenTutorialPanel(GameObject tutorialPanel)
