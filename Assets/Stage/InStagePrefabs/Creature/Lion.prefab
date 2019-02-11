@@ -861,7 +861,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1772566877903910}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 3.25, y: 0.9, z: 0}
+  m_LocalPosition: {x: 3.85, y: 0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4408342539744540}
@@ -1161,6 +1161,7 @@ MonoBehaviour:
   walkSpeed: 0
   verticalJumpImpulse: 5.2
   horizontalJumpImpulse: 1.6
+  isGrounded_delayed: 0
 --- !u!114 &114847448946194524
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1261,13 +1262,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 0
-  m_Radius: 0.8
+  m_Height: 2
+  m_Radius: 1
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.8, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!198 &198224117220388162
 ParticleSystem:
   m_ObjectHideFlags: 1

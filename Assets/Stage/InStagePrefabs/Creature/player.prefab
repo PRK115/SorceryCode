@@ -392,7 +392,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1849303232956244}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 8.07, y: 10.56, z: 0}
+  m_LocalPosition: {x: 8.03, y: 8.79, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 4237060855046228}
@@ -848,6 +848,7 @@ MonoBehaviour:
   walkSpeed: 1.6
   verticalJumpImpulse: 5.2
   horizontalJumpImpulse: 1.6
+  isGrounded_delayed: 0
 --- !u!137 &137540835659747166
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -917,7 +918,7 @@ CharacterController:
   m_Radius: 0.4
   m_SlopeLimit: 0
   m_StepOffset: 0.01
-  m_SkinWidth: 0.01
+  m_SkinWidth: 0.04
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: -0.35, z: 0}
 --- !u!198 &198165762466344852

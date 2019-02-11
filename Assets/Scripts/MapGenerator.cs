@@ -58,7 +58,7 @@ public class MapGenerator : MonoBehaviour {
                 }
             }
             int mapHeight = highest - lowest;
-            Debug.Log(mapHeight);
+            //Debug.Log(mapHeight);
             if(resizeCamera)
                 stageCamera.GetComponent<Camera>().orthographicSize = mapHeight / 2;
             transform.Translate(new Vector3(0, -imageHeight / 2, 0));

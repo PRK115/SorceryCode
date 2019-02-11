@@ -17,6 +17,8 @@ public class WalkAndJump : MonoBehaviour {
 
     float halfHeight;
     float radius;
+    Vector3 ctrlCenter => transform.position + ctrl.center;
+    Vector3 foot => ctrlCenter + Vector3.down * (halfHeight - radius);
     Moveable platform;
     //Vector3 originalScale;
 
@@ -92,7 +94,8 @@ public class WalkAndJump : MonoBehaviour {
 
         else
         {
-            moveDirection.y -= g * Time.deltaTime;
+            if (ctrl.isGrounded) moveDirection.y = 0;
+            else moveDirection.y -= g * Time.deltaTime;
             platform = null;
         }
 
@@ -122,8 +125,8 @@ public class WalkAndJump : MonoBehaviour {
 
     private bool CheckUnderFoot()
     {
-        Ray ray = new Ray(transform.position + ctrl.center, Vector3.down);
-        if (Physics.SphereCast(ray, radius, halfHeight - radius, (1 << 11)))
+        Ray ray = new Ray(ctrlCenter, Vector3.down);
+        if (Physics.Raycast(ray, halfHeight, (1 << 11)))
         {
             RaycastHit[] Moveables = new RaycastHit[1];
             Physics.SphereCastNonAlloc(ray, radius, Moveables, halfHeight - radius, 1 << 11);
@@ -134,7 +137,7 @@ public class WalkAndJump : MonoBehaviour {
             }
         }
 
-        if (Physics.SphereCast(ray, radius, halfHeight - radius, 1 +(1 << 8)))
+        if (Physics.Raycast(ray, halfHeight, 1 +(1 << 8)))
         {
             return true;
         }
