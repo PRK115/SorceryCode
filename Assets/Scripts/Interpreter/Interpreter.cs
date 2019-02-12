@@ -80,10 +80,13 @@ public class Interpreter : MonoBehaviour
 
         public override async Task<StmtResult> Eval(EvalContext context)
         {
+          // Debug.Log("block begins");
             await base.Eval(context);
             foreach (Stmt stmt in Statements)
             {
+                //Debug.Log("block stmt begins");
                 StmtResult result = await stmt.Eval(context);
+                //Debug.Log("block stmt ends");
                 if (result == StmtResult.Break)
                     return StmtResult.Break;
             }
@@ -91,22 +94,25 @@ public class Interpreter : MonoBehaviour
         }
     }
 
+
+
     public class If : Stmt
     {
         //public Expr Cond;
         public BoolExpr Cond;
-        public Stmt Then;
+        public Stmt Then = null;
         public Stmt Else;
 
         public override async Task<StmtResult> Eval(EvalContext context)
         {
+            //Debug.Log("if begins");
             await base.Eval(context);
             //object condResult = Cond.Eval();    
             object condResult = Inst.CommandMgr.Sense(context, Cond.type);
             if (condResult is bool)
             {
                 bool condValue = (bool) condResult;
-                if (condValue)
+                if (condValue&&Then!=null)
                 {
                     return await Then.Eval(context);
                 }
@@ -129,13 +135,22 @@ public class Interpreter : MonoBehaviour
 
         public override async Task<StmtResult> Eval(EvalContext context)
         {
+            //Debug.Log("repeat begins");
             await base.Eval(context);
             while (true)
             {
+                //Debug.Log("repeatbody begins");
                 StmtResult result = await Body.Eval(context);
-                if (result == StmtResult.Break)
+                if (result == StmtResult.Break||context.Target.isActiveAndEnabled==false)
                 {
                     return StmtResult.None;
+                }
+                Block newbody = (Block)Body;
+                if(newbody.Statements.Count==1&&newbody.Statements[0] is If)
+                {
+                    //임시방편
+                    await new WaitForSeconds(0.2f);
+                    
                 }
             }
         }
@@ -156,9 +171,12 @@ public class Interpreter : MonoBehaviour
 
         public override async Task<StmtResult> Eval(EvalContext context)
         {
+            //Debug.Log("Conjure begins");
             await base.Eval(context);
             Inst.CommandMgr.Conjure(context, Entity);
+            //Debug.Log("Conjure ends");
             await new WaitForSeconds(Inst.Delay);
+           // Debug.Log("waiting ends");
             Inst.Nounce++;
             return StmtResult.None;
         }
@@ -196,6 +214,7 @@ public class Interpreter : MonoBehaviour
 
         public override async Task<StmtResult> Eval(EvalContext context)
         {
+            //Debug.Log("Move begins");
             await base.Eval(context);
             if (context.Target == null)
             {
@@ -220,7 +239,7 @@ public class Interpreter : MonoBehaviour
 
     public bool CancelAllPrograms { get; private set; } = false;
 
-    public async void Execute(EvalContext context, Block program)
+    public async void Execute(EvalContext context, Stmt program)
     {
         ExecutingPrograms++;
         try
