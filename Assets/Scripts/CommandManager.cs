@@ -326,6 +326,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
     {
         int nounce = Interpreter.Inst.Nounce;
         float timer = 0.0f;
+        /* 
         while (timer < time)
         {
             action(timer);
@@ -338,7 +339,15 @@ public class CommandManager : MonoBehaviour, ICommandManager
             {
                 break;
             }
+        }     
+        */ 
+        while(timer<time)
+        {
+            action(timer);
+            yield return null;
+            timer += Time.deltaTime;
         }
+        
         onFinished();
     }
 
@@ -348,9 +357,13 @@ public class CommandManager : MonoBehaviour, ICommandManager
         if(detector == null)
             detector = context.Target.gameObject.AddComponent<IfDetector>();
         Moveable moveable = context.Target.GetComponent<Moveable>();
+        Rigidbody rb = context.Target.GetComponent<Rigidbody>();
         if (moveable != null)
+        {   //block된 상황에서 부들거리는 현상을 없애기 위해 iskinematic 변환 효과 없앰
+            bool current = rb.isKinematic;
             moveable.Ungravitate();
-    
+            rb.isKinematic = current;
+        }
         bool value =  detector.Detect(entityToBeDetected);
 
         if (moveable != null)
