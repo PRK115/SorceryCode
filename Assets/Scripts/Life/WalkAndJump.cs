@@ -11,14 +11,14 @@ public class WalkAndJump : MonoBehaviour {
 
     private CharacterController ctrl;
     //private Vector3 moveDirection = Vector3.zero;
+    [SerializeField]
     Vector3 moveDirection = Vector3.zero;
 
     private float g = 9.8f;
 
     float halfHeight;
     float radius;
-    Vector3 ctrlCenter => transform.position + ctrl.center;
-    Vector3 foot => ctrlCenter + Vector3.down * (halfHeight - radius);
+    [SerializeField]
     Moveable platform;
     //Vector3 originalScale;
 
@@ -33,7 +33,7 @@ public class WalkAndJump : MonoBehaviour {
         ctrl = GetComponent<CharacterController>();
         sound = GetComponent<AudioSource>();
         halfHeight = ctrl.height / 2 *transform.localScale.x + 0.02f;
-        radius = ctrl.radius;
+        radius = ctrl.radius*0.6f;
     }
 
     public void Manuever(Direction direction)
@@ -88,14 +88,15 @@ public class WalkAndJump : MonoBehaviour {
             if (platform != null)
             {
                 moveDirection += new Vector3(platform.XTendency, platform.YTendency, 0);
+                Vector3 platformMove = new Vector3(platform.XTendency,platform.YTendency,0);
+                ctrl.Move(platformMove * Time.deltaTime);
             }
-            ctrl.Move(moveDirection * Time.deltaTime);
+           // ctrl.Move(moveDirection * Time.deltaTime);
         }
 
         else
         {
-            if (ctrl.isGrounded) moveDirection.y = 0;
-            else moveDirection.y -= g * Time.deltaTime;
+            moveDirection.y -= g * Time.deltaTime;
             platform = null;
         }
 
@@ -115,7 +116,7 @@ public class WalkAndJump : MonoBehaviour {
                 moveDirection = new Vector3(walkSpeed, moveDirection.y, 0);
                 break;
         }
-        ctrl.Move(moveDirection * Time.deltaTime);
+        //ctrl.Move(moveDirection * Time.deltaTime);
     }
 
     public void SetWalkSpeed(float speed)
@@ -125,8 +126,8 @@ public class WalkAndJump : MonoBehaviour {
 
     private bool CheckUnderFoot()
     {
-        Ray ray = new Ray(ctrlCenter, Vector3.down);
-        if (Physics.Raycast(ray, halfHeight, (1 << 11)))
+        Ray ray = new Ray(transform.position + ctrl.center, Vector3.down);
+        if (Physics.SphereCast(ray, radius, halfHeight - radius, (1 << 11)))
         {
             RaycastHit[] Moveables = new RaycastHit[1];
             Physics.SphereCastNonAlloc(ray, radius, Moveables, halfHeight - radius, 1 << 11);
@@ -137,7 +138,7 @@ public class WalkAndJump : MonoBehaviour {
             }
         }
 
-        if (Physics.Raycast(ray, halfHeight, 1 +(1 << 8)))
+        if (Physics.SphereCast(ray, radius, halfHeight - radius, 1 +(1 << 8)))
         {
             return true;
         }
@@ -159,4 +160,9 @@ public class WalkAndJump : MonoBehaviour {
     //    //    jumpDirection.x = 0;
     //    //}
     //}
+
+    void Update()
+    {
+        ctrl.Move(moveDirection * Time.deltaTime);
+    }
 }
