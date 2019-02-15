@@ -113,6 +113,7 @@ namespace CodeUI
 
         public void SetUnused()
         {
+            Debug.Log(gameObject.name +" set unused");
             used = false;
         }
 
@@ -124,10 +125,10 @@ namespace CodeUI
                 if(RuneStock.Inst != null)
                 RuneStock.Inst.ReturnRune(runeType);
             }
-            else if(used)
+            /*else if(used)
             {
                 BlockListRoot.inst.ResetUsed();
-            }
+            }*/
         }
     }
 }
