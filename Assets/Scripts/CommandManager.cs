@@ -182,7 +182,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
                 target.transform.localScale = finalSize;
                 changeable.changing = false;
                 changeable.AdjustPosition();
-                collider.size = type == ChangeType.Big ? new Vector3(0.97f, 0.97f) : new Vector3(0.9f,0.9f);
+                collider.size = type == ChangeType.Big ? new Vector3(0.97f, 0.97f, 0.97f) : new Vector3(0.9f,0.9f, 0.9f);
             },
             1.0f
         )
