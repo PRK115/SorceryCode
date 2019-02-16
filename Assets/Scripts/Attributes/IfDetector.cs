@@ -1,23 +1,54 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class IfDetector : MonoBehaviour{
 
     EntityType myType;
-    
+
+    new Collider collider;
+    Vector3 colliderCenter;
+    Vector3 realCenter => colliderCenter + transform.position;
+    Vector3 boxSize;
+    Vector3 realBoxSize => boxSize * transform.localScale.x;
+    float capsuleHeight;
+    float realCapsuleHeight => capsuleHeight * transform.localScale.y;
+    float capsuleRadius;
+    float realCapsuleRadius => capsuleRadius * transform.localScale.x;
+    System.Type colliderType;
+
     private void Awake()
     {
+        colliderType = typeof (int);
         myType = GetComponent<Entity>().EntityType;
+        collider  = GetComponent<Collider>();
+        colliderType = collider.GetType();
+        if(colliderType == typeof(BoxCollider))
+        {
+            var c = (BoxCollider) collider;
+            boxSize = c.size;
+            colliderCenter = c.center;
+        }
+        else if(colliderType == typeof(CharacterController))
+        {
+            var c = (CharacterController)collider;
+            capsuleHeight = c.height;
+            capsuleRadius = c.radius;
+            colliderCenter = c.center;
+        }
+        CheckSurroundings(~0);
     }
 
     public bool Detect(EntityType target)
     {
-        
         //스위치 탐지
         if (target == EntityType.Switch)
         {
-            return Physics.CheckBox(transform.position, Vector3.one * 0.5f, Quaternion.identity, 1024);
+            if (colliderType == typeof(BoxCollider))
+                return Physics.CheckBox(realCenter, realBoxSize/2, Quaternion.identity, 1024);
+            else if (colliderType == typeof(CharacterController))
+                return Physics.CheckCapsule(realCenter + Vector3.up * realCapsuleHeight / 2, realCenter + Vector3.down * realCapsuleHeight / 2, realCapsuleRadius, 1024);
         }
 
         //에너지 탐지
@@ -79,26 +110,39 @@ public class IfDetector : MonoBehaviour{
     private List<Collider> CheckSurroundings(int layerMask)
     {
         List<Collider> ColliderList = new List<Collider>();
+        Collider[] Colliders;
 
-        Collider[] Colliders = Physics.OverlapBox(transform.position + Vector3.up * 0.8f, new Vector3(0.3f, 0.1f, 0.5f), Quaternion.identity, layerMask);
-        for(int i = 0; i< Colliders.Length; i++)
+        if (colliderType == typeof(BoxCollider))
         {
-            ColliderList.Add(Colliders[i]);
+            var halfWidth = realBoxSize.x / 2;
+            var halfHeight = realBoxSize.y / 2;
+            Colliders = Physics.OverlapBox(realCenter + Vector3.up * (halfHeight + 0.3f), new Vector3(halfWidth, 0.1f, 0.5f), Quaternion.identity, layerMask);
+            for (int i = 0; i < Colliders.Length; i++)
+            {
+                ColliderList.Add(Colliders[i]);
+            }
+            Colliders = Physics.OverlapBox(realCenter + Vector3.down * (halfHeight + 0.3f), new Vector3(halfWidth, 0.1f, 0.5f), Quaternion.identity, layerMask);
+            for (int i = 0; i < Colliders.Length; i++)
+            {
+                ColliderList.Add(Colliders[i]);
+            }
+            Colliders = Physics.OverlapBox(realCenter + Vector3.left * (halfWidth + 0.3f), new Vector3(0.1f, halfHeight, 0.5f), Quaternion.identity, layerMask);
+            for (int i = 0; i < Colliders.Length; i++)
+            {
+                ColliderList.Add(Colliders[i]);
+            }
+            Colliders = Physics.OverlapBox(realCenter + Vector3.right * (halfWidth + 0.3f), new Vector3(0.1f, halfHeight, 0.5f), Quaternion.identity, layerMask);
+            for (int i = 0; i < Colliders.Length; i++)
+            {
+                ColliderList.Add(Colliders[i]);
+            }
         }
-        Colliders = Physics.OverlapBox(transform.position + Vector3.down * 0.8f, new Vector3(0.3f, 0.1f, 0.5f), Quaternion.identity, layerMask);
-        for (int i = 0; i < Colliders.Length; i++)
+        else if (colliderType == typeof(CharacterController))
         {
-            ColliderList.Add(Colliders[i]);
-        }
-        Colliders = Physics.OverlapBox(transform.position + Vector3.left * 0.8f, new Vector3(0.1f, 0.3f, 0.5f), Quaternion.identity, layerMask);
-        for (int i = 0; i < Colliders.Length; i++)
-        {
-            ColliderList.Add(Colliders[i]);
-        }
-        Colliders = Physics.OverlapBox(transform.position + Vector3.right * 0.8f, new Vector3(0.1f, 0.3f, 0.5f), Quaternion.identity, layerMask);
-        for (int i = 0; i < Colliders.Length; i++)
-        {
-            ColliderList.Add(Colliders[i]);
+            Colliders = Physics.OverlapCapsule(realCenter + Vector3.up * capsuleHeight / 2, realCenter - Vector3.up * capsuleHeight / 2, realCapsuleRadius * 1.2f);
+
+            ColliderList.AddRange(Colliders);
+            ColliderList.Remove(collider);
         }
         return ColliderList;
     }

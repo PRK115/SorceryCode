@@ -119,7 +119,6 @@ namespace CodeUI
 
         protected void OnDestroy()
         {
-            Debug.Log(gameObject.name + " " + used);
             if (!used)
             {
                 if(RuneStock.Inst != null)
