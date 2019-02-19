@@ -5,7 +5,12 @@ using UnityEngine;
 public class ContactDetector : MonoBehaviour {
 
     //Rigidbody rb;
+    private Vector3[] direction = {new Vector3(-1,1,0),new Vector3(0,1,0),new Vector3(1,1,0),new Vector3(1,0,0)
+                                  ,new Vector3(1,-1,0),new Vector3(0,-1,0),new Vector3(-1,-1,0),new Vector3(-1,0,0)};
 
+                                  //막힘체크시 사용할 방향을 저장, 시계방향으로8방향을 체크하며 첫번째 방향은 11시
+                                  //11시->12->1->3->5->6->7->9시 방향 순서로 저장되어 있음
+    public bool[] checkResult = new bool[8];
     public bool rightBlocked;
     public bool leftBlocked;
 
@@ -60,10 +65,14 @@ public class ContactDetector : MonoBehaviour {
     public void CheckSurroundingObstacles()
     {
         int layerMask = ~ (11 << 9);
-        upBlocked = Physics.CheckBox(transform.position + Vector3.up * 0.8f, new Vector3(0.3f, 0.1f, 0.5f), Quaternion.identity, layerMask);
-        downBlocked = Physics.CheckBox(transform.position + Vector3.down * 0.8f, new Vector3(0.3f, 0.1f, 0.5f), Quaternion.identity, layerMask);
-        leftBlocked = Physics.CheckBox(transform.position + Vector3.left * 0.8f, new Vector3(0.1f, 0.3f, 0.5f), Quaternion.identity, layerMask);
-        rightBlocked = Physics.CheckBox(transform.position + Vector3.right * 0.8f, new Vector3(0.1f, 0.3f, 0.5f), Quaternion.identity, layerMask);
+        for(int i=0;i<8;i++)
+        {
+            checkResult[i] = Physics.CheckBox(transform.position + direction[i] * 0.8f, new Vector3(0.3f, 0.1f, 0.5f), Quaternion.identity, layerMask);
+        }
+        upBlocked = checkResult[1];
+        rightBlocked = checkResult[3];
+        downBlocked = checkResult[5];
+        leftBlocked = checkResult[7];
         Collider[] c = Physics.OverlapBox(transform.position + Vector3.up * 0.8f, new Vector3(0.3f, 0.1f, 0.5f), Quaternion.identity, layerMask);
         for (int i = 0; i < c.Length; i++)
         {

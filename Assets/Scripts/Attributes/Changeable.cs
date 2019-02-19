@@ -34,11 +34,15 @@ public class Changeable : MonoBehaviour, Attribute
 
     public bool IsConfined()
     {
-        return (cd.rightBlocked && cd.leftBlocked) || (cd.upBlocked && cd.downBlocked);
+        bool result = false;
+        result = (cd.upBlocked&&cd.downBlocked)||(cd.rightBlocked&&cd.leftBlocked);
+        result = result || (cd.checkResult[0]&&cd.checkResult[2]&&cd.checkResult[4]&&cd.checkResult[6]);
+        return result;
     }
 
     public Vector3 BePushed(Vector3 position)
     {
+        bool basicBlocked = cd.rightBlocked||cd.leftBlocked||cd.upBlocked||cd.downBlocked;
         if (cd.rightBlocked)
         {
             moveable.XTendency = -1f;
@@ -60,8 +64,50 @@ public class Changeable : MonoBehaviour, Attribute
             moveable.YTendency = 1f;
             position += Vector3.up;
         }
+        if(!basicBlocked)
+        {
+            Vector3 Xmove = new Vector3(0,0,0);
+            Vector3 Ymove = new Vector3(0,0,0);
+            float XTendency = 0f; // moveable의 XTendency와는 다른 변수임. 여기서만 사용되는 지역변수
+            float YTendency = 0f;
+            
+            if(cd.checkResult[0])
+            {
+                XTendency += 1f;
+                YTendency += -1f;
+                Xmove+=Vector3.right;
+                Ymove+=Vector3.down;
+            }
+            else if(cd.checkResult[4])
+            {
+                XTendency += -1f;
+                YTendency += 1f;
+                Xmove+=Vector3.left;
+                Ymove+=Vector3.up;
+            }
+            if(cd.checkResult[2])
+            {
+                XTendency += -1f;
+                YTendency += -1f;
+                Xmove+=Vector3.left;
+                Ymove+=Vector3.down;
+            }
+            else if(cd.checkResult[6])
+            {
+                XTendency += 1f;
+                YTendency += 1f;
+                Xmove+=Vector3.right;
+                Ymove+=Vector3.up;
+            }
+            moveable.XTendency+= XTendency/Math.Abs(XTendency);
+            moveable.YTendency+= YTendency/Math.Abs(YTendency);
 
+            return (position+Xmove.normalized+Ymove.normalized);
+        }
+        else
+        {
         return position;
+        }
     }
 
     public void AdjustPosition()
