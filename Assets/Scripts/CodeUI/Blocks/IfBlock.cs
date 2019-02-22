@@ -1,8 +1,16 @@
-﻿namespace CodeUI
+﻿using UnityEngine.UI;
+using UnityEngine;
+
+namespace CodeUI
 {
     public class IfBlock : StmtListBlock
     {
         private ExprSlot conditionSlot;
+        public bool toggleable;
+        private bool not;
+        public bool Not => toggleable ? not : false;
+        private GameObject trueText;
+        private GameObject falseText;
 
         //public bool? Condition
         //{
@@ -20,6 +28,22 @@
             IsRune = false;
             conditionSlot = GetComponentInChildren<ExprSlot>();
             DynamicHeight = true;
+            if(toggleable)
+            {
+                Toggle toggle = transform.Find("Toggle").GetComponent<Toggle>();
+                Transform background = toggle.transform.Find("Background");
+                falseText = background.Find("false").gameObject;
+                trueText = background.Find("true").gameObject;
+
+                toggle.onValueChanged.AddListener((bool boolean) =>
+                {
+                    not = boolean;
+                    falseText.SetActive(not);
+                    trueText.SetActive(!not);
+                }
+                );
+
+            }
         }
 
         protected override void Start()
