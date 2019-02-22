@@ -15,7 +15,7 @@ public class Flammable : MonoBehaviour, ISubstance {
     public float burnDelay;
     float timeTillIgnition;
     public float burningDuration;
-    float burningTimeLeft;
+    public float burningTimeLeft;
 
     private GameObject fire;
     private MeshRenderer meshRenderer;
