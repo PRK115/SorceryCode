@@ -43,7 +43,7 @@ namespace CodeUI
                     }
                     return new Interpreter.If
                     {
-                        Cond = new Interpreter.BoolExpr {type = ifBlock.EntityToCheck.Value},
+                        Cond = new Interpreter.BoolExpr {type = ifBlock.EntityToCheck.Value, Value = ifBlock.Not},
                         Then = new Interpreter.Block
                         {
                             Statements = ifBlock.StatementBlocks.Select(CompileStmt).ToList()

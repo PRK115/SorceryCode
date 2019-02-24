@@ -28,7 +28,7 @@ public class Changeable : MonoBehaviour, Attribute
         moveable = GetComponent<Moveable>();
         sound = GetComponent<AudioSource>();
         boxCollider = GetComponent<BoxCollider>();
-        if(boxCollider != null)
+        if(boxCollider != null&&transform.name!="cauldron_LID")
             boxCollider.size = big ? new Vector3(0.97f, 0.97f, 1f) : new Vector3(0.9f, 0.9f, 1f);
     }
 
