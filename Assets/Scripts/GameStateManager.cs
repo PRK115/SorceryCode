@@ -125,7 +125,6 @@ public class GameStateManager : MonoBehaviour
         instance = this;
         Program = codeUIElement.Program;
         codeButton.onClick.AddListener(() => SetState(UIState.Code));
-        aimButton.onClick.AddListener(() => SetState(UIState.Game));
         pauseButton.onClick.AddListener(() => SetState(UIState.Pause));
         resumeButton.onClick.AddListener(() => SetState(UIState.Game));
         closeCodeButton.onClick.AddListener(() => SetState(UIState.Game));
@@ -141,7 +140,7 @@ public class GameStateManager : MonoBehaviour
         });
 
         player = FindObjectOfType<PlayerCtrl>();
-        aimButton.onClick.AddListener(() => player.SetState(PlayerCtrl.State.Aiming));
+        aimButton.onClick.AddListener(() => AimingButton.inst.CheckExprSlots());
     }
 
     private void Start()

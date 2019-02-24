@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class PlayerCtrl : MonoBehaviour {
 
-    public PlayerCtrl inst;
+    public static PlayerCtrl inst;
 
     private Organism organism;
     private WalkAndJump walkAndJump;

@@ -898,6 +898,7 @@ MonoBehaviour:
   indestructable: 1
   burnDelay: 0
   burningDuration: 1
+  burningTimeLeft: 0
 --- !u!65 &153144394
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8757,6 +8758,7 @@ GameObject:
   - component: {fileID: 1128229603}
   - component: {fileID: 1128229602}
   - component: {fileID: 1128229601}
+  - component: {fileID: 1128229604}
   m_Layer: 5
   m_Name: AimingButton
   m_TagString: Untagged
@@ -8858,6 +8860,17 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1128229599}
   m_CullTransparentMesh: 0
+--- !u!114 &1128229604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1128229599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 883338a325367914f9a56b77178f7ae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1152099329
 Prefab:
   m_ObjectHideFlags: 0
@@ -9786,7 +9799,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.021000002, y: 0.3504123}
   m_AnchorMax: {x: 0.263, y: 0.7313697}
-  m_AnchoredPosition: {x: 2.9999695, y: 0}
+  m_AnchoredPosition: {x: 2.999939, y: 0}
   m_SizeDelta: {x: 14, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1611565739

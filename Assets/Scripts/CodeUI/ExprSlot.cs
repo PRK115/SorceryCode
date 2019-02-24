@@ -28,6 +28,13 @@ namespace CodeUI
             rectTransform = GetComponent<RectTransform>();
             image = GetComponent<Image>();
             OwnerBlock = GetComponentInParent<Block>();
+
+            AimingButton.inst.OnAimClicked += IsSlotFull;
+        }
+
+        void IsSlotFull()
+        {
+            AimingButton.inst.ExprSlotsFull = transform.childCount > 0;
         }
 
         public void OnPointerEnter(PointerEventData eventData)
