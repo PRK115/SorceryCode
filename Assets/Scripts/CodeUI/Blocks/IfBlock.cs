@@ -30,7 +30,7 @@ namespace CodeUI
             DynamicHeight = true;
             if(toggleable)
             {
-                Toggle toggle = transform.Find("Toggle").GetComponent<Toggle>();
+                Toggle toggle = transform.GetChild(0).GetChild(0).GetComponent<Toggle>();
                 Transform background = toggle.transform.Find("Background");
                 falseText = background.Find("false").gameObject;
                 trueText = background.Find("true").gameObject;
