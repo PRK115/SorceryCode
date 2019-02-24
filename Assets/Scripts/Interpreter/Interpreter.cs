@@ -112,7 +112,7 @@ public class Interpreter : MonoBehaviour
             if (condResult is bool)
             {
                 bool condValue = (bool) condResult;
-                if (condValue&&Then!=null)
+                if ((condValue^Cond.Value)&&Then!=null)
                 {
                     return await Then.Eval(context);
                 }
