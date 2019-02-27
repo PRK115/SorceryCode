@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 23559107927209930}
   - component: {fileID: 65841572923273052}
   - component: {fileID: 54443688850849790}
+  - component: {fileID: 114428283179223726}
   m_Layer: 0
   m_Name: Cauldron
   m_TagString: Untagged
@@ -72,7 +73,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4089331027732572}
-  - component: {fileID: 114684585859920334}
   m_Layer: 0
   m_Name: Cauldron
   m_TagString: Untagged
@@ -82,7 +82,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1933529466931046
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
@@ -141,13 +141,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1643028391622716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 8.85, z: 0}
+  m_LocalPosition: {x: 8.321497, y: -3.085, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4133823841631118}
   - {fileID: 4821002484387398}
   - {fileID: 4254038497049712}
-  - {fileID: 4121990794088054}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -157,12 +156,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1933529466931046}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.17306063, z: 0}
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_Children: []
-  m_Father: {fileID: 4089331027732572}
-  m_RootOrder: 3
+  m_Father: {fileID: 4133823841631118}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4133823841631118
 Transform:
@@ -173,7 +172,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.87885755, z: 0}
   m_LocalScale: {x: 0.9, y: 0.7, z: 0.9}
-  m_Children: []
+  m_Children:
+  - {fileID: 4121990794088054}
   m_Father: {fileID: 4089331027732572}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -388,12 +388,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.163164, y: 1.442109, z: 1.774904}
   m_Center: {x: 0, y: 0.7210545, z: -0.027732998}
---- !u!114 &114684585859920334
+--- !u!114 &114428283179223726
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1643028391622716}
+  m_GameObject: {fileID: 1121686732705254}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f03bd62193537b46aefaeac08c082fc, type: 3}
