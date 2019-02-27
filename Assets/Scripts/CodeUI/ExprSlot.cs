@@ -133,5 +133,10 @@ namespace CodeUI
             }
             
         }
+
+        private void OnDestroy()
+        {
+            AimingButton.inst.OnAimClicked -= IsSlotFull;
+        }
     }
 }
