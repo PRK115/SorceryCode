@@ -34,6 +34,7 @@ namespace CodeUI
 
         void IsSlotFull()
         {
+            if(this != null)
             AimingButton.inst.ExprSlotsFull = transform.childCount > 0;
         }
 
