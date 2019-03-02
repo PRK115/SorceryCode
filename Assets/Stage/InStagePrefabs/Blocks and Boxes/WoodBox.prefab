@@ -374,7 +374,8 @@ MonoBehaviour:
   state: 0
   indestructable: 0
   burnDelay: 0.6
-  burningDuration: 2
+  burningDuration: 5.88
+  burningTimeLeft: 0
 --- !u!114 &114531006737796994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -418,6 +419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9a06609918c6a4e8ca839067dcff53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkResult: 0000000000000000
   rightBlocked: 0
   leftBlocked: 0
   upBlocked: 0
@@ -437,6 +439,7 @@ MonoBehaviour:
   indestructable: 0
   burnDelay: 0.2
   burningDuration: 1
+  burningTimeLeft: 0
 --- !u!114 &114767547606100878
 MonoBehaviour:
   m_ObjectHideFlags: 1
