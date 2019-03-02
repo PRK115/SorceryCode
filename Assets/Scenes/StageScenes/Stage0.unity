@@ -3709,52 +3709,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1092081185}
   m_CullTransparentMesh: 0
---- !u!1001 &1114155007
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 6.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
-      propertyPath: m_RootOrder
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 1470952991085498, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
-      propertyPath: m_Name
-      value: Rune_woodBox (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1001 &1141552177
 Prefab:
   m_ObjectHideFlags: 0
@@ -4668,6 +4622,7 @@ GameObject:
   - component: {fileID: 1424714921}
   - component: {fileID: 1424714920}
   - component: {fileID: 1424714919}
+  - component: {fileID: 1424714922}
   m_Layer: 5
   m_Name: AimingButton
   m_TagString: Untagged
@@ -4769,6 +4724,17 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1424714917}
   m_CullTransparentMesh: 0
+--- !u!114 &1424714922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1424714917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 883338a325367914f9a56b77178f7ae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1478177177
 GameObject:
   m_ObjectHideFlags: 0
@@ -6046,52 +6012,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1816901711}
   m_CullTransparentMesh: 0
---- !u!1001 &1866904636
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 6.233
-      objectReference: {fileID: 0}
-    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 6.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4958765087454582, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
-      propertyPath: m_RootOrder
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 1470952991085498, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
-      propertyPath: m_Name
-      value: Rune_woodBox (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f7e1ea9b85731f043ac13d437e345ab9, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &1880974643
 GameObject:
   m_ObjectHideFlags: 0

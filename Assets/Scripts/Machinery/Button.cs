@@ -24,6 +24,11 @@ public class Button : MonoBehaviour {
     {
         foreach (Collider c in pressingColliders)
         {
+            if (c == null)
+            {
+                pressingColliders.Remove(c);
+                continue;
+            }
             if(c.gameObject.activeInHierarchy == false)
             {
                 pressingColliders.Remove(c);
