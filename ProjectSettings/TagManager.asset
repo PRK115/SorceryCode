@@ -7,6 +7,7 @@ TagManager:
   - Block
   - Life
   - PowerSupply
+  - Box
   layers:
   - Default
   - TransparentFX

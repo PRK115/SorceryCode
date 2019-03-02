@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: 114074987518874038}
   m_Layer: 11
   m_Name: IronBox
-  m_TagString: Block
+  m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -260,6 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9a06609918c6a4e8ca839067dcff53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkResult: 0000000000000000
   rightBlocked: 0
   leftBlocked: 0
   upBlocked: 0

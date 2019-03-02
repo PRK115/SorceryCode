@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Cauldron : MonoBehaviour {
-
+    [SerializeField]
 	List<GameObject> source = new List<GameObject>();
 	private GameObject lid;
 	private GameObject steam;
@@ -38,8 +38,20 @@ public class Cauldron : MonoBehaviour {
 				lid.GetComponent<Rigidbody>().isKinematic = true;
 				lidMoveable.YTendency = (startY+height-lid.transform.position.y)*height*2.0f;
 				duration += Time.deltaTime;
-
-		}
+            List<GameObject> imsi = new List<GameObject>();
+            imsi.AddRange(source);
+                foreach(GameObject fuel in source)
+            {
+                if (fuel == null || !fuel.activeInHierarchy)
+                    imsi.Remove(fuel);
+            }
+            source.Clear();
+            source.AddRange(imsi);
+            if (source.Count == 0)
+            {
+                TurnOff();
+            }
+        }
 		else
 		{
 			lidMoveable.gravitated = true;
@@ -75,7 +87,7 @@ public class Cauldron : MonoBehaviour {
 		GameObject intruder = other.gameObject;
 		Flammable flammable = intruder.GetComponent<Flammable>();
 		PureEnergy pureEnergy = intruder.GetComponent<PureEnergy>();
-		if(flammable!=null&&flammable.burningTimeLeft<=0)
+		if(flammable!=null&&flammable.state!=Flammable.State.Burning)
 		{
 			source.Remove(intruder);
 		}
@@ -83,11 +95,11 @@ public class Cauldron : MonoBehaviour {
 		{
 			source.Remove(intruder);
 		}
-		if(flammable!=null&&flammable.burningTimeLeft>0&&(!source.Remove(intruder)))
+		if(flammable!=null&& flammable.state == Flammable.State.Burning && (!source.Remove(intruder)))
 		{
 			source.Add(intruder);
 		}
-		else if(flammable!=null&&flammable.burningTimeLeft>0)
+		else if(flammable!=null&& flammable.state == Flammable.State.Burning)
 		{
 			source.Add(intruder);
 		}

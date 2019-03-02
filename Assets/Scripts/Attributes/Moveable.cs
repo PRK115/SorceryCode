@@ -52,7 +52,7 @@ public class Moveable : MonoBehaviour, Attribute
             else
             {
                 XTendency = 0;
-                transform.position = new Vector3(Mathf.Round(transform.position.x), transform.position.y, 0);
+                transform.position = new Vector3(gameObject.tag == "Box" ? Mathf.Round(transform.position.x):transform.position.x, transform.position.y, 0);
             }
 
         }
