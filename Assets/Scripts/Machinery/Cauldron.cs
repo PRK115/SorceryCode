@@ -22,8 +22,8 @@ public class Cauldron : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		lid = transform.Find("cauldron_LID").gameObject;
-		steam = transform.Find("steam").gameObject;
+		lid = transform.parent.transform.Find("cauldron_LID").gameObject;
+		steam = transform.parent.transform.Find("steam").gameObject;
 		lidMoveable = lid.GetComponent<Moveable>();
 		steam.SetActive(false);
 		startY = lid.transform.position.y;
@@ -39,6 +39,12 @@ public class Cauldron : MonoBehaviour {
 				lidMoveable.YTendency = (startY+height-lid.transform.position.y)*height*2.0f;
 				duration += Time.deltaTime;
 
+		}
+		else
+		{
+			lidMoveable.gravitated = true;
+			steam.SetActive(false);
+			duration = 0;
 		}
 
 	}
@@ -77,9 +83,21 @@ public class Cauldron : MonoBehaviour {
 		{
 			source.Remove(intruder);
 		}
+		if(flammable!=null&&flammable.burningTimeLeft>0&&(!source.Remove(intruder)))
+		{
+			source.Add(intruder);
+		}
+		else if(flammable!=null&&flammable.burningTimeLeft>0)
+		{
+			source.Add(intruder);
+		}
 		if(source.Count==0)
 		{
 			TurnOff();
+		}
+		else
+		{
+			TurnOn();
 		}
 	}
 	void OnTriggerExit(Collider other)
