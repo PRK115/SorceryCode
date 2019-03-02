@@ -99,7 +99,9 @@ public class Changeable : MonoBehaviour, Attribute
                 Xmove+=Vector3.right;
                 Ymove+=Vector3.up;
             }
+            if(XTendency!=0)
             moveable.XTendency+= XTendency/Math.Abs(XTendency);
+            if(YTendency!=0)
             moveable.YTendency+= YTendency/Math.Abs(YTendency);
 
             return (position+Xmove.normalized+Ymove.normalized);
