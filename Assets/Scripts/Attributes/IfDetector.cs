@@ -40,7 +40,7 @@ public class IfDetector : MonoBehaviour{
         CheckSurroundings(~0);
     }
 
-    public bool Detect(EntityType target)
+    public bool Detect(EntityType target, bool surrounding = true)
     {
         //스위치 탐지
         if (target == EntityType.Switch)
@@ -55,7 +55,16 @@ public class IfDetector : MonoBehaviour{
         else if (target == EntityType.FireBall)
         {
             //Organism, MoveableObject, Energy
-            List<Collider> colliders = CheckSurroundings(13 << 9);
+            List<Collider> colliders = new List<Collider>();
+            if(surrounding)
+                colliders = CheckSurroundings(13 << 9);
+            else
+            {
+                if (colliderType == typeof(BoxCollider))
+                    colliders.AddRange(Physics.OverlapBox(realCenter, realBoxSize / 2, Quaternion.identity, 13<<9));
+                else if (colliderType == typeof(CharacterController))
+                    colliders.AddRange(Physics.OverlapCapsule(realCenter + Vector3.up * realCapsuleHeight / 2, realCenter + Vector3.down * realCapsuleHeight / 2, realCapsuleRadius, 13<<9));
+            }
 
             for (int i = 0; i < colliders.Count; i++)
             {
@@ -107,7 +116,18 @@ public class IfDetector : MonoBehaviour{
         return false;
     }
 
-    private List<Collider> CheckSurroundings(int layerMask)
+    public List<Collider> CheckSelf(int layerMask)
+    {
+        List<Collider> colliders = new List<Collider>();
+        if (colliderType == typeof(BoxCollider))
+            colliders.AddRange(Physics.OverlapBox(realCenter, realBoxSize / 2, Quaternion.identity, layerMask));
+        else if (colliderType == typeof(CharacterController))
+            colliders.AddRange(Physics.OverlapCapsule(realCenter + Vector3.up * realCapsuleHeight / 2, realCenter + Vector3.down * realCapsuleHeight / 2, realCapsuleRadius, layerMask));
+
+        return colliders;
+    }
+
+    public List<Collider> CheckSurroundings(int layerMask)
     {
         List<Collider> ColliderList = new List<Collider>();
         Collider[] Colliders;

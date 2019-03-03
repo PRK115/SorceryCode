@@ -17,6 +17,8 @@ public class Flammable : MonoBehaviour, ISubstance {
     public float burningDuration;
     public float burningTimeLeft;
 
+    private IfDetector id;
+
     private GameObject fire;
     private MeshRenderer meshRenderer;
 
@@ -34,6 +36,7 @@ public class Flammable : MonoBehaviour, ISubstance {
         meshRenderer = GetComponentInChildren<MeshRenderer>();
         fire = transform.Find("fire").gameObject;
         sound = GetComponent<AudioSource>();
+        id = GetComponent<IfDetector>();
     }
 
     private void Start()
@@ -44,7 +47,13 @@ public class Flammable : MonoBehaviour, ISubstance {
 
     void Update()
     {
-        if (state == State.BurnReady)
+        if(state == State.Intact)
+        {
+            List<Collider> colliders = id.CheckSelf(1 << 12);
+            if (colliders.Exists(collider => collider.gameObject.name == "fire"))
+                Ignite();
+        }
+        else if (state == State.BurnReady)
         {
             if (timeTillIgnition <= 0)
             {
@@ -78,21 +87,21 @@ public class Flammable : MonoBehaviour, ISubstance {
         }
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if(state == State.Burning)
-        {
-            Flammable flammable = other.GetComponent<Flammable>();
-            if (flammable != null)
-            {
-                if (flammable.state == State.Intact)
-                {
-                    flammable.Ignite();
-                }
-            }
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if(state == State.Burning)
+    //    {
+    //        Flammable flammable = other.GetComponent<Flammable>();
+    //        if (flammable != null)
+    //        {
+    //            if (flammable.state == State.Intact)
+    //            {
+    //                flammable.Ignite();
+    //            }
+    //        }
 
-        }
-    }
+    //    }
+    //}
 
     public void Ignite()
     {
