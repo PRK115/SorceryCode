@@ -143,7 +143,7 @@ public class WalkAndJump : MonoBehaviour {
             return true;
         }
 
-        return false;
+        return false || ctrl.isGrounded;
     }
 
     //private void OnControllerColliderHit(ControllerColliderHit hit)
