@@ -66,6 +66,7 @@ namespace CodeUI
                 {
                     runeCountIcon = Instantiate(CodeUIElement.Instance.RuneCountIconPrefab);
                     runeCountIcon.transform.SetParent(this.transform);
+                    runeCountIcon.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
                 }
                 runeCountIcon.Count = count;
                 if (count > 1) IsMovable = false;

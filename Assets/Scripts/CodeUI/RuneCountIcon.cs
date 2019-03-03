@@ -9,7 +9,11 @@ namespace CodeUI
 
         public int Count
         {
-            set { text.text = $"x{value}"; }
+            set
+            {
+                gameObject.SetActive(value != 1);
+                text.text = $"x{value}";
+            }
         }
     }
 }

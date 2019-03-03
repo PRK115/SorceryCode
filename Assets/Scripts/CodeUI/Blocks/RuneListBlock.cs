@@ -60,7 +60,7 @@ namespace CodeUI
             else
             {
                 // Update rune count
-                Block runeBlock = Blocks.Find(block => block.IsRune && block.RuneType == runeType);
+                var runeBlock = (RuneBlock) Blocks.Find(block => block.IsRune && block.RuneType == runeType);
                 if(runeBlock != null)
                     runeBlock.SetRuneCount(runeCount);
             }
