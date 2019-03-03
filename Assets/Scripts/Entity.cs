@@ -22,6 +22,7 @@ public enum EntityType
     LockedDoor = 40,
     RotatingDoor,
     SlidingDoor,
+    Witch = 63,
     Lion = 64,
     Mouse,
     FireBall = 96,
