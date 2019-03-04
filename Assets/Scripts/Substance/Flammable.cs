@@ -49,7 +49,9 @@ public class Flammable : MonoBehaviour, ISubstance {
     {
         if(state == State.Intact)
         {
-            List<Collider> colliders = id.CheckSelf(1 << 12);
+            List<Collider> colliders = new List<Collider>();
+            if(id != null)
+                colliders = id.CheckSelf(1 << 12);
             if (colliders.Exists(collider => collider.gameObject.name == "fire"))
                 Ignite();
         }

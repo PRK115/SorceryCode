@@ -16,6 +16,8 @@ public class HelpManager : MonoBehaviour {
     {
         gsm = FindObjectOfType<GameStateManager>();
         tutorialPanel.SetActive(false);
+        tutorialPanel.transform.GetChild(0).GetComponent<Text>().resizeTextForBestFit = true;
+        tutorialPanel.transform.GetChild(1).GetComponent<Text>().resizeTextForBestFit = true;
     }
 
     private void OnTriggerEnter(Collider other)

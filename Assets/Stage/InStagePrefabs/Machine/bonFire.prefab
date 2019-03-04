@@ -55,7 +55,8 @@ GameObject:
   - component: {fileID: 4456064428505398}
   - component: {fileID: 198541410436449460}
   - component: {fileID: 199446251162034664}
-  m_Layer: 0
+  - component: {fileID: 65292927617468088}
+  m_Layer: 12
   m_Name: fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,6 +146,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1459675708439356}
   m_Mesh: {fileID: 4300000, guid: 9bf9de3c771cc374b97e69a946c9a1d5, type: 3}
+--- !u!65 &65292927617468088
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1871807016643898}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!65 &65307056024335638
 BoxCollider:
   m_ObjectHideFlags: 1
