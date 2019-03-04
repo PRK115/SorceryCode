@@ -188,12 +188,16 @@ public class PlayerCtrl : MonoBehaviour {
         p.Destination = mousePosition;
         if (Physics.CheckSphere(mousePosition, 0.1f))
         {
-            GameObject g = Physics.OverlapSphere(mousePosition, 0.1f)[0].gameObject;
-            if (g.GetComponent<Entity>() != null)
-            {
-                p.Target = g;
-                p.TargetOffset = mousePosition - g.transform.position;
-            }
+            Collider[] g = Physics.OverlapSphere(mousePosition, 0.1f);
+            if (g.Length != 0)
+                for (int i = 0; i < g.Length; i++)
+                {
+                    if (g[i].GetComponent<Entity>() != null)
+                    {
+                        p.Target = g[i].gameObject;
+                        p.TargetOffset = mousePosition - g[i].gameObject.transform.position;
+                    }
+                }
         }
         yield return new WaitForSeconds(0.2f);
 

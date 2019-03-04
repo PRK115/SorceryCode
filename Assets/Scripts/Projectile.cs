@@ -64,8 +64,19 @@ public class Projectile : MonoBehaviour {
 
             else
             {
-                transform.LookAt(target.transform.position + targetOffset, Vector3.up);
-                transform.Translate(Vector3.forward * speed * Time.deltaTime);
+                Vector3 targetPos = target.transform.position + targetOffset;
+                if(Vector3.Distance(targetPos, transform.position) < 0.2f)
+                {
+                    transform.position = targetPos;
+                    touchingEntity = target.GetComponent<Entity>();
+                    state = State.Arrival;
+                }
+
+                else
+                {
+                    transform.LookAt(target.transform.position + targetOffset, Vector3.up);
+                    transform.Translate(Vector3.forward * speed * Time.deltaTime);
+                }
             }
         }
 	    else if (state == State.Arrival)
@@ -104,6 +115,8 @@ public class Projectile : MonoBehaviour {
         }
         else
         {
+            //Debug.Log("execute " + touchingEntity.name);
+            Debug.Log(touchingEntity.name);
             CommandManager.Inst.ExecuteCode(touchingEntity, touchingEntity.transform.position);
         }
     }
@@ -115,13 +128,12 @@ public class Projectile : MonoBehaviour {
         //Debug.Log(other.name);
         if(otherEntity != null)
         {
-            //Debug.Log(otherEntity);
             if (otherEntity.blockProjectiles)
             {
                 state = State.Explode;
             }
 
-            else
+            else if (otherEntity.gameObject == target)
             {
                 state = State.Arrival;
                 touchingEntity = otherEntity;
@@ -129,12 +141,12 @@ public class Projectile : MonoBehaviour {
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        Entity otherEntity = other.GetComponent<Entity>();
-        if (otherEntity != null)
-        {
-            touchingEntity = null;
-        }
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    Entity otherEntity = other.GetComponent<Entity>();
+    //    if (otherEntity != null)
+    //    {
+    //        touchingEntity = null;
+    //    }
+    //}
 }

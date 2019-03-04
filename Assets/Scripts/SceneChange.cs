@@ -18,4 +18,9 @@ public class SceneChange : MonoBehaviour {
     {
         SceneManager.LoadScene("Stage" + stageNumber);
     }
+
+    public void Restart()
+    {
+        GameStateManager.instance.Restart();
+    }
 }
