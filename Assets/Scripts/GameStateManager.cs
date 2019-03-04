@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Threading.Tasks;
 using System.Collections.Generic;
 using CodeUI;
 using UnityEngine;
@@ -8,8 +9,6 @@ using UnityEngine.UI;
 
 public class GameStateManager : MonoBehaviour
 {
-    private SceneChange sceneChange;
-
     public GameObject inStagePanel;
     public GameObject inStagePausePanel;
     public GameObject inStageFuneralPanel;
@@ -33,6 +32,8 @@ public class GameStateManager : MonoBehaviour
     private StmtListBlock Program;
 
     PlayerCtrl player;
+
+    private Task interpreterCancelTask = null;
 
     public enum UIState
     {
@@ -70,6 +71,8 @@ public class GameStateManager : MonoBehaviour
                     inStagePanel.SetActive(false);
                     inStagePausePanel.SetActive(false);
                     clearPanel.SetActive(true);
+
+                    interpreterCancelTask = Interpreter.Inst.CancelAll();
                     StartCoroutine(ReturnAfterClear());
                 }
                 else throw new Exception($"Invalid UI State {state} -> {nextState}");
@@ -88,7 +91,7 @@ public class GameStateManager : MonoBehaviour
                     inStageFuneralPanel.SetActive(true);
 
                     // When game over, stop all running programs
-                    Interpreter.Inst.CancelAll();
+                    interpreterCancelTask = Interpreter.Inst.CancelAll();
                 }
                 else if (nextState == UIState.StageClear)
                 {
@@ -98,7 +101,7 @@ public class GameStateManager : MonoBehaviour
                     clearPanel.SetActive(true);
 
                     // When stage is clear, stop all running programs
-                    Interpreter.Inst.CancelAll();
+                    interpreterCancelTask = Interpreter.Inst.CancelAll();
                 }
                 else throw new Exception($"Invalid UI State {state} -> {nextState}");
                 break;
@@ -119,9 +122,6 @@ public class GameStateManager : MonoBehaviour
 
     private void Awake()
     {
-        //Interpreter.Inst.CancelAll();
-        sceneChange = FindObjectOfType<SceneChange>();
-
         instance = this;
         Program = codeUIElement.Program;
         codeButton.onClick.AddListener(() => SetState(UIState.Code));
@@ -131,12 +131,12 @@ public class GameStateManager : MonoBehaviour
         restartButton.onClick.AddListener(() =>
         {
             Time.timeScale = 1;
-            sceneChange.Restart();
+            Restart();
         });
         exitButton.onClick.AddListener(() =>
         {
             Time.timeScale = 1;
-            sceneChange.ToStageSelection();
+            ToStageSelection();
         });
 
         player = FindObjectOfType<PlayerCtrl>();
@@ -180,6 +180,45 @@ public class GameStateManager : MonoBehaviour
     IEnumerator ReturnAfterClear()
     {
         yield return new WaitForSeconds(1.2f);
-        sceneChange.ToStageSelection();
+        ToStageSelection();
+    }
+
+    public void ToStageSelection()
+    {
+        if (interpreterCancelTask != null)
+        {
+            interpreterCancelTask.Wait();
+        }
+        SceneManager.LoadScene("StageSelection");
+    }
+
+    public void ToIntro()
+    {
+        if (interpreterCancelTask != null)
+        {
+            interpreterCancelTask.Wait();
+        }
+        SceneManager.LoadScene("Intro");
+    }
+
+    public void ToStage(int stageNumber)
+    {
+        if (interpreterCancelTask != null)
+        {
+            interpreterCancelTask.Wait();
+        }
+        SceneManager.LoadScene("Stage" + stageNumber);
+    }
+
+    public void Restart()
+    {
+        if (interpreterCancelTask != null)
+        {
+            interpreterCancelTask.Wait();
+        }
+        //Destroy(Interpreter.Inst.gameObject);
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
+        Time.timeScale = 1;
     }
 }

@@ -264,7 +264,7 @@ public class Interpreter : MonoBehaviour
         }
     }
 
-    public async void CancelAll()
+    public async Task CancelAll()
     {
         CancelAllPrograms = true;
         await new WaitUntil(() => ExecutingPrograms == 0);
