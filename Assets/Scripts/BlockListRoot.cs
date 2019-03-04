@@ -16,7 +16,8 @@ public class BlockListRoot : MonoBehaviour {
 
     public void Clear()
     {
-        OnUse();
+        if(OnUse != null)
+            OnUse();
         foreach (Transform child in transform)
         {
             Destroy(child.gameObject);

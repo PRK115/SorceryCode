@@ -12,8 +12,12 @@ public class Projectile : MonoBehaviour {
     private State state = State.Flying;
 
     Vector3 destination;
+    GameObject target;
+    Vector3 targetOffset;
     float travelTime;
     public Vector3 Destination { set { destination = value; } }
+    public GameObject Target { set { target = value; } }
+    public Vector3 TargetOffset { set { targetOffset = value; } }
     float speed = 7.2f;
 
     GameObject aura;
@@ -44,15 +48,24 @@ public class Projectile : MonoBehaviour {
 	void Update () {
 	    if (state == State.Flying)
 	    {
-            if (travelTime <= 0)
+            if(target == null)
             {
-                transform.position = destination;
-                state = State.Arrival;
+                if (travelTime <= 0)
+                {
+                    transform.position = destination;
+                    state = State.Arrival;
+                }
+                else
+                {
+                    transform.Translate(Vector3.forward * speed * Time.deltaTime);
+                    travelTime -= Time.deltaTime;
+                }
             }
+
             else
             {
+                transform.LookAt(target.transform.position + targetOffset, Vector3.up);
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
-                travelTime -= Time.deltaTime;
             }
         }
 	    else if (state == State.Arrival)
@@ -110,6 +123,7 @@ public class Projectile : MonoBehaviour {
 
             else
             {
+                state = State.Arrival;
                 touchingEntity = otherEntity;
             }
         }

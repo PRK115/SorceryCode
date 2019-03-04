@@ -183,8 +183,18 @@ public class PlayerCtrl : MonoBehaviour {
     {
         GameObject newProjectile = Instantiate(projectile, wand.transform.position, Quaternion.identity);
 
-        newProjectile.GetComponent<Projectile>().Destination = mousePosition;
+        Projectile p = newProjectile.GetComponent<Projectile>();
 
+        p.Destination = mousePosition;
+        if (Physics.CheckSphere(mousePosition, 0.1f))
+        {
+            GameObject g = Physics.OverlapSphere(mousePosition, 0.1f)[0].gameObject;
+            if (g.GetComponent<Entity>() != null)
+            {
+                p.Target = g;
+                p.TargetOffset = mousePosition - g.transform.position;
+            }
+        }
         yield return new WaitForSeconds(0.2f);
 
         SetState(State.Walking);
