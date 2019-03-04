@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4176731887053496}
   - component: {fileID: 198227166343206580}
   - component: {fileID: 199148676977156116}
+  - component: {fileID: 65279280020857364}
   m_Layer: 12
   m_Name: fire
   m_TagString: Untagged
@@ -107,6 +108,18 @@ Transform:
   m_Father: {fileID: 4176731887053496}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65279280020857364
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1530708335456842}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 1.2, z: 1.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65659868116493144
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -241,6 +254,7 @@ MonoBehaviour:
   indestructable: 0
   burnDelay: 0
   burningDuration: 1000
+  burningTimeLeft: 0
 --- !u!114 &114343459573225718
 MonoBehaviour:
   m_ObjectHideFlags: 1

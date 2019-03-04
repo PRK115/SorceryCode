@@ -52,7 +52,7 @@ public class IfDetector : MonoBehaviour{
         }
 
         //에너지 탐지
-        else if (target == EntityType.FireBall)
+        else if (target == EntityType.Fire)
         {
             //Organism, MoveableObject, Energy
             List<Collider> colliders = new List<Collider>();
@@ -78,7 +78,7 @@ public class IfDetector : MonoBehaviour{
                 }
             }
         }
-        else if (target == EntityType.LightningBall)
+        else if (target == EntityType.Electricity)
         {
             //Organism, MoveableObject, Energy
             List<Collider> colliders = CheckSurroundings(13 << 9);

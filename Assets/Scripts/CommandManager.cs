@@ -67,7 +67,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
             }
             context.Target = conjuredEntity;
 
-            if(type == EntityType.FireBall || type == EntityType.LightningBall)
+            if(type == EntityType.Fire || type == EntityType.Electricity)
             {
             }
             else

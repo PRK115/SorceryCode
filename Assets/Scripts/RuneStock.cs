@@ -26,8 +26,8 @@ public class RuneStock : MonoBehaviour
         runeStockDictionary.Add(new RuneType(EntityType.SlidingDoor), 0);
         runeStockDictionary.Add(new RuneType(EntityType.WoodBox), 0);
         runeStockDictionary.Add(new RuneType(EntityType.IronBox), 0);
-        runeStockDictionary.Add(new RuneType(EntityType.FireBall), 0);
-        runeStockDictionary.Add(new RuneType(EntityType.LightningBall), 0);
+        runeStockDictionary.Add(new RuneType(EntityType.Fire), 0);
+        runeStockDictionary.Add(new RuneType(EntityType.Electricity), 0);
         runeStockDictionary.Add(new RuneType(EntityType.Witch), 0);
         runeStockDictionary.Add(new RuneType(EntityType.Lion), 0);
         runeStockDictionary.Add(new RuneType(EntityType.Mouse), 0);
@@ -48,8 +48,8 @@ public class RuneStock : MonoBehaviour
         {new RuneType(EntityType.Switch), 0},
         {new RuneType(EntityType.WoodBox), 0},
         {new RuneType(EntityType.IronBox), 0},
-        {new RuneType(EntityType.FireBall), 0},
-        {new RuneType(EntityType.LightningBall), 0},
+        {new RuneType(EntityType.Fire), 0},
+        {new RuneType(EntityType.Electricity), 0},
         {new RuneType(EntityType.Witch), 0 },
         {new RuneType(EntityType.Lion), 0},
         {new RuneType(EntityType.Mouse), 0},
