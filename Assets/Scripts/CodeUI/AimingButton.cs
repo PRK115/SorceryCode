@@ -11,7 +11,7 @@ public class AimingButton : MonoBehaviour {
     private void Awake()
     {
         inst = this;
-        transform.GetChild(0).GetComponent<Text>().text = "Cast \n (Enter)";
+        transform.GetChild(0).GetComponent<Text>().text = "Cast\n(Enter)";
     }
 
     private bool exprSlotsFull;
