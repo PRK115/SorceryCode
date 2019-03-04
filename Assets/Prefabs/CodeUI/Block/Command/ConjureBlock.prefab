@@ -168,6 +168,12 @@ MonoBehaviour:
   ContainedScopedBlock: {fileID: 0}
   Depth: 0
   IsRune: 1
+  runeType:
+    type: 0
+    entity: 0
+    adjective: 0
+    direction: 0
+  runeCountIcon: {fileID: 0}
 --- !u!114 &114860422325723084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -200,7 +206,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Conjure
+  m_Text: Summon
 --- !u!114 &114868524802350942
 MonoBehaviour:
   m_ObjectHideFlags: 1
