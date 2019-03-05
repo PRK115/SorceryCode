@@ -22,6 +22,7 @@ public class Moveable : MonoBehaviour, Attribute
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(YTendency);
         if (rb.isKinematic)
         {
             if ((YTendency > 0 && (!cd.upBlocked && !changeable.changing) || (YTendency < 0 && (!cd.downBlocked) && !changeable.changing)))

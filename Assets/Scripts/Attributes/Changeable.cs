@@ -61,6 +61,7 @@ public class Changeable : MonoBehaviour, Attribute
         }
         else if (cd.downBlocked)
         {
+            Debug.Log("downBlocked");
             moveable.YTendency = 1f;
             position += Vector3.up;
         }

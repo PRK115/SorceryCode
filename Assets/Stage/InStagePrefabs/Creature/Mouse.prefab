@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 114547388575350612}
   - component: {fileID: 114239974445977162}
   - component: {fileID: 114574170883194700}
+  - component: {fileID: 114662468584800030}
   m_Layer: 9
   m_Name: Mouse
   m_TagString: Life
@@ -539,6 +540,7 @@ MonoBehaviour:
   indestructable: 0
   burnDelay: 0
   burningDuration: 1
+  burningTimeLeft: 0
 --- !u!114 &114176733408111538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -625,6 +627,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c35bc56f19c148a458f04219f708a5b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114662468584800030
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1525892520556632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 398b42ebdae92cb459f8e662dfa2fcf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Resizable: 0
+  big: 0
+  changing: 0
+  shrink: {fileID: 0}
+  swell: {fileID: 0}
 --- !u!137 &137818195883514388
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

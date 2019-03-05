@@ -116,7 +116,7 @@ public class Projectile : MonoBehaviour {
         else
         {
             //Debug.Log("execute " + touchingEntity.name);
-            Debug.Log(touchingEntity.name);
+            //Debug.Log(touchingEntity.name);
             CommandManager.Inst.ExecuteCode(touchingEntity, touchingEntity.transform.position);
         }
     }
