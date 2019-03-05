@@ -13,11 +13,13 @@ public class GameStateManager : MonoBehaviour
     public GameObject inStagePausePanel;
     public GameObject inStageFuneralPanel;
     public GameObject grimoire;
+    public Image grimoireImage;
     public GameObject clearPanel;
 
     public UnityEngine.UI.Button codeButton;
     public UnityEngine.UI.Button closeCodeButton;
     public UnityEngine.UI.Button aimButton;
+    public UnityEngine.UI.Slider transparencySlider;
     public UnityEngine.UI.Button pauseButton;
     public UnityEngine.UI.Button resumeButton;
     public UnityEngine.UI.Button restartButton;
@@ -141,6 +143,10 @@ public class GameStateManager : MonoBehaviour
 
         player = FindObjectOfType<PlayerCtrl>();
         aimButton.onClick.AddListener(() => AimingButton.inst.CheckExprSlots());
+        grimoireImage = grimoire.GetComponent<Image>();
+        transparencySlider = FindObjectOfType<Slider>();
+        if (transparencySlider != null)
+            transparencySlider.onValueChanged.AddListener(ChangeCodeWindowTransparncy);
     }
 
     private void Start()
@@ -220,5 +226,10 @@ public class GameStateManager : MonoBehaviour
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
         Time.timeScale = 1;
+    }
+
+    public void ChangeCodeWindowTransparncy(float value)
+    {
+        grimoireImage.color = new Color(1,1,1,value);
     }
 }
