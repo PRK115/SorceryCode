@@ -51,7 +51,7 @@ namespace CodeUI
             }
         }
 
-        public bool IsChangeable(EntityType from, EntityType to)
+        public bool IsChangeable(EntityType to)
         {
             return true;
         }

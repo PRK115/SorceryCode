@@ -2760,7 +2760,7 @@ Prefab:
     - target: {fileID: 114428283179223726, guid: aa474f03b767d494d90a73081bef0754,
         type: 2}
       propertyPath: height
-      value: 4
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 198527301541293966, guid: aa474f03b767d494d90a73081bef0754,
         type: 2}
@@ -2770,7 +2770,7 @@ Prefab:
     - target: {fileID: 198527301541293966, guid: aa474f03b767d494d90a73081bef0754,
         type: 2}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 3.2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 198527301541293966, guid: aa474f03b767d494d90a73081bef0754,
         type: 2}

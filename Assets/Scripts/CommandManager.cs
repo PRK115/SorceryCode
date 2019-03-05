@@ -297,6 +297,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
 
     public bool IsConjurable(EntityType type)
     {
+        Debug.Log("conjurable");
         GameObject prefab = prefabDB.GetPrefab(type);
         Conjurable conjurable = prefab.GetComponent<Conjurable>();
         return conjurable != null;
@@ -309,9 +310,11 @@ public class CommandManager : MonoBehaviour, ICommandManager
         return changeable != null && changeable.Resizable;
     }
 
-    public bool IsChangeable(EntityType from, EntityType to)
+    public bool IsChangeable(EntityType to)
     {
-        return (prefabDB.GetPrefab(from).GetComponent<Changeable>() != null && prefabDB.GetPrefab(to).GetComponent<Changeable>() != null);
+        //Debug.Log("change");
+        //Debug.Log($"{to} {prefabDB.GetPrefab(to).GetComponent<Changeable>()}");
+        return (prefabDB.GetPrefab(to).GetComponent<Changeable>() != null);
     }
 
     public bool IsMoveable(EntityType type)

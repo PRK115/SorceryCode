@@ -39,7 +39,20 @@ namespace CodeUI
         protected override void Start()
         {
             base.Start();
-            argumentSlot.CheckBlockValidCallback = block => block is ChangeTypeBlock || block is EntityBlock;
+            argumentSlot.CheckBlockValidCallback = block =>
+            {
+                if ((block is ChangeTypeBlock)) return true;
+                else if(block is EntityBlock)
+                {
+                    var entityBlock = (EntityBlock)block;
+                    if (commandMgr.IsChangeable(entityBlock.EntityType))
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
+            };
         }
     }
 }
