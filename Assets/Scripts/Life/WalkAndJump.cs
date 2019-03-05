@@ -96,6 +96,7 @@ public class WalkAndJump : MonoBehaviour {
 
         else
         {
+            Debug.Log(moveDirection.y);
             moveDirection.y -= g * Time.deltaTime;
             platform = null;
         }
@@ -138,9 +139,14 @@ public class WalkAndJump : MonoBehaviour {
             }
         }
 
-        if (Physics.SphereCast(ray, radius, halfHeight - radius, 1 +(1 << 8)))
+        RaycastHit[] Below = new RaycastHit[1];
+        Physics.SphereCastNonAlloc(ray, radius, Below, halfHeight - radius, 1 + (1 << 8));
+        if (Below[0].collider != null)
         {
-            return true;
+            if (!Below[0].collider.isTrigger)
+            {
+                return true;
+            }
         }
 
         return false || ctrl.isGrounded;
@@ -160,6 +166,12 @@ public class WalkAndJump : MonoBehaviour {
     //    //    jumpDirection.x = 0;
     //    //}
     //}
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.normal == Vector3.up)
+            moveDirection.y = 0;
+    }
 
     void Update()
     {
