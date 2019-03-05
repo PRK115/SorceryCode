@@ -96,7 +96,7 @@ public class WalkAndJump : MonoBehaviour {
 
         else
         {
-            Debug.Log(moveDirection.y);
+            //Debug.Log(moveDirection.y);
             moveDirection.y -= g * Time.deltaTime;
             platform = null;
         }

@@ -14,6 +14,14 @@ public class GridButton : MonoBehaviour {
         GetComponent<UnityEngine.UI.Button>().onClick.AddListener(GridOnOff);
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            GridOnOff();
+        }
+    }
+
     public void GridOnOff()
     {
         if(grid != null)
