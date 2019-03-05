@@ -33,7 +33,7 @@ public class WalkAndJump : MonoBehaviour {
         ctrl = GetComponent<CharacterController>();
         sound = GetComponent<AudioSource>();
         halfHeight = ctrl.height / 2 *transform.localScale.x + 0.02f;
-        radius = ctrl.radius*0.6f;
+        radius = ctrl.radius*0.7f;
     }
 
     public void Manuever(Direction direction)
@@ -98,7 +98,6 @@ public class WalkAndJump : MonoBehaviour {
         {
             //Debug.Log(moveDirection.y);
             moveDirection.y -= g * Time.deltaTime;
-            platform = null;
         }
 
         switch (direction)
@@ -135,9 +134,13 @@ public class WalkAndJump : MonoBehaviour {
             if (Moveables.Length != 0)
             {
                 platform = Moveables[0].collider.GetComponent<Moveable>();
+                //Debug.Log("플랫폼");
                 return true;
             }
         }
+
+        //Debug.Log("플랫폼 이탈");
+        platform = null;
 
         RaycastHit[] Below = new RaycastHit[1];
         Physics.SphereCastNonAlloc(ray, radius, Below, halfHeight - radius, 1 + (1 << 8));

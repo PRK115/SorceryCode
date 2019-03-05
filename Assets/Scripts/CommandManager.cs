@@ -297,7 +297,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
 
     public bool IsConjurable(EntityType type)
     {
-        Debug.Log("conjurable");
+        //Debug.Log("conjurable");
         GameObject prefab = prefabDB.GetPrefab(type);
         Conjurable conjurable = prefab.GetComponent<Conjurable>();
         return conjurable != null;

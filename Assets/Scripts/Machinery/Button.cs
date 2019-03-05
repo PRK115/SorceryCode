@@ -22,17 +22,23 @@ public class Button : MonoBehaviour {
 
     private void Update()
     {
+        List<Collider> futileColliders  = new List<Collider>();
         foreach (Collider c in pressingColliders)
         {
             if (c == null)
             {
-                pressingColliders.Remove(c);
+                futileColliders.Add(c);
                 continue;
             }
             if(c.gameObject.activeInHierarchy == false)
             {
-                pressingColliders.Remove(c);
+                futileColliders.Add(c);
             }
+        }
+
+        foreach(Collider c in futileColliders)
+        {
+            pressingColliders.Remove(c);
         }
 
         if(Input.GetKey(KeyCode.K))

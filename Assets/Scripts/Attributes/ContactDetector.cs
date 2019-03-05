@@ -64,12 +64,12 @@ public class ContactDetector : MonoBehaviour {
 
     public void CheckSurroundingObstacles()
     {
-        Debug.Log("check");
+        //Debug.Log("check");
         int layerMask = (1 + (1<<8) + (1<< 11));
         for(int i=0;i<8;i++)
         {
             checkResult[i] = Physics.CheckBox(transform.position + direction[i] * 0.8f, new Vector3(0.3f, 0.1f, 0.5f), Quaternion.identity, layerMask);
-            Debug.Log(i +" " +checkResult[i]);
+            //Debug.Log(i +" " +checkResult[i]);
         }
         upBlocked = checkResult[1];
         rightBlocked = checkResult[3];
@@ -80,7 +80,7 @@ public class ContactDetector : MonoBehaviour {
         //{
         //    Debug.Log(c[i].name);
         //}
-        Debug.Log($"{upBlocked} {downBlocked} {leftBlocked} {rightBlocked}");
+        //Debug.Log($"{upBlocked} {downBlocked} {leftBlocked} {rightBlocked}");
     }
 
     private void OnCollisionExit(Collision collision)
