@@ -109,6 +109,7 @@ public class Projectile : MonoBehaviour {
 
     void Execute()
     {
+        //Debug.Log("실행");
         if (touchingEntity == null)
         {
             CommandManager.Inst.ExecuteCode(null, transform.position);

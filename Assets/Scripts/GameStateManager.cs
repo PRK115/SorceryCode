@@ -200,19 +200,11 @@ public class GameStateManager : MonoBehaviour
 
     public void ToIntro()
     {
-        if (interpreterCancelTask != null)
-        {
-            interpreterCancelTask.Wait();
-        }
         SceneManager.LoadScene("Intro");
     }
 
     public void ToStage(int stageNumber)
     {
-        if (interpreterCancelTask != null)
-        {
-            interpreterCancelTask.Wait();
-        }
         SceneManager.LoadScene("Stage" + stageNumber);
     }
 

@@ -1848,11 +1848,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4903086397714472, guid: 2e6104010d3ec7b4d9349a50dc4dc2fc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9.31
+      value: 8.29
       objectReference: {fileID: 0}
     - target: {fileID: 4903086397714472, guid: 2e6104010d3ec7b4d9349a50dc4dc2fc, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -7.47
+      value: -0.35
       objectReference: {fileID: 0}
     - target: {fileID: 4903086397714472, guid: 2e6104010d3ec7b4d9349a50dc4dc2fc, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3390,7 +3390,7 @@ Prefab:
     - target: {fileID: 114428283179223726, guid: aa474f03b767d494d90a73081bef0754,
         type: 2}
       propertyPath: height
-      value: 3.5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 198527301541293966, guid: aa474f03b767d494d90a73081bef0754,
         type: 2}
@@ -3400,7 +3400,7 @@ Prefab:
     - target: {fileID: 198527301541293966, guid: aa474f03b767d494d90a73081bef0754,
         type: 2}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 3
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 198527301541293966, guid: aa474f03b767d494d90a73081bef0754,
         type: 2}
@@ -4797,6 +4797,10 @@ Prefab:
     - target: {fileID: 1643028391622716, guid: aa474f03b767d494d90a73081bef0754, type: 2}
       propertyPath: m_Name
       value: Cauldron (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1091681296815848, guid: aa474f03b767d494d90a73081bef0754, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa474f03b767d494d90a73081bef0754, type: 2}

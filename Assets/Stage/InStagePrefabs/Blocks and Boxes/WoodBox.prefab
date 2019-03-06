@@ -247,7 +247,7 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1549163940768664}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2f27a1a3a69655e4c8b7b2c0c1bda343, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -445,9 +445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539d357d99c20dd4b98cb3c9eafde502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XTendency: 0
-  YTendency: 0
   gravitated: 1
+  rider: {fileID: 0}
 --- !u!198 &198037049063964448
 ParticleSystem:
   m_ObjectHideFlags: 1

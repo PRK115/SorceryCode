@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 54258759400312404}
   - component: {fileID: 114770214695158434}
   - component: {fileID: 114851771245953724}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: cauldron_LID
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,9 +413,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539d357d99c20dd4b98cb3c9eafde502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XTendency: 0
-  YTendency: 0
   gravitated: 1
+  rider: {fileID: 0}
 --- !u!114 &114851771245953724
 MonoBehaviour:
   m_ObjectHideFlags: 1

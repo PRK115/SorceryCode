@@ -27,6 +27,7 @@ public class CommandManager : MonoBehaviour, ICommandManager
 
     public void ExecuteCode(Entity target, Vector3 location)
     {
+        Debug.Log($"{target} {location}");
         var code = Compiler.Compile(program);
         Interpreter.Inst.Execute(new EvalContext{Target = target, Location = location}, code);
         BlockListRoot.inst.Clear();

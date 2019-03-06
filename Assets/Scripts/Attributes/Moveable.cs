@@ -2,8 +2,25 @@
 
 public class Moveable : MonoBehaviour, Attribute
 {
-    public float XTendency;
-    public float YTendency;
+    private float xTendency;
+    public float XTendency
+    {
+        get;set;
+    }
+    private float yTendency;
+    public float YTendency
+    {
+        get
+        {
+            return yTendency;
+        }
+        set
+        {
+            yTendency = value;
+            //if (value > 0 && rider != null)
+            //    rider.ForceMove();
+        }
+    }
 
     Rigidbody rb;
     ContactDetector cd;
@@ -11,6 +28,8 @@ public class Moveable : MonoBehaviour, Attribute
 
     public bool gravitated = true;
     float g = 9.8f;
+
+    public WalkAndJump rider;
 
     private void Awake()
     {

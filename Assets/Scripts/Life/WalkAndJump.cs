@@ -13,6 +13,21 @@ public class WalkAndJump : MonoBehaviour {
     //private Vector3 moveDirection = Vector3.zero;
     [SerializeField]
     Vector3 moveDirection = Vector3.zero;
+    Vector3 MoveDirection
+    {
+        get
+        {
+            return moveDirection;
+        }
+        set
+        {
+            //점프하자마자 속도가 0이 되는 현상 방지
+            if (!(moveDirection.y == verticalJumpImpulse && value.y == 0))
+            {
+                moveDirection = value;
+            }
+        }
+    }
 
     private float g = 9.8f;
 
@@ -32,8 +47,8 @@ public class WalkAndJump : MonoBehaviour {
         //originalScale = transform.localScale;
         ctrl = GetComponent<CharacterController>();
         sound = GetComponent<AudioSource>();
-        halfHeight = ctrl.height / 2 *transform.localScale.x + 0.02f;
-        radius = ctrl.radius*0.7f;
+        halfHeight = ctrl.height / 2 *transform.localScale.x + 0.01f;
+        radius = ctrl.radius * transform.localScale.x;
     }
 
     public void Manuever(Direction direction)
@@ -59,45 +74,49 @@ public class WalkAndJump : MonoBehaviour {
             {
                 case Direction.None:
                     //Debug.Log("none");
-                    moveDirection = Vector3.zero;
+                    MoveDirection = Vector3.zero;
                     break;
 
                 case Direction.Up:
-                    moveDirection = new Vector3(0, verticalJumpImpulse, 0);
+                    MoveDirection = new Vector3(0, verticalJumpImpulse, 0);
                     isGrounded_delayed = false;
                     sound.Play();
-                    transform.parent = null;
+                    if(platform != null)
+                        platform.rider = null;
+                    platform = null;
                     break;
                 case Direction.LeftUp:
                     transform.LookAt(transform.position + Vector3.left);
-                    moveDirection = new Vector3(-horizontalJumpImpulse, verticalJumpImpulse, 0);
+                    MoveDirection = new Vector3(-horizontalJumpImpulse, verticalJumpImpulse, 0);
                     sound.Play();
                     isGrounded_delayed = false;
-                    transform.parent = null;
-
+                    if (platform != null)
+                        platform.rider = null;
+                    platform = null;
                     break;
                 case Direction.RightUp:
                     transform.LookAt(transform.position + Vector3.right);
-                    moveDirection = new Vector3(horizontalJumpImpulse, verticalJumpImpulse, 0);
+                    MoveDirection = new Vector3(horizontalJumpImpulse, verticalJumpImpulse, 0);
                     sound.Play();
                     isGrounded_delayed = false;
-                    transform.parent = null;
-
+                    if (platform != null)
+                        platform.rider = null;
+                    platform = null;
                     break;
             }
             if (platform != null)
             {
-                moveDirection += new Vector3(platform.XTendency, platform.YTendency, 0);
-                Vector3 platformMove = new Vector3(platform.XTendency,platform.YTendency,0);
+                //moveDirection += new Vector3(platform.XTendency, platform.YTendency, 0);
+                Vector3 platformMove = new Vector3(platform.XTendency, platform.YTendency > MoveDirection.y ? platform.YTendency : MoveDirection.y, 0);
                 ctrl.Move(platformMove * Time.deltaTime);
             }
-           // ctrl.Move(moveDirection * Time.deltaTime);
         }
 
         else
         {
+            //Debug.Log("fall");
             //Debug.Log(moveDirection.y);
-            moveDirection.y -= g * Time.deltaTime;
+            MoveDirection -= g * Time.deltaTime * Vector3.up;
         }
 
         switch (direction)
@@ -108,15 +127,14 @@ public class WalkAndJump : MonoBehaviour {
 
             case Direction.Left:
                 transform.LookAt(transform.position + Vector3.left);
-                moveDirection = new Vector3(-walkSpeed, moveDirection.y, 0);
+                MoveDirection = new Vector3(-walkSpeed, MoveDirection.y, 0);
                 break;
 
             case Direction.Right:
                 transform.LookAt(transform.position + Vector3.right);
-                moveDirection = new Vector3(walkSpeed, moveDirection.y, 0);
+                MoveDirection = new Vector3(walkSpeed, MoveDirection.y, 0);
                 break;
         }
-        //ctrl.Move(moveDirection * Time.deltaTime);
     }
 
     public void SetWalkSpeed(float speed)
@@ -134,12 +152,15 @@ public class WalkAndJump : MonoBehaviour {
             if (Moveables.Length != 0)
             {
                 platform = Moveables[0].collider.GetComponent<Moveable>();
+                platform.rider = this;
                 //Debug.Log("플랫폼");
                 return true;
             }
         }
 
         //Debug.Log("플랫폼 이탈");
+        if(platform!=null)
+            platform.rider = null;
         platform = null;
 
         RaycastHit[] Below = new RaycastHit[1];
@@ -172,12 +193,16 @@ public class WalkAndJump : MonoBehaviour {
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.normal == Vector3.up)
+        if ((hit.normal == Vector3.up && moveDirection.y < 0) || (hit.normal == Vector3.down && moveDirection.y >0))
+        {
+            //Debug.Log(moveDirection.y);
             moveDirection.y = 0;
+        }
     }
 
     void Update()
     {
+        //Debug.Log(moveDirection.y);
         ctrl.Move(moveDirection * Time.deltaTime);
     }
 }
