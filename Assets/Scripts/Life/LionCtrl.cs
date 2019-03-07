@@ -195,7 +195,7 @@ public class LionCtrl : MonoBehaviour
             {
                 var relPos = mainTarget.transform.position - transform.position;
 
-                Killing(0.5f);
+                Killing(0.8f);
 
                 if (relPos.x < 0f)
                 {

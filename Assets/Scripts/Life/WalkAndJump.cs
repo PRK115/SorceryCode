@@ -70,6 +70,16 @@ public class WalkAndJump : MonoBehaviour {
 
         if (isGrounded_delayed)
         {
+            RaycastHit[] TtookbaegiBreaker = new RaycastHit[1];
+
+            Ray ray = new Ray(transform.position + ctrl.center + Vector3.up * halfHeight, Vector3.up);
+            Physics.RaycastNonAlloc(ray, TtookbaegiBreaker, radius, 1 + (1 << 11) + (1 << 8));
+
+            if (TtookbaegiBreaker[0].collider != null)
+            {
+                if(!TtookbaegiBreaker[0].collider.isTrigger && TtookbaegiBreaker[0].point.y > transform.position.y)
+                    GetComponent<Organism>().PhysicalDamage();
+            }
             switch (direction)
             {
                 case Direction.None:
@@ -203,6 +213,7 @@ public class WalkAndJump : MonoBehaviour {
     void Update()
     {
         //Debug.Log(moveDirection.y);
-        ctrl.Move(moveDirection * Time.deltaTime);
+        if(ctrl.enabled)
+            ctrl.Move(moveDirection * Time.deltaTime);
     }
 }

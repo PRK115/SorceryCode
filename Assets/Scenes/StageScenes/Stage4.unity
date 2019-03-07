@@ -5869,6 +5869,43 @@ Prefab:
       propertyPath: transition.y
       value: -2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1152030148730582, guid: 1ee1e83d70f906642844664f3a38280d, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1364284397553008, guid: 1ee1e83d70f906642844664f3a38280d, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1307494870252762, guid: 1ee1e83d70f906642844664f3a38280d, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452798828939412, guid: 1ee1e83d70f906642844664f3a38280d, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391259954644128, guid: 1ee1e83d70f906642844664f3a38280d, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737088386467792, guid: 1ee1e83d70f906642844664f3a38280d, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1194890632325490, guid: 1ee1e83d70f906642844664f3a38280d, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087221804485938, guid: 1ee1e83d70f906642844664f3a38280d, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 108523027141600824, guid: 1ee1e83d70f906642844664f3a38280d,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 16384
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ee1e83d70f906642844664f3a38280d, type: 2}
   m_IsPrefabAsset: 0

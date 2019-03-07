@@ -221,7 +221,7 @@ public class PlayerCtrl : MonoBehaviour {
         }
         else
         {
-            transform.Translate(Vector3.forward * Time.deltaTime);
+            transform.Translate(Vector3.forward * 1.6f * Time.deltaTime);
             exitTime -= Time.deltaTime;
         }
         yield return null;

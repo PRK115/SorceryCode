@@ -32,6 +32,7 @@ public class Organism : MonoBehaviour {
         if (conductor.state == Conductor.State.Electrified || flammable.state == Flammable.State.Burning || physicallyDamaged)
         {
             alive = false;
+            GetComponent<CharacterController>().enabled = false;
             if (timeTillDeath < 0)
             {
                 gameObject.SetActive(false);

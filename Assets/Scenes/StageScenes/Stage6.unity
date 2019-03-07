@@ -980,7 +980,7 @@ GameObject:
   - component: {fileID: 318832708}
   - component: {fileID: 318832710}
   - component: {fileID: 318832709}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3209,6 +3209,22 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1659442514955882, guid: 2e6104010d3ec7b4d9349a50dc4dc2fc, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955156491205022, guid: 2e6104010d3ec7b4d9349a50dc4dc2fc, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658140158088914, guid: 2e6104010d3ec7b4d9349a50dc4dc2fc, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020227921719244, guid: 2e6104010d3ec7b4d9349a50dc4dc2fc, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e6104010d3ec7b4d9349a50dc4dc2fc, type: 2}
   m_IsPrefabAsset: 0
@@ -3324,7 +3340,7 @@ GameObject:
   - component: {fileID: 868697640}
   - component: {fileID: 868697642}
   - component: {fileID: 868697641}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3620,7 +3636,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1064499396}
   - component: {fileID: 1064499397}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3670,7 +3686,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 16384
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
@@ -3900,7 +3916,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1154664469}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Consumed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4837,7 +4853,7 @@ GameObject:
   - component: {fileID: 1384376837}
   - component: {fileID: 1384376836}
   - component: {fileID: 1384376835}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5499,7 +5515,7 @@ GameObject:
   - component: {fileID: 1636278380}
   - component: {fileID: 1636278382}
   - component: {fileID: 1636278381}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6686,7 +6702,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2048898164}
   - component: {fileID: 2048898165}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: goalDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6982,6 +6998,14 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1.1111112
       objectReference: {fileID: 0}
+    - target: {fileID: 1436148846266370, guid: e1af60e07f0a7f54fa545b660bed07a2, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346209230492836, guid: e1af60e07f0a7f54fa545b660bed07a2, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1af60e07f0a7f54fa545b660bed07a2, type: 2}
   m_IsPrefabAsset: 0
@@ -7145,7 +7169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2119793078}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Goal 1(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

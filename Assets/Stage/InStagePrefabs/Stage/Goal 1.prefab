@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4842262839739752}
   - component: {fileID: 33040489847452914}
   - component: {fileID: 23453557782973426}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4685439613231306}
   - component: {fileID: 33764231521391656}
   - component: {fileID: 23960179556028582}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4336042564894920}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Consumed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 4483960504304220}
   - component: {fileID: 33424513568646252}
   - component: {fileID: 23187619340006050}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 65126350982364930}
   - component: {fileID: 114511851587366678}
   - component: {fileID: 114528661233812024}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4158314636426076}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Goal 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4815739434444844}
   - component: {fileID: 108413417515944196}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4458593351579160}
   - component: {fileID: 114259141555688602}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: goalDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1901295889627082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.84, y: 0.64, z: -0.07}
+  m_LocalPosition: {x: 0.84, y: 0.64, z: -0.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4393857460012480}
@@ -208,7 +208,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1440205444087234}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.34, y: -0.53, z: 0}
+  m_LocalPosition: {x: 0.34, y: -0.53, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4158314636426076}
@@ -221,7 +221,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1199484088672040}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.32, y: 0.52, z: -0.422}
+  m_LocalPosition: {x: 0.32, y: 0.52, z: -0.922}
   m_LocalScale: {x: 1.098435, y: 2.1197243, z: 0.3193125}
   m_Children: []
   m_Father: {fileID: 4158314636426076}
@@ -234,7 +234,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1479915736450164}
   m_LocalRotation: {x: -0, y: -0.99916226, z: 0.040923685, w: 0}
-  m_LocalPosition: {x: 0.49, y: 1.54, z: 8.87}
+  m_LocalPosition: {x: 0.49, y: 1.54, z: 8.37}
   m_LocalScale: {x: 1, y: 1.1103681, z: 1.000743}
   m_Children: []
   m_Father: {fileID: 4158314636426076}
@@ -419,7 +419,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 16385
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4231007403471410}
   - component: {fileID: 198991719930645666}
   - component: {fileID: 199973524620112222}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Burst
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4301971995218632}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: forearm.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4929714320035346}
   - component: {fileID: 198915615815266262}
   - component: {fileID: 199616220496816724}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4907283608655524}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: blood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4782479155196276}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: hindCover_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4220499240208914}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: forearm.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4485168637385820}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: hindCover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4012100291603736}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: frontCover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 4651405835037366}
   - component: {fileID: 198165762466344852}
   - component: {fileID: 199328958248642130}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4196789256856850}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: frontCover_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4835794784831634}
   - component: {fileID: 95658957344276138}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: witch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4888189682490228}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: upperArm.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4769033749346016}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: upperArm.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4430678164513098}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: forearm.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4758182924387374}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4913605891545492}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Book
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4684972709471012}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4079916694822984}
   - component: {fileID: 137540835659747166}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: main character vox.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +353,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4406086196920660}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: forearm.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}

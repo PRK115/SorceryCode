@@ -836,7 +836,7 @@ GameObject:
   m_Component:
   - component: {fileID: 95461406}
   - component: {fileID: 95461407}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: goalDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2305,7 +2305,7 @@ GameObject:
   - component: {fileID: 228345198}
   - component: {fileID: 228345200}
   - component: {fileID: 228345199}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9307,7 +9307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 650769570}
   - component: {fileID: 650769571}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9357,7 +9357,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 16384
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
@@ -16425,7 +16425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1208091286}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Goal 1(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21335,7 +21335,7 @@ GameObject:
   - component: {fileID: 1661057004}
   - component: {fileID: 1661057006}
   - component: {fileID: 1661057005}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22678,7 +22678,7 @@ GameObject:
   - component: {fileID: 1809899952}
   - component: {fileID: 1809899954}
   - component: {fileID: 1809899953}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22836,7 +22836,7 @@ GameObject:
   - component: {fileID: 1823813082}
   - component: {fileID: 1823813081}
   - component: {fileID: 1823813080}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23554,7 +23554,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1891818254}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Consumed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
