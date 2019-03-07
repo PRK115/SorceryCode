@@ -65,21 +65,12 @@ public class WalkAndJump : MonoBehaviour {
         //    else
         //        airborneDelay--;
         //}
-
+        TtookbaegiBreak();
         isGrounded_delayed = CheckUnderFoot();
 
         if (isGrounded_delayed)
         {
-            RaycastHit[] TtookbaegiBreaker = new RaycastHit[1];
-
-            Ray ray = new Ray(transform.position + ctrl.center + Vector3.up * halfHeight, Vector3.up);
-            Physics.RaycastNonAlloc(ray, TtookbaegiBreaker, radius, 1 + (1 << 11) + (1 << 8));
-
-            if (TtookbaegiBreaker[0].collider != null)
-            {
-                if(!TtookbaegiBreaker[0].collider.isTrigger && TtookbaegiBreaker[0].point.y > transform.position.y)
-                    GetComponent<Organism>().PhysicalDamage();
-            }
+            SqueezeCheck();
             switch (direction)
             {
                 case Direction.None:
@@ -184,6 +175,38 @@ public class WalkAndJump : MonoBehaviour {
         }
 
         return false || ctrl.isGrounded;
+    }
+
+    void SqueezeCheck()
+    {
+        RaycastHit[] TtookbaegiBreaker = new RaycastHit[1];
+
+        Ray ray = new Ray(transform.position + ctrl.center + Vector3.up * halfHeight, Vector3.up);
+
+        Physics.RaycastNonAlloc(ray, TtookbaegiBreaker, radius, 1 + (1 << 8) +(1 << 11));
+
+        if (TtookbaegiBreaker[0].collider != null)
+        {
+            if (!TtookbaegiBreaker[0].collider.isTrigger && TtookbaegiBreaker[0].point.y > transform.position.y)
+            {
+                GetComponent<Organism>().PhysicalDamage();
+            }
+        }
+    }
+
+    void TtookbaegiBreak()
+    {
+        Collider[] Moveables = Physics.OverlapSphere(transform.position + ctrl.center, radius, 1 << 11);
+        if (Moveables.Length != 0)
+        {
+            var m = Moveables[0].GetComponent<Moveable>();
+            if(m.gravitated)
+            {
+                m.YTendency = 0;
+                GetComponent<Organism>().PhysicalDamage();
+            }
+            return;
+        }
     }
 
     //private void OnControllerColliderHit(ControllerColliderHit hit)
