@@ -139,6 +139,7 @@ public class PlayerCtrl : MonoBehaviour {
         }
         else
         {
+            walkAndJump.Manuever(Direction.None);
             if (manager != null)
                 manager.SetState(GameStateManager.UIState.GameOver);
         }
