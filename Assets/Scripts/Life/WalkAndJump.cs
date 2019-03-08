@@ -180,8 +180,12 @@ public class WalkAndJump : MonoBehaviour {
     void SqueezeCheck()
     {
         RaycastHit[] TtookbaegiBreaker = new RaycastHit[1];
-
-        Ray ray = new Ray(transform.position + ctrl.center + Vector3.up * halfHeight, Vector3.up);
+        Ray ray;
+        if(transform.tag=="Player")
+            ray = new Ray(transform.position + ctrl.center + Vector3.up * halfHeight, Vector3.up);
+        
+        else
+            ray = new Ray(transform.position + ctrl.center, Vector3.up);
 
         Physics.RaycastNonAlloc(ray, TtookbaegiBreaker, radius, 1 + (1 << 8) +(1 << 11));
 
@@ -190,6 +194,7 @@ public class WalkAndJump : MonoBehaviour {
             if (!TtookbaegiBreaker[0].collider.isTrigger && TtookbaegiBreaker[0].point.y > transform.position.y)
             {
                 GetComponent<Organism>().PhysicalDamage();
+                Debug.Log(transform.name + "die");
             }
         }
     }
