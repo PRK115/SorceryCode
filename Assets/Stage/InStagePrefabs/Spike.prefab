@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 65546295724506136}
   - component: {fileID: 114227757358577904}
   - component: {fileID: 114514183664475086}
+  - component: {fileID: 54638350700762348}
   m_Layer: 0
   m_Name: Spike
   m_TagString: Untagged
@@ -86,6 +87,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1056389075123610}
   m_Mesh: {fileID: 4300000, guid: ecdeff3a16cd59c47a7ff9c1defe6559, type: 3}
+--- !u!54 &54638350700762348
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1056389075123610}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!65 &65546295724506136
 BoxCollider:
   m_ObjectHideFlags: 1

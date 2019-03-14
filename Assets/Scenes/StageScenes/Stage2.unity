@@ -545,7 +545,7 @@ Prefab:
     - target: {fileID: 114424926527028276, guid: afd6a6151b9f500428b0719d72b376f5,
         type: 2}
       propertyPath: machine.phaseChangeTime
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1135031775155250, guid: afd6a6151b9f500428b0719d72b376f5, type: 2}
       propertyPath: m_Layer
@@ -583,6 +583,11 @@ Prefab:
         type: 2}
       propertyPath: m_CullingMask.m_Bits
       value: 16384
+      objectReference: {fileID: 0}
+    - target: {fileID: 114424926527028276, guid: afd6a6151b9f500428b0719d72b376f5,
+        type: 2}
+      propertyPath: machine.returnTime
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afd6a6151b9f500428b0719d72b376f5, type: 2}
@@ -801,6 +806,11 @@ Prefab:
     - target: {fileID: 4166209003197168, guid: 698eadc8535d5914391e107ddf1170e8, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114981008827435346, guid: 698eadc8535d5914391e107ddf1170e8,
+        type: 2}
+      propertyPath: walkSpeed
+      value: 1.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 698eadc8535d5914391e107ddf1170e8, type: 2}

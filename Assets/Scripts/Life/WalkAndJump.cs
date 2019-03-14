@@ -128,12 +128,12 @@ public class WalkAndJump : MonoBehaviour {
 
             case Direction.Left:
                 transform.LookAt(transform.position + Vector3.left);
-                MoveDirection = new Vector3(-walkSpeed, MoveDirection.y, 0);
+                MoveDirection = new Vector3(-walkSpeed/(isGrounded_delayed ? 1: 1.5f), MoveDirection.y, 0);
                 break;
 
             case Direction.Right:
                 transform.LookAt(transform.position + Vector3.right);
-                MoveDirection = new Vector3(walkSpeed, MoveDirection.y, 0);
+                MoveDirection = new Vector3(walkSpeed/ (isGrounded_delayed ? 1 : 1.5f), MoveDirection.y, 0);
                 break;
         }
     }
@@ -194,7 +194,7 @@ public class WalkAndJump : MonoBehaviour {
             if (!TtookbaegiBreaker[0].collider.isTrigger && TtookbaegiBreaker[0].point.y > transform.position.y)
             {
                 GetComponent<Organism>().PhysicalDamage();
-                Debug.Log(transform.name + "die");
+                //Debug.Log(transform.name + "die");
             }
         }
     }

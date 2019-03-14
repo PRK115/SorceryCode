@@ -30,6 +30,7 @@ namespace CodeUI
             OwnerBlock = GetComponentInParent<Block>();
 
             AimingButton.inst.OnAimClicked += IsSlotFull;
+            AimingButton.inst.expr.Add(this);
         }
 
         void IsSlotFull()
@@ -137,6 +138,7 @@ namespace CodeUI
         private void OnDestroy()
         {
             AimingButton.inst.OnAimClicked -= IsSlotFull;
+            AimingButton.inst.expr.Remove(this);
         }
     }
 }

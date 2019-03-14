@@ -23,6 +23,7 @@ public class AimingButton : MonoBehaviour {
             CheckExprSlots();
     }
 
+    public List<CodeUI.ExprSlot> expr = new List<CodeUI.ExprSlot>();
     public void CheckExprSlots()
     {
         exprSlotsFull = true;
