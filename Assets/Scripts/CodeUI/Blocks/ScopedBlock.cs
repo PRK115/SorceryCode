@@ -68,6 +68,8 @@ namespace CodeUI
 
         public void OnDrop(PointerEventData eventData)
         {
+            Debug.Log(gameObject.name);
+
             blockListPanel.color = Color.clear;
 
             if (eventData.pointerDrag == null) return;

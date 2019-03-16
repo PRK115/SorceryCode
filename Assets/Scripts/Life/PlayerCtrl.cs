@@ -70,6 +70,7 @@ public class PlayerCtrl : MonoBehaviour {
                     break;
 
                 case State.Aiming:
+                    walkAndJump.Manuever(Direction.None);
                     //mousePosition = Input.mousePosition;
 
                     //mousePosition = cam.ScreenToWorldPoint(mousePosition);
@@ -130,6 +131,7 @@ public class PlayerCtrl : MonoBehaviour {
                     break;
 
                 case State.Casting:
+                    walkAndJump.Manuever(Direction.None);
                     break;
 
                 case State.Cleared:

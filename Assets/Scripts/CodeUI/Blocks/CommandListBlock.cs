@@ -17,8 +17,10 @@ namespace CodeUI
         {
             Block draggedBlock = CodeUIElement.Instance.DraggedBlock;
             base.OnDrop(eventData);
-            if(draggedBlock != null)
+            if (draggedBlock != null)
+            {
                 Destroy(draggedBlock.gameObject);
+            }
         }
     }
 }

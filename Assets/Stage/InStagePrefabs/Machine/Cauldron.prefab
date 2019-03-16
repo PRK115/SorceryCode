@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 65841572923273052}
   - component: {fileID: 54443688850849790}
   - component: {fileID: 114428283179223726}
+  - component: {fileID: 114993369000302182}
   m_Layer: 0
   m_Name: Cauldron
   m_TagString: Untagged
@@ -447,6 +448,22 @@ MonoBehaviour:
   leftBlocked: 0
   upBlocked: 0
   downBlocked: 0
+--- !u!114 &114993369000302182
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1121686732705254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927dd6ac6f44c8d4da744262e751162d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityType: 0
+  isMovable: 0
+  IsButtonPushable: 0
+  blockProjectiles: 1
+  occupySpace: 0
 --- !u!198 &198527301541293966
 ParticleSystem:
   m_ObjectHideFlags: 1
